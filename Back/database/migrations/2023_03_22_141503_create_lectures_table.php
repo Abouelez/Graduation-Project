@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title', 100);
             $table->enum('type', ['video', 'text']);
-            $table->integer('order');
+            $table->smallInteger('order');
             $table->string('content_url');
-            $table->time('duration');
+            $table->integer('duration_seconds')->unsigned();
             $table->timestamps();
         });
     }

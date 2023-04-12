@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('courses', function (Blueprint $table) {
-            //
+            $table->foreignId('category_id')
+                ->constrained()
+                ->onDelete('restrict')
+                ->onUpdate('cascade')->after('total_duration_seconds');
         });
     }
 
@@ -21,8 +24,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('courses', function (Blueprint $table) {
-            //
-        });
+        if (Schema::hasTable('courses')) {
+            Schema::table('courses', function (Blueprint $table) {
+                $table->dropForeign(['category_id']);
+            });
+        }
     }
 };

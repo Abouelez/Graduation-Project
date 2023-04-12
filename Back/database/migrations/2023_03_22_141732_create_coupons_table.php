@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->decimal('discount_percentage', 3, 2);
             $table->timestamps();
         });
     }
