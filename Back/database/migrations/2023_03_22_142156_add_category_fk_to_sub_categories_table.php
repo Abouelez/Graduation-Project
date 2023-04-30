@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('lectures', function (Blueprint $table) {
-            $table->foreignId('section_id')
+        Schema::table('sub_categories', function (Blueprint $table) {
+            $table->foreignId('category_id')
                 ->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade')
-                ->after('order');
+                ->after('name');
         });
     }
 
@@ -25,9 +25,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        if (Schema::hasTable('lectures')) {
-            Schema::table('lectures', function (Blueprint $table) {
-                $table->dropForeign(['section_id']);
+        if (Schema::hasTable('sub_categories')) {
+            Schema::table('sub_categories', function (Blueprint $table) {
+                $table->dropForeign(['category_id']);
             });
         }
     }
