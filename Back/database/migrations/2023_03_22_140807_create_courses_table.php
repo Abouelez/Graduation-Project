@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title', 100);
             $table->text('description');
             $table->string('thumbnail');
-            $table->decimal('price', 5, 2);
+            $table->bigInteger('price');
             $table->bigInteger('total_enrollments')->default(0);
             $table->integer('total_duration_seconds')->unsigned();
             $table->decimal('rating', 2, 1)->default(0);
