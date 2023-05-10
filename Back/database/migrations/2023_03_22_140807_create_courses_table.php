@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('thumbnail');
             $table->bigInteger('price');
             $table->bigInteger('total_enrollments')->default(0);
-            $table->integer('total_duration_seconds')->unsigned();
+            // $table->integer('total_duration_seconds')->unsigned();
             $table->decimal('rating', 2, 1)->default(0);
             $table->timestamps();
         });

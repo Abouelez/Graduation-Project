@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('coupon_course', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('course_id')
+                ->constrained()
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->foreignId('coupon_id')
+                ->constrained()
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->timestamp('expiration_data')->nullable();
+
             $table->timestamps();
         });
     }

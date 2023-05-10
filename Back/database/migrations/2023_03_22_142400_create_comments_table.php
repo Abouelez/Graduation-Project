@@ -13,6 +13,23 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreignId('course_id')
+                ->constrained()
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
+
+            $table->text('comment_text');
+
+            $table->foreignId('parent_id')
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade')
+                ->nullable();
             $table->timestamps();
         });
     }

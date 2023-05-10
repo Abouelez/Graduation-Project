@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreignId('course_id')
+                ->constrained()
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
+            $table->text('comment');
             $table->timestamps();
         });
     }

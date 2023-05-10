@@ -17,12 +17,14 @@ return new class extends Migration
                 ->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+
             $table->foreignId('course_id')
                 ->constrained()
                 ->onDelete('restrict')
                 ->onUpdate('cascade');
+
             $table->bigInteger('paid_price');
-            $table->date('purchase_date');
+            $table->timestamp('purchase_date');
             $table->timestamps();
         });
     }
