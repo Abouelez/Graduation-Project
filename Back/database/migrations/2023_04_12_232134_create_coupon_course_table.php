@@ -13,15 +13,18 @@ return new class extends Migration
     {
         Schema::create('coupon_course', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('course_id')
                 ->constrained()
-                ->nullOnDelete()
+                ->cascadeOnDelete()
                 ->cascadeOnUpdate();
 
             $table->foreignId('coupon_id')
                 ->constrained()
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
+
+            $table->unique(['course_id', 'coupon_id']);
 
             $table->timestamp('expiration_data')->nullable();
 

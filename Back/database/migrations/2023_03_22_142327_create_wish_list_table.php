@@ -23,6 +23,8 @@ return new class extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('cascade');
 
+            $table->unique(['user_id', 'course_id']);
+
             $table->timestamps();
         });
     }

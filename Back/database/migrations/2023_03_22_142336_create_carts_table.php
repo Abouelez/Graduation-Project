@@ -22,7 +22,9 @@ return new class extends Migration
                 ->constrained()
                 ->onDelete('restrict')
                 ->onUpdate('cascade');
-                
+
+            $table->unique(['user_id', 'course_id']);
+
             $table->timestamps();
         });
     }

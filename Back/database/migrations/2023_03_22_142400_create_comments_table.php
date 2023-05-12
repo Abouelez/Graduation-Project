@@ -25,11 +25,7 @@ return new class extends Migration
 
             $table->text('comment_text');
 
-            $table->foreignId('parent_id')
-                ->constrained()
-                ->onDelete('cascade')
-                ->onUpdate('cascade')
-                ->nullable();
+            
             $table->timestamps();
         });
     }
