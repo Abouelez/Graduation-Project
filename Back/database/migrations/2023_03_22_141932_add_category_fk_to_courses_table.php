@@ -15,7 +15,7 @@ return new class extends Migration
             $table->foreignId('category_id')
                 ->constrained()
                 ->onDelete('restrict')
-                ->onUpdate('cascade')->after('total_duration_seconds');
+                ->onUpdate('cascade')->after('price');
         });
     }
 
