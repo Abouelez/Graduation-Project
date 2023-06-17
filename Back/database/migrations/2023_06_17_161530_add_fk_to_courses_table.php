@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('sub_categories', function (Blueprint $table) {
-            $table->foreignId('category_id')->after('name')
+        Schema::table('courses', function (Blueprint $table) {
+            $table->foreignId('user_id')->after('sub_category_id')
                 ->constrained()
-                ->onDelete('cascade')
+                ->onDelete('restrict')
                 ->onUpdate('cascade');
         });
     }
@@ -24,9 +24,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        if (Schema::hasTable('sub_categories')) {
-            Schema::table('sub_categories', function (Blueprint $table) {
-                $table->dropForeign(['category_id']);
+        if (Schema::hasTable('courses')) {
+            Schema::table('courses', function (Blueprint $table) {
+                $table->dropForeign(['user_id']);
             });
         }
     }

@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('quizzes', function (Blueprint $table) {
-            $table->foreignId('section_id')
+            $table->foreignId('section_id')->after('order')
                 ->constrained()
                 ->onDelete('cascade')
-                ->onUpdate('cascade')
-                ->after('order');
+                ->onUpdate('cascade');
         });
     }
 

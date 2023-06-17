@@ -24,8 +24,10 @@ return new class extends Migration
                 ->onUpdate('cascade');
 
             $table->unique(['user_id', 'course_id']);
-            
+
+            $table->unsignedTinyInteger('rate');
             $table->text('comment');
+
             $table->timestamps();
         });
     }

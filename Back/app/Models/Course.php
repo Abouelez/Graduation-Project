@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -29,5 +30,36 @@ class Course extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function subCategory(): BelongsTo
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class)->withPivot('paid_price');
+    }
+
+    public function rates(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'reviews')->withPivot('rate', 'comment');
+    }
+
+    public function comments(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'comments')->withPivot('comment_text', 'parent_id');
+    }
+
+    public function instructor(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    //return only accepted courses
+    public function scopeAccepted(Builder $query): void
+    {
+        $query->where('AC', 1);
     }
 }
