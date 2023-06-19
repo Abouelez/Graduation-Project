@@ -13,7 +13,7 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'thumbnail', 'price', 'category_id'];
+    protected $fillable = ['title', 'description', 'thumbnail', 'price', 'category_id', 'user_id'];
 
 
 
@@ -54,12 +54,17 @@ class Course extends Model
 
     public function instructor(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     //return only accepted courses
     public function scopeAccepted(Builder $query): void
     {
         $query->where('AC', 1);
+    }
+
+    public function isPublished(): bool
+    {
+        return $this->AC == true;
     }
 }
