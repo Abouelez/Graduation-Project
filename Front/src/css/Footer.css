@@ -1,0 +1,18 @@
+/*Footer*/
+footer{
+ background-color: #000;
+}
+footer:not(:first-of-type){
+ border-top: 2px solid var(--color-3b4149);
+}
+footer .input-group-text {
+ background-color: var(--color-232f3e);
+ color: white;
+ padding: 8px 17px;
+ text-transform: uppercase;
+ font-size: 12px;
+}
+.lfooter h2{
+ color: rgb(20, 94, 224);
+}
+/*End Footer*/

@@ -1,0 +1,725 @@
+
+ [
+  {
+  "albumId": 1,
+  "id": 1,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+  
+},
+{
+  "albumId": 1,
+  "id": 2,
+  "imeg":"images/card1.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 3,
+  "imeg":"images/card3.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 4,
+  "imeg":"images/card4.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 5,
+  "imeg":"images/card1.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 6,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 7,
+  "imeg":"images/card3.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 8,
+  "imeg":"images/card4.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 9,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 10,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 11,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 12,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 13,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 14,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 15,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 16,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 17,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 18,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 19,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 20,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 21,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 22,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 23,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 24,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 25,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 26,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 27,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 28,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 29,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 30,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 31,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 32,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 33,
+  "imeg":"images/card3.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 34,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 35,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 36,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 37,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 38,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 39,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 40,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 1,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+  
+},
+{
+  "albumId": 1,
+  "id": 2,
+  "imeg":"images/card1.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 3,
+  "imeg":"images/card3.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 4,
+  "imeg":"images/card4.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 5,
+  "imeg":"images/card1.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 6,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 7,
+  "imeg":"images/card3.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 8,
+  "imeg":"images/card4.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 9,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 10,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 11,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 12,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 13,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 14,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 15,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 16,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 17,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 18,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 19,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 20,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 21,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 22,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 23,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 24,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 25,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 26,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 27,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 28,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 29,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 30,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 31,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 32,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 33,
+  "imeg":"images/card3.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 34,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 35,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 36,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 37,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 38,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 39,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+},
+{
+  "albumId": 1,
+  "id": 40,
+  "imeg":"images/card2.jpg",
+  "h2": "The complete 2023 web Development Bootcamp",
+  "p": "Dr.Angela Yu",
+  "price1": "E$266.9",
+  "price2": " E$1,699.99"
+}
+]
