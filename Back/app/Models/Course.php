@@ -27,14 +27,9 @@ class Course extends Model
         return $this->belongsToMany(Coupon::class);
     }
 
-    public function category(): BelongsTo
+    public function categories(): BelongsToMany
     {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function subCategory(): BelongsTo
-    {
-        return $this->belongsTo(SubCategory::class);
+        return $this->belongsToMany(Category::class);
     }
 
     public function users(): BelongsToMany

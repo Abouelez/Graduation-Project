@@ -19,7 +19,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::accepted()->with(['category', 'instructor', 'subCategory'])->paginate(5);
+        $courses = Course::accepted()->with(['categories', 'instructor'])->paginate(5);
         return  CourseResource::collection($courses);
     }
 
@@ -35,8 +35,11 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        $data = $request->except('thumbnail');
+        $data = $request->except('thumbnail', 'category_ids');
         $course = Course::create($data);
+
+        $categoryIds = $request->input('category_ids', []);
+        $course->categories()->sync($categoryIds);
 
         $uploadedImage = $request->file('thumbnail');
         $imagePath = $this->saveImage($uploadedImage, 'thumbnail', 'courses/course' . $course->id);
@@ -53,7 +56,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        return new CourseResource($course->load(['category', 'instructor', 'subCategory']));
+        return new CourseResource($course->load(['categories', 'instructor', 'sections.lectures', 'sections.quizzes']));
     }
 
     /**

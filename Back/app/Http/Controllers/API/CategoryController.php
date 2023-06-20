@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
@@ -13,8 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('subCategories')->get();
-        return $categories;
+        $categories = Category::with('parent', 'children')->get();
+        return CategoryResource::collection($categories);
     }
 
     /**
@@ -28,9 +32,10 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+        $category = Category::create($request->all());
+        return new CategoryResource($category);
     }
 
     /**
@@ -38,7 +43,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return new CategoryResource($category->load('courses', 'parent', 'children'));
     }
 
     /**
@@ -52,9 +57,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $category->update($request->all());
+
+        return new CategoryResource($category);
     }
 
     /**
@@ -62,6 +69,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        if ($category->courses()->exists() || $category->children()->exists()) {
+            return response()->json(['message' => 'Category has courses or sub categories so cannot be deleted.'], Response::HTTP_FORBIDDEN);
+        }
+        $category->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('comments', function (Blueprint $table) {
-            $table->foreignId('parent_id')->after('comment_text')->nullable()
-                ->constrained('comments')
-                ->cascadeOnDelete()
+        Schema::table('categories', function (Blueprint $table) {
+            $table->foreignId('parent_id')->after('name')->nullable()
+                ->constrained('categories')
+                ->restrictOnDelete()
                 ->cascadeOnUpdate();
         });
     }
@@ -24,8 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        if (Schema::hasTable('comments')) {
-            Schema::table('comments', function (Blueprint $table) {
+        if (Schema::hasTable('categories')) {
+            Schema::table('categories', function (Blueprint $table) {
                 $table->dropForeign(['parent_id']);
             });
         }
