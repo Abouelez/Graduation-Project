@@ -1,0 +1,77 @@
+.head{
+    margin-top: 50px;
+    font-weight: bold;
+}
+.phase{
+    display: grid;
+  justify-content:left;
+  align-items: center;
+  margin-left: 100px;
+  cursor: pointer;
+  }
+  .phase img{
+    width: 350px;
+    height: 350px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .ABB{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+ }
+ @media(max-width:767px){
+  .ABB{
+    display: inline-grid;
+    position: relative;
+    left: -9.5rem;
+  }
+  .price{
+    position: absolute;
+    bottom: -1%;
+    right: 0;
+  }
+ }
+  button{
+    margin-right: 30px;
+    width: 50px;
+    height: 50px;
+  }
+    .active1{
+        background-color: rgb(9, 112, 112);
+        color: white;
+        transition:.2s ease-in-out;
+      }
+      .ABB .slide .HE{
+        font-size: 20px;
+        color: #1c1d1f;
+        font-weight: inherit;
+      }
+      .ABB .slide .paragraph{
+        font-size: 15px;
+        color: #b8b5b5;
+      }
+      .ABB .slide h6{
+        font-size: 15px;
+        color: #b8b5b5;
+      }
+      .ABB .slide .button{
+        display: inline-block;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .pr{
+        font-size: 15px;
+        font-weight: bold;
+        width: 80px;
+      }
+      .bt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
