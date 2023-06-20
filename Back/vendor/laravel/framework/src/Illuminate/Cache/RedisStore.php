@@ -77,10 +77,6 @@ class RedisStore extends TaggableStore implements LockProvider
      */
     public function many(array $keys)
     {
-        if (count($keys) === 0) {
-            return [];
-        }
-
         $results = [];
 
         $values = $this->connection()->mget(array_map(function ($key) {
@@ -118,20 +114,12 @@ class RedisStore extends TaggableStore implements LockProvider
      */
     public function putMany(array $values, $seconds)
     {
-        $serializedValues = [];
-
-        foreach ($values as $key => $value) {
-            $serializedValues[$this->prefix.$key] = $this->serialize($value);
-        }
-
         $this->connection()->multi();
 
         $manyResult = null;
 
-        foreach ($serializedValues as $key => $value) {
-            $result = (bool) $this->connection()->setex(
-                $key, (int) max(1, $seconds), $value
-            );
+        foreach ($values as $key => $value) {
+            $result = $this->put($key, $value, $seconds);
 
             $manyResult = is_null($manyResult) ? $result : $result && $manyResult;
         }

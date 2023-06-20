@@ -1,32 +1,32 @@
-import React, { useEffect, useState, CSSProperties  } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../../css/Home.css"
 import AllCourses from "../../component/utility/AllCourses"
 import Instructor from '../../component/utility/Instructor'
 import Cat from '../../component/utility/Cat'
 import CourseCard from '../../component/utility/CourseCard'
 import axios from 'axios'
-import { useSelector, useDispatch } from 'react-redux'
-import { getAllCourses } from '../../redux/actions/courseAction'
-
-import { Spinner } from 'react-bootstrap'
+import {useSelector,useDispatch} from 'react-redux'
+import {getAllCourses} from '../../redux/actions/courseAction'
 function HomePage() {
-
-  const [data, setData] = useState([]);
-  const dispatch = useDispatch();
+  
+const [data,setData]=useState()
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     dispatch(getAllCourses());
-  }, []);
+  }, [dispatch]); 
+  const data0=useSelector(state =>state.allCourses.courses)
+  const loading=useSelector(state =>state.allCourses.loading)
+  if (data0){
+    
+console.log(data0);
+console.log(loading);
+  }
+  
 
-  const { courses, loading } = useSelector(state => state.allCourses);
-
-
-  //console.log(courses);
-
-
-
-
-
+    
+  
+  
   return (
     <>
       <section className='home-wraber-1 '>
@@ -52,23 +52,9 @@ function HomePage() {
             </div>
             <div className='col-12'>
               <div className='courses d-flex justify-content-between align-items-center flex-wrap'>
-                {courses ? (
-                  courses.data.slice(0, 4).map((course) => {
-                    const { id, title, thumbnail, price, instructor } = course;
-                    const { name: instructorName } = instructor;
-                    return (
-                      <CourseCard
-                        key={id}
-                        id={id}
-                        title={title}
-                        instructor={instructorName}
-                        price={price}
-                        thumbnail={thumbnail}
-                      />
-                    );
-                  })
-                ) : (<Spinner/>
-                )}
+               {data0?
+                <CourseCard course={data0.data[0]}/>:<h1>noneeeeeeeee</h1>
+                }
               </div>
 
             </div>
@@ -77,7 +63,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> 
       <section className='categorysection'>
         <div className='container'>
           <div className='row'>

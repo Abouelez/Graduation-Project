@@ -254,7 +254,7 @@ class Stringable implements JsonSerializable, ArrayAccess
      *
      * @param  string  $delimiter
      * @param  int  $limit
-     * @return \Illuminate\Support\Collection<int, string>
+     * @return \Illuminate\Support\Collection
      */
     public function explode($delimiter, $limit = PHP_INT_MAX)
     {
@@ -267,7 +267,7 @@ class Stringable implements JsonSerializable, ArrayAccess
      * @param  string|int  $pattern
      * @param  int  $limit
      * @param  int  $flags
-     * @return \Illuminate\Support\Collection<int, string>
+     * @return \Illuminate\Support\Collection
      */
     public function split($pattern, $limit = -1, $flags = 0)
     {
@@ -614,12 +614,11 @@ class Stringable implements JsonSerializable, ArrayAccess
      *
      * @param  string|iterable<string>  $search
      * @param  string|iterable<string>  $replace
-     * @param  bool  $caseSensitive
      * @return static
      */
-    public function replace($search, $replace, $caseSensitive = true)
+    public function replace($search, $replace)
     {
-        return new static(Str::replace($search, $replace, $this->value, $caseSensitive));
+        return new static(Str::replace($search, $replace, $this->value));
     }
 
     /**
@@ -909,7 +908,7 @@ class Stringable implements JsonSerializable, ArrayAccess
     /**
      * Split a string by uppercase characters.
      *
-     * @return \Illuminate\Support\Collection<int, string>
+     * @return \Illuminate\Support\Collection
      */
     public function ucsplit()
     {

@@ -9,10 +9,7 @@
  */
 namespace PHPUnit\Event;
 
-use function gc_status;
 use PHPUnit\Event\Telemetry\HRTime;
-use PHPUnit\Event\Telemetry\Php81GarbageCollectorStatusProvider;
-use PHPUnit\Event\Telemetry\Php83GarbageCollectorStatusProvider;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -90,9 +87,8 @@ final class Facade
             $dispatcher,
             new Telemetry\System(
                 new Telemetry\SystemStopWatchWithOffset($offset),
-                new Telemetry\SystemMemoryMeter,
-                $this->garbageCollectorStatusProvider(),
-            ),
+                new Telemetry\SystemMemoryMeter
+            )
         );
 
         $this->sealed = true;
@@ -126,7 +122,7 @@ final class Facade
     {
         return new DispatchingEmitter(
             $this->deferredDispatcher(),
-            $this->createTelemetrySystem(),
+            $this->createTelemetrySystem()
         );
     }
 
@@ -134,8 +130,7 @@ final class Facade
     {
         return new Telemetry\System(
             new Telemetry\SystemStopWatch,
-            new Telemetry\SystemMemoryMeter,
-            $this->garbageCollectorStatusProvider(),
+            new Telemetry\SystemMemoryMeter
         );
     }
 
@@ -143,7 +138,7 @@ final class Facade
     {
         if ($this->deferringDispatcher === null) {
             $this->deferringDispatcher = new DeferringDispatcher(
-                new DirectDispatcher($this->typeMap()),
+                new DirectDispatcher($this->typeMap())
             );
         }
 
@@ -169,8 +164,6 @@ final class Facade
             Application\Started::class,
             Application\Finished::class,
 
-            Test\DataProviderMethodCalled::class,
-            Test\DataProviderMethodFinished::class,
             Test\MarkedIncomplete::class,
             Test\AfterLastTestMethodCalled::class,
             Test\AfterLastTestMethodFinished::class,
@@ -221,7 +214,6 @@ final class Facade
             TestRunner\BootstrapFinished::class,
             TestRunner\Configured::class,
             TestRunner\EventFacadeSealed::class,
-            TestRunner\ExecutionAborted::class,
             TestRunner\ExecutionFinished::class,
             TestRunner\ExecutionStarted::class,
             TestRunner\ExtensionLoadedFromPhar::class,
@@ -242,17 +234,8 @@ final class Facade
         foreach ($defaultEvents as $eventClass) {
             $typeMap->addMapping(
                 $eventClass . 'Subscriber',
-                $eventClass,
+                $eventClass
             );
         }
-    }
-
-    private function garbageCollectorStatusProvider(): Telemetry\GarbageCollectorStatusProvider
-    {
-        if (!isset(gc_status()['running'])) {
-            return new Php81GarbageCollectorStatusProvider;
-        }
-
-        return new Php83GarbageCollectorStatusProvider;
     }
 }

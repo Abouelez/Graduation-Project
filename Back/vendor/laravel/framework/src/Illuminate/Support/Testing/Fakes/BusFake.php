@@ -90,7 +90,7 @@ class BusFake implements Fake, QueueingDispatcher
      * Specify the jobs that should be dispatched instead of faked.
      *
      * @param  array|string  $jobsToDispatch
-     * @return $this
+     * @return void
      */
     public function except($jobsToDispatch)
     {

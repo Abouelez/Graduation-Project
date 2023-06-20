@@ -118,11 +118,11 @@ class Kernel implements KernelContract
         $this->app = $app;
         $this->events = $events;
 
-        $this->app->booted(function () {
-            if (! $this->app->runningUnitTests()) {
-                $this->rerouteSymfonyCommandEvents();
-            }
+        if (! $this->app->runningUnitTests()) {
+            $this->rerouteSymfonyCommandEvents();
+        }
 
+        $this->app->booted(function () {
             $this->defineConsoleSchedule();
         });
     }
@@ -474,7 +474,7 @@ class Kernel implements KernelContract
     /**
      * Set the Artisan application instance.
      *
-     * @param  \Illuminate\Console\Application|null  $artisan
+     * @param  \Illuminate\Console\Application  $artisan
      * @return void
      */
     public function setArtisan($artisan)

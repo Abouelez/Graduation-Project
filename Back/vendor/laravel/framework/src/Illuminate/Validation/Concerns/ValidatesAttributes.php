@@ -7,7 +7,6 @@ use Brick\Math\BigNumber;
 use Brick\Math\Exception\MathException as BrickMathException;
 use DateTime;
 use DateTimeInterface;
-use DateTimeZone;
 use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Validation\DNSCheckValidation;
 use Egulias\EmailValidator\Validation\Extra\SpoofCheckValidation;
@@ -26,7 +25,6 @@ use Illuminate\Validation\ValidationData;
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use ValueError;
 
 trait ValidatesAttributes
 {
@@ -552,14 +550,10 @@ trait ValidatesAttributes
         }
 
         foreach ($parameters as $format) {
-            try {
-                $date = DateTime::createFromFormat('!'.$format, $value);
+            $date = DateTime::createFromFormat('!'.$format, $value);
 
-                if ($date && $date->format($format) == $value) {
-                    return true;
-                }
-            } catch (ValueError) {
-                return false;
+            if ($date && $date->format($format) == $value) {
+                return true;
             }
         }
 
@@ -591,11 +585,11 @@ trait ValidatesAttributes
      */
     public function validateDecimal($attribute, $value, $parameters)
     {
-        $this->requireParameterCount(1, $parameters, 'decimal');
-
         if (! $this->validateNumeric($attribute, $value)) {
             return false;
         }
+
+        $this->requireParameterCount(1, $parameters, 'decimal');
 
         $matches = [];
 
@@ -684,21 +678,13 @@ trait ValidatesAttributes
             return true;
         }
 
-        if (! $this->isValidFileInstance($value)) {
-            return false;
-        }
-
-        $dimensions = method_exists($value, 'dimensions')
-                ? $value->dimensions()
-                : @getimagesize($value->getRealPath());
-
-        if (! $dimensions) {
+        if (! $this->isValidFileInstance($value) || ! $sizeDetails = @getimagesize($value->getRealPath())) {
             return false;
         }
 
         $this->requireParameterCount(1, $parameters, 'dimensions');
 
-        [$width, $height] = $dimensions;
+        [$width, $height] = $sizeDetails;
 
         $parameters = $this->parseNamedParameters($parameters);
 
@@ -1430,7 +1416,7 @@ trait ValidatesAttributes
      */
     public function validateMaxDigits($attribute, $value, $parameters)
     {
-        $this->requireParameterCount(1, $parameters, 'max_digits');
+        $this->requireParameterCount(1, $parameters, 'max');
 
         $length = strlen((string) $value);
 
@@ -1532,7 +1518,7 @@ trait ValidatesAttributes
      */
     public function validateMinDigits($attribute, $value, $parameters)
     {
-        $this->requireParameterCount(1, $parameters, 'min_digits');
+        $this->requireParameterCount(1, $parameters, 'min');
 
         $length = strlen((string) $value);
 
@@ -1623,7 +1609,7 @@ trait ValidatesAttributes
      */
     public function validateMissingWithAll($attribute, $value, $parameters)
     {
-        $this->requireParameterCount(1, $parameters, 'missing_with_all');
+        $this->requireParameterCount(1, $parameters, 'missing_with');
 
         if (Arr::has($this->data, $parameters)) {
             return $this->validateMissing($attribute, $value, $parameters);
@@ -2286,15 +2272,11 @@ trait ValidatesAttributes
      *
      * @param  string  $attribute
      * @param  mixed  $value
-     * @param  array<string, null|string>  $parameters
      * @return bool
      */
-    public function validateTimezone($attribute, $value, $parameters = [])
+    public function validateTimezone($attribute, $value)
     {
-        return in_array($value, timezone_identifiers_list(
-            constant(DateTimeZone::class.'::'.Str::upper($parameters[0] ?? 'ALL')),
-            isset($parameters[1]) ? Str::upper($parameters[1]) : null,
-        ), true);
+        return in_array($value, timezone_identifiers_list(), true);
     }
 
     /**

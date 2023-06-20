@@ -2,7 +2,6 @@
 
 namespace Illuminate\Http\Client;
 
-use Closure;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
@@ -131,7 +130,7 @@ class PendingRequest
     /**
      * The number of milliseconds to wait between retries.
      *
-     * @var Closure|int
+     * @var int
      */
     protected $retryDelay = 100;
 
@@ -394,19 +393,6 @@ class PendingRequest
     }
 
     /**
-     * Replace the given headers on the request.
-     *
-     * @param  array  $headers
-     * @return $this
-     */
-    public function replaceHeaders(array $headers)
-    {
-        $this->options['headers'] = array_merge($this->options['headers'] ?? [], $headers);
-
-        return $this;
-    }
-
-    /**
      * Specify the basic authentication username and password for the request.
      *
      * @param  string  $username
@@ -570,12 +556,12 @@ class PendingRequest
      * Specify the number of times the request should be attempted.
      *
      * @param  int  $times
-     * @param  Closure|int  $sleepMilliseconds
+     * @param  int  $sleepMilliseconds
      * @param  callable|null  $when
      * @param  bool  $throw
      * @return $this
      */
-    public function retry(int $times, Closure|int $sleepMilliseconds = 0, ?callable $when = null, bool $throw = true)
+    public function retry(int $times, int $sleepMilliseconds = 0, ?callable $when = null, bool $throw = true)
     {
         $this->tries = $times;
         $this->retryDelay = $sleepMilliseconds;
@@ -972,17 +958,11 @@ class PendingRequest
 
         $laravelData = $this->parseRequestData($method, $url, $options);
 
-        $onStats = function ($transferStats) {
-            if (($callback = ($this->options['on_stats'] ?? false)) instanceof Closure) {
-                $transferStats = $callback($transferStats) ?: $transferStats;
-            }
-
-            $this->transferStats = $transferStats;
-        };
-
         return $this->buildClient()->$clientMethod($method, $url, $this->mergeOptions([
             'laravel_data' => $laravelData,
-            'on_stats' => $onStats,
+            'on_stats' => function ($transferStats) {
+                $this->transferStats = $transferStats;
+            },
         ], $options));
     }
 

@@ -95,10 +95,7 @@ class EventFake implements Dispatcher, Fake
                     if (Str::contains($expectedListener, '@')) {
                         $normalizedListener = Str::parseCallback($expectedListener);
                     } else {
-                        $normalizedListener = [
-                            $expectedListener,
-                            method_exists($expectedListener, 'handle') ? 'handle' : '__invoke',
-                        ];
+                        $normalizedListener = [$expectedListener, 'handle'];
                     }
                 }
             }

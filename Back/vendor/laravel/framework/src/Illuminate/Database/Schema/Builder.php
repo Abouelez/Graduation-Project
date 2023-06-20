@@ -421,11 +421,11 @@ class Builder
     {
         $this->disableForeignKeyConstraints();
 
-        try {
-            return $callback();
-        } finally {
-            $this->enableForeignKeyConstraints();
-        }
+        $result = $callback();
+
+        $this->enableForeignKeyConstraints();
+
+        return $result;
     }
 
     /**

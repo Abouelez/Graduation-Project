@@ -33,7 +33,7 @@ abstract class Queue
     /**
      * Indicates that jobs should be dispatched after all database transactions have committed.
      *
-     * @var bool
+     * @return $this
      */
     protected $dispatchAfterCommit;
 
@@ -102,11 +102,11 @@ abstract class Queue
             $job = CallQueuedClosure::create($job);
         }
 
-        $payload = json_encode($value = $this->createPayloadArray($job, $queue, $data), \JSON_UNESCAPED_UNICODE);
+        $payload = json_encode($this->createPayloadArray($job, $queue, $data), \JSON_UNESCAPED_UNICODE);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new InvalidPayloadException(
-                'Unable to JSON encode payload. Error code: '.json_last_error(), $value
+                'Unable to JSON encode payload. Error code: '.json_last_error()
             );
         }
 
@@ -325,7 +325,7 @@ abstract class Queue
      */
     protected function shouldDispatchAfterCommit($job)
     {
-        if (! $job instanceof Closure && is_object($job) && isset($job->afterCommit)) {
+        if (is_object($job) && isset($job->afterCommit)) {
             return $job->afterCommit;
         }
 

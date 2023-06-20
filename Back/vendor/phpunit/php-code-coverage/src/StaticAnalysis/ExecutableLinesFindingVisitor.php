@@ -26,8 +26,6 @@ use PhpParser\NodeVisitorAbstract;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for phpunit/php-code-coverage
- *
- * @psalm-import-type LinesType from \SebastianBergmann\CodeCoverage\StaticAnalysis\FileAnalyser
  */
 final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
 {
@@ -35,7 +33,7 @@ final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
     private readonly string $source;
 
     /**
-     * @psalm-var LinesType
+     * @psalm-var array<int, int>
      */
     private array $executableLinesGroupedByBranch = [];
 
@@ -96,7 +94,6 @@ final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
             $node instanceof Node\Stmt\Else_ ||
             $node instanceof Node\Stmt\EnumCase ||
             $node instanceof Node\Stmt\Finally_ ||
-            $node instanceof Node\Stmt\GroupUse ||
             $node instanceof Node\Stmt\Label ||
             $node instanceof Node\Stmt\Namespace_ ||
             $node instanceof Node\Stmt\Nop ||
@@ -355,9 +352,6 @@ final class ExecutableLinesFindingVisitor extends NodeVisitorAbstract
         );
     }
 
-    /**
-     * @psalm-return LinesType
-     */
     public function executableLinesGroupedByBranch(): array
     {
         return $this->executableLinesGroupedByBranch;

@@ -16,8 +16,7 @@ use Traversable;
 
 /**
  * @template TKey of array-key
- *
- * @template-covariant TValue
+ * @template TValue
  *
  * @implements \Illuminate\Support\Enumerable<TKey, TValue>
  */
@@ -1726,6 +1725,6 @@ class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
      */
     protected function now()
     {
-        return Carbon::now()->timestamp;
+        return time();
     }
 }

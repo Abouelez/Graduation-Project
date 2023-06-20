@@ -76,6 +76,8 @@ abstract class Constraint implements Countable, SelfDescribing
      * constraint is met, false otherwise.
      *
      * This method can be overridden to implement the evaluation algorithm.
+     *
+     * @codeCoverageIgnore
      */
     protected function matches(mixed $other): bool
     {
@@ -91,7 +93,7 @@ abstract class Constraint implements Countable, SelfDescribing
     {
         $failureDescription = sprintf(
             'Failed asserting that %s.',
-            $this->failureDescription($other),
+            $this->failureDescription($other)
         );
 
         $additionalFailureDescription = $this->additionalFailureDescription($other);
@@ -106,7 +108,7 @@ abstract class Constraint implements Countable, SelfDescribing
 
         throw new ExpectationFailedException(
             $failureDescription,
-            $comparisonFailure,
+            $comparisonFailure
         );
     }
 

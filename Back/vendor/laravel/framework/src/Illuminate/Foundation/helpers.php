@@ -226,13 +226,15 @@ if (! function_exists('cache')) {
      *
      * If an array is passed, we'll assume you want to put to the cache.
      *
-     * @param  mixed  ...$arguments  key|key,default|data,expiration|null
+     * @param  dynamic  key|key,default|data,expiration|null
      * @return mixed|\Illuminate\Cache\CacheManager
      *
      * @throws \InvalidArgumentException
      */
-    function cache(...$arguments)
+    function cache()
     {
+        $arguments = func_get_args();
+
         if (empty($arguments)) {
             return app('cache');
         }
@@ -610,7 +612,7 @@ if (! function_exists('precognitive')) {
         });
 
         if (request()->isPrecognitive()) {
-            abort(204, headers: ['Precognition-Success' => 'true']);
+            abort(204);
         }
 
         return $payload;
