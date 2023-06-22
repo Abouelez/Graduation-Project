@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, CSSProperties } from 'react'
 import "../../css/Home.css"
 import InstructorCard from '../../component/Instructor/InstructorCard'
@@ -18,6 +19,37 @@ function HomePage() {
 
   const { courses, loading } = useSelector(state => state.allCourses);
   console.log(loading);
+=======
+import React, { useEffect, useState } from 'react'
+import "../../css/Home.css"
+import AllCourses from "../../component/utility/AllCourses"
+import Instructor from '../../component/utility/Instructor'
+import Cat from '../../component/utility/Cat'
+import CourseCard from '../../component/utility/CourseCard'
+import axios from 'axios'
+import {useSelector,useDispatch} from 'react-redux'
+import {getAllCourses} from '../../redux/actions/courseAction'
+function HomePage() {
+  
+const [data,setData]=useState()
+  const dispatch = useDispatch(); 
+
+  useEffect(() => {
+    dispatch(getAllCourses());
+  }, [dispatch]); 
+  const data0=useSelector(state =>state.allCourses.courses)
+  const loading=useSelector(state =>state.allCourses.loading)
+  if (data0){
+    
+console.log(data0);
+console.log(loading);
+  }
+  
+
+    
+  
+  
+>>>>>>> 459e6535796b0307256781af4de090612d9a5dd2
   return (
     <>
       <section className='home-wraber-1 '>
@@ -43,6 +75,7 @@ function HomePage() {
             </div>
             <div className='col-12'>
               <div className='courses d-flex justify-content-between align-items-center flex-wrap'>
+<<<<<<< HEAD
                 {courses ? (
                   courses.data.slice(0, 4).map(({ id, title, thumbnail, price, instructor }) => (
                     <CourseCard
@@ -57,6 +90,11 @@ function HomePage() {
                 ) : (
                   <Spinner />
                 )}
+=======
+               {data0?
+                <CourseCard course={data0.data[0]}/>:<h1>noneeeeeeeee</h1>
+                }
+>>>>>>> 459e6535796b0307256781af4de090612d9a5dd2
               </div>
             </div>
             <div className='col-12'> 
@@ -66,7 +104,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> 
       <section className='categorysection'>
         <div className='container'>
           <div className='row'>

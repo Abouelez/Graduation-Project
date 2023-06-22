@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->foreignId('user_id')->after('price')
+            $table->foreignId('category_id')->after('price')
                 ->constrained()
-                ->onDelete('restrict')
-                ->onUpdate('cascade');
+                ->restrictOnDelete()
+                ->cascadeOnUpdate();
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     {
         if (Schema::hasTable('courses')) {
             Schema::table('courses', function (Blueprint $table) {
-                $table->dropForeign(['user_id']);
+                $table->dropForeign(['category_id']);
             });
         }
     }

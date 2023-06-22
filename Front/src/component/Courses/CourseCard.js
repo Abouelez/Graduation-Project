@@ -3,18 +3,18 @@ import { HiStar } from 'react-icons/hi'
 import { IoMdStarHalf } from 'react-icons/io'
 import '../../css/coursecard.css'
 
-const CourseCard = ({ title, instructor, price, thumbnail }) => {
-  //console.log(title);
+const CourseCard = ({ course }) => {
+  //console.log(course);
   return (
     <div className='coursecard'>
        <div className='imag'>
-        <img src={ thumbnail} alt={ title} width={300} height={200} />
+        <img src={course.thumbnail} alt={course.title} width={300} height={200} />
       </div>
       <div>
-        <h2 className='h2'>{ title}</h2>
-        <p className='p'>{ instructor}</p>
-        <h4 className='h4'>4.7 <HiStar/></h4>
-        <h2 className='h2'>E${ price}  </h2>
+        <h2 className='h2'>{course.title}</h2>
+        <p className='p'>{course.instructor}</p>
+        <h4 className='h4'>4.7 <HiStar/><span>(272.011)</span></h4>
+        <h2 className='h2'>E${course.price}  <span><del>E$1,699.99</del></span></h2>
         <a className='button2' href='h'>Bestseller</a>
       </div> 
     </div>

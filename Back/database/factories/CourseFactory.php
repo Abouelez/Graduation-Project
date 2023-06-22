@@ -25,8 +25,9 @@ class CourseFactory extends Factory
             'description' => fake()->paragraph,
             'thumbnail' => fake()->imageUrl(),
             'price' => fake()->numberBetween(1000, 100000),
-            'category_id' => Category::inRandomOrder()->first()->id,
             'user_id' => User::inRandomOrder()->first()->id,
+            'category_id' => Category::inRandomOrder()->first()->id,
+            'sub_category_id' => Category::whereNotNull('parent_id')->inRandomOrder()->first()->id ?? null,
             'AC' => true,
         ];
     }

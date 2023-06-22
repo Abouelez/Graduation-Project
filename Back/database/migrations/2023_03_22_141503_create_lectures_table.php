@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100);
             $table->enum('type', ['video', 'text']);
-            $table->smallInteger('order');
-            $table->string('content_url');
+            $table->string('content')->nullable();
             // $table->integer('duration_seconds')->unsigned();
             $table->timestamps();
         });

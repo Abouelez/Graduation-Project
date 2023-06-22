@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
-            $table->smallInteger('order');
+            $table->string('title');
             $table->timestamps();
         });
     }
