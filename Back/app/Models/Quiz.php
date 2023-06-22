@@ -10,7 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Quiz extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'order', 'section_id'];
+    protected $table = 'quizzes';
+    protected $fillable = ['title', 'section_id'];
 
     public function section(): BelongsTo
     {

@@ -15,9 +15,10 @@ class SectionResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
             'lectures' => LectureResource::collection($this->whenLoaded('lectures')),
-            'quizzes' => QuizResource::collection($this->whenLoaded('quizzes'))
+            'quizzes' => QuizResource::collection($this->whenLoaded('quizzes')),
         ];
     }
 }

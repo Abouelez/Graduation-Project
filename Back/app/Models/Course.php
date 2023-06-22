@@ -13,7 +13,7 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'thumbnail', 'price', 'category_id', 'user_id'];
+    protected $fillable = ['title', 'description', 'thumbnail', 'price', 'category_id', 'sub_category_id', 'user_id'];
 
 
 
@@ -27,9 +27,14 @@ class Course extends Model
         return $this->belongsToMany(Coupon::class);
     }
 
-    public function categories(): BelongsToMany
+    public function category(): BelongsTo
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Category::class);
+    }
+
+    public function subCategory(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'sub_category_id');
     }
 
     public function users(): BelongsToMany

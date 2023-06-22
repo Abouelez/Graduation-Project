@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Lecture extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'type', 'order', 'content_url', 'section_id'];
+    protected $fillable = ['title', 'type', 'content_url', 'section_id'];
 
     public function section(): BelongsTo
     {

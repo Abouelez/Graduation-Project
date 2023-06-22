@@ -8,8 +8,11 @@ use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Http\Resources\CourseResource;
 use App\Models\Course;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class CourseController extends Controller
 {
@@ -17,9 +20,12 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $courses = Course::accepted()->with(['categories', 'instructor'])->paginate(5);
+        $numOfCoursePerPage = $request->courses_per_page ?? 10;
+        $courses = Course::accepted()
+            ->with(['category', 'subCategory', 'instructor'])
+            ->paginate($numOfCoursePerPage);
         return  CourseResource::collection($courses);
     }
 
@@ -35,18 +41,17 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        $data = $request->except('thumbnail', 'category_ids');
+        $data = $request->except('thumbnail');
         $course = Course::create($data);
 
-        $categoryIds = $request->input('category_ids', []);
-        $course->categories()->sync($categoryIds);
-
         $uploadedImage = $request->file('thumbnail');
-        $imagePath = $this->saveImage($uploadedImage, 'thumbnail', 'courses/course' . $course->id);
+        $resizedImage = Image::make($uploadedImage)->resize(300, 200);
+        $imageName = 'thumbnail.' . $uploadedImage->getClientOriginalExtension();
+        $imagePath = 'courses/course' . $course->id . '/' . $imageName;
+        Storage::disk('content')->put($imagePath, $resizedImage->encode());
 
         $course->thumbnail = $imagePath;
         $course->save();
-
 
         return new CourseResource($course);
     }
@@ -56,7 +61,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        return new CourseResource($course->load(['categories', 'instructor', 'sections.lectures', 'sections.quizzes']));
+        return new CourseResource($course->load(['category', 'subCategory', 'instructor', 'sections.lectures', 'sections.quizzes', 'sections.quizzes.questions']));
     }
 
     /**
@@ -78,7 +83,15 @@ class CourseController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             $uploadedImage = $request->file('thumbnail');
-            $imagePath = $this->saveImage($uploadedImage, 'thumbnail', 'courses/course' . $course->id);
+            $resizedImage = Image::make($uploadedImage)->resize(300, 200);
+            $imageName = 'thumbnail.' . $uploadedImage->getClientOriginalExtension();
+            $imagePath = 'courses/course' . $course->id . '/' . $imageName;
+
+            if (Storage::disk('content')->exists($imagePath)) {
+                Storage::disk('content')->delete($imagePath);
+            }
+
+            Storage::disk('content')->put($imagePath, $resizedImage->encode());
 
             $course->thumbnail = $imagePath;
             $course->save();

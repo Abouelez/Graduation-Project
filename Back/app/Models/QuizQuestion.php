@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class QuizQuestion extends Model
 {
     use HasFactory;
-    protected $fillable = ['answer', 'A', 'B', 'C', 'D', 'quiz_id'];
+    protected $table = 'quiz_questions';
+    protected $fillable = ['answer', 'question', 'A', 'B', 'C', 'D', 'quiz_id'];
 
     public function quiz(): BelongsTo
     {

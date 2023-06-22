@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreQuizRequest;
+use App\Http\Requests\UpdateQuizRequest;
+use App\Http\Resources\QuizResource;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class QuizController extends Controller
 {
@@ -13,7 +17,8 @@ class QuizController extends Controller
      */
     public function index()
     {
-        //
+        $quizzes = Quiz::with('questions')->get();
+        return QuizResource::collection($quizzes);
     }
 
     /**
@@ -27,9 +32,10 @@ class QuizController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreQuizRequest $request)
     {
-        //
+        $quiz = Quiz::create($request->all());
+        return new QuizResource($quiz->load('questions'));
     }
 
     /**
@@ -37,7 +43,7 @@ class QuizController extends Controller
      */
     public function show(Quiz $quiz)
     {
-        //
+        return new QuizResource($quiz->load('questions'));
     }
 
     /**
@@ -51,9 +57,9 @@ class QuizController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Quiz $quiz)
+    public function update(UpdateQuizRequest $request, Quiz $quiz)
     {
-        //
+        $quiz->update($request->validated());
     }
 
     /**
@@ -61,6 +67,8 @@ class QuizController extends Controller
      */
     public function destroy(Quiz $quiz)
     {
-        //
+        if ($quiz->section->course->isPublished()) {
+            return response()->json(['message' => 'The course is published, so quiz cannot be deleted.'], Response::HTTP_FORBIDDEN);
+        }
     }
 }

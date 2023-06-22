@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('quiz_questions', function (Blueprint $table) {
             $table->id();
+            $table->string('question');
             $table->char('answer', 1);
             $table->string('A');
             $table->string('B');

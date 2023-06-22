@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSectionRequest;
 use App\Http\Requests\UpdateSectionRequest;
+use App\Http\Resources\CategoryResource;
 use App\Http\Resources\SectionResource;
 use App\Models\Section;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $sections = Section::with(['lectures', 'quizzes'])->get();
+        $sections = Section::with(['lectures', 'quizzes', 'quizzes.questions'])->get();
         return SectionResource::collection($sections);
     }
 
@@ -41,9 +42,9 @@ class SectionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Section $section)
     {
-        //
+        return new CategoryResource($section->load('lectures', 'quizzes', 'quizzes.questions'));
     }
 
     /**

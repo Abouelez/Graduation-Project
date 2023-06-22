@@ -23,9 +23,11 @@ class CourseResource extends JsonResource
             'description' => $this->description,
             'thumbnail' => $this->thumbnail,
             'price' => number_format(($this->price) / 100, 2),
-            'categories' => CategoryResource::collection($this->whenLoaded('categories')),
+            'published' => $this->AC,
+            'category' => new CategoryResource($this->whenLoaded('category')),
+            'sub_category' => new CategoryResource($this->whenLoaded('subCategory')),
             'instructor' => new UserResource($this->instructor),
-            'sections' => SectionResource::collection($this->whenLoaded('sections'))
+            'sections' => SectionResource::collection($this->whenLoaded('sections')),
         ];
     }
 }
