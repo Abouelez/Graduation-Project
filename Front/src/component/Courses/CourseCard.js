@@ -1,7 +1,7 @@
 import React from 'react'
 import { HiStar } from 'react-icons/hi'
 import { IoMdStarHalf } from 'react-icons/io'
-import './coursecard.css'
+import '../../css/coursecard.css'
 
 const CourseCard = ({ course }) => {
   //console.log(course);

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Instructor = () => {
+const InstructorCard = () => {
   return (
     <div className='instractorcard'>
                   <div className='imag'>
@@ -15,4 +15,4 @@ const Instructor = () => {
   )
 }
 
-export default Instructor
+export default InstructorCard
