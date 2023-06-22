@@ -1,17 +1,15 @@
-import React, { useEffect, useState, CSSProperties  } from 'react'
+import React, { useEffect, useState, CSSProperties } from 'react'
 import "../../css/Home.css"
-import AllCourses from "../../component/utility/AllCourses"
-import Instructor from '../../component/utility/Instructor'
-import Cat from '../../component/utility/Cat'
-import CourseCard from '../../component/utility/CourseCard'
-import axios from 'axios'
+import InstructorCard from '../../component/Instructor/InstructorCard'
+import CourseCard from '../../component/Courses/CourseCard'
 import { useSelector, useDispatch } from 'react-redux'
 import { getAllCourses } from '../../redux/actions/courseAction'
 
 import { Spinner } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import CatCard from '../../component/categories/CatCard'
 function HomePage() {
 
-  const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,14 +17,7 @@ function HomePage() {
   }, []);
 
   const { courses, loading } = useSelector(state => state.allCourses);
-
-
-  //console.log(courses);
-
-
-
-
-
+  console.log(loading);
   return (
     <>
       <section className='home-wraber-1 '>
@@ -53,27 +44,25 @@ function HomePage() {
             <div className='col-12'>
               <div className='courses d-flex justify-content-between align-items-center flex-wrap'>
                 {courses ? (
-                  courses.data.slice(0, 4).map((course) => {
-                    const { id, title, thumbnail, price, instructor } = course;
-                    const { name: instructorName } = instructor;
-                    return (
-                      <CourseCard
-                        key={id}
-                        id={id}
-                        title={title}
-                        instructor={instructorName}
-                        price={price}
-                        thumbnail={thumbnail}
-                      />
-                    );
-                  })
-                ) : (<Spinner/>
+                  courses.data.slice(0, 4).map(({ id, title, thumbnail, price, instructor }) => (
+                    <CourseCard
+                      key={id}
+                      id={id}
+                      title={title}
+                      instructor={instructor.name}
+                      price={price}
+                      thumbnail={thumbnail}
+                    />
+                  ))
+                ) : (
+                  <Spinner />
                 )}
               </div>
-
             </div>
-            <div className='col-12'>
-              <a className='button  coursebtn' href='h'>EXPLORE ALL COURCES</a>
+            <div className='col-12'> 
+              <Link  to={"/allcourses"}>
+                <h2><span className='button coursebtn' >EXPLORE ALL COURSES</span></h2>
+              </Link>
             </div>
           </div>
         </div>
@@ -90,12 +79,11 @@ function HomePage() {
             </div>
             <div className='col-12'>
               <div className='categorys d-flex justify-content-between align-items-center flex-wrap'>
-                <Cat />
-                <Cat />
-                <Cat />
-                <Cat />
-                <Cat />
-                <Cat />
+                <CatCard/>
+                <CatCard/>
+                <CatCard/>
+                <CatCard/>
+                <CatCard/>
               </div>
 
             </div>
@@ -114,11 +102,11 @@ function HomePage() {
             </div>
             <div className='col-12'>
               <div className=' instractors d-flex justify-content-between align-items-center flex-wrap'>
-                <Instructor />
-                <Instructor />
-                <Instructor />
-                <Instructor />
-                <Instructor />
+                <InstructorCard /> 
+                <InstructorCard />
+                <InstructorCard />
+                <InstructorCard />
+                <InstructorCard />
 
               </div>
 
@@ -126,7 +114,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <AllCourses />
     </>
   )
 }

@@ -1,0 +1,69 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+:root{
+ --color-131921:#131921;
+ --color-3b4149:#3b4149;
+ --color-fedb69:#fedb69;
+ --color-232f3e:#232f3e;
+ --color-f5f5f7 :#f5f5f7;
+}
+.button{
+ background-color: var(--color-fedb69);
+ border-radius: 20px;
+ color: var(--color-131921);
+ padding: 13px 33px;
+ font-size: 14px;
+}
+.button:hover{
+background-color: var(--color-232f3e);
+color: white;
+text-decoration: none;
+}
+
+.card-filter {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 170px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-filter-item {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 10px;
+  }
+  .card-filter-item:hover {
+    background-color: #272727;
+    color: #ffffff;
+  }
+  .sub-tile {
+    color: #272727;
+    font-family: Almarai;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+
+  /*side filter*/
+  .filter-title {
+    color: #555550;
+    font-family: "Almarai";
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: right;
+  }
+  .filter-sub {
+    color: #555550;
+    font-family: "Almarai";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 17px;
+    text-align: center;
+  }

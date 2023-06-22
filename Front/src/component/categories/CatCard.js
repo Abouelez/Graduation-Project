@@ -1,6 +1,7 @@
 import React from 'react'
 import { RiVideoLine } from "react-icons/ri"
-const Cat = () => {
+
+const CatCard = () => {
   return (
     <div className='categorycard'>
                   <div className='icone'>
@@ -14,4 +15,4 @@ const Cat = () => {
   )
 }
 
-export default Cat
+export default CatCard
