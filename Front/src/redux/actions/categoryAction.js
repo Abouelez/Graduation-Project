@@ -18,22 +18,22 @@ export const getAllCategory = (limit) => async (dispatch) => {
     }
 }
 
-// //get all category with pagination
-// export const getAllCategoryPage = (page) => async (dispatch) => {
-//     try {
-//         const response = await useGetData(`api/courses`);
-//         dispatch({
-//             type: GET_ALL_CATEGORY,
-//             payload: response,
-//         })
+//get all category with pagination
+export const getAllCategoryPage = (page) => async (dispatch) => {
+    try {
+        const response = await useGetData(`api/courses?page=${page}`);
+        dispatch({
+            type: GET_ALL_CATEGORY,
+            payload: response,
+        })
 
-//     } catch (e) {
-//         dispatch({
-//             type: GET_ERROR,
-//             payload: "Error " + e,
-//         })
-//     }
-// }
+    } catch (e) {
+        dispatch({
+            type: GET_ERROR,
+            payload: "Error " + e,
+        })
+    }
+}
 
 
 // //create category 

@@ -14,10 +14,11 @@ function HomePage() {
 
   useEffect(() => {
     dispatch(getAllCourses());
-  }, []);
+    console.log('1');
+  }, [dispatch]);
 
   const { courses, loading } = useSelector(state => state.allCourses);
-  console.log(loading);
+  console.log(courses);
   return (
     <>
       <section className='home-wraber-1 '>
@@ -43,20 +44,16 @@ function HomePage() {
             </div>
             <div className='col-12'>
               <div className='courses d-flex justify-content-between align-items-center flex-wrap'>
-                {courses ? (
-                  courses.data.slice(0, 4).map(({ id, title, thumbnail, price, instructor }) => (
-                    <CourseCard
-                      key={id}
-                      id={id}
-                      title={title}
-                      instructor={instructor.name}
-                      price={price}
-                      thumbnail={thumbnail}
-                    />
-                  ))
-                ) : (
-                  <Spinner />
-                )}
+              {courses ? (
+  courses.data.slice(0, 4).map((course) => (
+    <CourseCard
+      key={course.id}
+      course={course}
+    />
+  ))
+) : (
+  <Spinner />
+)}
               </div>
             </div>
             <div className='col-12'> 
