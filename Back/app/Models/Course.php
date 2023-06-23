@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -66,5 +66,10 @@ class Course extends Model
     public function isPublished(): bool
     {
         return $this->AC == true;
+    }
+
+    public function scopeFilterByPrice(Builder $query, $minPrice, $maxPrice): void
+    {
+        $query->whereBetween('price', [$minPrice, $maxPrice]);
     }
 }

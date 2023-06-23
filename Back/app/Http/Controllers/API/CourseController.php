@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ImageHelper;
+use App\Http\Requests\PriceFilterRequest;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Http\Resources\CourseResource;
@@ -110,5 +111,27 @@ class CourseController extends Controller
         }
         $course->delete();
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $results = Course::where('title', 'LIKE', "%$keyword%")
+            ->orWhere('description', 'LIKE', "%$keyword%")
+            ->get();
+
+
+        return CourseResource::collection($results);
+    }
+
+    public function priceFilter(PriceFilterRequest $request)
+    {
+        //We will accept value like this 199.99 and we convert it to 19999 like as we store in database
+        $min = $request->min * 100;
+        $max = $request->max * 100;
+        $numOfCoursePerPage = $request->courses_per_page ?? 10;
+        $results = Course::filterByPrice($min, $max)->paginate($numOfCoursePerPage);
+        return CourseResource::collection($results);
     }
 }

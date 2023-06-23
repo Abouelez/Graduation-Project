@@ -23,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+Route::get('courses/search', [CourseController::class, 'search']);
+Route::get('courses/price_filter', [CourseController::class, 'priceFilter']);
 Route::apiResource('courses', CourseController::class);
 Route::apiResource('categories', CategoryController::class);
 Route::apiResource('sections', SectionController::class);
