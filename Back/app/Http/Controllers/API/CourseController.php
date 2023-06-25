@@ -62,7 +62,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        return new CourseResource($course->load(['category', 'subCategory', 'instructor', 'sections.lectures', 'sections.quizzes', 'sections.quizzes.questions']));
+        return new CourseResource($course->load(['category', 'subCategory', 'instructor', 'sections.lectures', 'sections.quizzes', 'sections.quizzes.questions', 'comments', 'comments.user', 'reviews', 'reviews.user']));
     }
 
     /**
@@ -130,8 +130,9 @@ class CourseController extends Controller
         //We will accept value like this 199.99 and we convert it to 19999 like as we store in database
         $min = $request->min * 100;
         $max = $request->max * 100;
+        $order = $request->order;
         $numOfCoursePerPage = $request->courses_per_page ?? 10;
-        $results = Course::filterByPrice($min, $max)->paginate($numOfCoursePerPage);
+        $results = Course::filterByPrice($min, $max)->orderBy('price', $order)->paginate($numOfCoursePerPage);
         return CourseResource::collection($results);
     }
 }

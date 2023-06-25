@@ -42,14 +42,14 @@ class Course extends Model
         return $this->belongsToMany(User::class)->withPivot('paid_price');
     }
 
-    public function rates(): BelongsToMany
+    public function reviews(): HasMany
     {
-        return $this->belongsToMany(User::class, 'reviews')->withPivot('rate', 'comment');
+        return $this->hasMany(Review::class);
     }
 
-    public function comments(): BelongsToMany
+    public function comments(): HasMany
     {
-        return $this->belongsToMany(User::class, 'comments')->withPivot('comment_text', 'parent_id');
+        return $this->hasMany(Comment::class);
     }
 
     public function instructor(): BelongsTo

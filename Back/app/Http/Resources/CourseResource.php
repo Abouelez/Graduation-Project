@@ -28,6 +28,9 @@ class CourseResource extends JsonResource
             'sub_category' => new CategoryResource($this->whenLoaded('subCategory')),
             'instructor' => new UserResource($this->instructor),
             'sections' => SectionResource::collection($this->whenLoaded('sections')),
+            'comments' => CommentResource::collection($this->whenLoaded('comments')),
+            'rate' => number_format($this->reviews()->avg('rate'), 1),
+            'reviews' => ReviewResource::collection($this->whenLoaded('reviews')),
         ];
     }
 }
