@@ -1,0 +1,448 @@
+name: Courses
+description: |-
+
+  Managing Courses
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/courses/search
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+        Managing Courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: Search
+      description: 'Searches for course names and course descriptions and returns any courses that match the keyword'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      keyword:
+        name: keyword
+        description: 'the word you are looking for.'
+        required: false
+        example: HTML
+        type: string
+        custom: []
+    cleanQueryParameters:
+      keyword: HTML
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"4.5"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/courses/price_filter
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+        Managing Courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Price Filter'
+      description: 'Filter results based on min and max values'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      min:
+        name: min
+        description: 'Minimum price.'
+        required: false
+        example: 20.0
+        type: number
+        custom: []
+      max:
+        name: max
+        description: 'Maximum price.'
+        required: false
+        example: 1000.0
+        type: number
+        custom: []
+      order:
+        name: order
+        description: 'In which order you want to see results.'
+        required: false
+        example: asc
+        type: string
+        custom: []
+    cleanQueryParameters:
+      min: 20.0
+      max: 1000.0
+      order: asc
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":50,"title":"Sed quos quia magnam dolor enim.","description":"Vero quia labore in ducimus expedita ea temporibus. Fugit qui nobis distinctio doloremque. Minima sunt vitae accusantium ut. Vitae quo sequi unde quasi voluptas quae et.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/006677?text=consequatur","price":"35.33","published":1,"instructor":{"id":8,"name":"Delphia Wintheiser III","email":"tnitzsche@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee99?text=debitis","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":31,"title":"Impedit et porro deleniti rem amet quidem rerum.","description":"Dicta aut eius veniam rerum dolores iusto voluptas. Nobis magni recusandae ad quis. Et numquam nam dolor ad labore. Necessitatibus rerum qui consectetur quis. Reiciendis assumenda dolorem modi ipsam numquam quia ut.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00ee33?text=laudantium","price":"45.95","published":1,"instructor":{"id":10,"name":"Mike Windler","email":"bwiza@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/002299?text=omnis","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":8,"title":"Cumque est accusantium est ipsa consequuntur quidem minima.","description":"Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/0088dd?text=unde","price":"57.83","published":1,"instructor":{"id":5,"name":"Mr. Lukas Bahringer","email":"tbogisich@example.com","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009933?text=laudantium","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":19,"title":"Distinctio et placeat maiores quidem.","description":"Magnam accusamus ut nemo voluptatem. In sunt magnam dolor cumque eaque aut ab. Reprehenderit enim natus autem cumque.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00dd44?text=non","price":"70.48","published":1,"instructor":{"id":7,"name":"Dr. Gregory Koch II","email":"hazle.dickens@example.com","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0088dd?text=cupiditate","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":42,"title":"Est sit accusamus et corporis at eum.","description":"Itaque quas asperiores enim voluptatem. Consequatur quos fugit tempore velit pariatur quaerat. Illo doloribus occaecati sint in. Non quas sit sit molestiae impedit nam.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=culpa","price":"85.86","published":1,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":41,"title":"Recusandae tempore ex asperiores provident.","description":"Nostrum expedita culpa doloribus commodi molestiae. Dolores eaque qui tempore et id. Quidem non asperiores laborum repellat corporis odit nisi aliquid.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/006677?text=inventore","price":"89.93","published":1,"instructor":{"id":5,"name":"Mr. Lukas Bahringer","email":"tbogisich@example.com","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009933?text=laudantium","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":47,"title":"Omnis earum expedita sed atque enim.","description":"Ea sed molestias rem ipsum. Eius suscipit consequatur error qui qui quis fugit.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/0033cc?text=et","price":"98.31","published":1,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"4.5"},{"id":16,"title":"Illo quis incidunt est nihil qui numquam sit voluptatem.","description":"Id modi aut sit libero consequatur. Explicabo incidunt animi deleniti est tempora. Nihil magnam maxime illo voluptates quasi exercitationem quisquam. Et et est fuga aut non.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/009955?text=ut","price":"147.56","published":1,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":15,"title":"Repellendus et qui in.","description":"Consequuntur quia repudiandae rem corrupti sint qui voluptates. Qui tenetur quos dolore explicabo. Sunt quasi neque architecto libero et repellat. Voluptatem vel tempore sed nihil et doloremque.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/000077?text=et","price":"183.20","published":1,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"}],"links":{"first":"http:\/\/localhost\/api\/courses\/price_filter?page=1","last":"http:\/\/localhost\/api\/courses\/price_filter?page=5","prev":null,"next":"http:\/\/localhost\/api\/courses\/price_filter?page=2"},"meta":{"current_page":1,"from":1,"last_page":5,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/courses\/price_filter?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/courses\/price_filter?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/courses\/price_filter?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/courses\/price_filter?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/courses\/price_filter?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/courses\/price_filter?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/courses\/price_filter","per_page":10,"to":10,"total":49}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/courses
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+        Managing Courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Courses'
+      description: 'Display a listing of all courses.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'Which page to show.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":2,"title":"Aut quis voluptatem autem voluptatibus.","description":"Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/009933?text=quo","price":"925.20","published":1,"category":{"id":5,"name":"Et repellendus ex et sapiente ut explicabo expedita dicta."},"sub_category":null,"instructor":{"id":7,"name":"Dr. Gregory Koch II","email":"hazle.dickens@example.com","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0088dd?text=cupiditate","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":3,"title":"Voluptas aliquid id sed facere.","description":"Qui recusandae consequatur natus est est vel quis. Ex exercitationem voluptatibus voluptatem non sed iusto ducimus. Reprehenderit deserunt sed ducimus quia debitis blanditiis. Alias amet ducimus ipsa ut inventore iure et id.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/000099?text=aut","price":"298.64","published":1,"category":{"id":13,"name":"Voluptatem culpa labore necessitatibus dolore a vitae."},"sub_category":null,"instructor":{"id":10,"name":"Mike Windler","email":"bwiza@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/002299?text=omnis","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":4,"title":"Soluta necessitatibus ea accusamus ipsum pariatur voluptate quis.","description":"Eligendi ea corrupti officia. Culpa voluptatibus est rerum distinctio. Tenetur id aut quidem nesciunt.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/005588?text=id","price":"265.89","published":1,"category":{"id":7,"name":"Qui ab ex laudantium."},"sub_category":null,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":5,"title":"Distinctio et dicta consequatur consequuntur aut.","description":"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00cc88?text=omnis","price":"932.28","published":1,"category":{"id":1,"name":"Et labore accusantium sed veritatis voluptatem."},"sub_category":null,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":6,"title":"Nihil tempore maiores possimus.","description":"Eos iure omnis voluptas nemo dolorem temporibus corporis. Et explicabo vero rem reprehenderit. Iure autem similique voluptatem aut et ut.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00dd00?text=temporibus","price":"471.39","published":1,"category":{"id":2,"name":"Totam ea adipisci ut."},"sub_category":null,"instructor":{"id":4,"name":"Esmeralda Howe DVM","email":"qhauck@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ff00?text=itaque","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":7,"title":"Id explicabo voluptas praesentium.","description":"Quidem est reprehenderit incidunt repellendus quia. Quod incidunt voluptatibus omnis quod iusto eveniet est accusantium. Dignissimos reprehenderit delectus commodi vero.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00eedd?text=molestiae","price":"658.84","published":1,"category":{"id":15,"name":"Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam."},"sub_category":null,"instructor":{"id":5,"name":"Mr. Lukas Bahringer","email":"tbogisich@example.com","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009933?text=laudantium","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":8,"title":"Cumque est accusantium est ipsa consequuntur quidem minima.","description":"Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/0088dd?text=unde","price":"57.83","published":1,"category":{"id":9,"name":"Et quis recusandae autem voluptates dolorem et."},"sub_category":null,"instructor":{"id":5,"name":"Mr. Lukas Bahringer","email":"tbogisich@example.com","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009933?text=laudantium","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":9,"title":"Culpa ut natus vitae atque ex dignissimos aut voluptatem.","description":"Sunt eum sint modi rerum cum quo. Ipsum fugiat delectus quo sed pariatur tenetur maiores. Et eligendi hic distinctio repellendus omnis. Totam cum sit ipsa.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00aabb?text=earum","price":"706.19","published":1,"category":{"id":6,"name":"Accusantium laborum reiciendis ab eos tempore qui."},"sub_category":null,"instructor":{"id":4,"name":"Esmeralda Howe DVM","email":"qhauck@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ff00?text=itaque","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":10,"title":"Quia sequi repellat sed cumque nobis ut.","description":"Ducimus cumque vel natus sint autem. In aliquid et ut nisi ipsam. Quidem praesentium dignissimos ea odio. Explicabo provident doloremque excepturi ut eligendi eos qui.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/003311?text=dolor","price":"736.60","published":1,"category":{"id":12,"name":"Sunt sint animi mollitia enim nobis vel sit."},"sub_category":null,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":11,"title":"Veritatis quo inventore officia sit rerum omnis ut velit.","description":"Dicta amet sequi error fugiat vitae accusantium vel. Nihil sint id expedita qui magnam qui ut qui.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00ff99?text=dolorem","price":"341.06","published":1,"category":{"id":14,"name":"Aliquam iste quasi quibusdam dignissimos cupiditate sit."},"sub_category":null,"instructor":{"id":9,"name":"Katrine Dietrich","email":"mccullough.alverta@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0022ee?text=deleniti","is_instructor":1,"is_admin":0},"rate":"0.0"}],"links":{"first":"http:\/\/localhost\/api\/courses?page=1","last":"http:\/\/localhost\/api\/courses?page=5","prev":null,"next":"http:\/\/localhost\/api\/courses?page=2"},"meta":{"current_page":1,"from":1,"last_page":5,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/courses?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/courses?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/courses?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/courses?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/courses?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/courses?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/courses","per_page":10,"to":10,"total":49}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/courses
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+        Managing Courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Course'
+      description: 'Store a newly created Course in storage.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+        required: true
+        example: drpts
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
+        required: true
+        example: 'Suscipit repellendus eum earum deserunt cupiditate aut dolor.'
+        type: string
+        custom: []
+      thumbnail:
+        name: thumbnail
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: true
+        example: null
+        type: file
+        custom: []
+      price:
+        name: price
+        description: 'Must be at least 0.'
+        required: true
+        example: 89
+        type: number
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: 13
+        type: integer
+        custom: []
+      sub_category_id:
+        name: sub_category_id
+        description: ''
+        required: false
+        example: 3
+        type: integer
+        custom: []
+      user_id:
+        name: user_id
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      title: drpts
+      description: 'Suscipit repellendus eum earum deserunt cupiditate aut dolor.'
+      price: 89
+      category_id: 13
+      sub_category_id: 3
+      user_id: 11
+    fileParameters:
+      thumbnail: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/courses/{id}'
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+        Managing Courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display Course'
+      description: 'Display the specified Course.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":2,"title":"Aut quis voluptatem autem voluptatibus.","description":"Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/009933?text=quo","price":"925.20","published":1,"category":{"id":5,"name":"Et repellendus ex et sapiente ut explicabo expedita dicta."},"sub_category":null,"instructor":{"id":7,"name":"Dr. Gregory Koch II","email":"hazle.dickens@example.com","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0088dd?text=cupiditate","is_instructor":1,"is_admin":0},"sections":[],"comments":[],"rate":"0.0","reviews":[]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/courses/{id}'
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+        Managing Courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Course'
+      description: 'Update the specified Course in storage.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+        required: true
+        example: fxlk
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
+        required: true
+        example: 'Similique at et ut est dolor deleniti laborum qui.'
+        type: string
+        custom: []
+      thumbnail:
+        name: thumbnail
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      price:
+        name: price
+        description: 'Must be at least 0.'
+        required: true
+        example: 66
+        type: number
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      sub_category_id:
+        name: sub_category_id
+        description: ''
+        required: false
+        example: 10
+        type: integer
+        custom: []
+      user_id:
+        name: user_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      title: fxlk
+      description: 'Similique at et ut est dolor deleniti laborum qui.'
+      price: 66
+      category_id: 1
+      sub_category_id: 10
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/courses/{id}'
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+        Managing Courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Course'
+      description: 'Remove the specified Course from storage.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

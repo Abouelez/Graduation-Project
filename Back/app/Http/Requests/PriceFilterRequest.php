@@ -4,6 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
+/**
+
+ */
 class PriceFilterRequest extends FormRequest
 {
     /**
@@ -23,7 +27,17 @@ class PriceFilterRequest extends FormRequest
     {
         return [
             'min' => 'numeric',
-            'max' => 'numeric'
+            'max' => 'numeric',
+            'order' => 'string'
         ];
     }
+
+    // protected function prepareForValidation()
+    // {
+    //     $this->merge([
+    //         'min' => $this->input('min', 0),
+    //         'max' => $this->input('max', PHP_INT_MAX),
+    //         'order' => $this->input('order', 'desc'),
+    //     ]);
+    // }
 }

@@ -10,10 +10,17 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group Categories
+ * 
+ * Managing Categories
+ */
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get categories
+     * 
+     * List all categories
      */
     public function index()
     {
@@ -30,7 +37,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create Category
+     * 
+     * Store a newly created Category in storage.
      */
     public function store(StoreCategoryRequest $request)
     {
@@ -39,7 +48,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display Category
+     * 
+     * Display the specified Category.
      */
     public function show(Category $category)
     {
@@ -55,7 +66,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update Category
+     * 
+     * Update the specified Category in storage.
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
@@ -65,7 +78,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete Category
+     * 
+     * Remove the specified Category from storage.
      */
     public function destroy(Category $category)
     {

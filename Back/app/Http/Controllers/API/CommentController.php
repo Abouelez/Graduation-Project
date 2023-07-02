@@ -7,6 +7,11 @@ use App\Http\Resources\CommentResource;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
+/**
+ * @group Comments
+ * 
+ * Managing Comments
+ */
 class CommentController extends Controller
 {
     /**

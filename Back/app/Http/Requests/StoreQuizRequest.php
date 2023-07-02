@@ -23,7 +23,7 @@ class StoreQuizRequest extends FormRequest
     {
         return [
             'title' => 'required|string|min:3|max:60',
-            'section_id' => 'required',
+            'section_id' => 'required|integer',
         ];
     }
 }

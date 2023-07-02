@@ -7,6 +7,11 @@ use App\Http\Resources\ReviewResource;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
+/**
+ * @group Reviews
+ * 
+ * Managing Reviews
+ */
 class ReviewController extends Controller
 {
     /**

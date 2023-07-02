@@ -13,13 +13,23 @@ use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use Image;
+use Intervention\Image\Facades\Image;
+
+/**
+ * @group Courses
+ * 
+ * Managing Courses
+ */
 
 class CourseController extends Controller
 {
     use ImageHelper;
     /**
-     * Display a listing of the resource.
+     * Get Courses
+     * 
+     * Display a listing of all courses.
+     * 
+     * @queryParam page Which page to show. Example: 1
      */
     public function index(Request $request)
     {
@@ -38,7 +48,9 @@ class CourseController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create Course
+     * 
+     * Store a newly created Course in storage.
      */
     public function store(StoreCourseRequest $request)
     {
@@ -58,7 +70,9 @@ class CourseController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display Course
+     * 
+     * Display the specified Course.
      */
     public function show(Course $course)
     {
@@ -74,7 +88,9 @@ class CourseController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update Course
+     * 
+     * Update the specified Course in storage.
      */
     public function update(UpdateCourseRequest $request, Course $course)
     {
@@ -102,7 +118,9 @@ class CourseController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete Course
+     * 
+     * Remove the specified Course from storage.
      */
     public function destroy(Course $course)
     {
@@ -113,6 +131,13 @@ class CourseController extends Controller
         return response(null, Response::HTTP_NO_CONTENT);
     }
 
+    /**
+     * Search
+     * 
+     * Searches for course names and course descriptions and returns any courses that match the keyword
+     * 
+     * @queryParam keyword the word you are looking for. Example: HTML
+     */
 
     public function search(Request $request)
     {
@@ -125,12 +150,22 @@ class CourseController extends Controller
         return CourseResource::collection($results);
     }
 
-    public function priceFilter(PriceFilterRequest $request)
+    /**
+     * Price Filter
+     * 
+     * Filter results based on min and max values
+     * @hideFromQueryParams
+     * @queryParam min number Minimum price. Example: 20
+     * @queryParam max number Maximum price. Example: 1000
+     * @queryParam order string In which order you want to see results. Example:asc
+     */
+
+    public function priceFilter(Request $request)
     {
-        //We will accept value like this 199.99 and we convert it to 19999 like as we store in database
-        $min = $request->min * 100;
-        $max = $request->max * 100;
-        $order = $request->order;
+        //The received value will be like this 199.99 and then convert it to 19999 like as we store in database
+        $min = $request->input('min', 0) * 100;
+        $max = $request->input('max', PHP_INT_MAX) * 100;
+        $order = $request->input('order', 'desc');
         $numOfCoursePerPage = $request->courses_per_page ?? 10;
         $results = Course::filterByPrice($min, $max)->orderBy('price', $order)->paginate($numOfCoursePerPage);
         return CourseResource::collection($results);

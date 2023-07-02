@@ -26,7 +26,7 @@ class StoreQuizQuestionRequest extends FormRequest
             'answer' => 'required|string|size:1',
             'A' => 'required|string|min:1|max:100',
             'B' => 'required|string|min:1|max:100',
-            'quiz_id' => 'required'
+            'quiz_id' => 'required|integer'
         ];
     }
 }
