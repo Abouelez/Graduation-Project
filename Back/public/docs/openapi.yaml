@@ -234,11 +234,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: jmuwkfxjxghcduhl
+                  example: riqnqeob
                 parent_id:
                   type: integer
                   description: ''
-                  example: 17
+                  example: 13
               required:
                 - name
       security: []
@@ -452,11 +452,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: dqlxlmtqwibxhic
+                  example: zyinyggoer
                 parent_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 14
               required:
                 - name
       security: []
@@ -1717,11 +1717,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: drpts
+                  example: uppseptojgho
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Suscipit repellendus eum earum deserunt cupiditate aut dolor.'
+                  example: 'Non vitae voluptatum rem animi autem voluptas earum.'
                 thumbnail:
                   type: string
                   format: binary
@@ -1729,19 +1729,19 @@ paths:
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 89
+                  example: 47
                 category_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 8
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 3
+                  example: 11
                 user_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 14
               required:
                 - title
                 - description
@@ -1874,11 +1874,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: fxlk
+                  example: njx
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Similique at et ut est dolor deleniti laborum qui.'
+                  example: 'Eius quia et iste natus omnis iusto rerum.'
                 thumbnail:
                   type: string
                   description: ''
@@ -1886,15 +1886,15 @@ paths:
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 66
+                  example: 68
                 category_id:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 14
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 17
                 user_id:
                   type: string
                   description: ''
@@ -1923,6 +1923,77 @@ paths:
         required: true
         schema:
           type: integer
+  /api/auth/register:
+    post:
+      summary: ''
+      operationId: postApiAuthRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: tiaunymuprxuvdlyxu
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: dayne87@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: 'l:g\&&|'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/auth/login:
+    post:
+      summary: ''
+      operationId: postApiAuthLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: ettie50@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: voluptatem
+              required:
+                - email
+                - password
+      security: []
+  /api/auth/logout:
+    post:
+      summary: ''
+      operationId: postApiAuthLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
   /api/user:
     get:
       summary: ''
@@ -2041,11 +2112,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: geeckmmypf
+                  example: iuxszfwpbbqqpnuh
                 type:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: cupiditate
                 section_id:
                   type: integer
                   description: ''
@@ -2053,7 +2124,7 @@ paths:
                 content:
                   type: string
                   description: ''
-                  example: doloremque
+                  example: amet
               required:
                 - title
                 - type
@@ -2217,23 +2288,23 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: kwbukec
+                  example: kysscqjnwuaansnpcumuxnmgz
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: z
+                  example: j
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: bedfuajy
+                  example: nmzsiiyrdddx
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: ursehlcpvykker
+                  example: lvdpkrxwdyvavratqbn
                 quiz_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 14
               required:
                 - question
                 - answer
@@ -2276,19 +2347,19 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: epidcbw
+                  example: rndzjorfjaipcfqjbvj
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: x
+                  example: d
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: ufonj
+                  example: cir
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: qjqddizgnqvsjrfh
+                  example: fvl
               required:
                 - question
                 - answer
@@ -2421,11 +2492,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: ejaz
+                  example: xqnumkxdmekifm
                 section_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 9
               required:
                 - title
                 - section_id
@@ -2522,7 +2593,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: zqylmvabvxaqijouklsvj
+                  example: ed
               required:
                 - title
       security: []
@@ -2914,11 +2985,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: zwbtzfubzsucaaw
+                  example: fcteqecswwlsmpnwouoa
                 course_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 4
               required:
                 - title
                 - course_id
@@ -2971,7 +3042,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: tqep
+                  example: hzspgp
               required:
                 - title
       security: []

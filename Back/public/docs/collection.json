@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "d6f7e9f5-4555-4e21-8492-296a6253d7fd",
+        "_postman_id": "0bb4fb83-4d9e-4244-9ba8-88017dd3d3f6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -62,7 +62,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "55"
+                                    "value": "54"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -97,7 +97,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"jmuwkfxjxghcduhl\",\"parent_id\":17}"
+                            "raw": "{\"name\":\"riqnqeob\",\"parent_id\":13}"
                         },
                         "description": "Store a newly created Category in storage.",
                         "auth": {
@@ -157,7 +157,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "54"
+                                    "value": "53"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -200,7 +200,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dqlxlmtqwibxhic\",\"parent_id\":11}"
+                            "raw": "{\"name\":\"zyinyggoer\",\"parent_id\":14}"
                         },
                         "description": "Update the specified Category in storage.",
                         "auth": {
@@ -301,7 +301,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -376,7 +376,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "58"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -439,7 +439,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "57"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -477,37 +477,37 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "drpts",
+                                    "value": "uppseptojgho",
                                     "type": "text",
                                     "description": "Must be at least 5 characters. Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Suscipit repellendus eum earum deserunt cupiditate aut dolor.",
+                                    "value": "Non vitae voluptatum rem animi autem voluptas earum.",
                                     "type": "text",
                                     "description": "Must be at least 10 characters. Must not be greater than 5000 characters."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 89,
+                                    "value": 47,
                                     "type": "text",
                                     "description": "Must be at least 0."
                                 },
                                 {
                                     "key": "category_id",
-                                    "value": 13,
+                                    "value": 8,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sub_category_id",
-                                    "value": 3,
+                                    "value": 11,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "user_id",
-                                    "value": 11,
+                                    "value": 14,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -576,7 +576,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "56"
+                                    "value": "55"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -619,7 +619,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"fxlk\",\"description\":\"Similique at et ut est dolor deleniti laborum qui.\",\"price\":66,\"category_id\":1,\"sub_category_id\":10}"
+                            "raw": "{\"title\":\"njx\",\"description\":\"Eius quia et iste natus omnis iusto rerum.\",\"price\":68,\"category_id\":14,\"sub_category_id\":17}"
                         },
                         "description": "Update the specified Course in storage.",
                         "auth": {
@@ -670,6 +670,96 @@
             "name": "Endpoints",
             "description": "",
             "item": [
+                {
+                    "name": "POST api\/auth\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"tiaunymuprxuvdlyxu\",\"email\":\"dayne87@example.com\",\"password\":\"l:g\\\\&&|\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"ettie50@example.com\",\"password\":\"voluptatem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
                 {
                     "name": "GET api\/user",
                     "request": {
@@ -767,7 +857,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "50"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -802,7 +892,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"geeckmmypf\",\"type\":\"distinctio\",\"section_id\":14,\"content\":\"doloremque\"}"
+                            "raw": "{\"title\":\"iuxszfwpbbqqpnuh\",\"type\":\"cupiditate\",\"section_id\":14,\"content\":\"amet\"}"
                         },
                         "description": "Store a newly created resource in storage.",
                         "auth": {
@@ -862,7 +952,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "49"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -996,7 +1086,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "47"
+                                    "value": "46"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1031,7 +1121,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"kwbukec\",\"answer\":\"z\",\"A\":\"bedfuajy\",\"B\":\"ursehlcpvykker\",\"quiz_id\":12}"
+                            "raw": "{\"question\":\"kysscqjnwuaansnpcumuxnmgz\",\"answer\":\"j\",\"A\":\"nmzsiiyrdddx\",\"B\":\"lvdpkrxwdyvavratqbn\",\"quiz_id\":14}"
                         },
                         "description": "Store a newly created question in storage.",
                         "auth": {
@@ -1091,7 +1181,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "46"
+                                    "value": "45"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1134,7 +1224,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"epidcbw\",\"answer\":\"x\",\"A\":\"ufonj\",\"B\":\"qjqddizgnqvsjrfh\"}"
+                            "raw": "{\"question\":\"rndzjorfjaipcfqjbvj\",\"answer\":\"d\",\"A\":\"cir\",\"B\":\"fvl\"}"
                         },
                         "description": "Update the specified resource in storage.",
                         "auth": {
@@ -1228,7 +1318,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "49"
+                                    "value": "48"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1263,7 +1353,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"ejaz\",\"section_id\":10}"
+                            "raw": "{\"title\":\"xqnumkxdmekifm\",\"section_id\":9}"
                         },
                         "description": "Store a newly created Quiz in storage.",
                         "auth": {
@@ -1323,7 +1413,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "48"
+                                    "value": "47"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1366,7 +1456,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"zqylmvabvxaqijouklsvj\"}"
+                            "raw": "{\"title\":\"ed\"}"
                         },
                         "description": "Update the specified Quiz in storage.",
                         "auth": {
@@ -1460,7 +1550,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "45"
+                                    "value": "44"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1552,7 +1642,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "44"
+                                    "value": "43"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1686,7 +1776,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "52"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1721,7 +1811,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"zwbtzfubzsucaaw\",\"course_id\":13}"
+                            "raw": "{\"title\":\"fcteqecswwlsmpnwouoa\",\"course_id\":4}"
                         },
                         "description": "Store a newly created section in storage.",
                         "auth": {
@@ -1781,7 +1871,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "52"
+                                    "value": "51"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1824,7 +1914,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"tqep\"}"
+                            "raw": "{\"title\":\"hzspgp\"}"
                         },
                         "description": "Update the specified section in storage.",
                         "auth": {

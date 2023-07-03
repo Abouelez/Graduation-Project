@@ -46,7 +46,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -113,7 +113,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
+          x-ratelimit-remaining: '57'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -164,7 +164,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
+          x-ratelimit-remaining: '56'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -201,14 +201,14 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: drpts
+        example: uppseptojgho
         type: string
         custom: []
       description:
         name: description
         description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
         required: true
-        example: 'Suscipit repellendus eum earum deserunt cupiditate aut dolor.'
+        example: 'Non vitae voluptatum rem animi autem voluptas earum.'
         type: string
         custom: []
       thumbnail:
@@ -222,37 +222,37 @@ endpoints:
         name: price
         description: 'Must be at least 0.'
         required: true
-        example: 89
+        example: 47
         type: number
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 13
+        example: 8
         type: integer
         custom: []
       sub_category_id:
         name: sub_category_id
         description: ''
         required: false
-        example: 3
+        example: 11
         type: integer
         custom: []
       user_id:
         name: user_id
         description: ''
         required: true
-        example: 11
+        example: 14
         type: integer
         custom: []
     cleanBodyParameters:
-      title: drpts
-      description: 'Suscipit repellendus eum earum deserunt cupiditate aut dolor.'
-      price: 89
-      category_id: 13
-      sub_category_id: 3
-      user_id: 11
+      title: uppseptojgho
+      description: 'Non vitae voluptatum rem animi autem voluptas earum.'
+      price: 47
+      category_id: 8
+      sub_category_id: 11
+      user_id: 14
     fileParameters:
       thumbnail: null
     responses: []
@@ -303,7 +303,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -349,14 +349,14 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: fxlk
+        example: njx
         type: string
         custom: []
       description:
         name: description
         description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
         required: true
-        example: 'Similique at et ut est dolor deleniti laborum qui.'
+        example: 'Eius quia et iste natus omnis iusto rerum.'
         type: string
         custom: []
       thumbnail:
@@ -370,21 +370,21 @@ endpoints:
         name: price
         description: 'Must be at least 0.'
         required: true
-        example: 66
+        example: 68
         type: number
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 1
+        example: 14
         type: integer
         custom: []
       sub_category_id:
         name: sub_category_id
         description: ''
         required: false
-        example: 10
+        example: 17
         type: integer
         custom: []
       user_id:
@@ -395,11 +395,11 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      title: fxlk
-      description: 'Similique at et ut est dolor deleniti laborum qui.'
-      price: 66
-      category_id: 1
-      sub_category_id: 10
+      title: njx
+      description: 'Eius quia et iste natus omnis iusto rerum.'
+      price: 68
+      category_id: 14
+      sub_category_id: 17
     fileParameters: []
     responses: []
     responseFields: []

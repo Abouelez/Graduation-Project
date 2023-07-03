@@ -36,7 +36,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
+          x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -73,19 +73,19 @@ endpoints:
         name: name
         description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: jmuwkfxjxghcduhl
+        example: riqnqeob
         type: string
         custom: []
       parent_id:
         name: parent_id
         description: ''
         required: false
-        example: 17
+        example: 13
         type: integer
         custom: []
     cleanBodyParameters:
-      name: jmuwkfxjxghcduhl
-      parent_id: 17
+      name: riqnqeob
+      parent_id: 13
     fileParameters: []
     responses: []
     responseFields: []
@@ -135,7 +135,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
+          x-ratelimit-remaining: '53'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -181,19 +181,19 @@ endpoints:
         name: name
         description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: dqlxlmtqwibxhic
+        example: zyinyggoer
         type: string
         custom: []
       parent_id:
         name: parent_id
         description: ''
         required: false
-        example: 11
+        example: 14
         type: integer
         custom: []
     cleanBodyParameters:
-      name: dqlxlmtqwibxhic
-      parent_id: 11
+      name: zyinyggoer
+      parent_id: 14
     fileParameters: []
     responses: []
     responseFields: []

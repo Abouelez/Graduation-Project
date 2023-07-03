@@ -38,7 +38,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
+          x-ratelimit-remaining: '52'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -75,19 +75,19 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: zwbtzfubzsucaaw
+        example: fcteqecswwlsmpnwouoa
         type: string
         custom: []
       course_id:
         name: course_id
         description: ''
         required: true
-        example: 13
+        example: 4
         type: integer
         custom: []
     cleanBodyParameters:
-      title: zwbtzfubzsucaaw
-      course_id: 13
+      title: fcteqecswwlsmpnwouoa
+      course_id: 4
     fileParameters: []
     responses: []
     responseFields: []
@@ -137,7 +137,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '51'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -183,11 +183,11 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: tqep
+        example: hzspgp
         type: string
         custom: []
     cleanBodyParameters:
-      title: tqep
+      title: hzspgp
     fileParameters: []
     responses: []
     responseFields: []
