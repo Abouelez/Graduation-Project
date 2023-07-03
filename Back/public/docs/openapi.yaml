@@ -1,0 +1,3020 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/categories:
+    get:
+      summary: 'Get categories'
+      operationId: getCategories
+      description: 'List all categories'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'Et labore accusantium sed veritatis voluptatem.'
+                      parent: null
+                      children:
+                        -
+                          id: 10
+                          name: 'Omnis neque fugiat cum.'
+                    -
+                      id: 2
+                      name: 'Totam ea adipisci ut.'
+                      parent: null
+                      children: []
+                    -
+                      id: 3
+                      name: 'Magni aut ipsa nostrum.'
+                      parent: null
+                      children: []
+                    -
+                      id: 4
+                      name: 'Molestiae sint eum ea expedita ipsum recusandae.'
+                      parent: null
+                      children: []
+                    -
+                      id: 5
+                      name: 'Et repellendus ex et sapiente ut explicabo expedita dicta.'
+                      parent: null
+                      children: []
+                    -
+                      id: 6
+                      name: 'Accusantium laborum reiciendis ab eos tempore qui.'
+                      parent: null
+                      children: []
+                    -
+                      id: 7
+                      name: 'Qui ab ex laudantium.'
+                      parent: null
+                      children: []
+                    -
+                      id: 8
+                      name: 'Voluptas perspiciatis voluptatibus voluptate ea asperiores.'
+                      parent: null
+                      children: []
+                    -
+                      id: 9
+                      name: 'Et quis recusandae autem voluptates dolorem et.'
+                      parent: null
+                      children: []
+                    -
+                      id: 10
+                      name: 'Omnis neque fugiat cum.'
+                      parent:
+                        id: 1
+                        name: 'Et labore accusantium sed veritatis voluptatem.'
+                      children: []
+                    -
+                      id: 11
+                      name: 'Doloremque quia aliquid sit.'
+                      parent: null
+                      children: []
+                    -
+                      id: 12
+                      name: 'Sunt sint animi mollitia enim nobis vel sit.'
+                      parent: null
+                      children: []
+                    -
+                      id: 13
+                      name: 'Voluptatem culpa labore necessitatibus dolore a vitae.'
+                      parent: null
+                      children: []
+                    -
+                      id: 14
+                      name: 'Aliquam iste quasi quibusdam dignissimos cupiditate sit.'
+                      parent: null
+                      children: []
+                    -
+                      id: 15
+                      name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                      parent: null
+                      children: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Et labore accusantium sed veritatis voluptatem.'
+                        parent: null
+                        children:
+                          -
+                            id: 10
+                            name: 'Omnis neque fugiat cum.'
+                      -
+                        id: 2
+                        name: 'Totam ea adipisci ut.'
+                        parent: null
+                        children: []
+                      -
+                        id: 3
+                        name: 'Magni aut ipsa nostrum.'
+                        parent: null
+                        children: []
+                      -
+                        id: 4
+                        name: 'Molestiae sint eum ea expedita ipsum recusandae.'
+                        parent: null
+                        children: []
+                      -
+                        id: 5
+                        name: 'Et repellendus ex et sapiente ut explicabo expedita dicta.'
+                        parent: null
+                        children: []
+                      -
+                        id: 6
+                        name: 'Accusantium laborum reiciendis ab eos tempore qui.'
+                        parent: null
+                        children: []
+                      -
+                        id: 7
+                        name: 'Qui ab ex laudantium.'
+                        parent: null
+                        children: []
+                      -
+                        id: 8
+                        name: 'Voluptas perspiciatis voluptatibus voluptate ea asperiores.'
+                        parent: null
+                        children: []
+                      -
+                        id: 9
+                        name: 'Et quis recusandae autem voluptates dolorem et.'
+                        parent: null
+                        children: []
+                      -
+                        id: 10
+                        name: 'Omnis neque fugiat cum.'
+                        parent:
+                          id: 1
+                          name: 'Et labore accusantium sed veritatis voluptatem.'
+                        children: []
+                      -
+                        id: 11
+                        name: 'Doloremque quia aliquid sit.'
+                        parent: null
+                        children: []
+                      -
+                        id: 12
+                        name: 'Sunt sint animi mollitia enim nobis vel sit.'
+                        parent: null
+                        children: []
+                      -
+                        id: 13
+                        name: 'Voluptatem culpa labore necessitatibus dolore a vitae.'
+                        parent: null
+                        children: []
+                      -
+                        id: 14
+                        name: 'Aliquam iste quasi quibusdam dignissimos cupiditate sit.'
+                        parent: null
+                        children: []
+                      -
+                        id: 15
+                        name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                        parent: null
+                        children: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Et labore accusantium sed veritatis voluptatem.'
+                        parent:
+                          type: string
+                          example: null
+                        children:
+                          type: array
+                          example:
+                            -
+                              id: 10
+                              name: 'Omnis neque fugiat cum.'
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 10
+                              name:
+                                type: string
+                                example: 'Omnis neque fugiat cum.'
+      tags:
+        - Categories
+      security: []
+    post:
+      summary: 'Create Category'
+      operationId: createCategory
+      description: 'Store a newly created Category in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
+                  example: jmuwkfxjxghcduhl
+                parent_id:
+                  type: integer
+                  description: ''
+                  example: 17
+              required:
+                - name
+      security: []
+  '/api/categories/{id}':
+    get:
+      summary: 'Display Category'
+      operationId: displayCategory
+      description: 'Display the specified Category.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: 'Et labore accusantium sed veritatis voluptatem.'
+                    parent: null
+                    children:
+                      -
+                        id: 10
+                        name: 'Omnis neque fugiat cum.'
+                    courses:
+                      -
+                        id: 5
+                        title: 'Distinctio et dicta consequatur consequuntur aut.'
+                        description: 'Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00cc88?text=omnis'
+                        price: '932.28'
+                        published: 1
+                        instructor:
+                          id: 6
+                          name: 'Leilani Gutmann'
+                          email: gwen.runte@example.org
+                          avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 18
+                        title: 'Tenetur vel ut quia itaque est explicabo.'
+                        description: 'Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/003366?text=quo'
+                        price: '286.31'
+                        published: 1
+                        instructor:
+                          id: 1
+                          name: 'Dr. Barrett Kreiger'
+                          email: mueller.zelda@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 51
+                        title: 'HTML Course'
+                        description: 'All you need to be professional in HTML'
+                        thumbnail: courses/course51/thumbnail.jpeg
+                        price: '119.99'
+                        published: 0
+                        instructor:
+                          id: 1
+                          name: 'Dr. Barrett Kreiger'
+                          email: mueller.zelda@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '4.5'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Et labore accusantium sed veritatis voluptatem.'
+                      parent:
+                        type: string
+                        example: null
+                      children:
+                        type: array
+                        example:
+                          -
+                            id: 10
+                            name: 'Omnis neque fugiat cum.'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 10
+                            name:
+                              type: string
+                              example: 'Omnis neque fugiat cum.'
+                      courses:
+                        type: array
+                        example:
+                          -
+                            id: 5
+                            title: 'Distinctio et dicta consequatur consequuntur aut.'
+                            description: 'Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.'
+                            thumbnail: 'https://via.placeholder.com/640x480.png/00cc88?text=omnis'
+                            price: '932.28'
+                            published: 1
+                            instructor:
+                              id: 6
+                              name: 'Leilani Gutmann'
+                              email: gwen.runte@example.org
+                              avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                              is_instructor: 1
+                              is_admin: 0
+                            rate: '0.0'
+                          -
+                            id: 18
+                            title: 'Tenetur vel ut quia itaque est explicabo.'
+                            description: 'Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.'
+                            thumbnail: 'https://via.placeholder.com/640x480.png/003366?text=quo'
+                            price: '286.31'
+                            published: 1
+                            instructor:
+                              id: 1
+                              name: 'Dr. Barrett Kreiger'
+                              email: mueller.zelda@example.net
+                              avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                              is_instructor: 1
+                              is_admin: 0
+                            rate: '0.0'
+                          -
+                            id: 51
+                            title: 'HTML Course'
+                            description: 'All you need to be professional in HTML'
+                            thumbnail: courses/course51/thumbnail.jpeg
+                            price: '119.99'
+                            published: 0
+                            instructor:
+                              id: 1
+                              name: 'Dr. Barrett Kreiger'
+                              email: mueller.zelda@example.net
+                              avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                              is_instructor: 1
+                              is_admin: 0
+                            rate: '4.5'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 5
+                            title:
+                              type: string
+                              example: 'Distinctio et dicta consequatur consequuntur aut.'
+                            description:
+                              type: string
+                              example: 'Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.'
+                            thumbnail:
+                              type: string
+                              example: 'https://via.placeholder.com/640x480.png/00cc88?text=omnis'
+                            price:
+                              type: string
+                              example: '932.28'
+                            published:
+                              type: integer
+                              example: 1
+                            instructor:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 6
+                                name:
+                                  type: string
+                                  example: 'Leilani Gutmann'
+                                email:
+                                  type: string
+                                  example: gwen.runte@example.org
+                                avatar:
+                                  type: string
+                                  example: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                                is_instructor:
+                                  type: integer
+                                  example: 1
+                                is_admin:
+                                  type: integer
+                                  example: 0
+                            rate:
+                              type: string
+                              example: '0.0'
+      tags:
+        - Categories
+      security: []
+    put:
+      summary: 'Update Category'
+      operationId: updateCategory
+      description: 'Update the specified Category in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
+                  example: dqlxlmtqwibxhic
+                parent_id:
+                  type: integer
+                  description: ''
+                  example: 11
+              required:
+                - name
+      security: []
+    delete:
+      summary: 'Delete Category'
+      operationId: deleteCategory
+      description: 'Remove the specified Category from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/courses/search:
+    get:
+      summary: Search
+      operationId: search
+      description: 'Searches for course names and course descriptions and returns any courses that match the keyword'
+      parameters:
+        -
+          in: query
+          name: keyword
+          description: 'the word you are looking for.'
+          example: HTML
+          required: false
+          schema:
+            type: string
+            description: 'the word you are looking for.'
+            example: HTML
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 51
+                      title: 'HTML Course'
+                      description: 'All you need to be professional in HTML'
+                      thumbnail: courses/course51/thumbnail.jpeg
+                      price: '119.99'
+                      published: 0
+                      instructor:
+                        id: 1
+                        name: 'Dr. Barrett Kreiger'
+                        email: mueller.zelda@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '4.5'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 51
+                        title: 'HTML Course'
+                        description: 'All you need to be professional in HTML'
+                        thumbnail: courses/course51/thumbnail.jpeg
+                        price: '119.99'
+                        published: 0
+                        instructor:
+                          id: 1
+                          name: 'Dr. Barrett Kreiger'
+                          email: mueller.zelda@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '4.5'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 51
+                        title:
+                          type: string
+                          example: 'HTML Course'
+                        description:
+                          type: string
+                          example: 'All you need to be professional in HTML'
+                        thumbnail:
+                          type: string
+                          example: courses/course51/thumbnail.jpeg
+                        price:
+                          type: string
+                          example: '119.99'
+                        published:
+                          type: integer
+                          example: 0
+                        instructor:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Dr. Barrett Kreiger'
+                            email:
+                              type: string
+                              example: mueller.zelda@example.net
+                            avatar:
+                              type: string
+                              example: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                            is_instructor:
+                              type: integer
+                              example: 1
+                            is_admin:
+                              type: integer
+                              example: 0
+                        rate:
+                          type: string
+                          example: '4.5'
+      tags:
+        - Courses
+      security: []
+  /api/courses/price_filter:
+    get:
+      summary: 'Price Filter'
+      operationId: priceFilter
+      description: 'Filter results based on min and max values'
+      parameters:
+        -
+          in: query
+          name: min
+          description: 'Minimum price.'
+          example: 20.0
+          required: false
+          schema:
+            type: number
+            description: 'Minimum price.'
+            example: 20.0
+        -
+          in: query
+          name: max
+          description: 'Maximum price.'
+          example: 1000.0
+          required: false
+          schema:
+            type: number
+            description: 'Maximum price.'
+            example: 1000.0
+        -
+          in: query
+          name: order
+          description: 'In which order you want to see results.'
+          example: asc
+          required: false
+          schema:
+            type: string
+            description: 'In which order you want to see results.'
+            example: asc
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 50
+                      title: 'Sed quos quia magnam dolor enim.'
+                      description: 'Vero quia labore in ducimus expedita ea temporibus. Fugit qui nobis distinctio doloremque. Minima sunt vitae accusantium ut. Vitae quo sequi unde quasi voluptas quae et.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/006677?text=consequatur'
+                      price: '35.33'
+                      published: 1
+                      instructor:
+                        id: 8
+                        name: 'Delphia Wintheiser III'
+                        email: tnitzsche@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee99?text=debitis'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 31
+                      title: 'Impedit et porro deleniti rem amet quidem rerum.'
+                      description: 'Dicta aut eius veniam rerum dolores iusto voluptas. Nobis magni recusandae ad quis. Et numquam nam dolor ad labore. Necessitatibus rerum qui consectetur quis. Reiciendis assumenda dolorem modi ipsam numquam quia ut.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00ee33?text=laudantium'
+                      price: '45.95'
+                      published: 1
+                      instructor:
+                        id: 10
+                        name: 'Mike Windler'
+                        email: bwiza@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/002299?text=omnis'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 8
+                      title: 'Cumque est accusantium est ipsa consequuntur quidem minima.'
+                      description: 'Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/0088dd?text=unde'
+                      price: '57.83'
+                      published: 1
+                      instructor:
+                        id: 5
+                        name: 'Mr. Lukas Bahringer'
+                        email: tbogisich@example.com
+                        avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 19
+                      title: 'Distinctio et placeat maiores quidem.'
+                      description: 'Magnam accusamus ut nemo voluptatem. In sunt magnam dolor cumque eaque aut ab. Reprehenderit enim natus autem cumque.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00dd44?text=non'
+                      price: '70.48'
+                      published: 1
+                      instructor:
+                        id: 7
+                        name: 'Dr. Gregory Koch II'
+                        email: hazle.dickens@example.com
+                        avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 42
+                      title: 'Est sit accusamus et corporis at eum.'
+                      description: 'Itaque quas asperiores enim voluptatem. Consequatur quos fugit tempore velit pariatur quaerat. Illo doloribus occaecati sint in. Non quas sit sit molestiae impedit nam.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00cc44?text=culpa'
+                      price: '85.86'
+                      published: 1
+                      instructor:
+                        id: 6
+                        name: 'Leilani Gutmann'
+                        email: gwen.runte@example.org
+                        avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 41
+                      title: 'Recusandae tempore ex asperiores provident.'
+                      description: 'Nostrum expedita culpa doloribus commodi molestiae. Dolores eaque qui tempore et id. Quidem non asperiores laborum repellat corporis odit nisi aliquid.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/006677?text=inventore'
+                      price: '89.93'
+                      published: 1
+                      instructor:
+                        id: 5
+                        name: 'Mr. Lukas Bahringer'
+                        email: tbogisich@example.com
+                        avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 47
+                      title: 'Omnis earum expedita sed atque enim.'
+                      description: 'Ea sed molestias rem ipsum. Eius suscipit consequatur error qui qui quis fugit.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/0033cc?text=et'
+                      price: '98.31'
+                      published: 1
+                      instructor:
+                        id: 6
+                        name: 'Leilani Gutmann'
+                        email: gwen.runte@example.org
+                        avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 51
+                      title: 'HTML Course'
+                      description: 'All you need to be professional in HTML'
+                      thumbnail: courses/course51/thumbnail.jpeg
+                      price: '119.99'
+                      published: 0
+                      instructor:
+                        id: 1
+                        name: 'Dr. Barrett Kreiger'
+                        email: mueller.zelda@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '4.5'
+                    -
+                      id: 16
+                      title: 'Illo quis incidunt est nihil qui numquam sit voluptatem.'
+                      description: 'Id modi aut sit libero consequatur. Explicabo incidunt animi deleniti est tempora. Nihil magnam maxime illo voluptates quasi exercitationem quisquam. Et et est fuga aut non.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/009955?text=ut'
+                      price: '147.56'
+                      published: 1
+                      instructor:
+                        id: 1
+                        name: 'Dr. Barrett Kreiger'
+                        email: mueller.zelda@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 15
+                      title: 'Repellendus et qui in.'
+                      description: 'Consequuntur quia repudiandae rem corrupti sint qui voluptates. Qui tenetur quos dolore explicabo. Sunt quasi neque architecto libero et repellat. Voluptatem vel tempore sed nihil et doloremque.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/000077?text=et'
+                      price: '183.20'
+                      published: 1
+                      instructor:
+                        id: 6
+                        name: 'Leilani Gutmann'
+                        email: gwen.runte@example.org
+                        avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                  links:
+                    first: 'http://localhost/api/courses/price_filter?page=1'
+                    last: 'http://localhost/api/courses/price_filter?page=5'
+                    prev: null
+                    next: 'http://localhost/api/courses/price_filter?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 5
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses/price_filter?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost/api/courses/price_filter?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses/price_filter?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses/price_filter?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses/price_filter?page=5'
+                        label: '5'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses/price_filter?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/courses/price_filter'
+                    per_page: 10
+                    to: 10
+                    total: 49
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 50
+                        title: 'Sed quos quia magnam dolor enim.'
+                        description: 'Vero quia labore in ducimus expedita ea temporibus. Fugit qui nobis distinctio doloremque. Minima sunt vitae accusantium ut. Vitae quo sequi unde quasi voluptas quae et.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/006677?text=consequatur'
+                        price: '35.33'
+                        published: 1
+                        instructor:
+                          id: 8
+                          name: 'Delphia Wintheiser III'
+                          email: tnitzsche@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee99?text=debitis'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 31
+                        title: 'Impedit et porro deleniti rem amet quidem rerum.'
+                        description: 'Dicta aut eius veniam rerum dolores iusto voluptas. Nobis magni recusandae ad quis. Et numquam nam dolor ad labore. Necessitatibus rerum qui consectetur quis. Reiciendis assumenda dolorem modi ipsam numquam quia ut.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00ee33?text=laudantium'
+                        price: '45.95'
+                        published: 1
+                        instructor:
+                          id: 10
+                          name: 'Mike Windler'
+                          email: bwiza@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/002299?text=omnis'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 8
+                        title: 'Cumque est accusantium est ipsa consequuntur quidem minima.'
+                        description: 'Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/0088dd?text=unde'
+                        price: '57.83'
+                        published: 1
+                        instructor:
+                          id: 5
+                          name: 'Mr. Lukas Bahringer'
+                          email: tbogisich@example.com
+                          avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 19
+                        title: 'Distinctio et placeat maiores quidem.'
+                        description: 'Magnam accusamus ut nemo voluptatem. In sunt magnam dolor cumque eaque aut ab. Reprehenderit enim natus autem cumque.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00dd44?text=non'
+                        price: '70.48'
+                        published: 1
+                        instructor:
+                          id: 7
+                          name: 'Dr. Gregory Koch II'
+                          email: hazle.dickens@example.com
+                          avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 42
+                        title: 'Est sit accusamus et corporis at eum.'
+                        description: 'Itaque quas asperiores enim voluptatem. Consequatur quos fugit tempore velit pariatur quaerat. Illo doloribus occaecati sint in. Non quas sit sit molestiae impedit nam.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00cc44?text=culpa'
+                        price: '85.86'
+                        published: 1
+                        instructor:
+                          id: 6
+                          name: 'Leilani Gutmann'
+                          email: gwen.runte@example.org
+                          avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 41
+                        title: 'Recusandae tempore ex asperiores provident.'
+                        description: 'Nostrum expedita culpa doloribus commodi molestiae. Dolores eaque qui tempore et id. Quidem non asperiores laborum repellat corporis odit nisi aliquid.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/006677?text=inventore'
+                        price: '89.93'
+                        published: 1
+                        instructor:
+                          id: 5
+                          name: 'Mr. Lukas Bahringer'
+                          email: tbogisich@example.com
+                          avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 47
+                        title: 'Omnis earum expedita sed atque enim.'
+                        description: 'Ea sed molestias rem ipsum. Eius suscipit consequatur error qui qui quis fugit.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/0033cc?text=et'
+                        price: '98.31'
+                        published: 1
+                        instructor:
+                          id: 6
+                          name: 'Leilani Gutmann'
+                          email: gwen.runte@example.org
+                          avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 51
+                        title: 'HTML Course'
+                        description: 'All you need to be professional in HTML'
+                        thumbnail: courses/course51/thumbnail.jpeg
+                        price: '119.99'
+                        published: 0
+                        instructor:
+                          id: 1
+                          name: 'Dr. Barrett Kreiger'
+                          email: mueller.zelda@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '4.5'
+                      -
+                        id: 16
+                        title: 'Illo quis incidunt est nihil qui numquam sit voluptatem.'
+                        description: 'Id modi aut sit libero consequatur. Explicabo incidunt animi deleniti est tempora. Nihil magnam maxime illo voluptates quasi exercitationem quisquam. Et et est fuga aut non.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/009955?text=ut'
+                        price: '147.56'
+                        published: 1
+                        instructor:
+                          id: 1
+                          name: 'Dr. Barrett Kreiger'
+                          email: mueller.zelda@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 15
+                        title: 'Repellendus et qui in.'
+                        description: 'Consequuntur quia repudiandae rem corrupti sint qui voluptates. Qui tenetur quos dolore explicabo. Sunt quasi neque architecto libero et repellat. Voluptatem vel tempore sed nihil et doloremque.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/000077?text=et'
+                        price: '183.20'
+                        published: 1
+                        instructor:
+                          id: 6
+                          name: 'Leilani Gutmann'
+                          email: gwen.runte@example.org
+                          avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 50
+                        title:
+                          type: string
+                          example: 'Sed quos quia magnam dolor enim.'
+                        description:
+                          type: string
+                          example: 'Vero quia labore in ducimus expedita ea temporibus. Fugit qui nobis distinctio doloremque. Minima sunt vitae accusantium ut. Vitae quo sequi unde quasi voluptas quae et.'
+                        thumbnail:
+                          type: string
+                          example: 'https://via.placeholder.com/640x480.png/006677?text=consequatur'
+                        price:
+                          type: string
+                          example: '35.33'
+                        published:
+                          type: integer
+                          example: 1
+                        instructor:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 8
+                            name:
+                              type: string
+                              example: 'Delphia Wintheiser III'
+                            email:
+                              type: string
+                              example: tnitzsche@example.net
+                            avatar:
+                              type: string
+                              example: 'https://via.placeholder.com/640x480.png/00ee99?text=debitis'
+                            is_instructor:
+                              type: integer
+                              example: 1
+                            is_admin:
+                              type: integer
+                              example: 0
+                        rate:
+                          type: string
+                          example: '0.0'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/courses/price_filter?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/courses/price_filter?page=5'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://localhost/api/courses/price_filter?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 5
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses/price_filter?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost/api/courses/price_filter?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses/price_filter?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses/price_filter?page=4'
+                            label: '4'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses/price_filter?page=5'
+                            label: '5'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses/price_filter?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/courses/price_filter'
+                      per_page:
+                        type: integer
+                        example: 10
+                      to:
+                        type: integer
+                        example: 10
+                      total:
+                        type: integer
+                        example: 49
+      tags:
+        - Courses
+      security: []
+  /api/courses:
+    get:
+      summary: 'Get Courses'
+      operationId: getCourses
+      description: 'Display a listing of all courses.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Which page to show.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Which page to show.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 2
+                      title: 'Aut quis voluptatem autem voluptatibus.'
+                      description: 'Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/009933?text=quo'
+                      price: '925.20'
+                      published: 1
+                      category:
+                        id: 5
+                        name: 'Et repellendus ex et sapiente ut explicabo expedita dicta.'
+                      sub_category: null
+                      instructor:
+                        id: 7
+                        name: 'Dr. Gregory Koch II'
+                        email: hazle.dickens@example.com
+                        avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 3
+                      title: 'Voluptas aliquid id sed facere.'
+                      description: 'Qui recusandae consequatur natus est est vel quis. Ex exercitationem voluptatibus voluptatem non sed iusto ducimus. Reprehenderit deserunt sed ducimus quia debitis blanditiis. Alias amet ducimus ipsa ut inventore iure et id.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/000099?text=aut'
+                      price: '298.64'
+                      published: 1
+                      category:
+                        id: 13
+                        name: 'Voluptatem culpa labore necessitatibus dolore a vitae.'
+                      sub_category: null
+                      instructor:
+                        id: 10
+                        name: 'Mike Windler'
+                        email: bwiza@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/002299?text=omnis'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 4
+                      title: 'Soluta necessitatibus ea accusamus ipsum pariatur voluptate quis.'
+                      description: 'Eligendi ea corrupti officia. Culpa voluptatibus est rerum distinctio. Tenetur id aut quidem nesciunt.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/005588?text=id'
+                      price: '265.89'
+                      published: 1
+                      category:
+                        id: 7
+                        name: 'Qui ab ex laudantium.'
+                      sub_category: null
+                      instructor:
+                        id: 1
+                        name: 'Dr. Barrett Kreiger'
+                        email: mueller.zelda@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 5
+                      title: 'Distinctio et dicta consequatur consequuntur aut.'
+                      description: 'Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00cc88?text=omnis'
+                      price: '932.28'
+                      published: 1
+                      category:
+                        id: 1
+                        name: 'Et labore accusantium sed veritatis voluptatem.'
+                      sub_category: null
+                      instructor:
+                        id: 6
+                        name: 'Leilani Gutmann'
+                        email: gwen.runte@example.org
+                        avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 6
+                      title: 'Nihil tempore maiores possimus.'
+                      description: 'Eos iure omnis voluptas nemo dolorem temporibus corporis. Et explicabo vero rem reprehenderit. Iure autem similique voluptatem aut et ut.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00dd00?text=temporibus'
+                      price: '471.39'
+                      published: 1
+                      category:
+                        id: 2
+                        name: 'Totam ea adipisci ut.'
+                      sub_category: null
+                      instructor:
+                        id: 4
+                        name: 'Esmeralda Howe DVM'
+                        email: qhauck@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ff00?text=itaque'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 7
+                      title: 'Id explicabo voluptas praesentium.'
+                      description: 'Quidem est reprehenderit incidunt repellendus quia. Quod incidunt voluptatibus omnis quod iusto eveniet est accusantium. Dignissimos reprehenderit delectus commodi vero.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00eedd?text=molestiae'
+                      price: '658.84'
+                      published: 1
+                      category:
+                        id: 15
+                        name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                      sub_category: null
+                      instructor:
+                        id: 5
+                        name: 'Mr. Lukas Bahringer'
+                        email: tbogisich@example.com
+                        avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 8
+                      title: 'Cumque est accusantium est ipsa consequuntur quidem minima.'
+                      description: 'Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/0088dd?text=unde'
+                      price: '57.83'
+                      published: 1
+                      category:
+                        id: 9
+                        name: 'Et quis recusandae autem voluptates dolorem et.'
+                      sub_category: null
+                      instructor:
+                        id: 5
+                        name: 'Mr. Lukas Bahringer'
+                        email: tbogisich@example.com
+                        avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 9
+                      title: 'Culpa ut natus vitae atque ex dignissimos aut voluptatem.'
+                      description: 'Sunt eum sint modi rerum cum quo. Ipsum fugiat delectus quo sed pariatur tenetur maiores. Et eligendi hic distinctio repellendus omnis. Totam cum sit ipsa.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00aabb?text=earum'
+                      price: '706.19'
+                      published: 1
+                      category:
+                        id: 6
+                        name: 'Accusantium laborum reiciendis ab eos tempore qui.'
+                      sub_category: null
+                      instructor:
+                        id: 4
+                        name: 'Esmeralda Howe DVM'
+                        email: qhauck@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ff00?text=itaque'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 10
+                      title: 'Quia sequi repellat sed cumque nobis ut.'
+                      description: 'Ducimus cumque vel natus sint autem. In aliquid et ut nisi ipsam. Quidem praesentium dignissimos ea odio. Explicabo provident doloremque excepturi ut eligendi eos qui.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/003311?text=dolor'
+                      price: '736.60'
+                      published: 1
+                      category:
+                        id: 12
+                        name: 'Sunt sint animi mollitia enim nobis vel sit.'
+                      sub_category: null
+                      instructor:
+                        id: 6
+                        name: 'Leilani Gutmann'
+                        email: gwen.runte@example.org
+                        avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                    -
+                      id: 11
+                      title: 'Veritatis quo inventore officia sit rerum omnis ut velit.'
+                      description: 'Dicta amet sequi error fugiat vitae accusantium vel. Nihil sint id expedita qui magnam qui ut qui.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00ff99?text=dolorem'
+                      price: '341.06'
+                      published: 1
+                      category:
+                        id: 14
+                        name: 'Aliquam iste quasi quibusdam dignissimos cupiditate sit.'
+                      sub_category: null
+                      instructor:
+                        id: 9
+                        name: 'Katrine Dietrich'
+                        email: mccullough.alverta@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/0022ee?text=deleniti'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                  links:
+                    first: 'http://localhost/api/courses?page=1'
+                    last: 'http://localhost/api/courses?page=5'
+                    prev: null
+                    next: 'http://localhost/api/courses?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 5
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost/api/courses?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses?page=5'
+                        label: '5'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/courses'
+                    per_page: 10
+                    to: 10
+                    total: 49
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        title: 'Aut quis voluptatem autem voluptatibus.'
+                        description: 'Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/009933?text=quo'
+                        price: '925.20'
+                        published: 1
+                        category:
+                          id: 5
+                          name: 'Et repellendus ex et sapiente ut explicabo expedita dicta.'
+                        sub_category: null
+                        instructor:
+                          id: 7
+                          name: 'Dr. Gregory Koch II'
+                          email: hazle.dickens@example.com
+                          avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 3
+                        title: 'Voluptas aliquid id sed facere.'
+                        description: 'Qui recusandae consequatur natus est est vel quis. Ex exercitationem voluptatibus voluptatem non sed iusto ducimus. Reprehenderit deserunt sed ducimus quia debitis blanditiis. Alias amet ducimus ipsa ut inventore iure et id.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/000099?text=aut'
+                        price: '298.64'
+                        published: 1
+                        category:
+                          id: 13
+                          name: 'Voluptatem culpa labore necessitatibus dolore a vitae.'
+                        sub_category: null
+                        instructor:
+                          id: 10
+                          name: 'Mike Windler'
+                          email: bwiza@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/002299?text=omnis'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 4
+                        title: 'Soluta necessitatibus ea accusamus ipsum pariatur voluptate quis.'
+                        description: 'Eligendi ea corrupti officia. Culpa voluptatibus est rerum distinctio. Tenetur id aut quidem nesciunt.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/005588?text=id'
+                        price: '265.89'
+                        published: 1
+                        category:
+                          id: 7
+                          name: 'Qui ab ex laudantium.'
+                        sub_category: null
+                        instructor:
+                          id: 1
+                          name: 'Dr. Barrett Kreiger'
+                          email: mueller.zelda@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 5
+                        title: 'Distinctio et dicta consequatur consequuntur aut.'
+                        description: 'Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00cc88?text=omnis'
+                        price: '932.28'
+                        published: 1
+                        category:
+                          id: 1
+                          name: 'Et labore accusantium sed veritatis voluptatem.'
+                        sub_category: null
+                        instructor:
+                          id: 6
+                          name: 'Leilani Gutmann'
+                          email: gwen.runte@example.org
+                          avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 6
+                        title: 'Nihil tempore maiores possimus.'
+                        description: 'Eos iure omnis voluptas nemo dolorem temporibus corporis. Et explicabo vero rem reprehenderit. Iure autem similique voluptatem aut et ut.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00dd00?text=temporibus'
+                        price: '471.39'
+                        published: 1
+                        category:
+                          id: 2
+                          name: 'Totam ea adipisci ut.'
+                        sub_category: null
+                        instructor:
+                          id: 4
+                          name: 'Esmeralda Howe DVM'
+                          email: qhauck@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ff00?text=itaque'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 7
+                        title: 'Id explicabo voluptas praesentium.'
+                        description: 'Quidem est reprehenderit incidunt repellendus quia. Quod incidunt voluptatibus omnis quod iusto eveniet est accusantium. Dignissimos reprehenderit delectus commodi vero.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00eedd?text=molestiae'
+                        price: '658.84'
+                        published: 1
+                        category:
+                          id: 15
+                          name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                        sub_category: null
+                        instructor:
+                          id: 5
+                          name: 'Mr. Lukas Bahringer'
+                          email: tbogisich@example.com
+                          avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 8
+                        title: 'Cumque est accusantium est ipsa consequuntur quidem minima.'
+                        description: 'Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/0088dd?text=unde'
+                        price: '57.83'
+                        published: 1
+                        category:
+                          id: 9
+                          name: 'Et quis recusandae autem voluptates dolorem et.'
+                        sub_category: null
+                        instructor:
+                          id: 5
+                          name: 'Mr. Lukas Bahringer'
+                          email: tbogisich@example.com
+                          avatar: 'https://via.placeholder.com/640x480.png/009933?text=laudantium'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 9
+                        title: 'Culpa ut natus vitae atque ex dignissimos aut voluptatem.'
+                        description: 'Sunt eum sint modi rerum cum quo. Ipsum fugiat delectus quo sed pariatur tenetur maiores. Et eligendi hic distinctio repellendus omnis. Totam cum sit ipsa.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00aabb?text=earum'
+                        price: '706.19'
+                        published: 1
+                        category:
+                          id: 6
+                          name: 'Accusantium laborum reiciendis ab eos tempore qui.'
+                        sub_category: null
+                        instructor:
+                          id: 4
+                          name: 'Esmeralda Howe DVM'
+                          email: qhauck@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ff00?text=itaque'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 10
+                        title: 'Quia sequi repellat sed cumque nobis ut.'
+                        description: 'Ducimus cumque vel natus sint autem. In aliquid et ut nisi ipsam. Quidem praesentium dignissimos ea odio. Explicabo provident doloremque excepturi ut eligendi eos qui.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/003311?text=dolor'
+                        price: '736.60'
+                        published: 1
+                        category:
+                          id: 12
+                          name: 'Sunt sint animi mollitia enim nobis vel sit.'
+                        sub_category: null
+                        instructor:
+                          id: 6
+                          name: 'Leilani Gutmann'
+                          email: gwen.runte@example.org
+                          avatar: 'https://via.placeholder.com/640x480.png/006688?text=quo'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 11
+                        title: 'Veritatis quo inventore officia sit rerum omnis ut velit.'
+                        description: 'Dicta amet sequi error fugiat vitae accusantium vel. Nihil sint id expedita qui magnam qui ut qui.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00ff99?text=dolorem'
+                        price: '341.06'
+                        published: 1
+                        category:
+                          id: 14
+                          name: 'Aliquam iste quasi quibusdam dignissimos cupiditate sit.'
+                        sub_category: null
+                        instructor:
+                          id: 9
+                          name: 'Katrine Dietrich'
+                          email: mccullough.alverta@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/0022ee?text=deleniti'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        title:
+                          type: string
+                          example: 'Aut quis voluptatem autem voluptatibus.'
+                        description:
+                          type: string
+                          example: 'Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.'
+                        thumbnail:
+                          type: string
+                          example: 'https://via.placeholder.com/640x480.png/009933?text=quo'
+                        price:
+                          type: string
+                          example: '925.20'
+                        published:
+                          type: integer
+                          example: 1
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 5
+                            name:
+                              type: string
+                              example: 'Et repellendus ex et sapiente ut explicabo expedita dicta.'
+                        sub_category:
+                          type: string
+                          example: null
+                        instructor:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 7
+                            name:
+                              type: string
+                              example: 'Dr. Gregory Koch II'
+                            email:
+                              type: string
+                              example: hazle.dickens@example.com
+                            avatar:
+                              type: string
+                              example: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                            is_instructor:
+                              type: integer
+                              example: 1
+                            is_admin:
+                              type: integer
+                              example: 0
+                        rate:
+                          type: string
+                          example: '0.0'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/courses?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/courses?page=5'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://localhost/api/courses?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 5
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost/api/courses?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses?page=4'
+                            label: '4'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses?page=5'
+                            label: '5'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/courses'
+                      per_page:
+                        type: integer
+                        example: 10
+                      to:
+                        type: integer
+                        example: 10
+                      total:
+                        type: integer
+                        example: 49
+      tags:
+        - Courses
+      security: []
+    post:
+      summary: 'Create Course'
+      operationId: createCourse
+      description: 'Store a newly created Course in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Courses
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+                  example: drpts
+                description:
+                  type: string
+                  description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
+                  example: 'Suscipit repellendus eum earum deserunt cupiditate aut dolor.'
+                thumbnail:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                price:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 89
+                category_id:
+                  type: integer
+                  description: ''
+                  example: 13
+                sub_category_id:
+                  type: integer
+                  description: ''
+                  example: 3
+                user_id:
+                  type: integer
+                  description: ''
+                  example: 11
+              required:
+                - title
+                - description
+                - thumbnail
+                - price
+                - category_id
+                - user_id
+      security: []
+  '/api/courses/{id}':
+    get:
+      summary: 'Display Course'
+      operationId: displayCourse
+      description: 'Display the specified Course.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 2
+                    title: 'Aut quis voluptatem autem voluptatibus.'
+                    description: 'Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.'
+                    thumbnail: 'https://via.placeholder.com/640x480.png/009933?text=quo'
+                    price: '925.20'
+                    published: 1
+                    category:
+                      id: 5
+                      name: 'Et repellendus ex et sapiente ut explicabo expedita dicta.'
+                    sub_category: null
+                    instructor:
+                      id: 7
+                      name: 'Dr. Gregory Koch II'
+                      email: hazle.dickens@example.com
+                      avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                      is_instructor: 1
+                      is_admin: 0
+                    sections: []
+                    comments: []
+                    rate: '0.0'
+                    reviews: []
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 2
+                      title:
+                        type: string
+                        example: 'Aut quis voluptatem autem voluptatibus.'
+                      description:
+                        type: string
+                        example: 'Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.'
+                      thumbnail:
+                        type: string
+                        example: 'https://via.placeholder.com/640x480.png/009933?text=quo'
+                      price:
+                        type: string
+                        example: '925.20'
+                      published:
+                        type: integer
+                        example: 1
+                      category:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 5
+                          name:
+                            type: string
+                            example: 'Et repellendus ex et sapiente ut explicabo expedita dicta.'
+                      sub_category:
+                        type: string
+                        example: null
+                      instructor:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 7
+                          name:
+                            type: string
+                            example: 'Dr. Gregory Koch II'
+                          email:
+                            type: string
+                            example: hazle.dickens@example.com
+                          avatar:
+                            type: string
+                            example: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                          is_instructor:
+                            type: integer
+                            example: 1
+                          is_admin:
+                            type: integer
+                            example: 0
+                      sections:
+                        type: array
+                        example: []
+                      comments:
+                        type: array
+                        example: []
+                      rate:
+                        type: string
+                        example: '0.0'
+                      reviews:
+                        type: array
+                        example: []
+      tags:
+        - Courses
+      security: []
+    put:
+      summary: 'Update Course'
+      operationId: updateCourse
+      description: 'Update the specified Course in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Courses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+                  example: fxlk
+                description:
+                  type: string
+                  description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
+                  example: 'Similique at et ut est dolor deleniti laborum qui.'
+                thumbnail:
+                  type: string
+                  description: ''
+                  example: null
+                price:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 66
+                category_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                sub_category_id:
+                  type: integer
+                  description: ''
+                  example: 10
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - title
+                - description
+                - price
+                - category_id
+      security: []
+    delete:
+      summary: 'Delete Course'
+      operationId: deleteCourse
+      description: 'Remove the specified Course from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Courses
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the course.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/lectures:
+    get:
+      summary: 'Get Lectures'
+      operationId: getLectures
+      description: 'Display a listing of the resource.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 16
+                      title: 'What is HTML'
+                      type: video
+                      content: courses/course51/section3/lecture16/lecture.mkv
+                      section:
+                        id: 3
+                        title: Introduction
+                    -
+                      id: 17
+                      title: 'Main tags'
+                      type: video
+                      content: courses/course51/section4/lecture17/lecture.mkv
+                      section:
+                        id: 4
+                        title: 'Create Your first HTML page'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 16
+                        title: 'What is HTML'
+                        type: video
+                        content: courses/course51/section3/lecture16/lecture.mkv
+                        section:
+                          id: 3
+                          title: Introduction
+                      -
+                        id: 17
+                        title: 'Main tags'
+                        type: video
+                        content: courses/course51/section4/lecture17/lecture.mkv
+                        section:
+                          id: 4
+                          title: 'Create Your first HTML page'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 16
+                        title:
+                          type: string
+                          example: 'What is HTML'
+                        type:
+                          type: string
+                          example: video
+                        content:
+                          type: string
+                          example: courses/course51/section3/lecture16/lecture.mkv
+                        section:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 3
+                            title:
+                              type: string
+                              example: Introduction
+      tags:
+        - Lectures
+      security: []
+    post:
+      summary: 'Create Lecture'
+      operationId: createLecture
+      description: 'Store a newly created resource in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Lectures
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
+                  example: geeckmmypf
+                type:
+                  type: string
+                  description: ''
+                  example: distinctio
+                section_id:
+                  type: integer
+                  description: ''
+                  example: 14
+                content:
+                  type: string
+                  description: ''
+                  example: doloremque
+              required:
+                - title
+                - type
+                - section_id
+                - content
+      security: []
+  '/api/lectures/{id}':
+    get:
+      summary: 'Display Lecture'
+      operationId: displayLecture
+      description: 'Display the specified resource.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 16
+                    title: 'What is HTML'
+                    type: video
+                    content: courses/course51/section3/lecture16/lecture.mkv
+                    section:
+                      id: 3
+                      title: Introduction
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 16
+                      title:
+                        type: string
+                        example: 'What is HTML'
+                      type:
+                        type: string
+                        example: video
+                      content:
+                        type: string
+                        example: courses/course51/section3/lecture16/lecture.mkv
+                      section:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 3
+                          title:
+                            type: string
+                            example: Introduction
+      tags:
+        - Lectures
+      security: []
+    put:
+      summary: 'Update Lecture'
+      operationId: updateLecture
+      description: 'Update the specified resource in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Lectures
+      security: []
+    delete:
+      summary: 'Delete Lecture'
+      operationId: deleteLecture
+      description: 'Remove the specified resource from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Lectures
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the lecture.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/questions:
+    get:
+      summary: 'Get questions'
+      operationId: getQuestions
+      description: 'List all questions.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      question: 'What is HTML ?'
+                      answer: A
+                      A: 'Hyper TExt Markup Language'
+                      B: 'Bla Bla'
+                      C: 'Bla BLa Bla'
+                      D: 'Somethig else'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        question: 'What is HTML ?'
+                        answer: A
+                        A: 'Hyper TExt Markup Language'
+                        B: 'Bla Bla'
+                        C: 'Bla BLa Bla'
+                        D: 'Somethig else'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        question:
+                          type: string
+                          example: 'What is HTML ?'
+                        answer:
+                          type: string
+                          example: A
+                        A:
+                          type: string
+                          example: 'Hyper TExt Markup Language'
+                        B:
+                          type: string
+                          example: 'Bla Bla'
+                        C:
+                          type: string
+                          example: 'Bla BLa Bla'
+                        D:
+                          type: string
+                          example: 'Somethig else'
+      tags:
+        - QuizQuestions
+      security: []
+    post:
+      summary: 'Create question'
+      operationId: createQuestion
+      description: 'Store a newly created question in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - QuizQuestions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
+                  example: kwbukec
+                answer:
+                  type: string
+                  description: 'Must be 1 character.'
+                  example: z
+                A:
+                  type: string
+                  description: 'Must be at least 1 character. Must not be greater than 100 characters.'
+                  example: bedfuajy
+                B:
+                  type: string
+                  description: 'Must be at least 1 character. Must not be greater than 100 characters.'
+                  example: ursehlcpvykker
+                quiz_id:
+                  type: integer
+                  description: ''
+                  example: 12
+              required:
+                - question
+                - answer
+                - A
+                - B
+                - quiz_id
+      security: []
+  '/api/questions/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - QuizQuestions
+      security: []
+    put:
+      summary: 'Update question'
+      operationId: updateQuestion
+      description: 'Update the specified resource in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - QuizQuestions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
+                  example: epidcbw
+                answer:
+                  type: string
+                  description: 'Must be 1 character.'
+                  example: x
+                A:
+                  type: string
+                  description: 'Must be at least 1 character. Must not be greater than 50 characters.'
+                  example: ufonj
+                B:
+                  type: string
+                  description: 'Must be at least 1 character. Must not be greater than 50 characters.'
+                  example: qjqddizgnqvsjrfh
+              required:
+                - question
+                - answer
+                - A
+                - B
+      security: []
+    delete:
+      summary: 'Delete Question'
+      operationId: deleteQuestion
+      description: 'Remove the specified resource from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - QuizQuestions
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the question.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/quizzes:
+    get:
+      summary: 'Get Quizzes'
+      operationId: getQuizzes
+      description: 'List all Quizzes.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      title: Quiz_1
+                      questions:
+                        -
+                          id: 1
+                          question: 'What is HTML ?'
+                          answer: A
+                          A: 'Hyper TExt Markup Language'
+                          B: 'Bla Bla'
+                          C: 'Bla BLa Bla'
+                          D: 'Somethig else'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: Quiz_1
+                        questions:
+                          -
+                            id: 1
+                            question: 'What is HTML ?'
+                            answer: A
+                            A: 'Hyper TExt Markup Language'
+                            B: 'Bla Bla'
+                            C: 'Bla BLa Bla'
+                            D: 'Somethig else'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        title:
+                          type: string
+                          example: Quiz_1
+                        questions:
+                          type: array
+                          example:
+                            -
+                              id: 1
+                              question: 'What is HTML ?'
+                              answer: A
+                              A: 'Hyper TExt Markup Language'
+                              B: 'Bla Bla'
+                              C: 'Bla BLa Bla'
+                              D: 'Somethig else'
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 1
+                              question:
+                                type: string
+                                example: 'What is HTML ?'
+                              answer:
+                                type: string
+                                example: A
+                              A:
+                                type: string
+                                example: 'Hyper TExt Markup Language'
+                              B:
+                                type: string
+                                example: 'Bla Bla'
+                              C:
+                                type: string
+                                example: 'Bla BLa Bla'
+                              D:
+                                type: string
+                                example: 'Somethig else'
+      tags:
+        - Quizzes
+      security: []
+    post:
+      summary: 'Create Quiz'
+      operationId: createQuiz
+      description: 'Store a newly created Quiz in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Quizzes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
+                  example: ejaz
+                section_id:
+                  type: integer
+                  description: ''
+                  example: 10
+              required:
+                - title
+                - section_id
+      security: []
+  '/api/quizzes/{id}':
+    get:
+      summary: 'Display Quiz'
+      operationId: displayQuiz
+      description: 'Display the specified Quiz.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    title: Quiz_1
+                    questions:
+                      -
+                        id: 1
+                        question: 'What is HTML ?'
+                        answer: A
+                        A: 'Hyper TExt Markup Language'
+                        B: 'Bla Bla'
+                        C: 'Bla BLa Bla'
+                        D: 'Somethig else'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: Quiz_1
+                      questions:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            question: 'What is HTML ?'
+                            answer: A
+                            A: 'Hyper TExt Markup Language'
+                            B: 'Bla Bla'
+                            C: 'Bla BLa Bla'
+                            D: 'Somethig else'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            question:
+                              type: string
+                              example: 'What is HTML ?'
+                            answer:
+                              type: string
+                              example: A
+                            A:
+                              type: string
+                              example: 'Hyper TExt Markup Language'
+                            B:
+                              type: string
+                              example: 'Bla Bla'
+                            C:
+                              type: string
+                              example: 'Bla BLa Bla'
+                            D:
+                              type: string
+                              example: 'Somethig else'
+      tags:
+        - Quizzes
+      security: []
+    put:
+      summary: 'Update Quiz'
+      operationId: updateQuiz
+      description: 'Update the specified Quiz in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Quizzes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+                  example: zqylmvabvxaqijouklsvj
+              required:
+                - title
+      security: []
+    delete:
+      summary: 'Delete Quiz'
+      operationId: deleteQuiz
+      description: 'Remove the specified resource from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Quizzes
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the quiz.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/reviews:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - Reviews
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Reviews
+      security: []
+  '/api/reviews/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    user:
+                      id: 1
+                      name: 'Dr. Barrett Kreiger'
+                      email: mueller.zelda@example.net
+                      avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                      is_instructor: 1
+                      is_admin: 0
+                    course:
+                      id: 51
+                      title: 'HTML Course'
+                      description: 'All you need to be professional in HTML'
+                      thumbnail: courses/course51/thumbnail.jpeg
+                      price: '119.99'
+                      published: 0
+                      instructor:
+                        id: 1
+                        name: 'Dr. Barrett Kreiger'
+                        email: mueller.zelda@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '4.5'
+                    rate: 4
+                    comment: 'Good Course'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: 'Dr. Barrett Kreiger'
+                          email:
+                            type: string
+                            example: mueller.zelda@example.net
+                          avatar:
+                            type: string
+                            example: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor:
+                            type: integer
+                            example: 1
+                          is_admin:
+                            type: integer
+                            example: 0
+                      course:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 51
+                          title:
+                            type: string
+                            example: 'HTML Course'
+                          description:
+                            type: string
+                            example: 'All you need to be professional in HTML'
+                          thumbnail:
+                            type: string
+                            example: courses/course51/thumbnail.jpeg
+                          price:
+                            type: string
+                            example: '119.99'
+                          published:
+                            type: integer
+                            example: 0
+                          instructor:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 1
+                              name:
+                                type: string
+                                example: 'Dr. Barrett Kreiger'
+                              email:
+                                type: string
+                                example: mueller.zelda@example.net
+                              avatar:
+                                type: string
+                                example: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                              is_instructor:
+                                type: integer
+                                example: 1
+                              is_admin:
+                                type: integer
+                                example: 0
+                          rate:
+                            type: string
+                            example: '4.5'
+                      rate:
+                        type: integer
+                        example: 4
+                      comment:
+                        type: string
+                        example: 'Good Course'
+      tags:
+        - Reviews
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Reviews
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Reviews
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the review.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/sections:
+    get:
+      summary: 'Get sections'
+      operationId: getSections
+      description: 'List all sections.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 3
+                      title: Introduction
+                      lectures:
+                        -
+                          id: 16
+                          title: 'What is HTML'
+                          type: video
+                          content: courses/course51/section3/lecture16/lecture.mkv
+                      quizzes:
+                        -
+                          id: 1
+                          title: Quiz_1
+                          questions:
+                            -
+                              id: 1
+                              question: 'What is HTML ?'
+                              answer: A
+                              A: 'Hyper TExt Markup Language'
+                              B: 'Bla Bla'
+                              C: 'Bla BLa Bla'
+                              D: 'Somethig else'
+                    -
+                      id: 4
+                      title: 'Create Your first HTML page'
+                      lectures:
+                        -
+                          id: 17
+                          title: 'Main tags'
+                          type: video
+                          content: courses/course51/section4/lecture17/lecture.mkv
+                      quizzes: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        title: Introduction
+                        lectures:
+                          -
+                            id: 16
+                            title: 'What is HTML'
+                            type: video
+                            content: courses/course51/section3/lecture16/lecture.mkv
+                        quizzes:
+                          -
+                            id: 1
+                            title: Quiz_1
+                            questions:
+                              -
+                                id: 1
+                                question: 'What is HTML ?'
+                                answer: A
+                                A: 'Hyper TExt Markup Language'
+                                B: 'Bla Bla'
+                                C: 'Bla BLa Bla'
+                                D: 'Somethig else'
+                      -
+                        id: 4
+                        title: 'Create Your first HTML page'
+                        lectures:
+                          -
+                            id: 17
+                            title: 'Main tags'
+                            type: video
+                            content: courses/course51/section4/lecture17/lecture.mkv
+                        quizzes: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        title:
+                          type: string
+                          example: Introduction
+                        lectures:
+                          type: array
+                          example:
+                            -
+                              id: 16
+                              title: 'What is HTML'
+                              type: video
+                              content: courses/course51/section3/lecture16/lecture.mkv
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 16
+                              title:
+                                type: string
+                                example: 'What is HTML'
+                              type:
+                                type: string
+                                example: video
+                              content:
+                                type: string
+                                example: courses/course51/section3/lecture16/lecture.mkv
+                        quizzes:
+                          type: array
+                          example:
+                            -
+                              id: 1
+                              title: Quiz_1
+                              questions:
+                                -
+                                  id: 1
+                                  question: 'What is HTML ?'
+                                  answer: A
+                                  A: 'Hyper TExt Markup Language'
+                                  B: 'Bla Bla'
+                                  C: 'Bla BLa Bla'
+                                  D: 'Somethig else'
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 1
+                              title:
+                                type: string
+                                example: Quiz_1
+                              questions:
+                                type: array
+                                example:
+                                  -
+                                    id: 1
+                                    question: 'What is HTML ?'
+                                    answer: A
+                                    A: 'Hyper TExt Markup Language'
+                                    B: 'Bla Bla'
+                                    C: 'Bla BLa Bla'
+                                    D: 'Somethig else'
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      example: 1
+                                    question:
+                                      type: string
+                                      example: 'What is HTML ?'
+                                    answer:
+                                      type: string
+                                      example: A
+                                    A:
+                                      type: string
+                                      example: 'Hyper TExt Markup Language'
+                                    B:
+                                      type: string
+                                      example: 'Bla Bla'
+                                    C:
+                                      type: string
+                                      example: 'Bla BLa Bla'
+                                    D:
+                                      type: string
+                                      example: 'Somethig else'
+      tags:
+        - Sections
+      security: []
+    post:
+      summary: 'Create section'
+      operationId: createSection
+      description: 'Store a newly created section in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Sections
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+                  example: zwbtzfubzsucaaw
+                course_id:
+                  type: integer
+                  description: ''
+                  example: 13
+              required:
+                - title
+                - course_id
+      security: []
+  '/api/sections/{id}':
+    get:
+      summary: 'Display section'
+      operationId: displaySection
+      description: 'Display the specified section.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 3
+                    name: null
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 3
+                      name:
+                        type: string
+                        example: null
+      tags:
+        - Sections
+      security: []
+    put:
+      summary: 'Update section'
+      operationId: updateSection
+      description: 'Update the specified section in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Sections
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+                  example: tqep
+              required:
+                - title
+      security: []
+    delete:
+      summary: "Delete section\nRemove the specified section from storage."
+      operationId: deleteSectionRemoveTheSpecifiedSectionFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Sections
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the section.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Categories
+    description: "\nManaging Categories"
+  -
+    name: Courses
+    description: "\nManaging Courses"
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: Lectures
+    description: "\nManaging Lectures"
+  -
+    name: QuizQuestions
+    description: "\nManaging QuizQuestions"
+  -
+    name: Quizzes
+    description: "\nManaging Quizzes"
+  -
+    name: Reviews
+    description: "\nManaging Reviews"
+  -
+    name: Sections
+    description: "\nManaging Sections"

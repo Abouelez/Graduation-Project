@@ -23,7 +23,7 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|min:2|max:255|unique:categories,name',
-            'parent_id' => '',
+            'parent_id' => 'integer',
         ];
     }
 }

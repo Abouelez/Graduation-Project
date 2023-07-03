@@ -24,7 +24,7 @@ class StoreLectureRequest extends FormRequest
         return [
             'title' => 'required|string|min:3|max:60',
             'type' => 'required',
-            'section_id' => 'required',
+            'section_id' => 'required|integer',
             'content' => 'required|mimetypes:video/*,text/plain,text/csv,application/pdf',
         ];
     }

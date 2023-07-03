@@ -11,9 +11,9 @@ trait CourseRules
             'description' => 'required|string|min:10|max:5000',
             'thumbnail' => 'required|image|max:2048',
             'price' => 'required|numeric|min:0',
-            'category_id' => 'required',
-            'sub_category_id' => '',
-            'user_id' => 'required',
+            'category_id' => 'required|integer',
+            'sub_category_id' => 'integer',
+            'user_id' => 'required|integer',
         ];
     }
 }

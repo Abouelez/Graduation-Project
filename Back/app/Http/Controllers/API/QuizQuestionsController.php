@@ -10,10 +10,18 @@ use App\Models\QuizQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+
+/**
+ * @group QuizQuestions
+ * 
+ * Managing QuizQuestions
+ */
 class QuizQuestionsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get questions
+     * 
+     * List all questions.
      */
     public function index()
     {
@@ -30,7 +38,9 @@ class QuizQuestionsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create question
+     * 
+     * Store a newly created question in storage.
      */
     public function store(StoreQuizQuestionRequest $request)
     {
@@ -47,6 +57,8 @@ class QuizQuestionsController extends Controller
     }
 
     /**
+     * Display question
+     * 
      * Show the form for editing the specified resource.
      */
     public function edit(QuizQuestion $quizQuestion)
@@ -55,6 +67,8 @@ class QuizQuestionsController extends Controller
     }
 
     /**
+     * Update question
+     * 
      * Update the specified resource in storage.
      */
     public function update(UpdateQuizQuestionRequest $request, QuizQuestion $quizQuestion)
@@ -64,6 +78,8 @@ class QuizQuestionsController extends Controller
     }
 
     /**
+     * Delete Question
+     * 
      * Remove the specified resource from storage.
      */
     public function destroy(QuizQuestion $quizQuestion)

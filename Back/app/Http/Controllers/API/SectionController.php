@@ -11,10 +11,17 @@ use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group Sections
+ * 
+ * Managing Sections
+ */
 class SectionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get sections
+     * 
+     * List all sections.
      */
     public function index()
     {
@@ -31,7 +38,9 @@ class SectionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create section
+     * 
+     * Store a newly created section in storage.
      */
     public function store(StoreSectionRequest $request)
     {
@@ -40,7 +49,9 @@ class SectionController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display section
+     * 
+     * Display the specified section.
      */
     public function show(Section $section)
     {
@@ -56,7 +67,9 @@ class SectionController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update section
+     *
+     * Update the specified section in storage.
      */
     public function update(UpdateSectionRequest $request, Section $section)
     {
@@ -65,7 +78,8 @@ class SectionController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete section
+     * Remove the specified section from storage.
      */
     public function destroy(Section $section)
     {

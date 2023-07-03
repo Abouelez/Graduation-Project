@@ -10,15 +10,22 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * @group Lectures
+ * 
+ * Managing Lectures
+ */
 class LectureController extends Controller
 {
     /**
+     * Get Lectures
+     * 
      * Display a listing of the resource.
      */
     public function index()
     {
-        // $lectures = Lecture::with('section')->get();
-        // return LectureResource::collection($lectures);
+        $lectures = Lecture::with('section')->get();
+        return LectureResource::collection($lectures);
     }
 
     /**
@@ -30,6 +37,8 @@ class LectureController extends Controller
     }
 
     /**
+     * Create Lecture
+     * 
      * Store a newly created resource in storage.
      */
     public function store(StoreLectureRequest $request)
@@ -50,6 +59,8 @@ class LectureController extends Controller
     }
 
     /**
+     * Display Lecture
+     * 
      * Display the specified resource.
      */
     public function show(Lecture $lecture)
@@ -66,6 +77,8 @@ class LectureController extends Controller
     }
 
     /**
+     * Update Lecture
+     * 
      * Update the specified resource in storage.
      */
     public function update(Request $request, Lecture $lecture)
@@ -93,6 +106,8 @@ class LectureController extends Controller
     }
 
     /**
+     * Delete Lecture
+     * 
      * Remove the specified resource from storage.
      */
     public function destroy(Lecture $lecture)
