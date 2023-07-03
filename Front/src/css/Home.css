@@ -1,10 +1,15 @@
 
 section{
  margin-bottom: 20px;
+ 
 }
 .main-banner .main-banner-content{
  top: 20%;
  left: 15%;
+
+}
+.home-wraber-1{
+   margin-top: 100px;
 }
 .main-banner-content h4{
  font-size: 15px;

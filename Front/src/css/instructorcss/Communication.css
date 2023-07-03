@@ -1,0 +1,18 @@
+.com{
+    left: 60%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.com h2{
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.9rem;
+    max-width: 36em;
+}
+.com p{
+    color: #6a6f73;
+    margin-top: 1.6rem;
+    font-size: 15px;
+}

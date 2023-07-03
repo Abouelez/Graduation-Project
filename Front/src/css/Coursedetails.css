@@ -11,10 +11,9 @@
     position: absolute;
     margin-top: 20rem;
     margin-left: 10rem;
-    color: white;
+    color: #fedb69;
     font-weight: bold;
     font-size: 5rem;
-    background: black;
     padding: 5px 10px;
     border-radius: 20px;
     cursor: pointer;
@@ -91,9 +90,8 @@
     font-size: 30px;
     font-weight: bold;
     margin-top: 10rem;
-    background-color: #050d36;
     width: 30rem;
-    color: #fff;
+    color: blue;
     padding: 5px 10px;
     border-radius: 20px;
     cursor: pointer;
@@ -102,9 +100,8 @@
     font-size: 30px;
     font-weight: bold;
     margin-top: 10rem;
-    background-color: #050d36;
     width: 30rem;
-    color: #fff;
+    color: blue;
     padding: 5px 10px;
     border-radius: 20px;
     cursor: pointer;

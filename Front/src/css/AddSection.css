@@ -1,0 +1,59 @@
+.Add{
+    margin: 4.8rem 0 2.4rem;
+    padding:1.5rem;
+    align-items: center;
+    width: 70%;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    justify-content: space-between;
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+    display: block;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #f7f9fa;
+}
+@media(max-width:767px){
+    .Add{
+        width: 100%;
+    }
+}
+.N{
+    display: block;
+    align-items: center;
+}
+.N h2,
+span{
+    font-weight: bold;
+}
+.N span{
+    font-size: 20px;
+    margin-right: 3px;
+}
+input{
+    width: 100%;
+    padding: 7px;
+    font-size: 15px;
+}
+.N{
+    margin-top: 5px;
+}
+.foot{
+    display: flex;
+    position: absolute;
+    right:1.5rem;
+    align-items: center;
+}
+.foot h2{
+    font-size: 15px;
+    cursor: pointer;
+}
+.foot button{
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
