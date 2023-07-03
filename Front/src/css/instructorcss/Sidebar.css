@@ -1,0 +1,41 @@
+.Sidebar{
+    background-color: #000;
+    color: #fff;
+    height: 250vh;
+    width: 200px;
+    transition: all 0.5s;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+}
+.top-section{
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo{
+    font-size: 30px;
+}
+.bars{
+    font-size: 25px;
+    display: flex;
+    margin-left: 50px;
+}
+.link{
+    display: flex;
+    color: #fff;
+    padding: 15px 20px;
+    gap: 15px;
+    transition: all 0.5s;
+}
+.link:hover{
+    background-color: lightskyblue;
+    color: #000;
+    transition: all 0.5s;
+}
+.active{
+    background-color: lightskyblue;
+    color: #000;
+}

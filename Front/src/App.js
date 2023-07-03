@@ -15,7 +15,6 @@ function App() {
     <>
     <BrowserRouter>
     <NavBar/>
-    <NavCategorySearch/>
      <Routes>
       <Route path="/" element={ <HomePage/> }/>
       <Route path="/login" element={ <Login/> }/>

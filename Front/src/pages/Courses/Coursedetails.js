@@ -4,10 +4,10 @@ import { TbCalendarStats } from "react-icons/tb"
 const Coursedetails = () => {
     return (
         <>
-            <div className='photo'>
+            {/* <div className='photo'>
                 <h1 className='h1'>Course Details</h1>
                 <img src="/images/pt.jpg" alt="" />
-            </div>
+            </div> */}
             <div className='section_details'>
                 <div className='image'>
                     <img src="/images/imm.jpg" alt="" />

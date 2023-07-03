@@ -24,23 +24,20 @@ const AllCourses = () => {
   if (courses)
     console.log(courses);
 
-    let pageCount = 0;
-    if (courses)
-        pageCount = courses.meta.last_page
+  let pageCount = 0;
+  if (courses)
+    pageCount = courses.meta.last_page
 
-    //when press pagination
-    const getPage = (page) => {
-      dispatch(getAllCoursesPage(page));
-    }
+  //when press pagination
+  const getPage = (page) => {
+    dispatch(getAllCoursesPage(page));
+  }
 
 
 
   return (
     <>
-
-
       <section>
-
         <div className='container'>
           <SearchCountResult title='355 courses' />
           <Row className='d-flex flex-row'>
@@ -68,8 +65,6 @@ const AllCourses = () => {
           </Row>
           {courses && (
             <Pagination pageCount={pageCount} onPress={getPage} />
-             
-            
           )}
         </div>
       </section>
