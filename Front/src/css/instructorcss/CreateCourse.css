@@ -1,35 +1,23 @@
 .F{
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: aliceblue;
     width: 500px;
-    /* height: 664.6px; */
-}
-label{
-    color: red;
+    min-height: 50rem;
+    padding: 25px;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     position: relative;
-    top: -20px;
-    font-size: 20px;
-    font-weight: bold;
-    position: relative;
-    left: 20%;
+    top: 75px;
+    margin-bottom: 140px;
 }
 form .in{
-    width: 300px;
-    height: 40px;
-    /* padding: 10px; */
-    font-size: 20px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.511);
-    margin-bottom: 40px;
-    position: relative;
-    top: 15px;
-    left: 20%;
-}form input:focus::-webkit-input-placeholder{
+    width: 10rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    top: 91%;
+}
+form input:focus::-webkit-input-placeholder{
     opacity: 0;
     transition: .3s ease-in-out;
 }
@@ -47,12 +35,19 @@ form input::placeholder{
     min-height: 100vh;
 } */
 .AK{
-    background-color: #0036ffb0;
-    color: #fff;
     font-weight: bold;
     position: relative;
     position: absolute;
-    top: 100%;
+    top: 102%;
     width: 10rem;
     left: 80%;
+}
+@media screen and (max-width:767px) {
+    .F{
+        width: 375px;
+    }
+    .AK{
+        position: absolute;
+        left: 74%;
+    }
 }

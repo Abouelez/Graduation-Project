@@ -4,111 +4,76 @@
  */
 
  .form{
-    width: 700px;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 4px 12px rgba(0,0,0,.08);
-    /* left: 200px; */
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 20px;
-    font-size: 20px;
+    background-color: aliceblue;
+    width: 500px;
+    padding: 25px;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+    top: 80px;
+    margin-bottom: 100px;
 }
-@media (max-width:767px){
+@media screen and (max-width:767px) {
     .form{
-        display: initial;
-        box-shadow: 0 0px 0px rgba(0,0,0,.1), 0px 0px rgba(0,0,0,.08);
-    }
-    .form .I{
-        width: 25rem;
-        margin: 10px;
-        padding: 10px 20px;
-        border-top: 2px solid #ccc;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        border-bottom: 2px solid #ccc;
-        font-size: 15px;
-    }
-    /* .form label{
-        position: initial;
-        margin-left: 65px;
-    } */
-    .form .submit{
-        position: relative;
-        left: 70px;
-        top: 10px;
-    }
-    .form .le{
-
+        width: 375px;
     }
 }
 .form input::placeholder{
     font-size: 17px;
     color: #beb8b8;
 }
-.I{
-    width: 40rem;
-    margin: 10px;
-    padding: 10px 20px;
-    border-top:2px solid #ccc;
-    border-left:1px solid #ccc;
-    border-right:1px solid #ccc;
-    border-bottom:2px solid #ccc;
-    font-size: 15px;
-    margin-top: 30px;
+.input_box .name{
+    padding: 14px 10px 14px 50px;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #0003;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+    height: 40px;
+}
+.icons{
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    bottom: 0px;
+    color: #0003;
+    background-color: #f1f1f1;
+    border-radius: 2px 0 0 2px;
+    transition: 0.3s ;
+    font-size: 20px;
+    pointer-events: none;
+    border: 1px solid #00000003;
+    padding: 9px 0;
+    border-right: none;
 }
 .submit{
     padding: 10px 30px;
     font-size: 15px;
     font-weight: bold;
     position: relative;
-    top: 65px;
-    right: -294px;
+    top: 85px;
+    right: -370px;
     width: auto;
     border: none;
 }
-.La{
-    color: #ccc;
-    position: relative;
-    top: 10px;
-    /* text-align: center; */
-    left: -17rem;
-}
-.Lb{
-    color: #ccc;
-    position: relative;
-    top: 10px;
-    /* text-align: center; */
-    left: -17rem;
-}
-.Lc{
-    color: #ccc;
-    position: relative;
-    top: 10px;
-    /* text-align: center; */
-    left: -15rem;
-}
-.Ld{
-    color: #ccc;
-    position: relative;
-    top: 10px;
-    text-align: center; 
-    left: -12rem; 
-}
-
-.Le{
-    color: #ccc;
-    position: relative;
-    top: 10px;
-    /* text-align: center; */
-    left: -13rem;
+@media screen and (max-width:767px) {
+    .submit{
+        right: -246px;
+    }
 }
 .Img{
     width: 200px;
     height: 200px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
 .Img img{
     width: 100%;
@@ -116,16 +81,9 @@
     border-radius: 50%;
 }
 .II{
-    width: 10.5rem;
-    position: relative;
-    /* left: 0px; */
-    top: -20px;;
-}
-@media(max-width:767px){
-    .II{
-        width: 52%;
-        position: relative;
-        top: -20px;
-        left: 0px;
-    }
+        width: 10rem;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        top: 47%;;
 }

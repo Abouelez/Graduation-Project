@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../css/Resources.css"
+import "../../css/instructorcss/Resources.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChalkboardUser,faComment,faBellConcierge ,faBell} from '@fortawesome/free-solid-svg-icons'
 const Resources = () => {
@@ -12,7 +12,7 @@ const Resources = () => {
       <div className='name'>AG</div>
     </div>
  <div className='A'>
-      <h1>Resources</h1>
+      <h1  className='h'>Resources</h1>
     </div>
     <div className='head'>
         <div className='Container'>

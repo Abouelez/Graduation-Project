@@ -16,6 +16,7 @@ const courseReducer = (state = inital, action) => {
       default:
         return state;
     }
+    
   };
   
   export default courseReducer;

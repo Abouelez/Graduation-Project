@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../css/Videos.css"
+import "../../css/instructorcss/Videos.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBell} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
@@ -15,11 +15,11 @@ const Videos = () => {
       <div className='name'>AG</div>
     </div>
     <div className='A'>
-      <h1>Cources</h1>
+      <h1 className='h'>Cources</h1>
     </div>
-    <div className='H'>
+    <div className='H '>
       <span>Jump Into Course Creation</span>
-      <a href='' onClick={()=>{route('/CreateCourse')}}>Create Your Course</a>
+      <a href=''className='button' onClick={()=>{route('/CreateCourse')}}>Create Your Course</a>
     </div>
     <div className='title'><h2>Based on your experience, we think these resources will be helpful.</h2></div>
     <h2 className='title'>Based on your experience, we think these resources will be helpful.</h2>
@@ -29,7 +29,7 @@ const Videos = () => {
         <p>Whether you've been teaching for years or are teaching for the first time, you can make an engaging
           course. We've compiled resources and best practices to help you get to the next
             level, no matter where you're starting.</p>
-            <button>Get Started</button>
+            <button className='button'>Get Started</button>
       </div>
       <div className='left-section'>
         <img src='/images/engaging-course.jpg' alt=""/>
@@ -42,7 +42,7 @@ const Videos = () => {
           faster! Eligible instructors who publish their first course on time will receive a special
            bonus to celebrate. Start today!
             level, no matter where you're starting.</p>
-            <button>Get Started</button>
+            <button className='button'>Get Started</button>
       </div>
       <div className='left-section'>
         <img src='/images/newcomer-challenge.jpg' alt=""/>

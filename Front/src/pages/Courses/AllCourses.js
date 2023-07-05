@@ -5,41 +5,35 @@ import { Col, Row } from 'react-bootstrap';
 import SideFilter from '../../component/utility/SideFilter';
 import CourseCard from '../../component/Courses/CourseCard'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAllCourses } from '../../redux/actions/courseAction'
-
 import { Spinner } from 'react-bootstrap'
 import Pagination from '../../component/utility/Pagination';
+import UseCoursesSearchHook from '../../Hook/Courses/UseCoursesSearchHook';
 import { getAllCoursesPage } from '../../redux/actions/courseAction';
+
 const AllCourses = () => {
 
+  const [courses, total, result, onPress, getCourse] = UseCoursesSearchHook();
   const dispatch = useDispatch();
 
+  // const {courses, loading } = useSelector(state => state.allCourses);
+  // if (courses)
+  let totall 
+  let pageCount 
 
-  useEffect(() => {
-    dispatch(getAllCourses());
-  }, []);
 
-
-  const { courses, loading } = useSelector(state => state.allCourses);
-  if (courses)
-    console.log(courses);
-
-  let pageCount = 0;
-  if (courses)
-    pageCount = courses.meta.last_page
-
-  //when press pagination
-  const getPage = (page) => {
-    dispatch(getAllCoursesPage(page));
+  if (total) {
+    pageCount = total;
+    totall = result;
+  } else {
+    pageCount = 0;
   }
-
-
 
   return (
     <>
       <section>
+
         <div className='container'>
-          <SearchCountResult title='355 courses' />
+          <SearchCountResult title={`${totall} courses`} />
           <Row className='d-flex flex-row'>
             <Col sm='2' xs='2' md='1' className='d-flex'>
               <SideFilter />
@@ -48,8 +42,8 @@ const AllCourses = () => {
               <div className='row'>
                 <div className='col-12'>
                   <div className='courses d-flex justify-content-between align-items-center flex-wrap gap-4'>
-                    {courses ? (
-                      courses.data.map((course) => (
+                    {courses && Array.isArray(courses) ? (
+                      courses.map((course) => (
                         <CourseCard
                           key={course.id}
                           course={course}
@@ -63,9 +57,9 @@ const AllCourses = () => {
               </div>
             </Col>
           </Row>
-          {courses && (
-            <Pagination pageCount={pageCount} onPress={getPage} />
-          )}
+          {
+            courses && (<Pagination pageCount={pageCount} onPress={onPress} />)
+          }
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
 import React from 'react'
-import "../../css/Communication.css"
+import "../../css/instructorcss/Communication.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope ,faBell} from '@fortawesome/free-solid-svg-icons'
+import { faBell, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const Communication = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const Communication = () => {
       <div className='name'>AG</div>
     </div>
     <div className='A'>
-      <h1>Message</h1>
+      <h1 className='h'>Message</h1>
     </div>
     <div className='com'>
     <FontAwesomeIcon className='i' icon={faEnvelope} />

@@ -1,3 +1,6 @@
+.h{
+  color: rgb(16, 80, 190);
+}
 .H{
       margin: 4.8rem 0 2.4rem;
       padding: 4.8rem;
@@ -27,15 +30,11 @@
       -webkit-user-select: none;
       vertical-align: bottom;
       white-space: nowrap;
-      background-color: #5624d0;
       text-decoration: none;
       padding: 10px 30px;
-      color: #fff;
       border-radius: 10px;
       transition: all 0.5s;
-  }
-  .H a:hover{
-    background-color: #6040b1;
+      font-weight: bold;
   }
   .H span{
     font-size: 15px;

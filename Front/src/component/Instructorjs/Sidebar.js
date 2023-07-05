@@ -1,4 +1,5 @@
 import React, {Children, useState } from 'react'
+import "../../css/instructorcss/Sidebar.css"
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faVideo,faMessage,faChartSimple,faWrench,faCircleExclamation } from '@fortawesome/free-solid-svg-icons'
@@ -17,11 +18,6 @@ const toggle=()=>setopen(!open);
       path:"/Communication",
       name:"Communication",
       icon:<FontAwesomeIcon icon={faMessage} />
-    },
-    {
-      path:"/performance",
-      name:"Performance",
-      icon:<FontAwesomeIcon icon={faChartSimple} />
     },
     {
       path:"/Tools",

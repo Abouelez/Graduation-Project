@@ -1,19 +1,19 @@
 import React from 'react'
-import "../../css/Tools.css"
+import "../../css/instructorcss/Tools.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVideo , faThumbtack , faFillDrip ,faBell} from '@fortawesome/free-solid-svg-icons'
 const Tools = () => {
   return (
     <>
     <div className='head-titlt'>
-      <h4>Student</h4>
+      <h4 className='h'>Student</h4>
       <p>Switch to the student view here - get back to the courses you’re taking.</p>
       <FontAwesomeIcon className='i' icon={faBell} />
       <div className='name'>AG</div>
     </div>
     <i class="fa-solid fa-thumbtack"></i>
     <div className='A'>
-      <h1>Tools</h1>
+      <h1  className='h'>Tools</h1>
     </div>
     <div className='head'>
         <div className='Container'>

@@ -1,10 +1,8 @@
 /*Footer*/
 footer{
- background-color: #000;
+ background-color: #010c1d;
 }
-footer:not(:first-of-type){
- border-top: 2px solid var(--color-3b4149);
-}
+
 footer .input-group-text {
  background-color: var(--color-232f3e);
  color: white;
@@ -12,7 +10,16 @@ footer .input-group-text {
  text-transform: uppercase;
  font-size: 12px;
 }
-.lfooter h2{
+.footer2 h2{
  color: rgb(20, 94, 224);
 }
+.gap-15{
+    gap: 30px;
+}
+@media screen and (max-width:800px){
+    .footer2 .social_icons{
+        gap: 10px;
+    }
+}
+
 /*End Footer*/

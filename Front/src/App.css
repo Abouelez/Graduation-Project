@@ -17,6 +17,7 @@
  padding: 13px 33px;
  font-size: 14px;
  transition: all 0.5s;
+ border: none;
 }
 .button:hover{
 background-color: var(--color-232f3e);
@@ -75,3 +76,6 @@ text-decoration: none;
     transition: all 0.2s;
   } 
   
+section {
+  margin-top: 88px;
+}

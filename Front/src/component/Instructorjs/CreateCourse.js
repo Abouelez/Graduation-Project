@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
-import "../../css/CreateCourse.css"
+import "../../css/instructorcss/CreateCourse.css"
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBell} from '@fortawesome/free-solid-svg-icons'
+import {faBell, faEnvelope, faInstitution, faMapMarker,faccVisa, faCcPaypal, faUser, faCreditCard, faLock, faPhone, faHeading, faAudioDescription, faMoneyBill, faIdCard, faMobileScreenButton} from '@fortawesome/free-solid-svg-icons'
+import { FaAudioDescription } from 'react-icons/fa';
 const CreateCourse = () => {
     const[Title,setTitle]=useState('');
     const[desc,setdesc]=useState('');
@@ -69,34 +70,31 @@ const CreateCourse = () => {
                 <FontAwesomeIcon className='i' icon={faBell} />
                 <div className='name'>AG</div>
             </div>
-            <h1 className='T'>Create Your Course</h1>
                 <form onSubmit={handsubmit} className='F'>
-                            <div>
-                                <input className='in' type="text" onChange={handTitle} placeholder="Title">
-                                </input>
+                <h1 className=' h T' style={{textAlign:"center"}}>Create Your Course</h1>
+                            <div className='input_group'>
+                                <input className='name' type="text" onChange={handTitle} placeholder="Title"/>
+                                <FontAwesomeIcon icon={faHeading} className='icons' />
                             </div>
-                            {Title?
-                            <label>Title can't be empty</label>:""}  
-                            <div>
-                                <input className='in' type="text" onChange={handdesc} placeholder="Description"></input>
+                            <div className='input_group'>
+                                <input className='name' type="text" onChange={handdesc} placeholder="Description"/>
+                                <FontAwesomeIcon icon={faAudioDescription} className='icons' />
                             </div>
-                            {desc?
-                            <label>desc can't be empty</label>:""}
-                            <div>
-                                <input className='in' type="text" onChange={handprice} placeholder="price">
-                                </input>
+                            <div className='input_group'>
+                                <input className='name' type="text" onChange={handprice} placeholder="price"/>
+                                <FontAwesomeIcon icon={faMoneyBill} className='icons' />
                             </div>                          
-                            <div>
-                                <input className='in' type="text" onChange={handuser} placeholder="user_id">
-                                </input>
+                            <div className='input_group'>
+                                <input className='name' type="text" onChange={handuser} placeholder="user_id"/>
+                                <FontAwesomeIcon icon={faIdCard} className='icons' />
                             </div>
-                            <div>
-                                <input className='in' type="text" onChange={handcategory} placeholder="category_id">
-                                </input>
+                            <div className='input_group'>
+                                <input className='name' type="text" onChange={handcategory} placeholder="category_id"/>
+                                <FontAwesomeIcon icon={faIdCard} className='icons' />
                             </div>
-                            <div>
-                                <input className='in' type="text" onChange={handsubcategory} placeholder="sub-category_id">
-                                </input>
+                            <div className='input_group'>
+                                <input className='name' type="text" onChange={handsubcategory} placeholder="sub-category_id"/>
+                                <FontAwesomeIcon icon={faMobileScreenButton} className='icons' />
                             </div>
 
                             <div>
@@ -104,7 +102,7 @@ const CreateCourse = () => {
                             
                             </div>
                             <div>
-                                <input className='AK' type="submit" value="Create"></input>
+                                <button className=' button AK'>Create</button>
                         </div>  
                 </form>
         </>

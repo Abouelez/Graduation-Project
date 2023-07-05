@@ -4,8 +4,8 @@ import axios from 'axios';
 //get all courses
 export const getAllCourses = () => async (dispatch) => {
   try {
-    const response = await axios.get('http://localhost:8000/api/courses ')
-    //console.log(response.data.data);
+    const response = await axios.get('http://localhost:8000/api/courses')
+   // console.log('all'+response.data.data);
     dispatch({
       type: GET_ALL_COURSE,
       payload: response.data,
@@ -28,10 +28,10 @@ const initialState = {
 export const getAllCoursesPage = (page) => async (dispatch) => {
   try {
     const response = await axios.get(`http://localhost:8000/api/courses?page=${page}`);
-    console.log('page'+response.data.data);
+    //console.log(page+response);
       dispatch({
           type: GET_ALL_COURSE,
-          payload: response.data,
+          payload: response,
       })
 
   } catch (e) {
@@ -41,3 +41,21 @@ export const getAllCoursesPage = (page) => async (dispatch) => {
       })
   }
 }
+//get all Courses with query string
+export const getAllCoursesSearch = (word) => async (dispatch) => {
+  //console.log(word);
+  try {
+    const response = await axios.get(`http://localhost:8000/api/courses/filter?${word}`);
+    dispatch({
+      type: GET_ALL_COURSE,
+      payload: response.data, // Only dispatch the 'data' property from the response
+      loading: true
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
