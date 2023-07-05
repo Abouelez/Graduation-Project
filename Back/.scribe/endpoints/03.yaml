@@ -73,19 +73,19 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: fcteqecswwlsmpnwouoa
+        example: nlssmx
         type: string
         custom: []
       course_id:
         name: course_id
         description: ''
         required: true
-        example: 4
+        example: 13
         type: integer
         custom: []
     cleanBodyParameters:
-      title: fcteqecswwlsmpnwouoa
-      course_id: 4
+      title: nlssmx
+      course_id: 13
     fileParameters: []
     responses: []
     responseFields: []
@@ -181,11 +181,11 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: hzspgp
+        example: ucgwc
         type: string
         custom: []
     cleanBodyParameters:
-      title: hzspgp
+      title: ucgwc
     fileParameters: []
     responses: []
     responseFields: []

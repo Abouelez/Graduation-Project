@@ -75,19 +75,19 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
         required: true
-        example: xqnumkxdmekifm
+        example: epndndz
         type: string
         custom: []
       section_id:
         name: section_id
         description: ''
         required: true
-        example: 9
+        example: 15
         type: integer
         custom: []
     cleanBodyParameters:
-      title: xqnumkxdmekifm
-      section_id: 9
+      title: epndndz
+      section_id: 15
     fileParameters: []
     responses: []
     responseFields: []
@@ -183,11 +183,11 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: ed
+        example: eirvlp
         type: string
         custom: []
     cleanBodyParameters:
-      title: ed
+      title: eirvlp
     fileParameters: []
     responses: []
     responseFields: []

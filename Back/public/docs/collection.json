@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "0bb4fb83-4d9e-4244-9ba8-88017dd3d3f6",
+        "_postman_id": "0467aef2-d5b5-4bd8-ba9e-8e3fda40a2fb",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -97,7 +97,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"riqnqeob\",\"parent_id\":13}"
+                            "raw": "{\"name\":\"ljcucrdwbuwurdoyyevkbo\",\"parent_id\":14}"
                         },
                         "description": "Store a newly created Category in storage.",
                         "auth": {
@@ -200,7 +200,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"zyinyggoer\",\"parent_id\":14}"
+                            "raw": "{\"name\":\"kka\",\"parent_id\":1}"
                         },
                         "description": "Update the specified Category in storage.",
                         "auth": {
@@ -263,9 +263,15 @@
                                     "value": "HTML",
                                     "description": "the word you are looking for.",
                                     "disabled": false
+                                },
+                                {
+                                    "key": "courses_per_page",
+                                    "value": "10",
+                                    "description": "Number of course per page.",
+                                    "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/courses\/search?keyword=HTML"
+                            "raw": "{{baseUrl}}\/api\/courses\/search?keyword=HTML&courses_per_page=10"
                         },
                         "method": "GET",
                         "header": [
@@ -309,7 +315,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"4.5\"}]}",
+                            "body": "{\"data\":[{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"4.5\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search\",\"per_page\":10,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -338,9 +344,15 @@
                                     "value": "asc",
                                     "description": "In which order you want to see results.",
                                     "disabled": false
+                                },
+                                {
+                                    "key": "courses_per_page",
+                                    "value": "10",
+                                    "description": "Number of course per page.",
+                                    "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/courses\/price_filter?min=20&max=1000&order=asc"
+                            "raw": "{{baseUrl}}\/api\/courses\/price_filter?min=20&max=1000&order=asc&courses_per_page=10"
                         },
                         "method": "GET",
                         "header": [
@@ -397,13 +409,19 @@
                             "path": "api\/courses",
                             "query": [
                                 {
+                                    "key": "courses_per_page",
+                                    "value": "10",
+                                    "description": "Number of course per page.",
+                                    "disabled": false
+                                },
+                                {
                                     "key": "page",
                                     "value": "1",
                                     "description": "Which page to show.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/courses?page=1"
+                            "raw": "{{baseUrl}}\/api\/courses?courses_per_page=10&page=1"
                         },
                         "method": "GET",
                         "header": [
@@ -477,37 +495,37 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "uppseptojgho",
+                                    "value": "jppfejryyxbfvrzfrwq",
                                     "type": "text",
                                     "description": "Must be at least 5 characters. Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Non vitae voluptatum rem animi autem voluptas earum.",
+                                    "value": "Sapiente nesciunt quo maiores est est corporis voluptatem.",
                                     "type": "text",
                                     "description": "Must be at least 10 characters. Must not be greater than 5000 characters."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 47,
+                                    "value": 89,
                                     "type": "text",
                                     "description": "Must be at least 0."
                                 },
                                 {
                                     "key": "category_id",
-                                    "value": 8,
+                                    "value": 16,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sub_category_id",
-                                    "value": 11,
+                                    "value": 8,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "user_id",
-                                    "value": 14,
+                                    "value": 2,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -619,7 +637,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"njx\",\"description\":\"Eius quia et iste natus omnis iusto rerum.\",\"price\":68,\"category_id\":14,\"sub_category_id\":17}"
+                            "raw": "{\"title\":\"ua\",\"description\":\"Ut voluptatem eos voluptatem ea nisi consequatur.\",\"price\":53,\"category_id\":20,\"sub_category_id\":19}"
                         },
                         "description": "Update the specified Course in storage.",
                         "auth": {
@@ -692,7 +710,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"tiaunymuprxuvdlyxu\",\"email\":\"dayne87@example.com\",\"password\":\"l:g\\\\&&|\"}"
+                            "raw": "{\"name\":\"pjxqhajioywocdwtpqp\",\"email\":\"hulda.morar@example.com\",\"password\":\"<&:A(7r\\\"\\\/<uw\\\/Lhm\"}"
                         },
                         "description": "",
                         "auth": {
@@ -723,7 +741,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"ettie50@example.com\",\"password\":\"voluptatem\"}"
+                            "raw": "{\"email\":\"feil.stella@example.net\",\"password\":\"quidem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -892,7 +910,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"iuxszfwpbbqqpnuh\",\"type\":\"cupiditate\",\"section_id\":14,\"content\":\"amet\"}"
+                            "raw": "{\"title\":\"lsec\",\"type\":\"accusamus\",\"section_id\":3,\"content\":\"voluptate\"}"
                         },
                         "description": "Store a newly created resource in storage.",
                         "auth": {
@@ -1121,7 +1139,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"kysscqjnwuaansnpcumuxnmgz\",\"answer\":\"j\",\"A\":\"nmzsiiyrdddx\",\"B\":\"lvdpkrxwdyvavratqbn\",\"quiz_id\":14}"
+                            "raw": "{\"question\":\"wqmteezncm\",\"answer\":\"z\",\"A\":\"agdotltbwmyncyvpxgxvdphsd\",\"B\":\"kiywbnfdfunylobjkyfrnxjof\",\"quiz_id\":7}"
                         },
                         "description": "Store a newly created question in storage.",
                         "auth": {
@@ -1224,7 +1242,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"rndzjorfjaipcfqjbvj\",\"answer\":\"d\",\"A\":\"cir\",\"B\":\"fvl\"}"
+                            "raw": "{\"question\":\"yrrnekt\",\"answer\":\"k\",\"A\":\"xunruhullsyi\",\"B\":\"gdfezydr\"}"
                         },
                         "description": "Update the specified resource in storage.",
                         "auth": {
@@ -1353,7 +1371,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"xqnumkxdmekifm\",\"section_id\":9}"
+                            "raw": "{\"title\":\"epndndz\",\"section_id\":15}"
                         },
                         "description": "Store a newly created Quiz in storage.",
                         "auth": {
@@ -1456,7 +1474,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"ed\"}"
+                            "raw": "{\"title\":\"eirvlp\"}"
                         },
                         "description": "Update the specified Quiz in storage.",
                         "auth": {
@@ -1811,7 +1829,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"fcteqecswwlsmpnwouoa\",\"course_id\":4}"
+                            "raw": "{\"title\":\"nlssmx\",\"course_id\":13}"
                         },
                         "description": "Store a newly created section in storage.",
                         "auth": {
@@ -1914,7 +1932,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"hzspgp\"}"
+                            "raw": "{\"title\":\"ucgwc\"}"
                         },
                         "description": "Update the specified section in storage.",
                         "auth": {

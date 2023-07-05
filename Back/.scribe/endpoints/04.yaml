@@ -73,35 +73,35 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
         required: true
-        example: iuxszfwpbbqqpnuh
+        example: lsec
         type: string
         custom: []
       type:
         name: type
         description: ''
         required: true
-        example: cupiditate
+        example: accusamus
         type: string
         custom: []
       section_id:
         name: section_id
         description: ''
         required: true
-        example: 14
+        example: 3
         type: integer
         custom: []
       content:
         name: content
         description: ''
         required: true
-        example: amet
+        example: voluptate
         type: string
         custom: []
     cleanBodyParameters:
-      title: iuxszfwpbbqqpnuh
-      type: cupiditate
-      section_id: 14
-      content: amet
+      title: lsec
+      type: accusamus
+      section_id: 3
+      content: voluptate
     fileParameters: []
     responses: []
     responseFields: []

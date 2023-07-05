@@ -29,6 +29,7 @@ class CourseController extends Controller
      * 
      * Display a listing of all courses.
      * 
+     * @queryParam courses_per_page Number of course per page. Example: 10
      * @queryParam page Which page to show. Example: 1
      */
     public function index(Request $request)
@@ -137,16 +138,16 @@ class CourseController extends Controller
      * Searches for course names and course descriptions and returns any courses that match the keyword
      * 
      * @queryParam keyword the word you are looking for. Example: HTML
+     * @queryParam courses_per_page Number of course per page. Example: 10
      */
 
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-        $results = Course::where('title', 'LIKE', "%$keyword%")
+        $numOfCoursePerPage = $request->courses_per_page ?? 10;
+        $results = Course::accepted()->where('title', 'LIKE', "%$keyword%")
             ->orWhere('description', 'LIKE', "%$keyword%")
-            ->get();
-
-
+            ->paginate($numOfCoursePerPage);
         return CourseResource::collection($results);
     }
 
@@ -158,6 +159,7 @@ class CourseController extends Controller
      * @queryParam min number Minimum price. Example: 20
      * @queryParam max number Maximum price. Example: 1000
      * @queryParam order string In which order you want to see results. Example:asc
+     * @queryParam courses_per_page Number of course per page. Example: 10
      */
 
     public function priceFilter(Request $request)

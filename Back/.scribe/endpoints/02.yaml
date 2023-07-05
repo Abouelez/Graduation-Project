@@ -73,19 +73,19 @@ endpoints:
         name: name
         description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: riqnqeob
+        example: ljcucrdwbuwurdoyyevkbo
         type: string
         custom: []
       parent_id:
         name: parent_id
         description: ''
         required: false
-        example: 13
+        example: 14
         type: integer
         custom: []
     cleanBodyParameters:
-      name: riqnqeob
-      parent_id: 13
+      name: ljcucrdwbuwurdoyyevkbo
+      parent_id: 14
     fileParameters: []
     responses: []
     responseFields: []
@@ -181,19 +181,19 @@ endpoints:
         name: name
         description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: zyinyggoer
+        example: kka
         type: string
         custom: []
       parent_id:
         name: parent_id
         description: ''
         required: false
-        example: 14
+        example: 1
         type: integer
         custom: []
     cleanBodyParameters:
-      name: zyinyggoer
-      parent_id: 14
+      name: kka
+      parent_id: 1
     fileParameters: []
     responses: []
     responseFields: []

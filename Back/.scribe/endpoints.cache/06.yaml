@@ -75,43 +75,43 @@ endpoints:
         name: question
         description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
         required: true
-        example: kysscqjnwuaansnpcumuxnmgz
+        example: wqmteezncm
         type: string
         custom: []
       answer:
         name: answer
         description: 'Must be 1 character.'
         required: true
-        example: j
+        example: z
         type: string
         custom: []
       A:
         name: A
         description: 'Must be at least 1 character. Must not be greater than 100 characters.'
         required: true
-        example: nmzsiiyrdddx
+        example: agdotltbwmyncyvpxgxvdphsd
         type: string
         custom: []
       B:
         name: B
         description: 'Must be at least 1 character. Must not be greater than 100 characters.'
         required: true
-        example: lvdpkrxwdyvavratqbn
+        example: kiywbnfdfunylobjkyfrnxjof
         type: string
         custom: []
       quiz_id:
         name: quiz_id
         description: ''
         required: true
-        example: 14
+        example: 7
         type: integer
         custom: []
     cleanBodyParameters:
-      question: kysscqjnwuaansnpcumuxnmgz
-      answer: j
-      A: nmzsiiyrdddx
-      B: lvdpkrxwdyvavratqbn
-      quiz_id: 14
+      question: wqmteezncm
+      answer: z
+      A: agdotltbwmyncyvpxgxvdphsd
+      B: kiywbnfdfunylobjkyfrnxjof
+      quiz_id: 7
     fileParameters: []
     responses: []
     responseFields: []
@@ -207,35 +207,35 @@ endpoints:
         name: question
         description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
         required: true
-        example: rndzjorfjaipcfqjbvj
+        example: yrrnekt
         type: string
         custom: []
       answer:
         name: answer
         description: 'Must be 1 character.'
         required: true
-        example: d
+        example: k
         type: string
         custom: []
       A:
         name: A
         description: 'Must be at least 1 character. Must not be greater than 50 characters.'
         required: true
-        example: cir
+        example: xunruhullsyi
         type: string
         custom: []
       B:
         name: B
         description: 'Must be at least 1 character. Must not be greater than 50 characters.'
         required: true
-        example: fvl
+        example: gdfezydr
         type: string
         custom: []
     cleanBodyParameters:
-      question: rndzjorfjaipcfqjbvj
-      answer: d
-      A: cir
-      B: fvl
+      question: yrrnekt
+      answer: k
+      A: xunruhullsyi
+      B: gdfezydr
     fileParameters: []
     responses: []
     responseFields: []

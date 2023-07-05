@@ -33,15 +33,23 @@ endpoints:
         example: HTML
         type: string
         custom: []
+      courses_per_page:
+        name: courses_per_page
+        description: 'Number of course per page.'
+        required: false
+        example: 10
+        type: integer
+        custom: []
     cleanQueryParameters:
       keyword: HTML
+      courses_per_page: 10
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"4.5"}]}'
+        content: '{"data":[{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"4.5"}],"links":{"first":"http:\/\/localhost\/api\/courses\/search?page=1","last":"http:\/\/localhost\/api\/courses\/search?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/courses\/search?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/courses\/search","per_page":10,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -98,10 +106,18 @@ endpoints:
         example: asc
         type: string
         custom: []
+      courses_per_page:
+        name: courses_per_page
+        description: 'Number of course per page.'
+        required: false
+        example: 10
+        type: integer
+        custom: []
     cleanQueryParameters:
       min: 20.0
       max: 1000.0
       order: asc
+      courses_per_page: 10
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -144,6 +160,13 @@ endpoints:
     urlParameters: []
     cleanUrlParameters: []
     queryParameters:
+      courses_per_page:
+        name: courses_per_page
+        description: 'Number of course per page.'
+        required: false
+        example: 10
+        type: integer
+        custom: []
       page:
         name: page
         description: 'Which page to show.'
@@ -152,6 +175,7 @@ endpoints:
         type: integer
         custom: []
     cleanQueryParameters:
+      courses_per_page: 10
       page: 1
     bodyParameters: []
     cleanBodyParameters: []
@@ -201,14 +225,14 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: uppseptojgho
+        example: jppfejryyxbfvrzfrwq
         type: string
         custom: []
       description:
         name: description
         description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
         required: true
-        example: 'Non vitae voluptatum rem animi autem voluptas earum.'
+        example: 'Sapiente nesciunt quo maiores est est corporis voluptatem.'
         type: string
         custom: []
       thumbnail:
@@ -222,37 +246,37 @@ endpoints:
         name: price
         description: 'Must be at least 0.'
         required: true
-        example: 47
+        example: 89
         type: number
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 8
+        example: 16
         type: integer
         custom: []
       sub_category_id:
         name: sub_category_id
         description: ''
         required: false
-        example: 11
+        example: 8
         type: integer
         custom: []
       user_id:
         name: user_id
         description: ''
         required: true
-        example: 14
+        example: 2
         type: integer
         custom: []
     cleanBodyParameters:
-      title: uppseptojgho
-      description: 'Non vitae voluptatum rem animi autem voluptas earum.'
-      price: 47
-      category_id: 8
-      sub_category_id: 11
-      user_id: 14
+      title: jppfejryyxbfvrzfrwq
+      description: 'Sapiente nesciunt quo maiores est est corporis voluptatem.'
+      price: 89
+      category_id: 16
+      sub_category_id: 8
+      user_id: 2
     fileParameters:
       thumbnail: null
     responses: []
@@ -349,14 +373,14 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: njx
+        example: ua
         type: string
         custom: []
       description:
         name: description
         description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
         required: true
-        example: 'Eius quia et iste natus omnis iusto rerum.'
+        example: 'Ut voluptatem eos voluptatem ea nisi consequatur.'
         type: string
         custom: []
       thumbnail:
@@ -370,21 +394,21 @@ endpoints:
         name: price
         description: 'Must be at least 0.'
         required: true
-        example: 68
+        example: 53
         type: number
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 14
+        example: 20
         type: integer
         custom: []
       sub_category_id:
         name: sub_category_id
         description: ''
         required: false
-        example: 17
+        example: 19
         type: integer
         custom: []
       user_id:
@@ -395,11 +419,11 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      title: njx
-      description: 'Eius quia et iste natus omnis iusto rerum.'
-      price: 68
-      category_id: 14
-      sub_category_id: 17
+      title: ua
+      description: 'Ut voluptatem eos voluptatem ea nisi consequatur.'
+      price: 53
+      category_id: 20
+      sub_category_id: 19
     fileParameters: []
     responses: []
     responseFields: []
