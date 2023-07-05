@@ -187,8 +187,8 @@ class CourseController extends Controller
     public function filter(Request $request)
     {
         $keyword = $request->input('keyword', '');
-        $min = $request->input('min', 0);
-        $max = $request->input('max', PHP_INT_MAX);
+        $min = $request->input('min', 0) * 100;
+        $max = $request->input('max', PHP_INT_MAX) * 100;
         $order = $request->input('order', 'desc');
         $limit = $request->input('limit', 10);
 
