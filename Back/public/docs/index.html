@@ -93,11 +93,8 @@
                     <a href="#courses">Courses</a>
                 </li>
                                     <ul id="tocify-subheader-courses" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="courses-GETapi-courses-search">
-                                <a href="#courses-GETapi-courses-search">Search</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="courses-GETapi-courses-price_filter">
-                                <a href="#courses-GETapi-courses-price_filter">Price Filter</a>
+                                                    <li class="tocify-item level-2" data-unique="courses-GETapi-courses-filter">
+                                <a href="#courses-GETapi-courses-filter">Filters</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="courses-GETapi-courses">
                                 <a href="#courses-GETapi-courses">Get Courses</a>
@@ -323,7 +320,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -519,8 +516,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ljcucrdwbuwurdoyyevkbo\",
-    \"parent_id\": 14
+    \"name\": \"tta\",
+    \"parent_id\": 12
 }"
 </code></pre></div>
 
@@ -536,8 +533,8 @@ const headers = {
 };
 
 let body = {
-    "name": "ljcucrdwbuwurdoyyevkbo",
-    "parent_id": 14
+    "name": "tta",
+    "parent_id": 12
 };
 
 fetch(url, {
@@ -626,10 +623,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-categories"
-               value="ljcucrdwbuwurdoyyevkbo"
+               value="tta"
                data-component="body">
     <br>
-<p>Must be at least 2 characters. Must not be greater than 255 characters. Example: <code>ljcucrdwbuwurdoyyevkbo</code></p>
+<p>Must be at least 2 characters. Must not be greater than 255 characters. Example: <code>tta</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
@@ -637,10 +634,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="parent_id"                data-endpoint="POSTapi-categories"
-               value="14"
+               value="12"
                data-component="body">
     <br>
-<p>Example: <code>14</code></p>
+<p>Example: <code>12</code></p>
         </div>
         </form>
 
@@ -690,7 +687,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 55
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -862,8 +859,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"kka\",
-    \"parent_id\": 1
+    \"name\": \"alpqyyursxopgo\",
+    \"parent_id\": 7
 }"
 </code></pre></div>
 
@@ -879,8 +876,8 @@ const headers = {
 };
 
 let body = {
-    "name": "kka",
-    "parent_id": 1
+    "name": "alpqyyursxopgo",
+    "parent_id": 7
 };
 
 fetch(url, {
@@ -985,10 +982,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-categories--id-"
-               value="kka"
+               value="alpqyyursxopgo"
                data-component="body">
     <br>
-<p>Must be at least 2 characters. Must not be greater than 255 characters. Example: <code>kka</code></p>
+<p>Must be at least 2 characters. Must not be greater than 255 characters. Example: <code>alpqyyursxopgo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
@@ -996,10 +993,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="parent_id"                data-endpoint="PUTapi-categories--id-"
-               value="1"
+               value="7"
                data-component="body">
     <br>
-<p>Example: <code>1</code></p>
+<p>Example: <code>7</code></p>
         </div>
         </form>
 
@@ -1127,32 +1124,35 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
     <p>Managing Courses</p>
 
-                                <h2 id="courses-GETapi-courses-search">Search</h2>
+                                <h2 id="courses-GETapi-courses-filter">Filters</h2>
 
 <p>
 </p>
 
-<p>Searches for course names and course descriptions and returns any courses that match the keyword</p>
+<p>Filter by searching in names and descriptions, with price filter also</p>
 
-<span id="example-requests-GETapi-courses-search">
+<span id="example-requests-GETapi-courses-filter">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/courses/search?keyword=HTML&amp;courses_per_page=10" \
+    --get "http://localhost/api/courses/filter?keyword=HTML&amp;min=20&amp;max=1000&amp;order=asc&amp;limit=10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/courses/search"
+    "http://localhost/api/courses/filter"
 );
 
 const params = {
     "keyword": "HTML",
-    "courses_per_page": "10",
+    "min": "20",
+    "max": "1000",
+    "order": "asc",
+    "limit": "10",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -1169,7 +1169,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-courses-search">
+<span id="example-responses-GETapi-courses-filter">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1180,39 +1180,21 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 51,
-            &quot;title&quot;: &quot;HTML Course&quot;,
-            &quot;description&quot;: &quot;All you need to be professional in HTML&quot;,
-            &quot;thumbnail&quot;: &quot;courses/course51/thumbnail.jpeg&quot;,
-            &quot;price&quot;: &quot;119.99&quot;,
-            &quot;published&quot;: 0,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Dr. Barrett Kreiger&quot;,
-                &quot;email&quot;: &quot;mueller.zelda@example.net&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ee88?text=et&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;4.5&quot;
-        }
-    ],
+    &quot;data&quot;: [],
     &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://localhost/api/courses/search?page=1&quot;,
-        &quot;last&quot;: &quot;http://localhost/api/courses/search?page=1&quot;,
+        &quot;first&quot;: &quot;http://localhost/api/courses/filter?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost/api/courses/filter?page=1&quot;,
         &quot;prev&quot;: null,
         &quot;next&quot;: null
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
+        &quot;from&quot;: null,
         &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
@@ -1221,7 +1203,7 @@ access-control-allow-origin: *
                 &quot;active&quot;: false
             },
             {
-                &quot;url&quot;: &quot;http://localhost/api/courses/search?page=1&quot;,
+                &quot;url&quot;: &quot;http://localhost/api/courses/filter?page=1&quot;,
                 &quot;label&quot;: &quot;1&quot;,
                 &quot;active&quot;: true
             },
@@ -1231,51 +1213,51 @@ access-control-allow-origin: *
                 &quot;active&quot;: false
             }
         ],
-        &quot;path&quot;: &quot;http://localhost/api/courses/search&quot;,
+        &quot;path&quot;: &quot;http://localhost/api/courses/filter&quot;,
         &quot;per_page&quot;: 10,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
     }
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-courses-search" hidden>
+<span id="execution-results-GETapi-courses-filter" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-courses-search"></span>:
+                id="execution-response-status-GETapi-courses-filter"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-courses-search"
+    <pre class="json"><code id="execution-response-content-GETapi-courses-filter"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-courses-search" hidden>
+<span id="execution-error-GETapi-courses-filter" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-courses-search">
+    <pre><code id="execution-error-message-GETapi-courses-filter">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-courses-search" data-method="GET"
-      data-path="api/courses/search"
+<form id="form-GETapi-courses-filter" data-method="GET"
+      data-path="api/courses/filter"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-courses-search', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-courses-filter', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-courses-search"
-                    onclick="tryItOut('GETapi-courses-search');">Try it out ⚡
+                    id="btn-tryout-GETapi-courses-filter"
+                    onclick="tryItOut('GETapi-courses-filter');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-courses-search"
-                    onclick="cancelTryOut('GETapi-courses-search');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-courses-filter"
+                    onclick="cancelTryOut('GETapi-courses-filter');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-courses-search"
+                    id="btn-executetryout-GETapi-courses-filter"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1283,7 +1265,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/courses/search</code></b>
+            <b><code>api/courses/filter</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1291,7 +1273,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-courses-search"
+                              name="Content-Type"                data-endpoint="GETapi-courses-filter"
                value="application/json"
                data-component="header">
     <br>
@@ -1302,7 +1284,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-courses-search"
+                              name="Accept"                data-endpoint="GETapi-courses-filter"
                value="application/json"
                data-component="header">
     <br>
@@ -1314,388 +1296,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="keyword"                data-endpoint="GETapi-courses-search"
+                              name="keyword"                data-endpoint="GETapi-courses-filter"
                value="HTML"
                data-component="query">
     <br>
 <p>the word you are looking for. Example: <code>HTML</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>courses_per_page</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="courses_per_page"                data-endpoint="GETapi-courses-search"
-               value="10"
-               data-component="query">
-    <br>
-<p>Number of course per page. Example: <code>10</code></p>
-            </div>
-                </form>
-
-                    <h2 id="courses-GETapi-courses-price_filter">Price Filter</h2>
-
-<p>
-</p>
-
-<p>Filter results based on min and max values</p>
-
-<span id="example-requests-GETapi-courses-price_filter">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/courses/price_filter?min=20&amp;max=1000&amp;order=asc&amp;courses_per_page=10" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/courses/price_filter"
-);
-
-const params = {
-    "min": "20",
-    "max": "1000",
-    "order": "asc",
-    "courses_per_page": "10",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-courses-price_filter">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 50,
-            &quot;title&quot;: &quot;Sed quos quia magnam dolor enim.&quot;,
-            &quot;description&quot;: &quot;Vero quia labore in ducimus expedita ea temporibus. Fugit qui nobis distinctio doloremque. Minima sunt vitae accusantium ut. Vitae quo sequi unde quasi voluptas quae et.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/006677?text=consequatur&quot;,
-            &quot;price&quot;: &quot;35.33&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 8,
-                &quot;name&quot;: &quot;Delphia Wintheiser III&quot;,
-                &quot;email&quot;: &quot;tnitzsche@example.net&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ee99?text=debitis&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 31,
-            &quot;title&quot;: &quot;Impedit et porro deleniti rem amet quidem rerum.&quot;,
-            &quot;description&quot;: &quot;Dicta aut eius veniam rerum dolores iusto voluptas. Nobis magni recusandae ad quis. Et numquam nam dolor ad labore. Necessitatibus rerum qui consectetur quis. Reiciendis assumenda dolorem modi ipsam numquam quia ut.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/00ee33?text=laudantium&quot;,
-            &quot;price&quot;: &quot;45.95&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 10,
-                &quot;name&quot;: &quot;Mike Windler&quot;,
-                &quot;email&quot;: &quot;bwiza@example.net&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/002299?text=omnis&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 8,
-            &quot;title&quot;: &quot;Cumque est accusantium est ipsa consequuntur quidem minima.&quot;,
-            &quot;description&quot;: &quot;Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/0088dd?text=unde&quot;,
-            &quot;price&quot;: &quot;57.83&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;Mr. Lukas Bahringer&quot;,
-                &quot;email&quot;: &quot;tbogisich@example.com&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/009933?text=laudantium&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 19,
-            &quot;title&quot;: &quot;Distinctio et placeat maiores quidem.&quot;,
-            &quot;description&quot;: &quot;Magnam accusamus ut nemo voluptatem. In sunt magnam dolor cumque eaque aut ab. Reprehenderit enim natus autem cumque.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/00dd44?text=non&quot;,
-            &quot;price&quot;: &quot;70.48&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 7,
-                &quot;name&quot;: &quot;Dr. Gregory Koch II&quot;,
-                &quot;email&quot;: &quot;hazle.dickens@example.com&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/0088dd?text=cupiditate&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 42,
-            &quot;title&quot;: &quot;Est sit accusamus et corporis at eum.&quot;,
-            &quot;description&quot;: &quot;Itaque quas asperiores enim voluptatem. Consequatur quos fugit tempore velit pariatur quaerat. Illo doloribus occaecati sint in. Non quas sit sit molestiae impedit nam.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/00cc44?text=culpa&quot;,
-            &quot;price&quot;: &quot;85.86&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 6,
-                &quot;name&quot;: &quot;Leilani Gutmann&quot;,
-                &quot;email&quot;: &quot;gwen.runte@example.org&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/006688?text=quo&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 41,
-            &quot;title&quot;: &quot;Recusandae tempore ex asperiores provident.&quot;,
-            &quot;description&quot;: &quot;Nostrum expedita culpa doloribus commodi molestiae. Dolores eaque qui tempore et id. Quidem non asperiores laborum repellat corporis odit nisi aliquid.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/006677?text=inventore&quot;,
-            &quot;price&quot;: &quot;89.93&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;Mr. Lukas Bahringer&quot;,
-                &quot;email&quot;: &quot;tbogisich@example.com&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/009933?text=laudantium&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 47,
-            &quot;title&quot;: &quot;Omnis earum expedita sed atque enim.&quot;,
-            &quot;description&quot;: &quot;Ea sed molestias rem ipsum. Eius suscipit consequatur error qui qui quis fugit.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/0033cc?text=et&quot;,
-            &quot;price&quot;: &quot;98.31&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 6,
-                &quot;name&quot;: &quot;Leilani Gutmann&quot;,
-                &quot;email&quot;: &quot;gwen.runte@example.org&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/006688?text=quo&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 51,
-            &quot;title&quot;: &quot;HTML Course&quot;,
-            &quot;description&quot;: &quot;All you need to be professional in HTML&quot;,
-            &quot;thumbnail&quot;: &quot;courses/course51/thumbnail.jpeg&quot;,
-            &quot;price&quot;: &quot;119.99&quot;,
-            &quot;published&quot;: 0,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Dr. Barrett Kreiger&quot;,
-                &quot;email&quot;: &quot;mueller.zelda@example.net&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ee88?text=et&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;4.5&quot;
-        },
-        {
-            &quot;id&quot;: 16,
-            &quot;title&quot;: &quot;Illo quis incidunt est nihil qui numquam sit voluptatem.&quot;,
-            &quot;description&quot;: &quot;Id modi aut sit libero consequatur. Explicabo incidunt animi deleniti est tempora. Nihil magnam maxime illo voluptates quasi exercitationem quisquam. Et et est fuga aut non.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/009955?text=ut&quot;,
-            &quot;price&quot;: &quot;147.56&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Dr. Barrett Kreiger&quot;,
-                &quot;email&quot;: &quot;mueller.zelda@example.net&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ee88?text=et&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        },
-        {
-            &quot;id&quot;: 15,
-            &quot;title&quot;: &quot;Repellendus et qui in.&quot;,
-            &quot;description&quot;: &quot;Consequuntur quia repudiandae rem corrupti sint qui voluptates. Qui tenetur quos dolore explicabo. Sunt quasi neque architecto libero et repellat. Voluptatem vel tempore sed nihil et doloremque.&quot;,
-            &quot;thumbnail&quot;: &quot;https://via.placeholder.com/640x480.png/000077?text=et&quot;,
-            &quot;price&quot;: &quot;183.20&quot;,
-            &quot;published&quot;: 1,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 6,
-                &quot;name&quot;: &quot;Leilani Gutmann&quot;,
-                &quot;email&quot;: &quot;gwen.runte@example.org&quot;,
-                &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/006688?text=quo&quot;,
-                &quot;is_instructor&quot;: 1,
-                &quot;is_admin&quot;: 0
-            },
-            &quot;rate&quot;: &quot;0.0&quot;
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://localhost/api/courses/price_filter?page=1&quot;,
-        &quot;last&quot;: &quot;http://localhost/api/courses/price_filter?page=5&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: &quot;http://localhost/api/courses/price_filter?page=2&quot;
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 5,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://localhost/api/courses/price_filter?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: &quot;http://localhost/api/courses/price_filter?page=2&quot;,
-                &quot;label&quot;: &quot;2&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://localhost/api/courses/price_filter?page=3&quot;,
-                &quot;label&quot;: &quot;3&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://localhost/api/courses/price_filter?page=4&quot;,
-                &quot;label&quot;: &quot;4&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://localhost/api/courses/price_filter?page=5&quot;,
-                &quot;label&quot;: &quot;5&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://localhost/api/courses/price_filter?page=2&quot;,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://localhost/api/courses/price_filter&quot;,
-        &quot;per_page&quot;: 10,
-        &quot;to&quot;: 10,
-        &quot;total&quot;: 49
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-courses-price_filter" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-courses-price_filter"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-courses-price_filter"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-courses-price_filter" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-courses-price_filter">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-courses-price_filter" data-method="GET"
-      data-path="api/courses/price_filter"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-courses-price_filter', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-courses-price_filter"
-                    onclick="tryItOut('GETapi-courses-price_filter');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-courses-price_filter"
-                    onclick="cancelTryOut('GETapi-courses-price_filter');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-courses-price_filter"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/courses/price_filter</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-courses-price_filter"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-courses-price_filter"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
-                                    <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>min</code></b>&nbsp;&nbsp;
 <small>number</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="min"                data-endpoint="GETapi-courses-price_filter"
+               step="any"               name="min"                data-endpoint="GETapi-courses-filter"
                value="20"
                data-component="query">
     <br>
@@ -1706,7 +1318,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>number</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="max"                data-endpoint="GETapi-courses-price_filter"
+               step="any"               name="max"                data-endpoint="GETapi-courses-filter"
                value="1000"
                data-component="query">
     <br>
@@ -1717,18 +1329,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="order"                data-endpoint="GETapi-courses-price_filter"
+                              name="order"                data-endpoint="GETapi-courses-filter"
                value="asc"
                data-component="query">
     <br>
 <p>In which order you want to see results. Example: <code>asc</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>courses_per_page</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="courses_per_page"                data-endpoint="GETapi-courses-price_filter"
+               step="any"               name="limit"                data-endpoint="GETapi-courses-filter"
                value="10"
                data-component="query">
     <br>
@@ -1789,7 +1401,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -2181,13 +1793,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/courses" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "title=jppfejryyxbfvrzfrwq"\
-    --form "description=Sapiente nesciunt quo maiores est est corporis voluptatem."\
-    --form "price=89"\
-    --form "category_id=16"\
-    --form "sub_category_id=8"\
-    --form "user_id=2"\
-    --form "thumbnail=@/tmp/phpHGK0oI" </code></pre></div>
+    --form "title=wcu"\
+    --form "description=Numquam ullam neque officia et dolorem sit culpa."\
+    --form "price=44"\
+    --form "category_id=15"\
+    --form "sub_category_id=12"\
+    --form "user_id=11"\
+    --form "thumbnail=@/tmp/phptTwowx" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2201,12 +1813,12 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('title', 'jppfejryyxbfvrzfrwq');
-body.append('description', 'Sapiente nesciunt quo maiores est est corporis voluptatem.');
-body.append('price', '89');
-body.append('category_id', '16');
-body.append('sub_category_id', '8');
-body.append('user_id', '2');
+body.append('title', 'wcu');
+body.append('description', 'Numquam ullam neque officia et dolorem sit culpa.');
+body.append('price', '44');
+body.append('category_id', '15');
+body.append('sub_category_id', '12');
+body.append('user_id', '11');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
 
 fetch(url, {
@@ -2295,10 +1907,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-courses"
-               value="jppfejryyxbfvrzfrwq"
+               value="wcu"
                data-component="body">
     <br>
-<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>jppfejryyxbfvrzfrwq</code></p>
+<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>wcu</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2306,10 +1918,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-courses"
-               value="Sapiente nesciunt quo maiores est est corporis voluptatem."
+               value="Numquam ullam neque officia et dolorem sit culpa."
                data-component="body">
     <br>
-<p>Must be at least 10 characters. Must not be greater than 5000 characters. Example: <code>Sapiente nesciunt quo maiores est est corporis voluptatem.</code></p>
+<p>Must be at least 10 characters. Must not be greater than 5000 characters. Example: <code>Numquam ullam neque officia et dolorem sit culpa.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>thumbnail</code></b>&nbsp;&nbsp;
@@ -2320,7 +1932,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/phpHGK0oI</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/phptTwowx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -2328,10 +1940,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="price"                data-endpoint="POSTapi-courses"
-               value="89"
+               value="44"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>89</code></p>
+<p>Must be at least 0. Example: <code>44</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
@@ -2339,10 +1951,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="category_id"                data-endpoint="POSTapi-courses"
-               value="16"
+               value="15"
                data-component="body">
     <br>
-<p>Example: <code>16</code></p>
+<p>Example: <code>15</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sub_category_id</code></b>&nbsp;&nbsp;
@@ -2350,10 +1962,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="sub_category_id"                data-endpoint="POSTapi-courses"
-               value="8"
+               value="12"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -2361,10 +1973,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-courses"
-               value="2"
+               value="11"
                data-component="body">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>11</code></p>
         </div>
         </form>
 
@@ -2414,7 +2026,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -2547,11 +2159,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"ua\",
-    \"description\": \"Ut voluptatem eos voluptatem ea nisi consequatur.\",
-    \"price\": 53,
-    \"category_id\": 20,
-    \"sub_category_id\": 19
+    \"title\": \"sgrwfdlmpsyizqhsivtuwki\",
+    \"description\": \"Et adipisci est qui optio quia.\",
+    \"price\": 23,
+    \"category_id\": 17,
+    \"sub_category_id\": 16
 }"
 </code></pre></div>
 
@@ -2567,11 +2179,11 @@ const headers = {
 };
 
 let body = {
-    "title": "ua",
-    "description": "Ut voluptatem eos voluptatem ea nisi consequatur.",
-    "price": 53,
-    "category_id": 20,
-    "sub_category_id": 19
+    "title": "sgrwfdlmpsyizqhsivtuwki",
+    "description": "Et adipisci est qui optio quia.",
+    "price": 23,
+    "category_id": 17,
+    "sub_category_id": 16
 };
 
 fetch(url, {
@@ -2676,10 +2288,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-courses--id-"
-               value="ua"
+               value="sgrwfdlmpsyizqhsivtuwki"
                data-component="body">
     <br>
-<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>ua</code></p>
+<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>sgrwfdlmpsyizqhsivtuwki</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2687,10 +2299,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-courses--id-"
-               value="Ut voluptatem eos voluptatem ea nisi consequatur."
+               value="Et adipisci est qui optio quia."
                data-component="body">
     <br>
-<p>Must be at least 10 characters. Must not be greater than 5000 characters. Example: <code>Ut voluptatem eos voluptatem ea nisi consequatur.</code></p>
+<p>Must be at least 10 characters. Must not be greater than 5000 characters. Example: <code>Et adipisci est qui optio quia.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>thumbnail</code></b>&nbsp;&nbsp;
@@ -2709,10 +2321,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="price"                data-endpoint="PUTapi-courses--id-"
-               value="53"
+               value="23"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>53</code></p>
+<p>Must be at least 0. Example: <code>23</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
@@ -2720,10 +2332,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="category_id"                data-endpoint="PUTapi-courses--id-"
-               value="20"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>20</code></p>
+<p>Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sub_category_id</code></b>&nbsp;&nbsp;
@@ -2731,10 +2343,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="sub_category_id"                data-endpoint="PUTapi-courses--id-"
-               value="19"
+               value="16"
                data-component="body">
     <br>
-<p>Example: <code>19</code></p>
+<p>Example: <code>16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -2890,9 +2502,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"pjxqhajioywocdwtpqp\",
-    \"email\": \"hulda.morar@example.com\",
-    \"password\": \"&lt;&amp;:A(7r\\\"\\/&lt;uw\\/Lhm\"
+    \"name\": \"vsqelfbxts\",
+    \"email\": \"elaina.franecki@example.net\",
+    \"password\": \"J?--C+V\"
 }"
 </code></pre></div>
 
@@ -2908,9 +2520,9 @@ const headers = {
 };
 
 let body = {
-    "name": "pjxqhajioywocdwtpqp",
-    "email": "hulda.morar@example.com",
-    "password": "&lt;&amp;:A(7r\"\/&lt;uw\/Lhm"
+    "name": "vsqelfbxts",
+    "email": "elaina.franecki@example.net",
+    "password": "J?--C+V"
 };
 
 fetch(url, {
@@ -2999,10 +2611,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-auth-register"
-               value="pjxqhajioywocdwtpqp"
+               value="vsqelfbxts"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>pjxqhajioywocdwtpqp</code></p>
+<p>Must not be greater than 255 characters. Example: <code>vsqelfbxts</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -3010,10 +2622,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-register"
-               value="hulda.morar@example.com"
+               value="elaina.franecki@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>hulda.morar@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>elaina.franecki@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -3021,10 +2633,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-register"
-               value="<&:A(7r"/<uw/Lhm"
+               value="J?--C+V"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>&lt;&amp;:A(7r"/&lt;uw/Lhm</code></p>
+<p>Must be at least 8 characters. Example: <code>J?--C+V</code></p>
         </div>
         </form>
 
@@ -3045,8 +2657,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"feil.stella@example.net\",
-    \"password\": \"quidem\"
+    \"email\": \"kuhic.berneice@example.com\",
+    \"password\": \"sit\"
 }"
 </code></pre></div>
 
@@ -3062,8 +2674,8 @@ const headers = {
 };
 
 let body = {
-    "email": "feil.stella@example.net",
-    "password": "quidem"
+    "email": "kuhic.berneice@example.com",
+    "password": "sit"
 };
 
 fetch(url, {
@@ -3152,10 +2764,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-auth-login"
-               value="feil.stella@example.net"
+               value="kuhic.berneice@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>feil.stella@example.net</code></p>
+<p>Must be a valid email address. Example: <code>kuhic.berneice@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -3163,10 +2775,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-login"
-               value="quidem"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>quidem</code></p>
+<p>Example: <code>sit</code></p>
         </div>
         </form>
 
@@ -3452,7 +3064,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 50
+x-ratelimit-remaining: 52
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -3570,10 +3182,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"lsec\",
-    \"type\": \"accusamus\",
-    \"section_id\": 3,
-    \"content\": \"voluptate\"
+    \"title\": \"z\",
+    \"type\": \"deleniti\",
+    \"section_id\": 18,
+    \"content\": \"optio\"
 }"
 </code></pre></div>
 
@@ -3589,10 +3201,10 @@ const headers = {
 };
 
 let body = {
-    "title": "lsec",
-    "type": "accusamus",
-    "section_id": 3,
-    "content": "voluptate"
+    "title": "z",
+    "type": "deleniti",
+    "section_id": 18,
+    "content": "optio"
 };
 
 fetch(url, {
@@ -3681,10 +3293,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-lectures"
-               value="lsec"
+               value="z"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 60 characters. Example: <code>lsec</code></p>
+<p>Must be at least 3 characters. Must not be greater than 60 characters. Example: <code>z</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
@@ -3692,10 +3304,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="type"                data-endpoint="POSTapi-lectures"
-               value="accusamus"
+               value="deleniti"
                data-component="body">
     <br>
-<p>Example: <code>accusamus</code></p>
+<p>Example: <code>deleniti</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>section_id</code></b>&nbsp;&nbsp;
@@ -3703,10 +3315,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="section_id"                data-endpoint="POSTapi-lectures"
-               value="3"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>18</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
@@ -3714,10 +3326,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="content"                data-endpoint="POSTapi-lectures"
-               value="voluptate"
+               value="optio"
                data-component="body">
     <br>
-<p>Example: <code>voluptate</code></p>
+<p>Example: <code>optio</code></p>
         </div>
         </form>
 
@@ -3767,7 +3379,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 49
+x-ratelimit-remaining: 51
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -4162,7 +3774,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 46
+x-ratelimit-remaining: 48
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -4269,11 +3881,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"question\": \"wqmteezncm\",
-    \"answer\": \"z\",
-    \"A\": \"agdotltbwmyncyvpxgxvdphsd\",
-    \"B\": \"kiywbnfdfunylobjkyfrnxjof\",
-    \"quiz_id\": 7
+    \"question\": \"ysuxdochsxwzswblzmqtl\",
+    \"answer\": \"v\",
+    \"A\": \"wibuervcueehjhcfyoyks\",
+    \"B\": \"psbfdmojxksabluvllakirrz\",
+    \"quiz_id\": 12
 }"
 </code></pre></div>
 
@@ -4289,11 +3901,11 @@ const headers = {
 };
 
 let body = {
-    "question": "wqmteezncm",
-    "answer": "z",
-    "A": "agdotltbwmyncyvpxgxvdphsd",
-    "B": "kiywbnfdfunylobjkyfrnxjof",
-    "quiz_id": 7
+    "question": "ysuxdochsxwzswblzmqtl",
+    "answer": "v",
+    "A": "wibuervcueehjhcfyoyks",
+    "B": "psbfdmojxksabluvllakirrz",
+    "quiz_id": 12
 };
 
 fetch(url, {
@@ -4382,10 +3994,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="question"                data-endpoint="POSTapi-questions"
-               value="wqmteezncm"
+               value="ysuxdochsxwzswblzmqtl"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>wqmteezncm</code></p>
+<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>ysuxdochsxwzswblzmqtl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>answer</code></b>&nbsp;&nbsp;
@@ -4393,10 +4005,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="answer"                data-endpoint="POSTapi-questions"
-               value="z"
+               value="v"
                data-component="body">
     <br>
-<p>Must be 1 character. Example: <code>z</code></p>
+<p>Must be 1 character. Example: <code>v</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>A</code></b>&nbsp;&nbsp;
@@ -4404,10 +4016,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="A"                data-endpoint="POSTapi-questions"
-               value="agdotltbwmyncyvpxgxvdphsd"
+               value="wibuervcueehjhcfyoyks"
                data-component="body">
     <br>
-<p>Must be at least 1 character. Must not be greater than 100 characters. Example: <code>agdotltbwmyncyvpxgxvdphsd</code></p>
+<p>Must be at least 1 character. Must not be greater than 100 characters. Example: <code>wibuervcueehjhcfyoyks</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>B</code></b>&nbsp;&nbsp;
@@ -4415,10 +4027,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="B"                data-endpoint="POSTapi-questions"
-               value="kiywbnfdfunylobjkyfrnxjof"
+               value="psbfdmojxksabluvllakirrz"
                data-component="body">
     <br>
-<p>Must be at least 1 character. Must not be greater than 100 characters. Example: <code>kiywbnfdfunylobjkyfrnxjof</code></p>
+<p>Must be at least 1 character. Must not be greater than 100 characters. Example: <code>psbfdmojxksabluvllakirrz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quiz_id</code></b>&nbsp;&nbsp;
@@ -4426,10 +4038,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="quiz_id"                data-endpoint="POSTapi-questions"
-               value="7"
+               value="12"
                data-component="body">
     <br>
-<p>Example: <code>7</code></p>
+<p>Example: <code>12</code></p>
         </div>
         </form>
 
@@ -4479,7 +4091,7 @@ fetch(url, {
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 45
+x-ratelimit-remaining: 47
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -4586,10 +4198,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"question\": \"yrrnekt\",
-    \"answer\": \"k\",
-    \"A\": \"xunruhullsyi\",
-    \"B\": \"gdfezydr\"
+    \"question\": \"fstotqpqueltxijbxaxt\",
+    \"answer\": \"d\",
+    \"A\": \"iovzcl\",
+    \"B\": \"tatmcxpabunoglndhoi\"
 }"
 </code></pre></div>
 
@@ -4605,10 +4217,10 @@ const headers = {
 };
 
 let body = {
-    "question": "yrrnekt",
-    "answer": "k",
-    "A": "xunruhullsyi",
-    "B": "gdfezydr"
+    "question": "fstotqpqueltxijbxaxt",
+    "answer": "d",
+    "A": "iovzcl",
+    "B": "tatmcxpabunoglndhoi"
 };
 
 fetch(url, {
@@ -4713,10 +4325,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="question"                data-endpoint="PUTapi-questions--id-"
-               value="yrrnekt"
+               value="fstotqpqueltxijbxaxt"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>yrrnekt</code></p>
+<p>Must be at least 3 characters. Must not be greater than 100 characters. Example: <code>fstotqpqueltxijbxaxt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>answer</code></b>&nbsp;&nbsp;
@@ -4724,10 +4336,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="answer"                data-endpoint="PUTapi-questions--id-"
-               value="k"
+               value="d"
                data-component="body">
     <br>
-<p>Must be 1 character. Example: <code>k</code></p>
+<p>Must be 1 character. Example: <code>d</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>A</code></b>&nbsp;&nbsp;
@@ -4735,10 +4347,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="A"                data-endpoint="PUTapi-questions--id-"
-               value="xunruhullsyi"
+               value="iovzcl"
                data-component="body">
     <br>
-<p>Must be at least 1 character. Must not be greater than 50 characters. Example: <code>xunruhullsyi</code></p>
+<p>Must be at least 1 character. Must not be greater than 50 characters. Example: <code>iovzcl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>B</code></b>&nbsp;&nbsp;
@@ -4746,10 +4358,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="B"                data-endpoint="PUTapi-questions--id-"
-               value="gdfezydr"
+               value="tatmcxpabunoglndhoi"
                data-component="body">
     <br>
-<p>Must be at least 1 character. Must not be greater than 50 characters. Example: <code>gdfezydr</code></p>
+<p>Must be at least 1 character. Must not be greater than 50 characters. Example: <code>tatmcxpabunoglndhoi</code></p>
         </div>
         </form>
 
@@ -4923,7 +4535,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 48
+x-ratelimit-remaining: 50
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -5036,8 +4648,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"epndndz\",
-    \"section_id\": 15
+    \"title\": \"f\",
+    \"section_id\": 13
 }"
 </code></pre></div>
 
@@ -5053,8 +4665,8 @@ const headers = {
 };
 
 let body = {
-    "title": "epndndz",
-    "section_id": 15
+    "title": "f",
+    "section_id": 13
 };
 
 fetch(url, {
@@ -5143,10 +4755,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-quizzes"
-               value="epndndz"
+               value="f"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 60 characters. Example: <code>epndndz</code></p>
+<p>Must be at least 3 characters. Must not be greater than 60 characters. Example: <code>f</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>section_id</code></b>&nbsp;&nbsp;
@@ -5154,10 +4766,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="section_id"                data-endpoint="POSTapi-quizzes"
-               value="15"
+               value="13"
                data-component="body">
     <br>
-<p>Example: <code>15</code></p>
+<p>Example: <code>13</code></p>
         </div>
         </form>
 
@@ -5207,7 +4819,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 47
+x-ratelimit-remaining: 49
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -5330,7 +4942,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"eirvlp\"
+    \"title\": \"bxl\"
 }"
 </code></pre></div>
 
@@ -5346,7 +4958,7 @@ const headers = {
 };
 
 let body = {
-    "title": "eirvlp"
+    "title": "bxl"
 };
 
 fetch(url, {
@@ -5451,10 +5063,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-quizzes--id-"
-               value="eirvlp"
+               value="bxl"
                data-component="body">
     <br>
-<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>eirvlp</code></p>
+<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>bxl</code></p>
         </div>
         </form>
 
@@ -5628,7 +5240,7 @@ fetch(url, {
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 44
+x-ratelimit-remaining: 46
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -5860,7 +5472,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 43
+x-ratelimit-remaining: 45
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -6275,7 +5887,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 54
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -6415,8 +6027,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"nlssmx\",
-    \"course_id\": 13
+    \"title\": \"zqjp\",
+    \"course_id\": 15
 }"
 </code></pre></div>
 
@@ -6432,8 +6044,8 @@ const headers = {
 };
 
 let body = {
-    "title": "nlssmx",
-    "course_id": 13
+    "title": "zqjp",
+    "course_id": 15
 };
 
 fetch(url, {
@@ -6522,10 +6134,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-sections"
-               value="nlssmx"
+               value="zqjp"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>nlssmx</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>zqjp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>course_id</code></b>&nbsp;&nbsp;
@@ -6533,10 +6145,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="course_id"                data-endpoint="POSTapi-sections"
-               value="13"
+               value="15"
                data-component="body">
     <br>
-<p>Example: <code>13</code></p>
+<p>Example: <code>15</code></p>
         </div>
         </form>
 
@@ -6586,7 +6198,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
+x-ratelimit-remaining: 53
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -6698,7 +6310,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"ucgwc\"
+    \"title\": \"xyqfrbhrozinpsupycswmupob\"
 }"
 </code></pre></div>
 
@@ -6714,7 +6326,7 @@ const headers = {
 };
 
 let body = {
-    "title": "ucgwc"
+    "title": "xyqfrbhrozinpsupycswmupob"
 };
 
 fetch(url, {
@@ -6819,10 +6431,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-sections--id-"
-               value="ucgwc"
+               value="xyqfrbhrozinpsupycswmupob"
                data-component="body">
     <br>
-<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>ucgwc</code></p>
+<p>Must be at least 5 characters. Must not be greater than 255 characters. Example: <code>xyqfrbhrozinpsupycswmupob</code></p>
         </div>
         </form>
 

@@ -36,7 +36,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -73,19 +73,19 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: nlssmx
+        example: zqjp
         type: string
         custom: []
       course_id:
         name: course_id
         description: ''
         required: true
-        example: 13
+        example: 15
         type: integer
         custom: []
     cleanBodyParameters:
-      title: nlssmx
-      course_id: 13
+      title: zqjp
+      course_id: 15
     fileParameters: []
     responses: []
     responseFields: []
@@ -135,7 +135,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '53'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -181,11 +181,11 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: ucgwc
+        example: xyqfrbhrozinpsupycswmupob
         type: string
         custom: []
     cleanBodyParameters:
-      title: ucgwc
+      title: xyqfrbhrozinpsupycswmupob
     fileParameters: []
     responses: []
     responseFields: []

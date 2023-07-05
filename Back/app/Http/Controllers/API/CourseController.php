@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use PHPUnit\Framework\Constraint\Count;
 
 /**
  * @group Courses
@@ -141,35 +142,62 @@ class CourseController extends Controller
      * @queryParam courses_per_page Number of course per page. Example: 10
      */
 
-    public function search(Request $request)
-    {
-        $keyword = $request->input('keyword');
-        $numOfCoursePerPage = $request->courses_per_page ?? 10;
-        $results = Course::accepted()->where('title', 'LIKE', "%$keyword%")
-            ->orWhere('description', 'LIKE', "%$keyword%")
-            ->paginate($numOfCoursePerPage);
-        return CourseResource::collection($results);
-    }
+    // public function search(Request $request)
+    // {
+    //     $keyword = $request->input('keyword');
+    //     $numOfCoursePerPage = $request->courses_per_page ?? 10;
+    //     $results = Course::accepted()->where('title', 'LIKE', "%$keyword%")
+    //         ->orWhere('description', 'LIKE', "%$keyword%")
+    //         ->paginate($numOfCoursePerPage);
+    //     return CourseResource::collection($results);
+    // }
 
+    // /**
+    //  * Price Filter
+    //  * 
+    //  * Filter results based on min and max values
+    //  * @hideFromQueryParams
+    //  * @queryParam min number Minimum price. Example: 20
+    //  * @queryParam max number Maximum price. Example: 1000
+    //  * @queryParam order string In which order you want to see results. Example:asc
+    //  * @queryParam courses_per_page Number of course per page. Example: 10
+    //  */
+
+    // public function priceFilter(Request $request)
+    // {
+    //     //The received value will be like this 199.99 and then convert it to 19999 like as we store in database
+    //     $min = $request->input('min', 0) * 100;
+    //     $max = $request->input('max', PHP_INT_MAX) * 100;
+    //     $order = $request->input('order', 'desc');
+    //     $numOfCoursePerPage = $request->courses_per_page ?? 10;
+    //     $results = Course::filterByPrice($min, $max, $order)->accepted()->paginate($numOfCoursePerPage);
+    //     return CourseResource::collection($results);
+    // }
     /**
-     * Price Filter
+     * Filters
      * 
-     * Filter results based on min and max values
-     * @hideFromQueryParams
+     * Filter by searching in names and descriptions, with price filter also
+     * 
+     * @queryParam keyword the word you are looking for. Example: HTML
      * @queryParam min number Minimum price. Example: 20
      * @queryParam max number Maximum price. Example: 1000
      * @queryParam order string In which order you want to see results. Example:asc
-     * @queryParam courses_per_page Number of course per page. Example: 10
+     * @queryParam limit Number of course per page. Example: 10
      */
-
-    public function priceFilter(Request $request)
+    public function filter(Request $request)
     {
-        //The received value will be like this 199.99 and then convert it to 19999 like as we store in database
-        $min = $request->input('min', 0) * 100;
-        $max = $request->input('max', PHP_INT_MAX) * 100;
+        $keyword = $request->input('keyword', '');
+        $min = $request->input('min', 0);
+        $max = $request->input('max', PHP_INT_MAX);
         $order = $request->input('order', 'desc');
-        $numOfCoursePerPage = $request->courses_per_page ?? 10;
-        $results = Course::filterByPrice($min, $max)->orderBy('price', $order)->paginate($numOfCoursePerPage);
+        $limit = $request->input('limit', 10);
+
+        $results = Course::accepted()
+            ->where('title', 'LIKE', "%$keyword%")
+            ->orWhere('description', 'LIKE', "%$keyword%")
+            ->filterByPrice($min, $max, $order)
+            ->paginate($limit);
+
         return CourseResource::collection($results);
     }
 }
