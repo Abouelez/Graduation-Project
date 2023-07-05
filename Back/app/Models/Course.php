@@ -68,8 +68,8 @@ class Course extends Model
         return $this->AC == true;
     }
 
-    public function scopeFilterByPrice(Builder $query, $minPrice, $maxPrice): void
+    public function scopeFilterByPrice(Builder $query, $minPrice, $maxPrice, $order): void
     {
-        $query->whereBetween('price', [$minPrice, $maxPrice]);
+        $query->whereBetween('price', [$minPrice, $maxPrice])->orderBy('price', $order);
     }
 }

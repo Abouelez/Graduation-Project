@@ -28,27 +28,27 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: pjxqhajioywocdwtpqp
+        example: vsqelfbxts
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: hulda.morar@example.com
+        example: elaina.franecki@example.net
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: '<&:A(7r"/<uw/Lhm'
+        example: 'J?--C+V'
         type: string
         custom: []
     cleanBodyParameters:
-      name: pjxqhajioywocdwtpqp
-      email: hulda.morar@example.com
-      password: '<&:A(7r"/<uw/Lhm'
+      name: vsqelfbxts
+      email: elaina.franecki@example.net
+      password: 'J?--C+V'
     fileParameters: []
     responses: []
     responseFields: []
@@ -82,19 +82,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: feil.stella@example.net
+        example: kuhic.berneice@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: quidem
+        example: sit
         type: string
         custom: []
     cleanBodyParameters:
-      email: feil.stella@example.net
-      password: quidem
+      email: kuhic.berneice@example.com
+      password: sit
     fileParameters: []
     responses: []
     responseFields: []
