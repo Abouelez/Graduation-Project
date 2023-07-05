@@ -234,11 +234,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: jmuwkfxjxghcduhl
+                  example: ljcucrdwbuwurdoyyevkbo
                 parent_id:
                   type: integer
                   description: ''
-                  example: 17
+                  example: 14
               required:
                 - name
       security: []
@@ -452,11 +452,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: dqlxlmtqwibxhic
+                  example: kka
                 parent_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 1
               required:
                 - name
       security: []
@@ -494,6 +494,16 @@ paths:
             type: string
             description: 'the word you are looking for.'
             example: HTML
+        -
+          in: query
+          name: courses_per_page
+          description: 'Number of course per page.'
+          example: 10
+          required: false
+          schema:
+            type: integer
+            description: 'Number of course per page.'
+            example: 10
       responses:
         200:
           description: ''
@@ -518,6 +528,32 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '4.5'
+                  links:
+                    first: 'http://localhost/api/courses/search?page=1'
+                    last: 'http://localhost/api/courses/search?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/courses/search?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/courses/search'
+                    per_page: 10
+                    to: 1
+                    total: 1
                 properties:
                   data:
                     type: array
@@ -582,6 +618,72 @@ paths:
                         rate:
                           type: string
                           example: '4.5'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/courses/search?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/courses/search?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/courses/search?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/courses/search'
+                      per_page:
+                        type: integer
+                        example: 10
+                      to:
+                        type: integer
+                        example: 1
+                      total:
+                        type: integer
+                        example: 1
       tags:
         - Courses
       security: []
@@ -621,6 +723,16 @@ paths:
             type: string
             description: 'In which order you want to see results.'
             example: asc
+        -
+          in: query
+          name: courses_per_page
+          description: 'Number of course per page.'
+          example: 10
+          required: false
+          schema:
+            type: integer
+            description: 'Number of course per page.'
+            example: 10
       responses:
         200:
           description: ''
@@ -1112,6 +1224,16 @@ paths:
       operationId: getCourses
       description: 'Display a listing of all courses.'
       parameters:
+        -
+          in: query
+          name: courses_per_page
+          description: 'Number of course per page.'
+          example: 10
+          required: false
+          schema:
+            type: integer
+            description: 'Number of course per page.'
+            example: 10
         -
           in: query
           name: page
@@ -1717,11 +1839,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: drpts
+                  example: jppfejryyxbfvrzfrwq
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Suscipit repellendus eum earum deserunt cupiditate aut dolor.'
+                  example: 'Sapiente nesciunt quo maiores est est corporis voluptatem.'
                 thumbnail:
                   type: string
                   format: binary
@@ -1733,15 +1855,15 @@ paths:
                 category_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 16
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 3
+                  example: 8
                 user_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 2
               required:
                 - title
                 - description
@@ -1874,11 +1996,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: fxlk
+                  example: ua
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Similique at et ut est dolor deleniti laborum qui.'
+                  example: 'Ut voluptatem eos voluptatem ea nisi consequatur.'
                 thumbnail:
                   type: string
                   description: ''
@@ -1886,15 +2008,15 @@ paths:
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 66
+                  example: 53
                 category_id:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 20
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 19
                 user_id:
                   type: string
                   description: ''
@@ -1923,6 +2045,77 @@ paths:
         required: true
         schema:
           type: integer
+  /api/auth/register:
+    post:
+      summary: ''
+      operationId: postApiAuthRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: pjxqhajioywocdwtpqp
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: hulda.morar@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: '<&:A(7r"/<uw/Lhm'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/auth/login:
+    post:
+      summary: ''
+      operationId: postApiAuthLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: feil.stella@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: quidem
+              required:
+                - email
+                - password
+      security: []
+  /api/auth/logout:
+    post:
+      summary: ''
+      operationId: postApiAuthLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
   /api/user:
     get:
       summary: ''
@@ -2041,19 +2234,19 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: geeckmmypf
+                  example: lsec
                 type:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: accusamus
                 section_id:
                   type: integer
                   description: ''
-                  example: 14
+                  example: 3
                 content:
                   type: string
                   description: ''
-                  example: doloremque
+                  example: voluptate
               required:
                 - title
                 - type
@@ -2217,7 +2410,7 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: kwbukec
+                  example: wqmteezncm
                 answer:
                   type: string
                   description: 'Must be 1 character.'
@@ -2225,15 +2418,15 @@ paths:
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: bedfuajy
+                  example: agdotltbwmyncyvpxgxvdphsd
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: ursehlcpvykker
+                  example: kiywbnfdfunylobjkyfrnxjof
                 quiz_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 7
               required:
                 - question
                 - answer
@@ -2276,19 +2469,19 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: epidcbw
+                  example: yrrnekt
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: x
+                  example: k
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: ufonj
+                  example: xunruhullsyi
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: qjqddizgnqvsjrfh
+                  example: gdfezydr
               required:
                 - question
                 - answer
@@ -2421,11 +2614,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: ejaz
+                  example: epndndz
                 section_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 15
               required:
                 - title
                 - section_id
@@ -2522,7 +2715,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: zqylmvabvxaqijouklsvj
+                  example: eirvlp
               required:
                 - title
       security: []
@@ -2914,7 +3107,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: zwbtzfubzsucaaw
+                  example: nlssmx
                 course_id:
                   type: integer
                   description: ''
@@ -2971,7 +3164,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: tqep
+                  example: ucgwc
               required:
                 - title
       security: []

@@ -36,7 +36,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
+          x-ratelimit-remaining: '48'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -73,19 +73,19 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
         required: true
-        example: ejaz
+        example: epndndz
         type: string
         custom: []
       section_id:
         name: section_id
         description: ''
         required: true
-        example: 10
+        example: 15
         type: integer
         custom: []
     cleanBodyParameters:
-      title: ejaz
-      section_id: 10
+      title: epndndz
+      section_id: 15
     fileParameters: []
     responses: []
     responseFields: []
@@ -135,7 +135,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '48'
+          x-ratelimit-remaining: '47'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -181,11 +181,11 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: zqylmvabvxaqijouklsvj
+        example: eirvlp
         type: string
         custom: []
     cleanBodyParameters:
-      title: zqylmvabvxaqijouklsvj
+      title: eirvlp
     fileParameters: []
     responses: []
     responseFields: []

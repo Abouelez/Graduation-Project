@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "d6f7e9f5-4555-4e21-8492-296a6253d7fd",
+        "_postman_id": "0467aef2-d5b5-4bd8-ba9e-8e3fda40a2fb",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -62,7 +62,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "55"
+                                    "value": "54"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -97,7 +97,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"jmuwkfxjxghcduhl\",\"parent_id\":17}"
+                            "raw": "{\"name\":\"ljcucrdwbuwurdoyyevkbo\",\"parent_id\":14}"
                         },
                         "description": "Store a newly created Category in storage.",
                         "auth": {
@@ -157,7 +157,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "54"
+                                    "value": "53"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -200,7 +200,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dqlxlmtqwibxhic\",\"parent_id\":11}"
+                            "raw": "{\"name\":\"kka\",\"parent_id\":1}"
                         },
                         "description": "Update the specified Category in storage.",
                         "auth": {
@@ -263,9 +263,15 @@
                                     "value": "HTML",
                                     "description": "the word you are looking for.",
                                     "disabled": false
+                                },
+                                {
+                                    "key": "courses_per_page",
+                                    "value": "10",
+                                    "description": "Number of course per page.",
+                                    "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/courses\/search?keyword=HTML"
+                            "raw": "{{baseUrl}}\/api\/courses\/search?keyword=HTML&courses_per_page=10"
                         },
                         "method": "GET",
                         "header": [
@@ -301,7 +307,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -309,7 +315,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"4.5\"}]}",
+                            "body": "{\"data\":[{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"4.5\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/search\",\"per_page\":10,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -338,9 +344,15 @@
                                     "value": "asc",
                                     "description": "In which order you want to see results.",
                                     "disabled": false
+                                },
+                                {
+                                    "key": "courses_per_page",
+                                    "value": "10",
+                                    "description": "Number of course per page.",
+                                    "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/courses\/price_filter?min=20&max=1000&order=asc"
+                            "raw": "{{baseUrl}}\/api\/courses\/price_filter?min=20&max=1000&order=asc&courses_per_page=10"
                         },
                         "method": "GET",
                         "header": [
@@ -376,7 +388,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "58"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -397,13 +409,19 @@
                             "path": "api\/courses",
                             "query": [
                                 {
+                                    "key": "courses_per_page",
+                                    "value": "10",
+                                    "description": "Number of course per page.",
+                                    "disabled": false
+                                },
+                                {
                                     "key": "page",
                                     "value": "1",
                                     "description": "Which page to show.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/courses?page=1"
+                            "raw": "{{baseUrl}}\/api\/courses?courses_per_page=10&page=1"
                         },
                         "method": "GET",
                         "header": [
@@ -439,7 +457,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "57"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -477,13 +495,13 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "drpts",
+                                    "value": "jppfejryyxbfvrzfrwq",
                                     "type": "text",
                                     "description": "Must be at least 5 characters. Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Suscipit repellendus eum earum deserunt cupiditate aut dolor.",
+                                    "value": "Sapiente nesciunt quo maiores est est corporis voluptatem.",
                                     "type": "text",
                                     "description": "Must be at least 10 characters. Must not be greater than 5000 characters."
                                 },
@@ -495,19 +513,19 @@
                                 },
                                 {
                                     "key": "category_id",
-                                    "value": 13,
+                                    "value": 16,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sub_category_id",
-                                    "value": 3,
+                                    "value": 8,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "user_id",
-                                    "value": 11,
+                                    "value": 2,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -576,7 +594,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "56"
+                                    "value": "55"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -619,7 +637,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"fxlk\",\"description\":\"Similique at et ut est dolor deleniti laborum qui.\",\"price\":66,\"category_id\":1,\"sub_category_id\":10}"
+                            "raw": "{\"title\":\"ua\",\"description\":\"Ut voluptatem eos voluptatem ea nisi consequatur.\",\"price\":53,\"category_id\":20,\"sub_category_id\":19}"
                         },
                         "description": "Update the specified Course in storage.",
                         "auth": {
@@ -670,6 +688,96 @@
             "name": "Endpoints",
             "description": "",
             "item": [
+                {
+                    "name": "POST api\/auth\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"pjxqhajioywocdwtpqp\",\"email\":\"hulda.morar@example.com\",\"password\":\"<&:A(7r\\\"\\\/<uw\\\/Lhm\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"feil.stella@example.net\",\"password\":\"quidem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
                 {
                     "name": "GET api\/user",
                     "request": {
@@ -767,7 +875,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "50"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -802,7 +910,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"geeckmmypf\",\"type\":\"distinctio\",\"section_id\":14,\"content\":\"doloremque\"}"
+                            "raw": "{\"title\":\"lsec\",\"type\":\"accusamus\",\"section_id\":3,\"content\":\"voluptate\"}"
                         },
                         "description": "Store a newly created resource in storage.",
                         "auth": {
@@ -862,7 +970,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "49"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -996,7 +1104,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "47"
+                                    "value": "46"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1031,7 +1139,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"kwbukec\",\"answer\":\"z\",\"A\":\"bedfuajy\",\"B\":\"ursehlcpvykker\",\"quiz_id\":12}"
+                            "raw": "{\"question\":\"wqmteezncm\",\"answer\":\"z\",\"A\":\"agdotltbwmyncyvpxgxvdphsd\",\"B\":\"kiywbnfdfunylobjkyfrnxjof\",\"quiz_id\":7}"
                         },
                         "description": "Store a newly created question in storage.",
                         "auth": {
@@ -1091,7 +1199,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "46"
+                                    "value": "45"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1134,7 +1242,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"epidcbw\",\"answer\":\"x\",\"A\":\"ufonj\",\"B\":\"qjqddizgnqvsjrfh\"}"
+                            "raw": "{\"question\":\"yrrnekt\",\"answer\":\"k\",\"A\":\"xunruhullsyi\",\"B\":\"gdfezydr\"}"
                         },
                         "description": "Update the specified resource in storage.",
                         "auth": {
@@ -1228,7 +1336,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "49"
+                                    "value": "48"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1263,7 +1371,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"ejaz\",\"section_id\":10}"
+                            "raw": "{\"title\":\"epndndz\",\"section_id\":15}"
                         },
                         "description": "Store a newly created Quiz in storage.",
                         "auth": {
@@ -1323,7 +1431,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "48"
+                                    "value": "47"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1366,7 +1474,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"zqylmvabvxaqijouklsvj\"}"
+                            "raw": "{\"title\":\"eirvlp\"}"
                         },
                         "description": "Update the specified Quiz in storage.",
                         "auth": {
@@ -1460,7 +1568,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "45"
+                                    "value": "44"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1552,7 +1660,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "44"
+                                    "value": "43"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1686,7 +1794,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "52"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1721,7 +1829,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"zwbtzfubzsucaaw\",\"course_id\":13}"
+                            "raw": "{\"title\":\"nlssmx\",\"course_id\":13}"
                         },
                         "description": "Store a newly created section in storage.",
                         "auth": {
@@ -1781,7 +1889,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "52"
+                                    "value": "51"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1824,7 +1932,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"tqep\"}"
+                            "raw": "{\"title\":\"ucgwc\"}"
                         },
                         "description": "Update the specified section in storage.",
                         "auth": {
