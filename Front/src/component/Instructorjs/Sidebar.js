@@ -1,41 +1,42 @@
 import React, {Children, useState } from 'react'
 import "../../css/instructorcss/Sidebar.css"
-import { NavLink } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faVideo,faMessage,faChartSimple,faWrench,faCircleExclamation } from '@fortawesome/free-solid-svg-icons'
-import {FaBars} from "react-icons/fa"
+import { NavLink, Outlet } from 'react-router-dom'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import {faVideo,faMessage,faChartSimple,faWrench,faCircleExclamation } from '@fortawesome/free-solid-svg-icons'
+import {FaBars, FaViadeo , FaWrench , FaAirFreshener, FaAlipay} from "react-icons/fa"
 <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
 const Sidebar = ({Children}) => {
   const [open ,setopen]=useState(false);
 const toggle=()=>setopen(!open);
   const menuItem=[
     {
-      path:"/Videos",
+      path:"videos",
       name:"Videos",
-      icon:<FontAwesomeIcon icon={faVideo} />
+      icon:<FaViadeo  />
     },
     {
-      path:"/Communication",
+      path:"communication",
       name:"Communication",
-      icon:<FontAwesomeIcon icon={faMessage} />
+      icon:<FaAlipay  />
     },
     {
-      path:"/Tools",
+      path:"tools",
       name:"Tools",
-      icon:<FontAwesomeIcon icon={faWrench} />
+      icon:<FaWrench />
     },
     
     {
-      path:"/resources",
+      path:"resources",
       name:"Resources",
-      icon:<FontAwesomeIcon icon={faCircleExclamation} />
+      icon:<FaAirFreshener />
     },
   ]
   return (
+    <>
     <div className='conf'>
       <div style={{width:open ? "300px" :"50px"}} className='Sidebar'>
         <div className='top-section'>
-          <h1 style={{display:open ? "block" :"none"}} className='logo'>Courza</h1>
+          <h1 style={{display:open ? "block" :"none"}} className='logo'>Instractor</h1>
           <div style={{marginLeft:open ? "50px" :"0px"}} className='bars'>
             <FaBars onClick={toggle}/> 
           </div>
@@ -53,6 +54,8 @@ const toggle=()=>setopen(!open);
 
 
     </div>
+    <Outlet/>
+    </>
   )
 }
 

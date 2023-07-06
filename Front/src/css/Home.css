@@ -99,9 +99,7 @@ h1{
 .coursecard{
  overflow: hidden;
 }
-.imag:hover{
- transform: scale(1.1);
-}
+ 
 .categorysection{
  background-color: #eee;
 }

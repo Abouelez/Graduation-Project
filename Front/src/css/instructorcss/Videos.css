@@ -101,6 +101,37 @@
     justify-content: space-between;
     flex-direction: row-reverse;
   }
+  @media screen and (max-width:767px) {
+    .H-2 , .H-3 , .H{
+      width: 96%;
+      position: absolute;
+      margin-top: -130px;
+    }
+  }
+  @media screen and (max-width:767px) {
+    .H-2{
+      width: 96%;
+      position: absolute;
+      margin-top: -85px;
+    }
+  }
+  @media screen and (max-width:767px) {
+      .H a{
+      position: relative;
+      left: 30px;
+      display: flex;
+    }
+    .title{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      top: 46%;
+      width: 25rem;
+    }
+    .ti{
+      width: 25rem;
+}
+  }
   .H-3 .right-section h2{
     font-size: 20px;
     margin-bottom: 20px;

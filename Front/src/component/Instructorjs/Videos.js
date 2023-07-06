@@ -1,8 +1,10 @@
 import React from 'react'
 import "../../css/instructorcss/Videos.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBell} from '@fortawesome/free-solid-svg-icons'
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import {faBell} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
+import { FaBell } from 'react-icons/fa';
 const Videos = () => {
     const route = useNavigate();
 
@@ -11,18 +13,18 @@ const Videos = () => {
       <div className='head-titlt'>
       <h4>Student</h4>
       <p>Switch to the student view here - get back to the courses you’re taking.</p>
-      <FontAwesomeIcon className='i' icon={faBell} />
+      <FaBell className='i' />
       <div className='name'>AG</div>
     </div>
     <div className='A'>
-      <h1 className='h'>Cources</h1>
+      <span className='h'>Cources</span>
     </div>
     <div className='H '>
       <span>Jump Into Course Creation</span>
-      <a href=''className='button' onClick={()=>{route('/CreateCourse')}}>Create Your Course</a>
+      <a href=''className='button' onClick={()=>{route('/Sidebar/createCourse')}}>Create Your Course</a>
     </div>
     <div className='title'><h2>Based on your experience, we think these resources will be helpful.</h2></div>
-    <h2 className='title'>Based on your experience, we think these resources will be helpful.</h2>
+    
     <div className='H-2'>
       <div className='right-section'>
         <h2>Create an Engaging Course</h2>

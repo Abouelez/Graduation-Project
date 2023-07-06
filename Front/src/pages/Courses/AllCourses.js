@@ -13,10 +13,7 @@ import { getAllCoursesPage } from '../../redux/actions/courseAction';
 const AllCourses = () => {
 
   const [courses, total, result, onPress, getCourse] = UseCoursesSearchHook();
-  const dispatch = useDispatch();
 
-  // const {courses, loading } = useSelector(state => state.allCourses);
-  // if (courses)
   let totall 
   let pageCount 
 
@@ -35,10 +32,10 @@ const AllCourses = () => {
         <div className='container'>
           <SearchCountResult title={`${totall} courses`} />
           <Row className='d-flex flex-row'>
-            <Col sm='2' xs='2' md='1' className='d-flex'>
+            <Col sm='3' xs='3' md='2' className='d-flex'>
               <SideFilter />
             </Col>
-            <Col sm='10' xs='10' md='11'>
+            <Col sm='9' xs='9' md='10'>
               <div className='row'>
                 <div className='col-12'>
                   <div className='courses d-flex justify-content-between align-items-center flex-wrap gap-4'>

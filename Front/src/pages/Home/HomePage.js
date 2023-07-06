@@ -8,17 +8,20 @@ import { getAllCourses } from '../../redux/actions/courseAction'
 import { Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import CatCard from '../../component/categories/CatCard'
+import UseCoursesSearchHook from '../../Hook/Courses/UseCoursesSearchHook'
 function HomePage() {
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getAllCourses());
+  // useEffect(() => {
+  //   dispatch(getAllCourses());
    
-  }, [dispatch]);
+  // }, [dispatch]);
 
-  const { courses, loading } = useSelector(state => state.allCourses);
+  // const { courses, loading } = useSelector(state => state.allCourses);
+
   //console.log(courses);
+  const [courses, total, result, onPress, getCourse] = UseCoursesSearchHook();
   return (
     <>
       <section className='home-wraber-1 '>
@@ -44,8 +47,9 @@ function HomePage() {
             </div>
             <div className='col-12'>
               <div className='courses d-flex justify-content-between align-items-center flex-wrap'>
-              {courses && Array.isArray(courses.data.data) ? (
-                courses.data.data.slice(0, 4).map((course) => (
+            
+              {courses && Array.isArray(courses) ? (
+                courses.slice(0, 4).map((course) => (
                   <CourseCard
                     key={course.id}
                     course={course}

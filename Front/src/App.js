@@ -34,18 +34,20 @@ function App() {
         <Route path="/login" element={ <Login/> }/>
         <Route path="/register" element={ <Register/> }/>
         <Route path="/reset" element={ <Reset/> }/>
-        <Route path="/coursedetails" element={ <Coursedetails/> }/>
+        <Route path="/coursedetails/:id" element={ <Coursedetails/> }/>
         <Route path="/allcourses" element={ <AllCourses/> }/>
         <Route path="/userprofile" element={ <Userprofile/> }/>
         <Route path="/Shopping" element={ <Shopping/> }/>
         <Route path="/Checkout" element={ <Checkout/> }/>
-        <Route path="/Communication" element={ <Communication/> }/>
-        <Route path="/Tools" element={ <Tools/> }/>
-        <Route path="/Videos" element={ <Videos/> }/>
-        <Route path="/Resources" element={ <Resources/> }/>
-        <Route path="/CreateCourse" element={ <CreateCourse/> }/>
+        <Route path="/sidebar" element={ <Sidebar/> }>
+          <Route index element={ <Videos/> }/>
+           <Route path="communication" element={ <Communication/> }/>
+           <Route path="tools" element={ <Tools/> }/>
+          <Route path="videos" element={ <Videos/> }/>
+          <Route path="resources" element={ <Resources/> }/>
+          <Route path="createCourse" element={ <CreateCourse/> }/>
+        </Route>
         </Routes>
-      <Sidebar/>
       {/* <AddLecture/>
       <AddSection/>
       <SectionDetails/> */}

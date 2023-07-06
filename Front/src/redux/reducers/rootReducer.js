@@ -6,4 +6,6 @@ import courseReducer from './courseReducer'
 
 export default combineReducers ({
     allCourses :courseReducer,
+    allCategories :categoryReducer,
+    allBrands :brandReducer,
 })

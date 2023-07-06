@@ -1,55 +1,26 @@
-import { GET_ALL_CATEGORY, GET_ERROR, CREATE_CATEGORY } from '../type'
-import useGetData from '../useGetData' 
-//get all category
-export const getAllCategory = (limit) => async (dispatch) => {
-    try {
-        const response = await useGetData(`/api/courses`);
-        console.log(response);
-        dispatch({
-            type: GET_ALL_CATEGORY,
-            payload: response,
-        })
+// Import action type constants
+import { GET_ALL_CATEGORY, GET_ERROR, CREATE_CATEGORY } from '../type';
 
-    } catch (e) {
-        dispatch({
-            type: GET_ERROR,
-            payload: "Error " + e,
-        })
-    }
+// Import dependencies
+import axios from 'axios'; 
+
+// Action creator function to get all categories
+export const getAllCategory = () => async (dispatch) => {
+  try {
+    // Make a GET request to the backend API to get all categories
+    const response = await axios.get('http://localhost:8000/api/categories');
+   // console.log(response);
+    
+    // Dispatch an action to the Redux store with the categories data
+    dispatch({
+      type: GET_ALL_CATEGORY,
+      payload: response.data,
+    });
+} catch (e) {
+    // Dispatch an action to the Redux store with the error message
+    dispatch({
+        type: GET_ERROR,
+        payload: "Error " + e,
+    });
 }
-
-//get all category with pagination
-export const getAllCategoryPage = (page) => async (dispatch) => {
-    try {
-        const response = await useGetData(`api/courses?page=${page}`);
-        dispatch({
-            type: GET_ALL_CATEGORY,
-            payload: response,
-        })
-
-    } catch (e) {
-        dispatch({
-            type: GET_ERROR,
-            payload: "Error " + e,
-        })
-    }
-}
-
-
-// //create category 
-// export const createCategory = (formData) => async (dispatch) => {
-//     try {
-//         const response = await useInsertDataWithImage(`/api/v1/categories`, formData);
-//         dispatch({
-//             type: CREATE_CATEGORY,
-//             payload: response,
-//             loading: true
-//         })
-
-//     } catch (e) {
-//         dispatch({
-//             type: GET_ERROR,
-//             payload: "Error " + e,
-//         })
-//     }
-// }
+};

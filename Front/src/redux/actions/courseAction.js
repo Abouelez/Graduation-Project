@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getAllCourses = () => async (dispatch) => {
   try {
     const response = await axios.get('http://localhost:8000/api/courses')
-   // console.log('all'+response.data.data);
+   console.log('all'+response.data.data);
     dispatch({
       type: GET_ALL_COURSE,
       payload: response.data,
@@ -59,3 +59,19 @@ export const getAllCoursesSearch = (word) => async (dispatch) => {
   }
 };
 
+//get one course
+export const getCourse = (id) => async (dispatch) => {
+  try {
+    const response = await axios.get(`http://localhost:8000/api/courses/${id}`);
+   
+    dispatch({
+      type: GET_ALL_COURSE,
+      payload: response.data,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};

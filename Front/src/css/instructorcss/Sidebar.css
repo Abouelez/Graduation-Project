@@ -1,11 +1,13 @@
 .Sidebar{
-    background-color: #000;
+    background-color: #010c1d;
     color: #fff;
     height: 300vh;
     width: 200px;
     transition: all 0.5s;
     position: relative;
-    top: 25px;
+    top: 81px;
+    z-index:1;
+    overflow: hidden;
 }
 .top-section{
     display: flex;
