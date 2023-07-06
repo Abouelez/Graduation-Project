@@ -39,7 +39,9 @@ class Course extends Model
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class)->withPivot('paid_price');
+        return $this->belongsToMany(User::class)
+            ->withPivot('paid_price', 'purchase_date')
+            ->withTimestamps();
     }
 
     public function reviews(): HasMany

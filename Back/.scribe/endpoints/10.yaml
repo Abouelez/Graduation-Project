@@ -1,21 +1,21 @@
-name: Lectures
+name: Reviews
 description: |-
 
-  Managing Lectures
+  Managing Reviews
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/lectures
+    uri: api/reviews
     metadata:
-      groupName: Lectures
+      groupName: Reviews
       groupDescription: |-
 
-        Managing Lectures
+        Managing Reviews
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get Lectures'
-      description: 'Display a listing of the resource.'
+      title: 'Display a listing of the resource.'
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -31,12 +31,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":16,"title":"What is HTML","type":"video","content":"courses\/course51\/section3\/lecture16\/lecture.mkv","section":{"id":3,"title":"Introduction"}},{"id":17,"title":"Main tags","type":"video","content":"courses\/course51\/section4\/lecture17\/lecture.mkv","section":{"id":4,"title":"Create Your first HTML page"}}]}'
+        content: ''
         headers:
+          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '46'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -49,16 +49,16 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/lectures
+    uri: api/reviews
     metadata:
-      groupName: Lectures
+      groupName: Reviews
       groupDescription: |-
 
-        Managing Lectures
+        Managing Reviews
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create Lecture'
-      description: 'Store a newly created resource in storage.'
+      title: 'Store a newly created resource in storage.'
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -68,40 +68,8 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-        required: true
-        example: ksfcjwvvxnd
-        type: string
-        custom: []
-      type:
-        name: type
-        description: ''
-        required: true
-        example: blanditiis
-        type: string
-        custom: []
-      section_id:
-        name: section_id
-        description: ''
-        required: true
-        example: 7
-        type: integer
-        custom: []
-      content:
-        name: content
-        description: ''
-        required: true
-        example: reiciendis
-        type: string
-        custom: []
-    cleanBodyParameters:
-      title: ksfcjwvvxnd
-      type: blanditiis
-      section_id: 7
-      content: reiciendis
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
@@ -113,16 +81,16 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/lectures/{id}'
+    uri: 'api/reviews/{id}'
     metadata:
-      groupName: Lectures
+      groupName: Reviews
       groupDescription: |-
 
-        Managing Lectures
+        Managing Reviews
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display Lecture'
-      description: 'Display the specified resource.'
+      title: 'Display the specified resource.'
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -131,13 +99,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the lecture.'
+        description: 'The ID of the review.'
         required: true
-        example: 16
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -146,12 +114,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":16,"title":"What is HTML","type":"video","content":"courses\/course51\/section3\/lecture16\/lecture.mkv","section":{"id":3,"title":"Introduction"}}}'
+        content: '{"data":{"id":1,"user":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"course":{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"4.5"},"rate":4,"comment":"Good Course"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '45'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -165,16 +133,16 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/lectures/{id}'
+    uri: 'api/reviews/{id}'
     metadata:
-      groupName: Lectures
+      groupName: Reviews
       groupDescription: |-
 
-        Managing Lectures
+        Managing Reviews
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Lecture'
-      description: 'Update the specified resource in storage.'
+      title: 'Update the specified resource in storage.'
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -183,13 +151,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the lecture.'
+        description: 'The ID of the review.'
         required: true
-        example: 16
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -205,16 +173,16 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/lectures/{id}'
+    uri: 'api/reviews/{id}'
     metadata:
-      groupName: Lectures
+      groupName: Reviews
       groupDescription: |-
 
-        Managing Lectures
+        Managing Reviews
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete Lecture'
-      description: 'Remove the specified resource from storage.'
+      title: 'Remove the specified resource from storage.'
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -223,13 +191,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the lecture.'
+        description: 'The ID of the review.'
         required: true
-        example: 16
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

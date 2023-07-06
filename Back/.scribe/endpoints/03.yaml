@@ -1,21 +1,47 @@
-name: Sections
-description: |-
-
-  Managing Sections
+name: Endpoints
+description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/sections
+      - POST
+    uri: api/auth/logout
     metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
+      groupName: Endpoints
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get sections'
-      description: 'List all sections.'
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -30,13 +56,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":[{"id":3,"title":"Introduction","lectures":[{"id":16,"title":"What is HTML","type":"video","content":"courses\/course51\/section3\/lecture16\/lecture.mkv"}],"quizzes":[{"id":1,"title":"Quiz_1","questions":[{"id":1,"question":"What is HTML ?","answer":"A","A":"Hyper TExt Markup Language","B":"Bla Bla","C":"Bla BLa Bla","D":"Somethig else"}]}]},{"id":4,"title":"Create Your first HTML page","lectures":[{"id":17,"title":"Main tags","type":"video","content":"courses\/course51\/section4\/lecture17\/lecture.mkv"}],"quizzes":[]}]}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -49,16 +73,14 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/sections
+    uri: api/enroll
     metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
+      groupName: Endpoints
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create section'
-      description: 'Store a newly created section in storage.'
+      title: ''
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -69,165 +91,31 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+      course_ids:
+        name: course_ids
+        description: 'Must have at least 1 items.'
         required: true
-        example: zqjp
-        type: string
+        example: []
+        type: object
         custom: []
-      course_id:
-        name: course_id
+      payment_amount:
+        name: payment_amount
         description: ''
         required: true
-        example: 15
-        type: integer
+        example: 52807.5667
+        type: number
         custom: []
-    cleanBodyParameters:
-      title: zqjp
-      course_id: 15
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/sections/{id}'
-    metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display section'
-      description: 'Display the specified section.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the section.'
+      payment_id:
+        name: payment_id
+        description: ''
         required: true
-        example: 3
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 3
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":3,"name":null}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/sections/{id}'
-    metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update section'
-      description: 'Update the specified section in storage.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the section.'
-        required: true
-        example: 3
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 3
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-        required: true
-        example: xyqfrbhrozinpsupycswmupob
+        example: itaque
         type: string
         custom: []
     cleanBodyParameters:
-      title: xyqfrbhrozinpsupycswmupob
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/sections/{id}'
-    metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
-      subgroup: ''
-      subgroupDescription: ''
-      title: |-
-        Delete section
-        Remove the specified section from storage.
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the section.'
-        required: true
-        example: 3
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 3
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+      course_ids: []
+      payment_amount: 52807.5667
+      payment_id: itaque
     fileParameters: []
     responses: []
     responseFields: []

@@ -1,64 +1,17 @@
-name: Categories
-description: |-
-
-  Managing Categories
+name: 'Email Verification'
+description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/categories
-    metadata:
-      groupName: Categories
-      groupDescription: |-
-
-        Managing Categories
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get categories'
-      description: 'List all categories'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":1,"name":"Et labore accusantium sed veritatis voluptatem.","parent":null,"children":[{"id":10,"name":"Omnis neque fugiat cum."}]},{"id":2,"name":"Totam ea adipisci ut.","parent":null,"children":[]},{"id":3,"name":"Magni aut ipsa nostrum.","parent":null,"children":[]},{"id":4,"name":"Molestiae sint eum ea expedita ipsum recusandae.","parent":null,"children":[]},{"id":5,"name":"Et repellendus ex et sapiente ut explicabo expedita dicta.","parent":null,"children":[]},{"id":6,"name":"Accusantium laborum reiciendis ab eos tempore qui.","parent":null,"children":[]},{"id":7,"name":"Qui ab ex laudantium.","parent":null,"children":[]},{"id":8,"name":"Voluptas perspiciatis voluptatibus voluptate ea asperiores.","parent":null,"children":[]},{"id":9,"name":"Et quis recusandae autem voluptates dolorem et.","parent":null,"children":[]},{"id":10,"name":"Omnis neque fugiat cum.","parent":{"id":1,"name":"Et labore accusantium sed veritatis voluptatem."},"children":[]},{"id":11,"name":"Doloremque quia aliquid sit.","parent":null,"children":[]},{"id":12,"name":"Sunt sint animi mollitia enim nobis vel sit.","parent":null,"children":[]},{"id":13,"name":"Voluptatem culpa labore necessitatibus dolore a vitae.","parent":null,"children":[]},{"id":14,"name":"Aliquam iste quasi quibusdam dignissimos cupiditate sit.","parent":null,"children":[]},{"id":15,"name":"Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.","parent":null,"children":[]}]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/categories
+    uri: api/auth/send-verification-email
     metadata:
-      groupName: Categories
-      groupDescription: |-
-
-        Managing Categories
+      groupName: 'Email Verification'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create Category'
-      description: 'Store a newly created Category in storage.'
+      title: 'Send Verification Email'
+      description: 'Send verification link to email'
       authenticated: false
       custom: []
     headers:
@@ -68,24 +21,8 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-        required: true
-        example: tta
-        type: string
-        custom: []
-      parent_id:
-        name: parent_id
-        description: ''
-        required: false
-        example: 12
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      name: tta
-      parent_id: 12
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
@@ -97,16 +34,14 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/categories/{id}'
+    uri: 'api/verify-email/{id}/{hash}'
     metadata:
-      groupName: Categories
-      groupDescription: |-
-
-        Managing Categories
+      groupName: 'Email Verification'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display Category'
-      description: 'Display the specified Category.'
+      title: 'Verify Email'
+      description: 'Verify email for user'
       authenticated: false
       custom: []
     headers:
@@ -115,13 +50,21 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the category.'
+        description: 'The ID of the verify email.'
         required: true
-        example: 1
-        type: integer
+        example: eum
+        type: string
+        custom: []
+      hash:
+        name: hash
+        description: ''
+        required: true
+        example: molestiae
+        type: string
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: eum
+      hash: molestiae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -129,113 +72,14 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":1,"name":"Et labore accusantium sed veritatis voluptatem.","parent":null,"children":[{"id":10,"name":"Omnis neque fugiat cum."}],"courses":[{"id":5,"title":"Distinctio et dicta consequatur consequuntur aut.","description":"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00cc88?text=omnis","price":"932.28","published":1,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":18,"title":"Tenetur vel ut quia itaque est explicabo.","description":"Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/003366?text=quo","price":"286.31","published":1,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"4.5"}]}}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/categories/{id}'
-    metadata:
-      groupName: Categories
-      groupDescription: |-
-
-        Managing Categories
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update Category'
-      description: 'Update the specified Category in storage.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the category.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-        required: true
-        example: alpqyyursxopgo
-        type: string
-        custom: []
-      parent_id:
-        name: parent_id
-        description: ''
-        required: false
-        example: 7
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      name: alpqyyursxopgo
-      parent_id: 7
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/categories/{id}'
-    metadata:
-      groupName: Categories
-      groupDescription: |-
-
-        Managing Categories
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Delete Category'
-      description: 'Remove the specified Category from storage.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the category.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null
