@@ -6,8 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 
+/**
+ * @group Email Verification
+ */
 class EmailVerificationController extends Controller
 {
+    /**
+     * Send Verification Email
+     * 
+     * Send verification link to email
+     */
     public function sendVerificationEmail(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
@@ -20,7 +28,11 @@ class EmailVerificationController extends Controller
 
         return ['status' => 'verification link sent'];
     }
-
+    /**
+     * Verify Email
+     * 
+     * Verify email for user
+     */
     public function verify(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {

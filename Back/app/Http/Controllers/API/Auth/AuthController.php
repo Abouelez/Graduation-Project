@@ -12,8 +12,20 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group Authentication
+ * 
+ * Managing Auth
+ */
 class AuthController extends Controller
 {
+    /**
+     * Register User
+     * 
+     * Add new user to system
+     * 
+     * @bodyParam password_confirmation string required Confirm password.
+     */
     public function register(RegisterRequest $request)
     {
         $user = User::create([
@@ -33,6 +45,11 @@ class AuthController extends Controller
         ], Response::HTTP_CREATED);
     }
 
+    /**
+     * Login
+     * 
+     * Login User
+     */
     public function login(LoginRequest $request)
     {
         $user = User::where('email', $request->email)->first();

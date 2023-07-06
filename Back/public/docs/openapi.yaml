@@ -7,6 +7,72 @@ servers:
   -
     url: 'http://localhost'
 paths:
+  /api/auth/register:
+    post:
+      summary: 'Register User'
+      operationId: registerUser
+      description: 'Add new user to system'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: cvdeqnapxiawusveobqa
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: tyshawn.ullrich@example.net
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: "'h(&'P`Kl[XqoY&/1#wF"
+                password_confirmation:
+                  type: string
+                  description: 'Confirm password.'
+                  example: repellendus
+              required:
+                - name
+                - email
+                - password
+                - password_confirmation
+      security: []
+  /api/auth/login:
+    post:
+      summary: Login
+      operationId: login
+      description: 'Login User'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: donnelly.karlie@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: quis
+              required:
+                - email
+                - password
+      security: []
   /api/categories:
     get:
       summary: 'Get categories'
@@ -234,11 +300,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: tta
+                  example: sshbo
                 parent_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 18
               required:
                 - name
       security: []
@@ -452,11 +518,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: alpqyyursxopgo
+                  example: wa
                 parent_id:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 15
               required:
                 - name
       security: []
@@ -542,7 +608,22 @@ paths:
               schema:
                 type: object
                 example:
-                  data: []
+                  data:
+                    -
+                      id: 51
+                      title: 'HTML Course'
+                      description: 'All you need to be professional in HTML'
+                      thumbnail: courses/course51/thumbnail.jpeg
+                      price: '119.99'
+                      published: 0
+                      instructor:
+                        id: 1
+                        name: 'Dr. Barrett Kreiger'
+                        email: mueller.zelda@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '4.5'
                   links:
                     first: 'http://localhost/api/courses/filter?page=1'
                     last: 'http://localhost/api/courses/filter?page=1'
@@ -550,7 +631,7 @@ paths:
                     next: null
                   meta:
                     current_page: 1
-                    from: null
+                    from: 1
                     last_page: 1
                     links:
                       -
@@ -567,12 +648,72 @@ paths:
                         active: false
                     path: 'http://localhost/api/courses/filter'
                     per_page: 10
-                    to: null
-                    total: 0
+                    to: 1
+                    total: 1
                 properties:
                   data:
                     type: array
-                    example: []
+                    example:
+                      -
+                        id: 51
+                        title: 'HTML Course'
+                        description: 'All you need to be professional in HTML'
+                        thumbnail: courses/course51/thumbnail.jpeg
+                        price: '119.99'
+                        published: 0
+                        instructor:
+                          id: 1
+                          name: 'Dr. Barrett Kreiger'
+                          email: mueller.zelda@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '4.5'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 51
+                        title:
+                          type: string
+                          example: 'HTML Course'
+                        description:
+                          type: string
+                          example: 'All you need to be professional in HTML'
+                        thumbnail:
+                          type: string
+                          example: courses/course51/thumbnail.jpeg
+                        price:
+                          type: string
+                          example: '119.99'
+                        published:
+                          type: integer
+                          example: 0
+                        instructor:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Dr. Barrett Kreiger'
+                            email:
+                              type: string
+                              example: mueller.zelda@example.net
+                            avatar:
+                              type: string
+                              example: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                            is_instructor:
+                              type: integer
+                              example: 1
+                            is_admin:
+                              type: integer
+                              example: 0
+                        rate:
+                          type: string
+                          example: '4.5'
                   links:
                     type: object
                     properties:
@@ -595,8 +736,8 @@ paths:
                         type: integer
                         example: 1
                       from:
-                        type: string
-                        example: null
+                        type: integer
+                        example: 1
                       last_page:
                         type: integer
                         example: 1
@@ -634,11 +775,11 @@ paths:
                         type: integer
                         example: 10
                       to:
-                        type: string
-                        example: null
+                        type: integer
+                        example: 1
                       total:
                         type: integer
-                        example: 0
+                        example: 1
       tags:
         - Courses
       security: []
@@ -1263,11 +1404,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: wcu
+                  example: fvkqfqmethsny
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Numquam ullam neque officia et dolorem sit culpa.'
+                  example: 'Impedit itaque velit molestiae eveniet.'
                 thumbnail:
                   type: string
                   format: binary
@@ -1275,19 +1416,19 @@ paths:
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 44
+                  example: 38
                 category_id:
                   type: integer
                   description: ''
-                  example: 15
+                  example: 16
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 15
                 user_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 18
               required:
                 - title
                 - description
@@ -1420,11 +1561,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: sgrwfdlmpsyizqhsivtuwki
+                  example: qvieylrzeqlrptkdqlle
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Et adipisci est qui optio quia.'
+                  example: 'Natus aut et ea autem eum.'
                 thumbnail:
                   type: string
                   description: ''
@@ -1432,15 +1573,15 @@ paths:
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 23
+                  example: 40
                 category_id:
                   type: integer
                   description: ''
-                  example: 17
+                  example: 19
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 16
+                  example: 18
                 user_id:
                   type: string
                   description: ''
@@ -1469,67 +1610,55 @@ paths:
         required: true
         schema:
           type: integer
-  /api/auth/register:
+  /api/auth/send-verification-email:
     post:
-      summary: ''
-      operationId: postApiAuthRegister
-      description: ''
+      summary: 'Send Verification Email'
+      operationId: sendVerificationEmail
+      description: 'Send verification link to email'
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: vsqelfbxts
-                email:
-                  type: string
-                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: elaina.franecki@example.net
-                password:
-                  type: string
-                  description: 'Must be at least 8 characters.'
-                  example: 'J?--C+V'
-              required:
-                - name
-                - email
-                - password
+        - 'Email Verification'
       security: []
-  /api/auth/login:
-    post:
-      summary: ''
-      operationId: postApiAuthLogin
-      description: ''
+  '/api/verify-email/{id}/{hash}':
+    get:
+      summary: 'Verify Email'
+      operationId: verifyEmail
+      description: 'Verify email for user'
       parameters: []
-      responses: {  }
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: kuhic.berneice@example.com
-                password:
-                  type: string
-                  description: ''
-                  example: sit
-              required:
-                - email
-                - password
+        - 'Email Verification'
       security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the verify email.'
+        example: eum
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: hash
+        description: ''
+        example: molestiae
+        required: true
+        schema:
+          type: string
   /api/auth/logout:
     post:
       summary: ''
@@ -1561,6 +1690,40 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
+      security: []
+  /api/enroll:
+    post:
+      summary: ''
+      operationId: postApiEnroll
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                course_ids:
+                  type: object
+                  description: 'Must have at least 1 items.'
+                  example: []
+                  properties: []
+                payment_amount:
+                  type: number
+                  description: ''
+                  example: 52807.5667
+                payment_id:
+                  type: string
+                  description: ''
+                  example: itaque
+              required:
+                - course_ids
+                - payment_amount
+                - payment_id
       security: []
   /api/lectures:
     get:
@@ -1658,19 +1821,19 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: z
+                  example: ksfcjwvvxnd
                 type:
                   type: string
                   description: ''
-                  example: deleniti
+                  example: blanditiis
                 section_id:
                   type: integer
                   description: ''
-                  example: 18
+                  example: 7
                 content:
                   type: string
                   description: ''
-                  example: optio
+                  example: reiciendis
               required:
                 - title
                 - type
@@ -1754,6 +1917,90 @@ paths:
         required: true
         schema:
           type: integer
+  /api/auth/change_password:
+    post:
+      summary: ''
+      operationId: postApiAuthChange_password
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Password'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                old_password:
+                  type: string
+                  description: ''
+                  example: maiores
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: "(|l^%b{'4'T}V"
+              required:
+                - old_password
+                - password
+      security: []
+  /api/auth/forgot-password:
+    post:
+      summary: ''
+      operationId: postApiAuthForgotPassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Password'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: deckow.parker@example.com
+              required:
+                - email
+      security: []
+  /api/auth/rest-password:
+    post:
+      summary: ''
+      operationId: postApiAuthRestPassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Password'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: alexane.muller@example.org
+                token:
+                  type: string
+                  description: ''
+                  example: est
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: '\a>L}Xe'
+              required:
+                - email
+                - token
+                - password
+      security: []
   /api/questions:
     get:
       summary: 'Get questions'
@@ -1834,23 +2081,23 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: ysuxdochsxwzswblzmqtl
+                  example: wsfqc
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: v
+                  example: x
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: wibuervcueehjhcfyoyks
+                  example: tmzjqee
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: psbfdmojxksabluvllakirrz
+                  example: eiordqatggqkgvlunqu
                 quiz_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 10
               required:
                 - question
                 - answer
@@ -1893,19 +2140,19 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: fstotqpqueltxijbxaxt
+                  example: xjtlyhmivwawypuqetfm
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: d
+                  example: r
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: iovzcl
+                  example: t
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: tatmcxpabunoglndhoi
+                  example: zeamxwhglhzxkfzwsow
               required:
                 - question
                 - answer
@@ -2038,11 +2285,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: f
+                  example: tdrxkwycxydlyshvnnxfg
                 section_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 20
               required:
                 - title
                 - section_id
@@ -2139,7 +2386,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: bxl
+                  example: aylwcstp
               required:
                 - title
       security: []
@@ -2531,11 +2778,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: zqjp
+                  example: xyeqyxlchljbkwczndvh
                 course_id:
                   type: integer
                   description: ''
-                  example: 15
+                  example: 4
               required:
                 - title
                 - course_id
@@ -2588,7 +2835,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: xyqfrbhrozinpsupycswmupob
+                  example: mionk
               required:
                 - title
       security: []
@@ -2612,17 +2859,26 @@ paths:
           type: integer
 tags:
   -
+    name: Authentication
+    description: "\nManaging Auth"
+  -
     name: Categories
     description: "\nManaging Categories"
   -
     name: Courses
     description: "\nManaging Courses"
   -
+    name: 'Email Verification'
+    description: ''
+  -
     name: Endpoints
     description: ''
   -
     name: Lectures
     description: "\nManaging Lectures"
+  -
+    name: 'Managing Password'
+    description: "\nManaging Password"
   -
     name: QuizQuestions
     description: "\nManaging QuizQuestions"

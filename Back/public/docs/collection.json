@@ -10,11 +10,79 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "8697f9a5-3567-40c8-b406-50c3cc1b607f",
+        "_postman_id": "d628e8e6-7e64-43d6-b46c-0ad7fe70db75",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Authentication",
+            "description": "\nManaging Auth",
+            "item": [
+                {
+                    "name": "Register User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"cvdeqnapxiawusveobqa\",\"email\":\"tyshawn.ullrich@example.net\",\"password\":\"'h(&'P`Kl[XqoY&\\\/1#wF\",\"password_confirmation\":\"repellendus\"}"
+                        },
+                        "description": "Add new user to system",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"donnelly.karlie@example.net\",\"password\":\"quis\"}"
+                        },
+                        "description": "Login User",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "Categories",
             "description": "\nManaging Categories",
@@ -97,7 +165,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"tta\",\"parent_id\":12}"
+                            "raw": "{\"name\":\"sshbo\",\"parent_id\":18}"
                         },
                         "description": "Store a newly created Category in storage.",
                         "auth": {
@@ -200,7 +268,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"alpqyyursxopgo\",\"parent_id\":7}"
+                            "raw": "{\"name\":\"wa\",\"parent_id\":15}"
                         },
                         "description": "Update the specified Category in storage.",
                         "auth": {
@@ -333,7 +401,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter\",\"per_page\":10,\"to\":null,\"total\":0}}",
+                            "body": "{\"data\":[{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"4.5\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter\",\"per_page\":10,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -432,37 +500,37 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "wcu",
+                                    "value": "fvkqfqmethsny",
                                     "type": "text",
                                     "description": "Must be at least 5 characters. Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Numquam ullam neque officia et dolorem sit culpa.",
+                                    "value": "Impedit itaque velit molestiae eveniet.",
                                     "type": "text",
                                     "description": "Must be at least 10 characters. Must not be greater than 5000 characters."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 44,
+                                    "value": 38,
                                     "type": "text",
                                     "description": "Must be at least 0."
                                 },
                                 {
                                     "key": "category_id",
-                                    "value": 15,
+                                    "value": 16,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sub_category_id",
-                                    "value": 12,
+                                    "value": 15,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "user_id",
-                                    "value": 11,
+                                    "value": 18,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -574,7 +642,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"sgrwfdlmpsyizqhsivtuwki\",\"description\":\"Et adipisci est qui optio quia.\",\"price\":23,\"category_id\":17,\"sub_category_id\":16}"
+                            "raw": "{\"title\":\"qvieylrzeqlrptkdqlle\",\"description\":\"Natus aut et ea autem eum.\",\"price\":40,\"category_id\":19,\"sub_category_id\":18}"
                         },
                         "description": "Update the specified Course in storage.",
                         "auth": {
@@ -622,17 +690,17 @@
             ]
         },
         {
-            "name": "Endpoints",
+            "name": "Email Verification",
             "description": "",
             "item": [
                 {
-                    "name": "POST api\/auth\/register",
+                    "name": "Send Verification Email",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/auth\/register",
+                            "path": "api\/auth\/send-verification-email",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/auth\/register"
+                            "raw": "{{baseUrl}}\/api\/auth\/send-verification-email"
                         },
                         "method": "POST",
                         "header": [
@@ -645,11 +713,8 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"vsqelfbxts\",\"email\":\"elaina.franecki@example.net\",\"password\":\"J?--C+V\"}"
-                        },
-                        "description": "",
+                        "body": null,
+                        "description": "Send verification link to email",
                         "auth": {
                             "type": "noauth"
                         }
@@ -657,15 +722,29 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/auth\/login",
+                    "name": "Verify Email",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/auth\/login",
+                            "path": "api\/verify-email\/:id\/:hash",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                            "raw": "{{baseUrl}}\/api\/verify-email\/:id\/:hash",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "eum",
+                                    "description": "The ID of the verify email."
+                                },
+                                {
+                                    "id": "hash",
+                                    "key": "hash",
+                                    "value": "molestiae",
+                                    "description": ""
+                                }
+                            ]
                         },
-                        "method": "POST",
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -676,17 +755,40 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"email\":\"kuhic.berneice@example.com\",\"password\":\"sit\"}"
-                        },
-                        "description": "",
+                        "body": null,
+                        "description": "Verify email for user",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": []
-                },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
                 {
                     "name": "POST api\/auth\/logout",
                     "request": {
@@ -762,6 +864,37 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/enroll",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/enroll",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/enroll"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"course_ids\":[],\"payment_amount\":52807.5667000000030384398996829986572265625,\"payment_id\":\"itaque\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -847,7 +980,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"z\",\"type\":\"deleniti\",\"section_id\":18,\"content\":\"optio\"}"
+                            "raw": "{\"title\":\"ksfcjwvvxnd\",\"type\":\"blanditiis\",\"section_id\":7,\"content\":\"reiciendis\"}"
                         },
                         "description": "Store a newly created resource in storage.",
                         "auth": {
@@ -995,6 +1128,105 @@
             ]
         },
         {
+            "name": "Managing Password",
+            "description": "\nManaging Password",
+            "item": [
+                {
+                    "name": "POST api\/auth\/change_password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/change_password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/change_password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"old_password\":\"maiores\",\"password\":\"(|l^%b{'4'T}V\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/forgot-password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/forgot-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/forgot-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"deckow.parker@example.com\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/rest-password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/rest-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/rest-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"alexane.muller@example.org\",\"token\":\"est\",\"password\":\"\\\\a>L}Xe\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "QuizQuestions",
             "description": "\nManaging QuizQuestions",
             "item": [
@@ -1076,7 +1308,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"ysuxdochsxwzswblzmqtl\",\"answer\":\"v\",\"A\":\"wibuervcueehjhcfyoyks\",\"B\":\"psbfdmojxksabluvllakirrz\",\"quiz_id\":12}"
+                            "raw": "{\"question\":\"wsfqc\",\"answer\":\"x\",\"A\":\"tmzjqee\",\"B\":\"eiordqatggqkgvlunqu\",\"quiz_id\":10}"
                         },
                         "description": "Store a newly created question in storage.",
                         "auth": {
@@ -1179,7 +1411,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"fstotqpqueltxijbxaxt\",\"answer\":\"d\",\"A\":\"iovzcl\",\"B\":\"tatmcxpabunoglndhoi\"}"
+                            "raw": "{\"question\":\"xjtlyhmivwawypuqetfm\",\"answer\":\"r\",\"A\":\"t\",\"B\":\"zeamxwhglhzxkfzwsow\"}"
                         },
                         "description": "Update the specified resource in storage.",
                         "auth": {
@@ -1308,7 +1540,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"f\",\"section_id\":13}"
+                            "raw": "{\"title\":\"tdrxkwycxydlyshvnnxfg\",\"section_id\":20}"
                         },
                         "description": "Store a newly created Quiz in storage.",
                         "auth": {
@@ -1411,7 +1643,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"bxl\"}"
+                            "raw": "{\"title\":\"aylwcstp\"}"
                         },
                         "description": "Update the specified Quiz in storage.",
                         "auth": {
@@ -1766,7 +1998,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"zqjp\",\"course_id\":15}"
+                            "raw": "{\"title\":\"xyeqyxlchljbkwczndvh\",\"course_id\":4}"
                         },
                         "description": "Store a newly created section in storage.",
                         "auth": {
@@ -1869,7 +2101,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"xyqfrbhrozinpsupycswmupob\"}"
+                            "raw": "{\"title\":\"mionk\"}"
                         },
                         "description": "Update the specified section in storage.",
                         "auth": {

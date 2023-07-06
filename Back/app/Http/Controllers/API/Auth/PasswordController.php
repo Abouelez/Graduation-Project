@@ -8,6 +8,11 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 
+/**
+ * @group Managing Password
+ * 
+ * Managing Password
+ */
 class PasswordController extends Controller
 {
     public function updatePassword(Request $request)
