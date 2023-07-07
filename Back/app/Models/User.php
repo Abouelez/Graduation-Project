@@ -23,6 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'bio',
+        'avatar',
     ];
 
     /**
@@ -46,7 +48,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function courses(): BelongsToMany
     {
-        return $this->belongsToMany(Course::class)
+        return $this->belongsToMany(Course::class, 'course_user')
             ->withPivot('paid_price', 'purchase_date')
             ->withTimestamps();
     }
@@ -56,9 +58,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Course::class, 'wish_list');
     }
 
-    public function carts(): BelongsToMany
+    public function cart(): BelongsToMany
     {
-        return $this->belongsToMany(Course::class, 'cart');
+        return $this->belongsToMany(Course::class, 'carts');
     }
 
     public function createdCourses(): HasMany
@@ -76,5 +78,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Review::class);
     }
 
-    
+    public function hasPurchased($course_id)
+    {
+        return $this->courses()->where('course_id', $course_id)->exists();
+    }
 }

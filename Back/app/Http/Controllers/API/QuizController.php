@@ -40,7 +40,7 @@ class QuizController extends Controller
     /**
      * Create Quiz
      * 
-     * Store a newly created Quiz in storage.
+     * Store a newly created Quiz in storage. 
      */
     public function store(StoreQuizRequest $request)
     {
@@ -73,7 +73,10 @@ class QuizController extends Controller
      */
     public function update(UpdateQuizRequest $request, Quiz $quiz)
     {
+        $this->authorize('update', $quiz);
+
         $quiz->update($request->validated());
+        return new QuizResource($quiz);
     }
 
     /**
@@ -83,6 +86,8 @@ class QuizController extends Controller
      */
     public function destroy(Quiz $quiz)
     {
+        $this->authorize('delete', $quiz);
+
         if ($quiz->section->course->isPublished()) {
             return response()->json(['message' => 'The course is published, so quiz cannot be deleted.'], Response::HTTP_FORBIDDEN);
         }

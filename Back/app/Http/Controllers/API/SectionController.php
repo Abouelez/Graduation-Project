@@ -73,6 +73,8 @@ class SectionController extends Controller
      */
     public function update(UpdateSectionRequest $request, Section $section)
     {
+        $this->authorize('update', $section);
+
         $section->update($request->validated());
         return new SectionResource($section);
     }
@@ -83,6 +85,8 @@ class SectionController extends Controller
      */
     public function destroy(Section $section)
     {
+        $this->authorize('update', $section);
+
         if ($section->course->accepted()) {
             return response()->json(['message' => 'The course is published, so section cannot be deleted.'], Response::HTTP_FORBIDDEN);
         }

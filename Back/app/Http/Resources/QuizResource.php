@@ -17,7 +17,24 @@ class QuizResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'questions' => QuizQuestionResource::collection($this->whenLoaded('questions'))
+            'questions' => $this->canAccess()
         ];
+    }
+
+
+
+
+    public function canAccess()
+    {
+        $user = auth()->user();
+        if (
+            $user
+            && ($user->hasPurchased($this->course()->id)
+                || $this->instructor()->id == $user->id
+                || $user->is_admin)
+        ) {
+            return QuizQuestionResource::collection($this->whenLoaded('questions'));
+        }
+        return null;
     }
 }

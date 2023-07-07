@@ -15,4 +15,14 @@ class Lecture extends Model
     {
         return $this->belongsTo(Section::class);
     }
+
+    public function instructor()
+    {
+        return $this->section->course->instructor;
+    }
+
+    public function course()
+    {
+        return $this->section->course;
+    }
 }

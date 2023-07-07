@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Section;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class StoreSectionRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class StoreSectionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return Gate::allows('create', Section::class);
     }
 
     /**

@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCommentRequest;
 use App\Http\Resources\CommentResource;
 use App\Models\Comment;
+use App\Models\Course;
+use App\Notifications\CommentNotification;
+use App\Policies\CommentPolicy;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 /**
  * @group Comments
@@ -33,9 +38,28 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCommentRequest $request)
     {
-        //
+
+        $user = $request->user();
+        $course = Course::findOrFail($request->course_id);
+        $instructor = $course->instructor;
+
+        $comment = Comment::create(
+            [
+                'course_id' => $request->course_id,
+                'user_id' => $user->id,
+                'comment_text' => $request->comment_text,
+                'parent_id' => $request->parent_id
+            ]
+        );
+        $instructor->notify(new CommentNotification($course, $comment));
+
+
+        return response()->json([
+            'message' => 'comment published',
+            'comment' => new CommentResource($comment->load(['user']))
+        ], Response::HTTP_CREATED);
     }
 
     /**
@@ -67,6 +91,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $this->authorize('delete', $comment);
+        $comment->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

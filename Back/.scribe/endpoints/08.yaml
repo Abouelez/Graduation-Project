@@ -1,21 +1,21 @@
-name: Quizzes
+name: Lectures
 description: |-
 
-  Managing Quizzes
+  Managing Lectures
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/quizzes
+    uri: api/lectures
     metadata:
-      groupName: Quizzes
+      groupName: Lectures
       groupDescription: |-
 
-        Managing Quizzes
+        Managing Lectures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get Quizzes'
-      description: 'List all Quizzes.'
+      title: 'Get Lectures'
+      description: 'Display a listing of the resource.'
       authenticated: false
       custom: []
     headers:
@@ -30,13 +30,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":[{"id":1,"title":"Quiz_1","questions":[{"id":1,"question":"What is HTML ?","answer":"A","A":"Hyper TExt Markup Language","B":"Bla Bla","C":"Bla BLa Bla","D":"Somethig else"}]}]}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '50'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -49,16 +47,16 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/quizzes
+    uri: api/lectures
     metadata:
-      groupName: Quizzes
+      groupName: Lectures
       groupDescription: |-
 
-        Managing Quizzes
+        Managing Lectures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create Quiz'
-      description: 'Store a newly created Quiz in storage.'
+      title: 'Create Lecture'
+      description: 'Store a newly created resource in storage.'
       authenticated: false
       custom: []
     headers:
@@ -73,19 +71,35 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
         required: true
-        example: tdrxkwycxydlyshvnnxfg
+        example: hqivklwdptrtfnqhsydyiqii
+        type: string
+        custom: []
+      type:
+        name: type
+        description: ''
+        required: true
+        example: provident
         type: string
         custom: []
       section_id:
         name: section_id
         description: ''
         required: true
-        example: 20
+        example: 18
         type: integer
         custom: []
+      content:
+        name: content
+        description: ''
+        required: true
+        example: culpa
+        type: string
+        custom: []
     cleanBodyParameters:
-      title: tdrxkwycxydlyshvnnxfg
-      section_id: 20
+      title: hqivklwdptrtfnqhsydyiqii
+      type: provident
+      section_id: 18
+      content: culpa
     fileParameters: []
     responses: []
     responseFields: []
@@ -97,16 +111,16 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/quizzes/{id}'
+    uri: 'api/lectures/{id}'
     metadata:
-      groupName: Quizzes
+      groupName: Lectures
       groupDescription: |-
 
-        Managing Quizzes
+        Managing Lectures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display Quiz'
-      description: 'Display the specified Quiz.'
+      title: 'Display Lecture'
+      description: 'Display the specified resource.'
       authenticated: false
       custom: []
     headers:
@@ -115,13 +129,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the quiz.'
+        description: 'The ID of the lecture.'
         required: true
-        example: 1
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -129,13 +143,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":1,"title":"Quiz_1","questions":[{"id":1,"question":"What is HTML ?","answer":"A","A":"Hyper TExt Markup Language","B":"Bla Bla","C":"Bla BLa Bla","D":"Somethig else"}]}}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -149,16 +161,16 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/quizzes/{id}'
+    uri: 'api/lectures/{id}'
     metadata:
-      groupName: Quizzes
+      groupName: Lectures
       groupDescription: |-
 
-        Managing Quizzes
+        Managing Lectures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Quiz'
-      description: 'Update the specified Quiz in storage.'
+      title: 'Update Lecture'
+      description: 'Update the specified resource in storage.'
       authenticated: false
       custom: []
     headers:
@@ -167,25 +179,17 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the quiz.'
+        description: 'The ID of the lecture.'
         required: true
-        example: 1
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 16
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-        required: true
-        example: aylwcstp
-        type: string
-        custom: []
-    cleanBodyParameters:
-      title: aylwcstp
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
@@ -197,15 +201,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/quizzes/{id}'
+    uri: 'api/lectures/{id}'
     metadata:
-      groupName: Quizzes
+      groupName: Lectures
       groupDescription: |-
 
-        Managing Quizzes
+        Managing Lectures
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete Quiz'
+      title: 'Delete Lecture'
       description: 'Remove the specified resource from storage.'
       authenticated: false
       custom: []
@@ -215,13 +219,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the quiz.'
+        description: 'The ID of the lecture.'
         required: true
-        example: 1
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

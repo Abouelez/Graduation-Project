@@ -83,6 +83,8 @@ class LectureController extends Controller
      */
     public function update(Request $request, Lecture $lecture)
     {
+        $this->authorize('update', $lecture);
+
         if ($lecture->section->course->isPublished()) {
             return response()->json(['message' => 'The course is published, so cannot be updated.'], Response::HTTP_FORBIDDEN);
         }
@@ -112,6 +114,8 @@ class LectureController extends Controller
      */
     public function destroy(Lecture $lecture)
     {
+        $this->authorize('delete', $lecture);
+
         if ($lecture->section->course->isPublished()) {
             return response()->json(['message' => 'The course is published, so lecture cannot be deleted.'], Response::HTTP_FORBIDDEN);
         }

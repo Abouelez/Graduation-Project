@@ -18,8 +18,22 @@ class LectureResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'type' => $this->type,
-            'content' => $this->content,
-            'section' => new SectionResource($this->whenLoaded('section'))
+            'content' => $this->canAccess($request),
+            // 'section' => new SectionResource($this->whenLoaded('section'))
         ];
+    }
+
+    public function canAccess($request)
+    {
+        $user = auth()->user();
+        if (
+            $user
+            && ($user->hasPurchased($this->course()->id)
+                || $this->instructor()->id == $user->id
+                || $user->is_admin)
+        ) {
+            return $this->content;
+        }
+        return null;
     }
 }

@@ -73,6 +73,7 @@ class QuizQuestionsController extends Controller
      */
     public function update(UpdateQuizQuestionRequest $request, QuizQuestion $quizQuestion)
     {
+        $this->authorize('update', $quizQuestion);
         $quizQuestion->update($request->validated());
         return new QuizQuestionResource($quizQuestion);
     }
@@ -84,6 +85,9 @@ class QuizQuestionsController extends Controller
      */
     public function destroy(QuizQuestion $quizQuestion)
     {
+        // $this->authorize('delete', $quizQuestion);
+        dd($quizQuestion->quiz);
+
         if ($quizQuestion->section->course->isPublished) {
             return response()->json(['message' => 'The course is published, so cannot be updated.'], Response::HTTP_FORBIDDEN);
         }

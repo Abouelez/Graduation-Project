@@ -25,20 +25,20 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: cvdeqnapxiawusveobqa
+                  description: 'Must not be greater than 100 characters.'
+                  example: elfhstlzfppkcouhcrwbkl
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: tyshawn.ullrich@example.net
+                  example: bednar.prudence@example.org
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: "'h(&'P`Kl[XqoY&/1#wF"
+                  example: 'V+K''.5y~>ZY"&|'
                 password_confirmation:
                   type: string
                   description: 'Confirm password.'
-                  example: repellendus
+                  example: porro
               required:
                 - name
                 - email
@@ -64,16 +64,52 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: donnelly.karlie@example.net
+                  example: savion11@example.com
                 password:
                   type: string
                   description: ''
-                  example: quis
+                  example: quia
               required:
                 - email
                 - password
       security: []
+  /api/auth/logout:
+    post:
+      summary: ''
+      operationId: postApiAuthLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
   /api/categories:
+    post:
+      summary: 'Create Category'
+      operationId: createCategory
+      description: 'Store a newly created Category in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
+                  example: mjiorhkv
+                parent_id:
+                  type: integer
+                  description: ''
+                  example: 6
+              required:
+                - name
+      security: []
     get:
       summary: 'Get categories'
       operationId: getCategories
@@ -165,7 +201,7 @@ paths:
                       children: []
                     -
                       id: 15
-                      name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                      name: 'tesst catdd'
                       parent: null
                       children: []
                 properties:
@@ -249,7 +285,7 @@ paths:
                         children: []
                       -
                         id: 15
-                        name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                        name: 'tesst catdd'
                         parent: null
                         children: []
                     items:
@@ -282,10 +318,11 @@ paths:
       tags:
         - Categories
       security: []
-    post:
-      summary: 'Create Category'
-      operationId: createCategory
-      description: 'Store a newly created Category in storage.'
+  '/api/categories/{id}':
+    put:
+      summary: 'Update Category'
+      operationId: updateCategory
+      description: 'Update the specified Category in storage.'
       parameters: []
       responses: {  }
       tags:
@@ -300,15 +337,23 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: sshbo
+                  example: sopmhhfe
                 parent_id:
                   type: integer
                   description: ''
-                  example: 18
+                  example: 10
               required:
                 - name
       security: []
-  '/api/categories/{id}':
+    delete:
+      summary: 'Delete Category'
+      operationId: deleteCategory
+      description: 'Remove the specified Category from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      security: []
     get:
       summary: 'Display Category'
       operationId: displayCategory
@@ -369,12 +414,13 @@ paths:
                         price: '119.99'
                         published: 0
                         instructor:
-                          id: 1
-                          name: 'Dr. Barrett Kreiger'
-                          email: mueller.zelda@example.net
-                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          id: 14
+                          name: updated
+                          email: abouelez10@gmail.com
+                          avatar: users/user14/avatar.jpeg
+                          bio: 'instructor for many years'
                           is_instructor: 1
-                          is_admin: 0
+                          is_admin: 1
                         rate: '4.5'
                 properties:
                   data:
@@ -445,12 +491,13 @@ paths:
                             price: '119.99'
                             published: 0
                             instructor:
-                              id: 1
-                              name: 'Dr. Barrett Kreiger'
-                              email: mueller.zelda@example.net
-                              avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                              id: 14
+                              name: updated
+                              email: abouelez10@gmail.com
+                              avatar: users/user14/avatar.jpeg
+                              bio: 'instructor for many years'
                               is_instructor: 1
-                              is_admin: 0
+                              is_admin: 1
                             rate: '4.5'
                         items:
                           type: object
@@ -500,14 +547,24 @@ paths:
       tags:
         - Categories
       security: []
-    put:
-      summary: 'Update Category'
-      operationId: updateCategory
-      description: 'Update the specified Category in storage.'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/comments:
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
       parameters: []
       responses: {  }
       tags:
-        - Categories
+        - Comments
       requestBody:
         required: true
         content:
@@ -515,31 +572,33 @@ paths:
             schema:
               type: object
               properties:
-                name:
+                course_id:
                   type: string
-                  description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: wa
-                parent_id:
-                  type: integer
                   description: ''
-                  example: 15
+                  example: nostrum
+                comment_text:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: jqbabalnicfxsjqoljlckpcpg
               required:
-                - name
+                - course_id
+                - comment_text
       security: []
+  '/api/comments/{id}':
     delete:
-      summary: 'Delete Category'
-      operationId: deleteCategory
-      description: 'Remove the specified Category from storage.'
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
       parameters: []
       responses: {  }
       tags:
-        - Categories
+        - Comments
       security: []
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the category.'
+        description: 'The ID of the comment.'
         example: 1
         required: true
         schema:
@@ -617,12 +676,13 @@ paths:
                       price: '119.99'
                       published: 0
                       instructor:
-                        id: 1
-                        name: 'Dr. Barrett Kreiger'
-                        email: mueller.zelda@example.net
-                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                        id: 14
+                        name: updated
+                        email: abouelez10@gmail.com
+                        avatar: users/user14/avatar.jpeg
+                        bio: 'instructor for many years'
                         is_instructor: 1
-                        is_admin: 0
+                        is_admin: 1
                       rate: '4.5'
                   links:
                     first: 'http://localhost/api/courses/filter?page=1'
@@ -662,12 +722,13 @@ paths:
                         price: '119.99'
                         published: 0
                         instructor:
-                          id: 1
-                          name: 'Dr. Barrett Kreiger'
-                          email: mueller.zelda@example.net
-                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                          id: 14
+                          name: updated
+                          email: abouelez10@gmail.com
+                          avatar: users/user14/avatar.jpeg
+                          bio: 'instructor for many years'
                           is_instructor: 1
-                          is_admin: 0
+                          is_admin: 1
                         rate: '4.5'
                     items:
                       type: object
@@ -695,22 +756,25 @@ paths:
                           properties:
                             id:
                               type: integer
-                              example: 1
+                              example: 14
                             name:
                               type: string
-                              example: 'Dr. Barrett Kreiger'
+                              example: updated
                             email:
                               type: string
-                              example: mueller.zelda@example.net
+                              example: abouelez10@gmail.com
                             avatar:
                               type: string
-                              example: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
+                              example: users/user14/avatar.jpeg
+                            bio:
+                              type: string
+                              example: 'instructor for many years'
                             is_instructor:
                               type: integer
                               example: 1
                             is_admin:
                               type: integer
-                              example: 0
+                              example: 1
                         rate:
                           type: string
                           example: '4.5'
@@ -783,7 +847,84 @@ paths:
       tags:
         - Courses
       security: []
+  '/api/courses/access-content/{course_id}':
+    get:
+      summary: ''
+      operationId: getApiCoursesAccessContentCourse_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Courses
+      security: []
+    parameters:
+      -
+        in: path
+        name: course_id
+        description: 'The ID of the course.'
+        example: 2
+        required: true
+        schema:
+          type: integer
   /api/courses:
+    post:
+      summary: 'Create Course'
+      operationId: createCourse
+      description: 'Store a newly created Course in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Courses
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+                  example: loklisvr
+                description:
+                  type: string
+                  description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
+                  example: 'Sit odio nisi et sed.'
+                thumbnail:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                price:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 12
+                category_id:
+                  type: integer
+                  description: ''
+                  example: 20
+                sub_category_id:
+                  type: integer
+                  description: ''
+                  example: 5
+              required:
+                - title
+                - description
+                - thumbnail
+                - price
+                - category_id
+      security: []
     get:
       summary: 'Get Courses'
       operationId: getCourses
@@ -834,25 +975,6 @@ paths:
                         name: 'Dr. Gregory Koch II'
                         email: hazle.dickens@example.com
                         avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
-                        is_instructor: 1
-                        is_admin: 0
-                      rate: '0.0'
-                    -
-                      id: 3
-                      title: 'Voluptas aliquid id sed facere.'
-                      description: 'Qui recusandae consequatur natus est est vel quis. Ex exercitationem voluptatibus voluptatem non sed iusto ducimus. Reprehenderit deserunt sed ducimus quia debitis blanditiis. Alias amet ducimus ipsa ut inventore iure et id.'
-                      thumbnail: 'https://via.placeholder.com/640x480.png/000099?text=aut'
-                      price: '298.64'
-                      published: 1
-                      category:
-                        id: 13
-                        name: 'Voluptatem culpa labore necessitatibus dolore a vitae.'
-                      sub_category: null
-                      instructor:
-                        id: 10
-                        name: 'Mike Windler'
-                        email: bwiza@example.net
-                        avatar: 'https://via.placeholder.com/640x480.png/002299?text=omnis'
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
@@ -922,7 +1044,7 @@ paths:
                       published: 1
                       category:
                         id: 15
-                        name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                        name: 'tesst catdd'
                       sub_category: null
                       instructor:
                         id: 5
@@ -1008,6 +1130,25 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                    -
+                      id: 12
+                      title: 'Hic quia et unde ab sapiente nobis repudiandae deserunt.'
+                      description: 'Voluptates iusto voluptatem nisi ut. Aspernatur eaque consequuntur quia aliquam. Molestiae quibusdam in labore fugit voluptatem aperiam unde. Neque ut vero dolores inventore in dolorem.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/00ee55?text=in'
+                      price: '727.85'
+                      published: 1
+                      category:
+                        id: 9
+                        name: 'Et quis recusandae autem voluptates dolorem et.'
+                      sub_category: null
+                      instructor:
+                        id: 9
+                        name: 'Katrine Dietrich'
+                        email: mccullough.alverta@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/0022ee?text=deleniti'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
                   links:
                     first: 'http://localhost/api/courses?page=1'
                     last: 'http://localhost/api/courses?page=5'
@@ -1049,7 +1190,7 @@ paths:
                     path: 'http://localhost/api/courses'
                     per_page: 10
                     to: 10
-                    total: 49
+                    total: 48
                 properties:
                   data:
                     type: array
@@ -1070,25 +1211,6 @@ paths:
                           name: 'Dr. Gregory Koch II'
                           email: hazle.dickens@example.com
                           avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
-                          is_instructor: 1
-                          is_admin: 0
-                        rate: '0.0'
-                      -
-                        id: 3
-                        title: 'Voluptas aliquid id sed facere.'
-                        description: 'Qui recusandae consequatur natus est est vel quis. Ex exercitationem voluptatibus voluptatem non sed iusto ducimus. Reprehenderit deserunt sed ducimus quia debitis blanditiis. Alias amet ducimus ipsa ut inventore iure et id.'
-                        thumbnail: 'https://via.placeholder.com/640x480.png/000099?text=aut'
-                        price: '298.64'
-                        published: 1
-                        category:
-                          id: 13
-                          name: 'Voluptatem culpa labore necessitatibus dolore a vitae.'
-                        sub_category: null
-                        instructor:
-                          id: 10
-                          name: 'Mike Windler'
-                          email: bwiza@example.net
-                          avatar: 'https://via.placeholder.com/640x480.png/002299?text=omnis'
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
@@ -1158,7 +1280,7 @@ paths:
                         published: 1
                         category:
                           id: 15
-                          name: 'Velit corrupti accusantium accusantium quia excepturi tempora odit laboriosam.'
+                          name: 'tesst catdd'
                         sub_category: null
                         instructor:
                           id: 5
@@ -1235,6 +1357,25 @@ paths:
                         category:
                           id: 14
                           name: 'Aliquam iste quasi quibusdam dignissimos cupiditate sit.'
+                        sub_category: null
+                        instructor:
+                          id: 9
+                          name: 'Katrine Dietrich'
+                          email: mccullough.alverta@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/0022ee?text=deleniti'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                      -
+                        id: 12
+                        title: 'Hic quia et unde ab sapiente nobis repudiandae deserunt.'
+                        description: 'Voluptates iusto voluptatem nisi ut. Aspernatur eaque consequuntur quia aliquam. Molestiae quibusdam in labore fugit voluptatem aperiam unde. Neque ut vero dolores inventore in dolorem.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/00ee55?text=in'
+                        price: '727.85'
+                        published: 1
+                        category:
+                          id: 9
+                          name: 'Et quis recusandae autem voluptates dolorem et.'
                         sub_category: null
                         instructor:
                           id: 9
@@ -1382,14 +1523,15 @@ paths:
                         example: 10
                       total:
                         type: integer
-                        example: 49
+                        example: 48
       tags:
         - Courses
       security: []
-    post:
-      summary: 'Create Course'
-      operationId: createCourse
-      description: 'Store a newly created Course in storage.'
+  '/api/courses/{id}':
+    put:
+      summary: 'Update Course'
+      operationId: updateCourse
+      description: 'Update the specified Course in storage.'
       parameters: []
       responses: {  }
       tags:
@@ -1397,51 +1539,53 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: fvkqfqmethsny
+                  example: huutiqmktjbglbqjntr
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Impedit itaque velit molestiae eveniet.'
+                  example: 'Autem aut impedit consectetur magni necessitatibus ut cum.'
                 thumbnail:
                   type: string
-                  format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  description: ''
+                  example: null
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 38
+                  example: 3
                 category_id:
                   type: integer
                   description: ''
-                  example: 16
+                  example: 12
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 15
-                user_id:
-                  type: integer
-                  description: ''
-                  example: 18
+                  example: 11
               required:
                 - title
                 - description
-                - thumbnail
                 - price
                 - category_id
-                - user_id
       security: []
-  '/api/courses/{id}':
+    delete:
+      summary: 'Delete Course'
+      operationId: deleteCourse
+      description: 'Remove the specified Course from storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Courses
+      security: []
     get:
       summary: 'Display Course'
       operationId: displayCourse
-      description: 'Display the specified Course.'
+      description: 'Display the specified Course Data without content.'
       parameters: []
       responses:
         200:
@@ -1543,64 +1687,6 @@ paths:
       tags:
         - Courses
       security: []
-    put:
-      summary: 'Update Course'
-      operationId: updateCourse
-      description: 'Update the specified Course in storage.'
-      parameters: []
-      responses: {  }
-      tags:
-        - Courses
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: qvieylrzeqlrptkdqlle
-                description:
-                  type: string
-                  description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Natus aut et ea autem eum.'
-                thumbnail:
-                  type: string
-                  description: ''
-                  example: null
-                price:
-                  type: number
-                  description: 'Must be at least 0.'
-                  example: 40
-                category_id:
-                  type: integer
-                  description: ''
-                  example: 19
-                sub_category_id:
-                  type: integer
-                  description: ''
-                  example: 18
-                user_id:
-                  type: string
-                  description: ''
-                  example: null
-              required:
-                - title
-                - description
-                - price
-                - category_id
-      security: []
-    delete:
-      summary: 'Delete Course'
-      operationId: deleteCourse
-      description: 'Remove the specified Course from storage.'
-      parameters: []
-      responses: {  }
-      tags:
-        - Courses
-      security: []
     parameters:
       -
         in: path
@@ -1647,7 +1733,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the verify email.'
-        example: eum
+        example: eos
         required: true
         schema:
           type: string
@@ -1655,24 +1741,14 @@ paths:
         in: path
         name: hash
         description: ''
-        example: molestiae
+        example: commodi
         required: true
         schema:
           type: string
-  /api/auth/logout:
-    post:
-      summary: ''
-      operationId: postApiAuthLogout
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  /api/user:
+  /api/notifications:
     get:
       summary: ''
-      operationId: getApiUser
+      operationId: getApiNotifications
       description: ''
       parameters: []
       responses:
@@ -1691,6 +1767,37 @@ paths:
       tags:
         - Endpoints
       security: []
+  '/api/notifications/{id}/mark-read':
+    get:
+      summary: ''
+      operationId: getApiNotificationsIdMarkRead
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the notification.'
+        example: modi
+        required: true
+        schema:
+          type: string
   /api/enroll:
     post:
       summary: ''
@@ -1715,11 +1822,11 @@ paths:
                 payment_amount:
                   type: number
                   description: ''
-                  example: 52807.5667
+                  example: 523740.19345359
                 payment_id:
                   type: string
                   description: ''
-                  example: itaque
+                  example: sed
               required:
                 - course_ids
                 - payment_amount
@@ -1732,74 +1839,18 @@ paths:
       description: 'Display a listing of the resource.'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    -
-                      id: 16
-                      title: 'What is HTML'
-                      type: video
-                      content: courses/course51/section3/lecture16/lecture.mkv
-                      section:
-                        id: 3
-                        title: Introduction
-                    -
-                      id: 17
-                      title: 'Main tags'
-                      type: video
-                      content: courses/course51/section4/lecture17/lecture.mkv
-                      section:
-                        id: 4
-                        title: 'Create Your first HTML page'
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 16
-                        title: 'What is HTML'
-                        type: video
-                        content: courses/course51/section3/lecture16/lecture.mkv
-                        section:
-                          id: 3
-                          title: Introduction
-                      -
-                        id: 17
-                        title: 'Main tags'
-                        type: video
-                        content: courses/course51/section4/lecture17/lecture.mkv
-                        section:
-                          id: 4
-                          title: 'Create Your first HTML page'
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 16
-                        title:
-                          type: string
-                          example: 'What is HTML'
-                        type:
-                          type: string
-                          example: video
-                        content:
-                          type: string
-                          example: courses/course51/section3/lecture16/lecture.mkv
-                        section:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              example: 3
-                            title:
-                              type: string
-                              example: Introduction
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Lectures
       security: []
@@ -1821,19 +1872,19 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: ksfcjwvvxnd
+                  example: hqivklwdptrtfnqhsydyiqii
                 type:
                   type: string
                   description: ''
-                  example: blanditiis
+                  example: provident
                 section_id:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 18
                 content:
                   type: string
                   description: ''
-                  example: reiciendis
+                  example: culpa
               required:
                 - title
                 - type
@@ -1847,46 +1898,18 @@ paths:
       description: 'Display the specified resource.'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    id: 16
-                    title: 'What is HTML'
-                    type: video
-                    content: courses/course51/section3/lecture16/lecture.mkv
-                    section:
-                      id: 3
-                      title: Introduction
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 16
-                      title:
-                        type: string
-                        example: 'What is HTML'
-                      type:
-                        type: string
-                        example: video
-                      content:
-                        type: string
-                        example: courses/course51/section3/lecture16/lecture.mkv
-                      section:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            example: 3
-                          title:
-                            type: string
-                            example: Introduction
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Lectures
       security: []
@@ -1917,34 +1940,6 @@ paths:
         required: true
         schema:
           type: integer
-  /api/auth/change_password:
-    post:
-      summary: ''
-      operationId: postApiAuthChange_password
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'Managing Password'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                old_password:
-                  type: string
-                  description: ''
-                  example: maiores
-                password:
-                  type: string
-                  description: 'Must be at least 8 characters.'
-                  example: "(|l^%b{'4'T}V"
-              required:
-                - old_password
-                - password
-      security: []
   /api/auth/forgot-password:
     post:
       summary: ''
@@ -1964,7 +1959,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: deckow.parker@example.com
+                  example: arianna.yundt@example.org
               required:
                 - email
       security: []
@@ -1987,18 +1982,46 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: alexane.muller@example.org
+                  example: abernathy.rickey@example.org
                 token:
                   type: string
                   description: ''
-                  example: est
+                  example: qui
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: '\a>L}Xe'
+                  example: 'JO9mvVP18D2YH(zz`#l'
               required:
                 - email
                 - token
+                - password
+      security: []
+  /api/auth/change_password:
+    post:
+      summary: ''
+      operationId: postApiAuthChange_password
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Password'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                old_password:
+                  type: string
+                  description: ''
+                  example: nihil
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: '-{[&iV:l;"9-"~5|7'
+              required:
+                - old_password
                 - password
       security: []
   /api/questions:
@@ -2008,58 +2031,18 @@ paths:
       description: 'List all questions.'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    -
-                      id: 1
-                      question: 'What is HTML ?'
-                      answer: A
-                      A: 'Hyper TExt Markup Language'
-                      B: 'Bla Bla'
-                      C: 'Bla BLa Bla'
-                      D: 'Somethig else'
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 1
-                        question: 'What is HTML ?'
-                        answer: A
-                        A: 'Hyper TExt Markup Language'
-                        B: 'Bla Bla'
-                        C: 'Bla BLa Bla'
-                        D: 'Somethig else'
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 1
-                        question:
-                          type: string
-                          example: 'What is HTML ?'
-                        answer:
-                          type: string
-                          example: A
-                        A:
-                          type: string
-                          example: 'Hyper TExt Markup Language'
-                        B:
-                          type: string
-                          example: 'Bla Bla'
-                        C:
-                          type: string
-                          example: 'Bla BLa Bla'
-                        D:
-                          type: string
-                          example: 'Somethig else'
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - QuizQuestions
       security: []
@@ -2081,23 +2064,23 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: wsfqc
+                  example: mccjhamzbbhtgzz
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: x
+                  example: q
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: tmzjqee
+                  example: nomplu
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: eiordqatggqkgvlunqu
+                  example: t
                 quiz_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 9
               required:
                 - question
                 - answer
@@ -2112,13 +2095,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: ''
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - QuizQuestions
       security: []
@@ -2140,19 +2128,19 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: xjtlyhmivwawypuqetfm
+                  example: qd
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: r
+                  example: d
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: t
+                  example: tujjlovgxpp
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: zeamxwhglhzxkfzwsow
+                  example: eokamesain
               required:
                 - question
                 - answer
@@ -2184,86 +2172,18 @@ paths:
       description: 'List all Quizzes.'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    -
-                      id: 1
-                      title: Quiz_1
-                      questions:
-                        -
-                          id: 1
-                          question: 'What is HTML ?'
-                          answer: A
-                          A: 'Hyper TExt Markup Language'
-                          B: 'Bla Bla'
-                          C: 'Bla BLa Bla'
-                          D: 'Somethig else'
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 1
-                        title: Quiz_1
-                        questions:
-                          -
-                            id: 1
-                            question: 'What is HTML ?'
-                            answer: A
-                            A: 'Hyper TExt Markup Language'
-                            B: 'Bla Bla'
-                            C: 'Bla BLa Bla'
-                            D: 'Somethig else'
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 1
-                        title:
-                          type: string
-                          example: Quiz_1
-                        questions:
-                          type: array
-                          example:
-                            -
-                              id: 1
-                              question: 'What is HTML ?'
-                              answer: A
-                              A: 'Hyper TExt Markup Language'
-                              B: 'Bla Bla'
-                              C: 'Bla BLa Bla'
-                              D: 'Somethig else'
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                example: 1
-                              question:
-                                type: string
-                                example: 'What is HTML ?'
-                              answer:
-                                type: string
-                                example: A
-                              A:
-                                type: string
-                                example: 'Hyper TExt Markup Language'
-                              B:
-                                type: string
-                                example: 'Bla Bla'
-                              C:
-                                type: string
-                                example: 'Bla BLa Bla'
-                              D:
-                                type: string
-                                example: 'Somethig else'
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Quizzes
       security: []
@@ -2285,11 +2205,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: tdrxkwycxydlyshvnnxfg
+                  example: zrcuw
                 section_id:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 13
               required:
                 - title
                 - section_id
@@ -2301,70 +2221,18 @@ paths:
       description: 'Display the specified Quiz.'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    id: 1
-                    title: Quiz_1
-                    questions:
-                      -
-                        id: 1
-                        question: 'What is HTML ?'
-                        answer: A
-                        A: 'Hyper TExt Markup Language'
-                        B: 'Bla Bla'
-                        C: 'Bla BLa Bla'
-                        D: 'Somethig else'
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 1
-                      title:
-                        type: string
-                        example: Quiz_1
-                      questions:
-                        type: array
-                        example:
-                          -
-                            id: 1
-                            question: 'What is HTML ?'
-                            answer: A
-                            A: 'Hyper TExt Markup Language'
-                            B: 'Bla Bla'
-                            C: 'Bla BLa Bla'
-                            D: 'Somethig else'
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              example: 1
-                            question:
-                              type: string
-                              example: 'What is HTML ?'
-                            answer:
-                              type: string
-                              example: A
-                            A:
-                              type: string
-                              example: 'Hyper TExt Markup Language'
-                            B:
-                              type: string
-                              example: 'Bla Bla'
-                            C:
-                              type: string
-                              example: 'Bla BLa Bla'
-                            D:
-                              type: string
-                              example: 'Somethig else'
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Quizzes
       security: []
@@ -2386,7 +2254,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: aylwcstp
+                  example: pmlvt
               required:
                 - title
       security: []
@@ -2415,13 +2283,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: ''
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Reviews
       security: []
@@ -2441,118 +2314,18 @@ paths:
       description: ''
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    id: 1
-                    user:
-                      id: 1
-                      name: 'Dr. Barrett Kreiger'
-                      email: mueller.zelda@example.net
-                      avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
-                      is_instructor: 1
-                      is_admin: 0
-                    course:
-                      id: 51
-                      title: 'HTML Course'
-                      description: 'All you need to be professional in HTML'
-                      thumbnail: courses/course51/thumbnail.jpeg
-                      price: '119.99'
-                      published: 0
-                      instructor:
-                        id: 1
-                        name: 'Dr. Barrett Kreiger'
-                        email: mueller.zelda@example.net
-                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
-                        is_instructor: 1
-                        is_admin: 0
-                      rate: '4.5'
-                    rate: 4
-                    comment: 'Good Course'
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 1
-                      user:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            example: 1
-                          name:
-                            type: string
-                            example: 'Dr. Barrett Kreiger'
-                          email:
-                            type: string
-                            example: mueller.zelda@example.net
-                          avatar:
-                            type: string
-                            example: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
-                          is_instructor:
-                            type: integer
-                            example: 1
-                          is_admin:
-                            type: integer
-                            example: 0
-                      course:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            example: 51
-                          title:
-                            type: string
-                            example: 'HTML Course'
-                          description:
-                            type: string
-                            example: 'All you need to be professional in HTML'
-                          thumbnail:
-                            type: string
-                            example: courses/course51/thumbnail.jpeg
-                          price:
-                            type: string
-                            example: '119.99'
-                          published:
-                            type: integer
-                            example: 0
-                          instructor:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                example: 1
-                              name:
-                                type: string
-                                example: 'Dr. Barrett Kreiger'
-                              email:
-                                type: string
-                                example: mueller.zelda@example.net
-                              avatar:
-                                type: string
-                                example: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
-                              is_instructor:
-                                type: integer
-                                example: 1
-                              is_admin:
-                                type: integer
-                                example: 0
-                          rate:
-                            type: string
-                            example: '4.5'
-                      rate:
-                        type: integer
-                        example: 4
-                      comment:
-                        type: string
-                        example: 'Good Course'
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Reviews
       security: []
@@ -2590,173 +2363,18 @@ paths:
       description: 'List all sections.'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    -
-                      id: 3
-                      title: Introduction
-                      lectures:
-                        -
-                          id: 16
-                          title: 'What is HTML'
-                          type: video
-                          content: courses/course51/section3/lecture16/lecture.mkv
-                      quizzes:
-                        -
-                          id: 1
-                          title: Quiz_1
-                          questions:
-                            -
-                              id: 1
-                              question: 'What is HTML ?'
-                              answer: A
-                              A: 'Hyper TExt Markup Language'
-                              B: 'Bla Bla'
-                              C: 'Bla BLa Bla'
-                              D: 'Somethig else'
-                    -
-                      id: 4
-                      title: 'Create Your first HTML page'
-                      lectures:
-                        -
-                          id: 17
-                          title: 'Main tags'
-                          type: video
-                          content: courses/course51/section4/lecture17/lecture.mkv
-                      quizzes: []
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 3
-                        title: Introduction
-                        lectures:
-                          -
-                            id: 16
-                            title: 'What is HTML'
-                            type: video
-                            content: courses/course51/section3/lecture16/lecture.mkv
-                        quizzes:
-                          -
-                            id: 1
-                            title: Quiz_1
-                            questions:
-                              -
-                                id: 1
-                                question: 'What is HTML ?'
-                                answer: A
-                                A: 'Hyper TExt Markup Language'
-                                B: 'Bla Bla'
-                                C: 'Bla BLa Bla'
-                                D: 'Somethig else'
-                      -
-                        id: 4
-                        title: 'Create Your first HTML page'
-                        lectures:
-                          -
-                            id: 17
-                            title: 'Main tags'
-                            type: video
-                            content: courses/course51/section4/lecture17/lecture.mkv
-                        quizzes: []
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 3
-                        title:
-                          type: string
-                          example: Introduction
-                        lectures:
-                          type: array
-                          example:
-                            -
-                              id: 16
-                              title: 'What is HTML'
-                              type: video
-                              content: courses/course51/section3/lecture16/lecture.mkv
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                example: 16
-                              title:
-                                type: string
-                                example: 'What is HTML'
-                              type:
-                                type: string
-                                example: video
-                              content:
-                                type: string
-                                example: courses/course51/section3/lecture16/lecture.mkv
-                        quizzes:
-                          type: array
-                          example:
-                            -
-                              id: 1
-                              title: Quiz_1
-                              questions:
-                                -
-                                  id: 1
-                                  question: 'What is HTML ?'
-                                  answer: A
-                                  A: 'Hyper TExt Markup Language'
-                                  B: 'Bla Bla'
-                                  C: 'Bla BLa Bla'
-                                  D: 'Somethig else'
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                example: 1
-                              title:
-                                type: string
-                                example: Quiz_1
-                              questions:
-                                type: array
-                                example:
-                                  -
-                                    id: 1
-                                    question: 'What is HTML ?'
-                                    answer: A
-                                    A: 'Hyper TExt Markup Language'
-                                    B: 'Bla Bla'
-                                    C: 'Bla BLa Bla'
-                                    D: 'Somethig else'
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: integer
-                                      example: 1
-                                    question:
-                                      type: string
-                                      example: 'What is HTML ?'
-                                    answer:
-                                      type: string
-                                      example: A
-                                    A:
-                                      type: string
-                                      example: 'Hyper TExt Markup Language'
-                                    B:
-                                      type: string
-                                      example: 'Bla Bla'
-                                    C:
-                                      type: string
-                                      example: 'Bla BLa Bla'
-                                    D:
-                                      type: string
-                                      example: 'Somethig else'
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Sections
       security: []
@@ -2778,11 +2396,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: xyeqyxlchljbkwczndvh
+                  example: bdodaledbskfl
                 course_id:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 9
               required:
                 - title
                 - course_id
@@ -2794,26 +2412,18 @@ paths:
       description: 'Display the specified section.'
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  data:
-                    id: 3
-                    name: null
+                  message: Unauthenticated.
                 properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 3
-                      name:
-                        type: string
-                        example: null
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Sections
       security: []
@@ -2835,7 +2445,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: mionk
+                  example: vnlnrghtxrwfgzyiwsdkxgrrv
               required:
                 - title
       security: []
@@ -2857,6 +2467,160 @@ paths:
         required: true
         schema:
           type: integer
+  /api/user-dashboard:
+    get:
+      summary: ''
+      operationId: getApiUserDashboard
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
+  /api/instructor-dashboard:
+    get:
+      summary: ''
+      operationId: getApiInstructorDashboard
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
+  /api/admin-dashboard:
+    get:
+      summary: ''
+      operationId: getApiAdminDashboard
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
+  /api/active-instructor-role:
+    get:
+      summary: ''
+      operationId: getApiActiveInstructorRole
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
+  /api/active-admin-role:
+    get:
+      summary: ''
+      operationId: getApiActiveAdminRole
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
+  /api/accept-course:
+    get:
+      summary: ''
+      operationId: getApiAcceptCourse
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
+  /api/reject-course:
+    get:
+      summary: ''
+      operationId: getApiRejectCourse
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
 tags:
   -
     name: Authentication
@@ -2864,6 +2628,9 @@ tags:
   -
     name: Categories
     description: "\nManaging Categories"
+  -
+    name: Comments
+    description: "\nManaging Comments"
   -
     name: Courses
     description: "\nManaging Courses"
@@ -2891,3 +2658,6 @@ tags:
   -
     name: Sections
     description: "\nManaging Sections"
+  -
+    name: Users
+    description: "\nManaging Users"

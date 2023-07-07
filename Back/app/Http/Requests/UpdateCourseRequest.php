@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Course;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class UpdateCourseRequest extends FormRequest
 {
@@ -12,7 +14,8 @@ class UpdateCourseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        // return Gate::allows('update', Course::class);
+        return 1;
     }
 
     /**
@@ -25,7 +28,7 @@ class UpdateCourseRequest extends FormRequest
 
         return array_merge($this->commonRules(), [
             'thumbnail' => '',
-            'user_id' => '',
+            // 'user_id' => '',
         ]);
     }
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('total_enrollments')->default(0);
             // $table->integer('total_duration_seconds')->unsigned();
             // $table->decimal('rating', 2, 1)->default(0);
-            $table->boolean('AC')->default(0);
+            $table->boolean('AC')->nullable();
             $table->timestamps();
         });
     }

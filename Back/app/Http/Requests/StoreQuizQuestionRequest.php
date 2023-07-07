@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Policies\QuizQuestionPolicy;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class StoreQuizQuestionRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class StoreQuizQuestionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return Gate::allows('create', QuizQuestionPolicy::class);
     }
 
     /**

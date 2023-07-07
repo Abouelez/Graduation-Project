@@ -65,6 +65,12 @@ class Course extends Model
         $query->where('AC', 1);
     }
 
+    public function scopeNotReviewed(Builder $query): void
+    {
+        $query->where('AC', null);
+    }
+
+
     public function isPublished(): bool
     {
         return $this->AC == true;

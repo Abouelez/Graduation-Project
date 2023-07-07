@@ -13,7 +13,7 @@ trait CourseRules
             'price' => 'required|numeric|min:0',
             'category_id' => 'required|integer',
             'sub_category_id' => 'integer',
-            'user_id' => 'required|integer',
+            // 'user_id' => 'required|integer',
         ];
     }
 }

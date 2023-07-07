@@ -1,21 +1,21 @@
-name: Lectures
+name: Sections
 description: |-
 
-  Managing Lectures
+  Managing Sections
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/lectures
+    uri: api/sections
     metadata:
-      groupName: Lectures
+      groupName: Sections
       groupDescription: |-
 
-        Managing Lectures
+        Managing Sections
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get Lectures'
-      description: 'Display a listing of the resource.'
+      title: 'Get sections'
+      description: 'List all sections.'
       authenticated: false
       custom: []
     headers:
@@ -30,13 +30,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":[{"id":16,"title":"What is HTML","type":"video","content":"courses\/course51\/section3\/lecture16\/lecture.mkv","section":{"id":3,"title":"Introduction"}},{"id":17,"title":"Main tags","type":"video","content":"courses\/course51\/section4\/lecture17\/lecture.mkv","section":{"id":4,"title":"Create Your first HTML page"}}]}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -49,16 +47,16 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/lectures
+    uri: api/sections
     metadata:
-      groupName: Lectures
+      groupName: Sections
       groupDescription: |-
 
-        Managing Lectures
+        Managing Sections
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create Lecture'
-      description: 'Store a newly created resource in storage.'
+      title: 'Create section'
+      description: 'Store a newly created section in storage.'
       authenticated: false
       custom: []
     headers:
@@ -71,37 +69,21 @@ endpoints:
     bodyParameters:
       title:
         name: title
-        description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: ksfcjwvvxnd
+        example: bdodaledbskfl
         type: string
         custom: []
-      type:
-        name: type
+      course_id:
+        name: course_id
         description: ''
         required: true
-        example: blanditiis
-        type: string
-        custom: []
-      section_id:
-        name: section_id
-        description: ''
-        required: true
-        example: 7
+        example: 9
         type: integer
         custom: []
-      content:
-        name: content
-        description: ''
-        required: true
-        example: reiciendis
-        type: string
-        custom: []
     cleanBodyParameters:
-      title: ksfcjwvvxnd
-      type: blanditiis
-      section_id: 7
-      content: reiciendis
+      title: bdodaledbskfl
+      course_id: 9
     fileParameters: []
     responses: []
     responseFields: []
@@ -113,16 +95,16 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/lectures/{id}'
+    uri: 'api/sections/{id}'
     metadata:
-      groupName: Lectures
+      groupName: Sections
       groupDescription: |-
 
-        Managing Lectures
+        Managing Sections
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display Lecture'
-      description: 'Display the specified resource.'
+      title: 'Display section'
+      description: 'Display the specified section.'
       authenticated: false
       custom: []
     headers:
@@ -131,13 +113,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the lecture.'
+        description: 'The ID of the section.'
         required: true
-        example: 16
+        example: 3
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -145,13 +127,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":16,"title":"What is HTML","type":"video","content":"courses\/course51\/section3\/lecture16\/lecture.mkv","section":{"id":3,"title":"Introduction"}}}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -165,16 +145,16 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/lectures/{id}'
+    uri: 'api/sections/{id}'
     metadata:
-      groupName: Lectures
+      groupName: Sections
       groupDescription: |-
 
-        Managing Lectures
+        Managing Sections
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Lecture'
-      description: 'Update the specified resource in storage.'
+      title: 'Update section'
+      description: 'Update the specified section in storage.'
       authenticated: false
       custom: []
     headers:
@@ -183,17 +163,25 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the lecture.'
+        description: 'The ID of the section.'
         required: true
-        example: 16
+        example: 3
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 3
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+        required: true
+        example: vnlnrghtxrwfgzyiwsdkxgrrv
+        type: string
+        custom: []
+    cleanBodyParameters:
+      title: vnlnrghtxrwfgzyiwsdkxgrrv
     fileParameters: []
     responses: []
     responseFields: []
@@ -205,16 +193,18 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/lectures/{id}'
+    uri: 'api/sections/{id}'
     metadata:
-      groupName: Lectures
+      groupName: Sections
       groupDescription: |-
 
-        Managing Lectures
+        Managing Sections
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete Lecture'
-      description: 'Remove the specified resource from storage.'
+      title: |-
+        Delete section
+        Remove the specified section from storage.
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -223,13 +213,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the lecture.'
+        description: 'The ID of the section.'
         required: true
-        example: 16
+        example: 3
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

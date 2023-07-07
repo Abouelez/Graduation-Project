@@ -1,21 +1,21 @@
-name: QuizQuestions
+name: Quizzes
 description: |-
 
-  Managing QuizQuestions
+  Managing Quizzes
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/questions
+    uri: api/quizzes
     metadata:
-      groupName: QuizQuestions
+      groupName: Quizzes
       groupDescription: |-
 
-        Managing QuizQuestions
+        Managing Quizzes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get questions'
-      description: 'List all questions.'
+      title: 'Get Quizzes'
+      description: 'List all Quizzes.'
       authenticated: false
       custom: []
     headers:
@@ -30,13 +30,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":[{"id":1,"question":"What is HTML ?","answer":"A","A":"Hyper TExt Markup Language","B":"Bla Bla","C":"Bla BLa Bla","D":"Somethig else"}]}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '48'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -49,16 +47,16 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/questions
+    uri: api/quizzes
     metadata:
-      groupName: QuizQuestions
+      groupName: Quizzes
       groupDescription: |-
 
-        Managing QuizQuestions
+        Managing Quizzes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create question'
-      description: 'Store a newly created question in storage.'
+      title: 'Create Quiz'
+      description: 'Store a newly created Quiz in storage.'
       authenticated: false
       custom: []
     headers:
@@ -69,47 +67,23 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      question:
-        name: question
-        description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
+      title:
+        name: title
+        description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
         required: true
-        example: wsfqc
+        example: zrcuw
         type: string
         custom: []
-      answer:
-        name: answer
-        description: 'Must be 1 character.'
-        required: true
-        example: x
-        type: string
-        custom: []
-      A:
-        name: A
-        description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-        required: true
-        example: tmzjqee
-        type: string
-        custom: []
-      B:
-        name: B
-        description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-        required: true
-        example: eiordqatggqkgvlunqu
-        type: string
-        custom: []
-      quiz_id:
-        name: quiz_id
+      section_id:
+        name: section_id
         description: ''
         required: true
-        example: 10
+        example: 13
         type: integer
         custom: []
     cleanBodyParameters:
-      question: wsfqc
-      answer: x
-      A: tmzjqee
-      B: eiordqatggqkgvlunqu
-      quiz_id: 10
+      title: zrcuw
+      section_id: 13
     fileParameters: []
     responses: []
     responseFields: []
@@ -121,16 +95,16 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/questions/{id}'
+    uri: 'api/quizzes/{id}'
     metadata:
-      groupName: QuizQuestions
+      groupName: Quizzes
       groupDescription: |-
 
-        Managing QuizQuestions
+        Managing Quizzes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified resource.'
-      description: ''
+      title: 'Display Quiz'
+      description: 'Display the specified Quiz.'
       authenticated: false
       custom: []
     headers:
@@ -139,7 +113,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the question.'
+        description: 'The ID of the quiz.'
         required: true
         example: 1
         type: integer
@@ -153,13 +127,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: ''
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
-          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '47'
+          content-type: application/json
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -173,16 +145,16 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/questions/{id}'
+    uri: 'api/quizzes/{id}'
     metadata:
-      groupName: QuizQuestions
+      groupName: Quizzes
       groupDescription: |-
 
-        Managing QuizQuestions
+        Managing Quizzes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update question'
-      description: 'Update the specified resource in storage.'
+      title: 'Update Quiz'
+      description: 'Update the specified Quiz in storage.'
       authenticated: false
       custom: []
     headers:
@@ -191,7 +163,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the question.'
+        description: 'The ID of the quiz.'
         required: true
         example: 1
         type: integer
@@ -201,39 +173,15 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      question:
-        name: question
-        description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
+      title:
+        name: title
+        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: xjtlyhmivwawypuqetfm
-        type: string
-        custom: []
-      answer:
-        name: answer
-        description: 'Must be 1 character.'
-        required: true
-        example: r
-        type: string
-        custom: []
-      A:
-        name: A
-        description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-        required: true
-        example: t
-        type: string
-        custom: []
-      B:
-        name: B
-        description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-        required: true
-        example: zeamxwhglhzxkfzwsow
+        example: pmlvt
         type: string
         custom: []
     cleanBodyParameters:
-      question: xjtlyhmivwawypuqetfm
-      answer: r
-      A: t
-      B: zeamxwhglhzxkfzwsow
+      title: pmlvt
     fileParameters: []
     responses: []
     responseFields: []
@@ -245,15 +193,15 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/questions/{id}'
+    uri: 'api/quizzes/{id}'
     metadata:
-      groupName: QuizQuestions
+      groupName: Quizzes
       groupDescription: |-
 
-        Managing QuizQuestions
+        Managing Quizzes
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete Question'
+      title: 'Delete Quiz'
       description: 'Remove the specified resource from storage.'
       authenticated: false
       custom: []
@@ -263,7 +211,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the question.'
+        description: 'The ID of the quiz.'
         required: true
         example: 1
         type: integer
