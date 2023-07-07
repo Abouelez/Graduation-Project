@@ -1,35 +1,63 @@
 import React from 'react'
 import { useState } from 'react';
+import RegesterHook from '../../Hook/Auth/RegesterHook';
 const Register = () => {
- const [fname,setfname]= useState("");
- const [lname,setlname]= useState("");
- const [email,setemail]= useState("");
- const [password,setpassword]= useState("");
- const [confirmpassword,setconfirmpassword]= useState("");
- const registerUser =(e)=>{
-   e.preventDefault();
- };
+const [
+  name,
+  email,
+  password,
+  confirmPassword,
+  onChangeName,
+  onChangeEmail,
+  onChangePassword,
+  onChangeConfirmPassword,
+  validateInputs,
+  onSubmit
+]=RegesterHook()
  return (
   <>
- <section className = "container auth">
-     <div className = "card">
-     <div className = "form">
-      <h2>Sign up</h2>
-       <form onSubmit={registerUser}>
-       <input type="text" placeholder='First Name' required value={fname} onChange={(e)=>setfname(e.target.value)} />
-       <input type="text" placeholder='Last Name' required value={lname} onChange={(e)=>setlname(e.target.value)} />
-       <input type="email" placeholder='Email' required value={email} onChange={(e)=>setemail(e.target.value)} />
-       <input type="password" placeholder='Password'  required  value={password} onChange={(e)=>setpassword(e.target.value)}/>
-       <input type="password" placeholder='confirmPassword'  required  value={confirmpassword} onChange={(e)=>setconfirmpassword(e.target.value)}/>
-       <button  type="submit" className="--btn --btn-primary --btn-block">Sign up</button>
-       </form>
-       <span className= "register"><p>Already an account?</p><a href='/login'>Login</a></span>
-     </div>
-     </div>
-     <div className="img">
-     <img src="images/register.png" alt="salah"  width={400} />
-   </div>
-  </section>
+  <section className="container auth">
+  <div className="row justify-content-center">
+    <div className="col-md-6 mb-4">
+      <div className="card">
+        <div className="card-body">
+          <h2 className="card-title text-center mb-4">Sign up</h2>
+          
+            <div className="form-group mt-3">
+              <label htmlFor="name"><h4>First Name</h4> </label>
+              <input type="text" className="form-control" id="name" placeholder="Enter your first name" required value={name} 
+              onChange={onChangeName} />
+            </div>
+            <div className="form-group mt-3">
+              <label htmlFor="email"><h4>Email</h4> </label>
+              <input type="email" className="form-control" id="email" placeholder="Enter your email" required value={email}
+               onChange={onChangeEmail} />
+            </div>
+            <div className="form-group mt-3">
+              <label htmlFor="password"><h4>Password</h4> </label>
+              <input type="password" className="form-control" id="password" placeholder="Enter your password" required value={password}
+               onChange={onChangePassword} />
+            </div>
+            <div className="form-group mt-3">
+              <label htmlFor="confirmPassword"><h4>Confirm Password</h4> </label>
+              <input type="password" className="form-control" id="confirmPassword" placeholder="Confirm your password" required 
+              value={confirmPassword} onChange={onChangeConfirmPassword} />
+              {password !== confirmPassword && <small className="form-text text-danger">Passwords do not match</small>}
+            </div>
+            <button onClick={onSubmit} className="btn btn-primary mx-auto mt-4">  SignUp</button>
+          
+          <div className="text-center mt-3">
+            <p className="text-muted"><a className='btn primary'> Already have an account?</a></p>
+            <a href="/login">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="col-md-6">
+      <img src="images/register.png" alt="salah" className="img-fluid" />
+    </div>
+  </div>
+</section>
   </>
  )
 }

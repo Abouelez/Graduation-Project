@@ -6,12 +6,7 @@ import { FaBell, FaFillDrip, FaThumbtack, FaVideo } from 'react-icons/fa'
 const Tools = () => {
   return (
     <>
-    <div className='head-titlt'>
-      <h4 className='h'>Student</h4>
-      <p>Switch to the student view here - get back to the courses you’re taking.</p>
-      <FaBell className='i' />
-      <div className='name'>AG</div>
-    </div>
+     
     <i class="fa-solid fa-thumbtack"></i>
     <div className='A'>
       <span  className='h'>Tools</span>

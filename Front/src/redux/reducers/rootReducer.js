@@ -1,11 +1,10 @@
 import {combineReducers} from 'redux'
 import categoryReducer from './categoryReducer'
-import brandReducer from './brandReducer'
 import subCategoryReducer from './subCategoryReducer'
 import courseReducer from './courseReducer'
-
+import authReducer from './authReducer'
 export default combineReducers ({
     allCourses :courseReducer,
     allCategories :categoryReducer,
-    allBrands :brandReducer,
+    authReducer: authReducer
 })
