@@ -36,7 +36,7 @@ class AuthController extends Controller
 
         event(new Registered($user));
 
-        $device = substr($request->userAgent() ?? '', 0, 255);
+        $device = substr($request->userAgent() ??  '',0, 255);
         // $expiresAt = $request->remember ? null : now()->addDays(5);
 
         return response()->json([
