@@ -11,6 +11,7 @@ class Comment extends Model
 {
     use HasFactory;
     public $incrementing = true;
+    protected $fillable = ['course_id', 'comment_text', 'parent_id', 'user_id'];
 
     public function children(): HasMany
     {

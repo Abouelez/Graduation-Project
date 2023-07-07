@@ -67,4 +67,10 @@ class AuthController extends Controller
             'access_token' => $user->createToken($device)->plainTextToken
         ], Response::HTTP_CREATED);
     }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->noContent();
+    }
 }

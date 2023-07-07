@@ -66,6 +66,7 @@ class CourseController extends Controller
         Storage::disk('content')->put($imagePath, $resizedImage->encode());
 
         $course->thumbnail = $imagePath;
+        $course->instructor = auth()->user();
         $course->save();
 
         return new CourseResource($course);
@@ -74,10 +75,18 @@ class CourseController extends Controller
     /**
      * Display Course
      * 
-     * Display the specified Course.
+     * Display the specified Course Data without content.
      */
+
     public function show(Course $course)
     {
+        return new CourseResource($course->load(['category', 'subCategory', 'instructor', 'sections.lectures', 'sections.quizzes', 'comments', 'comments.user', 'reviews', 'reviews.user']));
+    }
+
+    //access full content of the course
+    public function accessContent(Course $course)
+    {
+
         return new CourseResource($course->load(['category', 'subCategory', 'instructor', 'sections.lectures', 'sections.quizzes', 'sections.quizzes.questions', 'comments', 'comments.user', 'reviews', 'reviews.user']));
     }
 
@@ -96,6 +105,8 @@ class CourseController extends Controller
      */
     public function update(UpdateCourseRequest $request, Course $course)
     {
+        $this->authorize('update', $course);
+
         $data = $request->except('thumbnail');
         $course->update($data);
 
@@ -126,6 +137,8 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
+        $this->authorize('delete', $course);
+
         if ($course->isPublished()) {
             return response()->json(['message' => 'The course is published and cannot be deleted.'], Response::HTTP_FORBIDDEN);
         }

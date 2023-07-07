@@ -1,64 +1,21 @@
-name: Sections
+name: Categories
 description: |-
 
-  Managing Sections
+  Managing Categories
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/sections
-    metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get sections'
-      description: 'List all sections.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":3,"title":"Introduction","lectures":[{"id":16,"title":"What is HTML","type":"video","content":"courses\/course51\/section3\/lecture16\/lecture.mkv"}],"quizzes":[{"id":1,"title":"Quiz_1","questions":[{"id":1,"question":"What is HTML ?","answer":"A","A":"Hyper TExt Markup Language","B":"Bla Bla","C":"Bla BLa Bla","D":"Somethig else"}]}]},{"id":4,"title":"Create Your first HTML page","lectures":[{"id":17,"title":"Main tags","type":"video","content":"courses\/course51\/section4\/lecture17\/lecture.mkv"}],"quizzes":[]}]}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/sections
+    uri: api/categories
     metadata:
-      groupName: Sections
+      groupName: Categories
       groupDescription: |-
 
-        Managing Sections
+        Managing Categories
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create section'
-      description: 'Store a newly created section in storage.'
+      title: 'Create Category'
+      description: 'Store a newly created Category in storage.'
       authenticated: false
       custom: []
     headers:
@@ -69,23 +26,23 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+      name:
+        name: name
+        description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: xyeqyxlchljbkwczndvh
+        example: mjiorhkv
         type: string
         custom: []
-      course_id:
-        name: course_id
+      parent_id:
+        name: parent_id
         description: ''
-        required: true
-        example: 4
+        required: false
+        example: 6
         type: integer
         custom: []
     cleanBodyParameters:
-      title: xyeqyxlchljbkwczndvh
-      course_id: 4
+      name: mjiorhkv
+      parent_id: 6
     fileParameters: []
     responses: []
     responseFields: []
@@ -96,69 +53,18 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: 'api/sections/{id}'
-    metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display section'
-      description: 'Display the specified section.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the section.'
-        required: true
-        example: 3
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 3
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":3,"name":null}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - PUT
       - PATCH
-    uri: 'api/sections/{id}'
+    uri: 'api/categories/{id}'
     metadata:
-      groupName: Sections
+      groupName: Categories
       groupDescription: |-
 
-        Managing Sections
+        Managing Categories
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update section'
-      description: 'Update the specified section in storage.'
+      title: 'Update Category'
+      description: 'Update the specified Category in storage.'
       authenticated: false
       custom: []
     headers:
@@ -167,25 +73,33 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the section.'
+        description: 'The ID of the category.'
         required: true
-        example: 3
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+      name:
+        name: name
+        description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: mionk
+        example: sopmhhfe
         type: string
         custom: []
+      parent_id:
+        name: parent_id
+        description: ''
+        required: false
+        example: 10
+        type: integer
+        custom: []
     cleanBodyParameters:
-      title: mionk
+      name: sopmhhfe
+      parent_id: 10
     fileParameters: []
     responses: []
     responseFields: []
@@ -197,18 +111,16 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/sections/{id}'
+    uri: 'api/categories/{id}'
     metadata:
-      groupName: Sections
+      groupName: Categories
       groupDescription: |-
 
-        Managing Sections
+        Managing Categories
       subgroup: ''
       subgroupDescription: ''
-      title: |-
-        Delete section
-        Remove the specified section from storage.
-      description: ''
+      title: 'Delete Category'
+      description: 'Remove the specified Category from storage.'
       authenticated: false
       custom: []
     headers:
@@ -217,19 +129,113 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the section.'
+        description: 'The ID of the category.'
         required: true
-        example: 3
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/categories
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        Managing Categories
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get categories'
+      description: 'List all categories'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"name":"Et labore accusantium sed veritatis voluptatem.","parent":null,"children":[{"id":10,"name":"Omnis neque fugiat cum."}]},{"id":2,"name":"Totam ea adipisci ut.","parent":null,"children":[]},{"id":3,"name":"Magni aut ipsa nostrum.","parent":null,"children":[]},{"id":4,"name":"Molestiae sint eum ea expedita ipsum recusandae.","parent":null,"children":[]},{"id":5,"name":"Et repellendus ex et sapiente ut explicabo expedita dicta.","parent":null,"children":[]},{"id":6,"name":"Accusantium laborum reiciendis ab eos tempore qui.","parent":null,"children":[]},{"id":7,"name":"Qui ab ex laudantium.","parent":null,"children":[]},{"id":8,"name":"Voluptas perspiciatis voluptatibus voluptate ea asperiores.","parent":null,"children":[]},{"id":9,"name":"Et quis recusandae autem voluptates dolorem et.","parent":null,"children":[]},{"id":10,"name":"Omnis neque fugiat cum.","parent":{"id":1,"name":"Et labore accusantium sed veritatis voluptatem."},"children":[]},{"id":11,"name":"Doloremque quia aliquid sit.","parent":null,"children":[]},{"id":12,"name":"Sunt sint animi mollitia enim nobis vel sit.","parent":null,"children":[]},{"id":13,"name":"Voluptatem culpa labore necessitatibus dolore a vitae.","parent":null,"children":[]},{"id":14,"name":"Aliquam iste quasi quibusdam dignissimos cupiditate sit.","parent":null,"children":[]},{"id":15,"name":"tesst catdd","parent":null,"children":[]}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/categories/{id}'
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        Managing Categories
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display Category'
+      description: 'Display the specified Category.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"name":"Et labore accusantium sed veritatis voluptatem.","parent":null,"children":[{"id":10,"name":"Omnis neque fugiat cum."}],"courses":[{"id":5,"title":"Distinctio et dicta consequatur consequuntur aut.","description":"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00cc88?text=omnis","price":"932.28","published":1,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":18,"title":"Tenetur vel ut quia itaque est explicabo.","description":"Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/003366?text=quo","price":"286.31","published":1,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":14,"name":"updated","email":"abouelez10@gmail.com","avatar":"users\/user14\/avatar.jpeg","bio":"instructor for many years","is_instructor":1,"is_admin":1},"rate":"4.5"}]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

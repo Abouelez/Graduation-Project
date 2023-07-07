@@ -30,37 +30,37 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: 'Must not be greater than 100 characters.'
         required: true
-        example: cvdeqnapxiawusveobqa
+        example: elfhstlzfppkcouhcrwbkl
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: tyshawn.ullrich@example.net
+        example: bednar.prudence@example.org
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: "'h(&'P`Kl[XqoY&/1#wF"
+        example: 'V+K''.5y~>ZY"&|'
         type: string
         custom: []
       password_confirmation:
         name: password_confirmation
         description: 'Confirm password.'
         required: true
-        example: repellendus
+        example: porro
         type: string
         custom: []
     cleanBodyParameters:
-      name: cvdeqnapxiawusveobqa
-      email: tyshawn.ullrich@example.net
-      password: "'h(&'P`Kl[XqoY&/1#wF"
-      password_confirmation: repellendus
+      name: elfhstlzfppkcouhcrwbkl
+      email: bednar.prudence@example.org
+      password: 'V+K''.5y~>ZY"&|'
+      password_confirmation: porro
     fileParameters: []
     responses: []
     responseFields: []
@@ -96,19 +96,51 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: donnelly.karlie@example.net
+        example: savion11@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: quis
+        example: quia
         type: string
         custom: []
     cleanBodyParameters:
-      email: donnelly.karlie@example.net
-      password: quis
+      email: savion11@example.com
+      password: quia
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/logout
+    metadata:
+      groupName: Authentication
+      groupDescription: |-
+
+        Managing Auth
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []

@@ -6,54 +6,6 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/auth/change_password
-    metadata:
-      groupName: 'Managing Password'
-      groupDescription: |-
-
-        Managing Password
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      old_password:
-        name: old_password
-        description: ''
-        required: true
-        example: maiores
-        type: string
-        custom: []
-      password:
-        name: password
-        description: 'Must be at least 8 characters.'
-        required: true
-        example: "(|l^%b{'4'T}V"
-        type: string
-        custom: []
-    cleanBodyParameters:
-      old_password: maiores
-      password: "(|l^%b{'4'T}V"
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
     uri: api/auth/forgot-password
     metadata:
       groupName: 'Managing Password'
@@ -78,11 +30,11 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: deckow.parker@example.com
+        example: arianna.yundt@example.org
         type: string
         custom: []
     cleanBodyParameters:
-      email: deckow.parker@example.com
+      email: arianna.yundt@example.org
     fileParameters: []
     responses: []
     responseFields: []
@@ -118,27 +70,75 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: alexane.muller@example.org
+        example: abernathy.rickey@example.org
         type: string
         custom: []
       token:
         name: token
         description: ''
         required: true
-        example: est
+        example: qui
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: '\a>L}Xe'
+        example: 'JO9mvVP18D2YH(zz`#l'
         type: string
         custom: []
     cleanBodyParameters:
-      email: alexane.muller@example.org
-      token: est
-      password: '\a>L}Xe'
+      email: abernathy.rickey@example.org
+      token: qui
+      password: 'JO9mvVP18D2YH(zz`#l'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/auth/change_password
+    metadata:
+      groupName: 'Managing Password'
+      groupDescription: |-
+
+        Managing Password
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      old_password:
+        name: old_password
+        description: ''
+        required: true
+        example: nihil
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'Must be at least 8 characters.'
+        required: true
+        example: '-{[&iV:l;"9-"~5|7'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      old_password: nihil
+      password: '-{[&iV:l;"9-"~5|7'
     fileParameters: []
     responses: []
     responseFields: []

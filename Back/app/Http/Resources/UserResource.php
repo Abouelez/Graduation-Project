@@ -8,7 +8,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class UserResource extends JsonResource
 {
     /**
-     * Transform the resource into an array.
+     * Transform the resource into an array. 
      *
      * @return array<string, mixed>
      */
@@ -21,7 +21,11 @@ class UserResource extends JsonResource
             'avatar' => $this->whenNotNull($this->avatar),
             'bio' => $this->whenNotNull($this->bio),
             'is_instructor' => $this->is_instructor,
-            'is_admin' => $this->is_admin
+            'is_admin' => $this->is_admin,
+            'enrolled_courses' => CourseResource::collection($this->whenLoaded('courses')),
+            'cart' =>  CartResource::collection($this->whenLoaded('cart')),
+            'wish-list' =>  WishResource::collection($this->whenLoaded('wishes')),
+            'created-courses' => CourseResource::collection($this->whenLoaded('createdCourses'))
         ];
     }
 }

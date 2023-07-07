@@ -10,7 +10,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-/**
+/** 
  * @group Categories
  * 
  * Managing Categories
@@ -84,6 +84,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $this->authorize('delete', Category::class);
+
         if ($category->courses()->exists() || $category->children()->exists()) {
             return response()->json(['message' => 'Category has courses or sub categories so cannot be deleted.'], Response::HTTP_FORBIDDEN);
         }

@@ -26,4 +26,9 @@ class Section extends Model
     {
         return $this->hasMany(Quiz::class);
     }
+
+    public function instructor()
+    {
+        return $this->course->instructor;
+    }
 }

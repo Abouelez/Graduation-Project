@@ -39,6 +39,7 @@ class EnrollmentController extends Controller
 
     public function enroll($course_ids)
     {
+        /**@var User $user */
         $user = auth()->user();
         foreach ($course_ids as $course_id) {
             $price = Course::findOrFail($course_id)->price;

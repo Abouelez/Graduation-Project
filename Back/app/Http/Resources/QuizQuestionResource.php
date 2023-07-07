@@ -24,4 +24,6 @@ class QuizQuestionResource extends JsonResource
             'D' => $this->D,
         ];
     }
+
+    
 }
