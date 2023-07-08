@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBell, faEnvelope, faInstitution, faMapMarker,faGooglePay,faAmazonPay, faUser, faCreditCard, faPlay, faVial} from '@fortawesome/free-solid-svg-icons'
 import "../css/Checkout.css"
-
-import { FaCcApplePay, FaCreditCard} from 'react-icons/fa'
+import { FaCcApplePay, FaCreditCard, FaEnvelope, FaInstalod, FaMapMarker, FaUser} from 'react-icons/fa'
 const Checkout = () => {
     const [name,setname]= useState("");
     const [email,setemail]= useState("");
@@ -19,28 +16,28 @@ const Checkout = () => {
                     <div className='input_group'>
                         <div className='input_box'>
                             <input type='text' placeholder='Full Name' required className='name'  value={name} onChange={(a)=>setname(a.target.value)}/>
-                            <FontAwesomeIcon icon={faUser} className='icons' />
+                            <FaUser className='icons' />
                         </div>
                     </div>
                     <div className='input_group'>
                         <div className='input_box'>
                             <input type='email' placeholder='Email Address' required className='name' value={email} onChange=
                                 {(e)=>setemail(e.target.value)}/>
-                            <FontAwesomeIcon icon={faEnvelope} className='icons' />
+                            <FaEnvelope className='icons' />
                         </div>
                     </div>
                     <div className='input_group'>
                         <div className='input_box'>
                             <input type='text' placeholder='Address' required className='name' value={address} onChange=
                                 {(e)=>setaddress(e.target.value)}/>
-                            <FontAwesomeIcon icon={faMapMarker} area-aria-hidden="true" className='icons'/>
+                            <FaMapMarker area-aria-hidden="true" className='icons'/>
                         </div>
                     </div>
                     <div className='input_group'>
                         <div className='input_box'>
                             <input type='text' placeholder='City' required className='name' value={city} onChange=
                                 {(e)=>setcity(e.target.value)}/>
-                            <FontAwesomeIcon icon={faInstitution} className='icons' />
+                            <FaInstalod className='icons' />
                         </div>
                     </div>
                     {/*     DOB & Gender Start */}
@@ -78,7 +75,7 @@ const Checkout = () => {
                     <div className='input_group'>
                         <div className='input_box'>
                             <input type='tel' className='name' placeholder='card Number 1111-2222-3333-4444' required/>
-                            <FontAwesomeIcon icon={faCreditCard} className='icons'/>
+                            <FaCreditCard className='icons'/>
                         </div>
                     </div>
                     <div className='input_group'>

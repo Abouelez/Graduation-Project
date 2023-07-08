@@ -1,6 +1,4 @@
 import React from 'react';
-import { FaGooglePlusG } from "react-icons/fa"
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LoginHook from '../../Hook/Auth/LoginHook';
 import { Row, Spinner } from 'react-bootstrap';

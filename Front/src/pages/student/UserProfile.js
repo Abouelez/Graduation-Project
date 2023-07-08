@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import "../css/Userprofile.css"
+import "../../css/Userprofile.css"
 import { FaEnvelope, FaLock, FaPhone, FaUser } from 'react-icons/fa';
 const Userprofile = () => {
     const [name,setname]= useState("");

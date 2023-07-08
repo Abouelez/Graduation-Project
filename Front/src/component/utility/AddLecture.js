@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import "../../css/AddLecture.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faFile , faTrashCan ,faPenToSquare} from '@fortawesome/free-solid-svg-icons'
+import { FaPenSquare, FaTrash } from 'react-icons/fa';
 const AddLecture = () => {
     const[text , settext]=useState('');
     return (
@@ -11,8 +10,8 @@ const AddLecture = () => {
                             <div className='SCn'>
                                 <h2>New Lecture</h2>
                                 <div className='CO'>
-                                    <FontAwesomeIcon className='icmp' icon={faTrashCan} />
-                                    <FontAwesomeIcon className='icmp' icon={faPenToSquare} />
+                                    <FaTrash className='icmp'  />
+                                    <FaPenSquare className='icmp'  />
                                 </div>
                             </div>
                             <input type='text' placeholder='Title' value={text} onChange={(w)=>settext(w.target.value)}/>

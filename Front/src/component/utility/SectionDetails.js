@@ -1,7 +1,6 @@
 import React from 'react'
 import "../../css/SectionDetails.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faFile , faTrashCan ,faPenToSquare} from '@fortawesome/free-solid-svg-icons'
+import { FaFile, FaPenSquare, FaTrash } from 'react-icons/fa'
 const SectionDetails = () => {
 
     return (
@@ -9,11 +8,11 @@ const SectionDetails = () => {
                 <div className='details'>
                 <div className='SCn'>
                             <h2>Unpublished Section:</h2>
-                            <FontAwesomeIcon className='i' icon={faFile} />
+                            <FaFile className='i' />
                             <span className='para'>Course Name</span>
                             <div className='CO'>
-                                <FontAwesomeIcon className='icmp' icon={faTrashCan} />
-                                <FontAwesomeIcon className='icmp' icon={faPenToSquare} />
+                                <FaTrash className='icmp'  />
+                                <FaPenSquare className='icmp'  />
                             </div>
                         </div>
                         <div className='LQCPA'>

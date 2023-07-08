@@ -15,7 +15,6 @@ import HeadTitle from "./component/utility/HeadTitle";
 import AddLecture from "./component/utility/AddLecture";
 import AddSection from "./component/utility/AddSection";
 import SectionDetails from "./component/utility/SectionDetails";
-import Userprofile from "./pages/UserProfile";
 import Shopping from "./pages/Shopping";
 import Checkout from "./pages/Checkout";
 import Communication from "./component/Instructor/Communication"
@@ -24,6 +23,9 @@ import CoursesDashboard from "./component/Instructor/CoursesDashboard"
 import Resources from "./component/Instructor/Resources"
 import CreateCourse from "./component/Instructor/CreateCourse"
 import InstructorDashboard from "./component/Instructor/InstructorDashboard"  
+import Student from "./pages/student/Student";
+import Userprofile from "./pages/UserProfile";
+import StudentCourcessEnroll from "./pages/student/StudentCourcessEnroll";
 function App() {
   return (
     <>
@@ -47,6 +49,12 @@ function App() {
           <Route path="resources" element={ <Resources/> }/>
           <Route path="createCourse" element={ <CreateCourse/> }/>
         </Route>
+        <Route path="/student" element={ <Student/> }>
+        <Route index element={ <Userprofile/> }/>
+          <Route path="userprofile" element={ <Userprofile/> }/>
+          <Route path="studentCourcessEnroll" element={ <StudentCourcessEnroll/> }/>
+        </Route>
+
         </Routes>
       {/* <AddLecture/>
       <AddSection/>

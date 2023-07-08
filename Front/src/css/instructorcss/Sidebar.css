@@ -9,6 +9,9 @@
     z-index:1;
     overflow: hidden;
 }
+.Sidebar.Sidebar2{
+    height: 100vh;
+}
 .top-section{
     display: flex;
     align-items: center;

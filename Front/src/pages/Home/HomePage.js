@@ -1,10 +1,7 @@
-import React, { useEffect, useState, CSSProperties } from 'react'
+import React from 'react'
 import "../../css/Home.css"
 import InstructorCard from '../../component/Instructor/InstructorCard'
 import CourseCard from '../../component/Courses/CourseCard'
-import { useSelector, useDispatch } from 'react-redux'
-import { getAllCourses } from '../../redux/actions/courseAction'
-
 import { Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import CatCard from '../../component/categories/CatCard'

@@ -1,0 +1,18 @@
+.sce{
+    left: 20%;
+    position: absolute;
+    top: 20%;
+   
+}
+.h22{
+   margin-bottom: 50px;
+   font-size: 25px;
+   font-weight: bold;
+   color: rgb(2, 2, 59);
+}
+@media screen and (max-width:767px) {
+   .sce .coursecard {
+       
+    flex-direction: column;
+    }
+}

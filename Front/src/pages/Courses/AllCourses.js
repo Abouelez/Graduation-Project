@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import "./ReactjsCources.css";
 import SearchCountResult from '../../component/utility/searchCountResult';
 import { Col, Row } from 'react-bootstrap';
 import SideFilter from '../../component/utility/SideFilter';
 import CourseCard from '../../component/Courses/CourseCard'
-import { useSelector, useDispatch } from 'react-redux'
 import { Spinner } from 'react-bootstrap'
 import Pagination from '../../component/utility/Pagination';
 import UseCoursesSearchHook from '../../Hook/Courses/UseCoursesSearchHook';
-import { getAllCoursesPage } from '../../redux/actions/courseAction';
 
 const AllCourses = () => {
 
