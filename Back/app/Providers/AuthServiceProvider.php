@@ -4,7 +4,19 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Lecture;
+use App\Models\Quiz;
+use App\Models\QuizQuestion;
+use App\Models\Section;
+use App\Policies\CategoryPolicy;
+use App\Policies\CommentPolicy;
 use App\Policies\CoursePolicy;
+use App\Policies\LecturePolicy;
+use App\Policies\QuizPolicy;
+use App\Policies\QuizQuestionPolicy;
+use App\Policies\SectionPolicy;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -19,6 +31,12 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
         Course::class => CoursePolicy::class,
+        Category::class => CategoryPolicy::class,
+        Comment::class => CommentPolicy::class,
+        Lecture::class => LecturePolicy::class,
+        Quiz::class => QuizPolicy::class,
+        QuizQuestion::class => QuizQuestionPolicy::class,
+        Section::class => SectionPolicy::class
     ];
 
     /**

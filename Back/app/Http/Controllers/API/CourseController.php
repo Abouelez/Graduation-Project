@@ -57,7 +57,7 @@ class CourseController extends Controller
     public function store(StoreCourseRequest $request)
     {
         $data = $request->except('thumbnail');
-        $course = Course::create($data);
+        $course = Course::create(array_merge($data, ['user_id' => auth()->user()->id]));
 
         $uploadedImage = $request->file('thumbnail');
         $resizedImage = Image::make($uploadedImage)->resize(300, 200);
@@ -66,7 +66,6 @@ class CourseController extends Controller
         Storage::disk('content')->put($imagePath, $resizedImage->encode());
 
         $course->thumbnail = $imagePath;
-        $course->instructor = auth()->user();
         $course->save();
 
         return new CourseResource($course);
