@@ -1,21 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaShoppingCart, FaTimes, FaUserCircle } from 'react-icons/fa';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { GrClose } from 'react-icons/gr';
 import { BiSearch } from 'react-icons/bi';
 import { Link, NavLink } from 'react-router-dom';
 import "../../css/NavBar.css"
-import { FormControl } from 'react-bootstrap';
+import { FormControl, NavDropdown } from 'react-bootstrap';
 import NavbarSearchHook from '../../Hook/Search/NavbarSearchHook';
-const logo = (
-  <div className="logo">
-    <Link to={"/"}>
-      <h2><span>Courza.</span></h2>
-    </Link>
-  </div>
-);
-
 function NavBar() {
+
+
+
+  const logo = (
+    <div className="logo">
+      <Link to={"/"}>
+        <h2><span>Courza.</span></h2>
+      </Link>
+    </div>
+  );
+  const [user, setUser] = useState('');
+  useEffect(() => {
+    if (localStorage.getItem("user") != null)
+      setUser(JSON.parse(localStorage.getItem("user")))
+  }, [])
+
+  const logOut = () => {
+    localStorage.removeItem("user")
+    setUser('')
+  }
   const [showMenu, setshowMenu] = useState(false)
   const [showsearch, setshowsearch] = useState(false)
   const toggelmenu = () => {
@@ -103,21 +115,35 @@ function NavBar() {
                 </ul> */
               }
             </div>
-            <div className="header-right " onClick={hidemenu}>
-              <span className="links">
-                <NavLink to="/userprofile" style={{ color: "black" }}><FaUserCircle /> Hi,salah </NavLink>
-                <NavLink to={"/login"} className={({ isActive }) => isActive ? "active" : ""}>login</NavLink>
-              </span>
-              <div className="d-flex cart">
+            {
+              user != '' ? (
+                <NavDropdown title={user.name} id="basic-nav-dropdown">
+                  {
+                    user.is_admin == 1 ? (<NavDropdown.Item href="/admin/allproducts">admin dashboard</NavDropdown.Item>)
+                      : (<NavDropdown.Item href="/student"> my profil</NavDropdown.Item>)
+                  }
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={logOut} href="/"> log out</NavDropdown.Item>
+                </NavDropdown>
 
-                <Link to={"/Shopping"}>
-                  Cart
-                  <FaShoppingCart size={20} />
-                  <p>0</p>
-                </Link>
+              ) :
+                (<span className="links">
+                  <NavLink to={"/login"} className={({ isActive }) => isActive ? "active" : ""}>login</NavLink>
+                </span>)
+            }
 
+            <div className="links d-flex ">
+              <div className="header-right " onClick={hidemenu}>
+                <div className="d-flex cart">
+                  <Link to={"/Shopping"}>
+                    <FaShoppingCart size={20} />
+                    <p>0</p>
+                  </Link>
+                </div>
               </div>
             </div>
+
+
           </nav>
           <div className="menu-icon">
             <span className='cart1'>

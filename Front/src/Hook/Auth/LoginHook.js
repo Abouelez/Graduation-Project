@@ -39,13 +39,12 @@ const LoginHook = () => {
   const res = useSelector(state => state.authReducer.loginUser)
 
   useEffect(() => {
-    console.log(res.data)
     if (loading === false) {
-        if (res.data) {
-           // console.log(res)
+      if (res.data) {
+          console.log(res.data.user)
             if (res &&res.data && res.data.access_token ) {
                 localStorage.setItem("token", res.data.access_token)
-               // localStorage.setItem("user", JSON.stringify(res.data.data))
+                localStorage.setItem("user", JSON.stringify(res.data.user))
                 console.log("تم تسجيل الدخول بنجاح", "success")
                 setTimeout(() => {
                     window.location.href = "/"
