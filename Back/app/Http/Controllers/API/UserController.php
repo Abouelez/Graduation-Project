@@ -120,8 +120,10 @@ class UserController extends Controller
         $limit = $request->limit ?? 10;
         $categories = Category::with(['parent', 'children'])->get();
         $courses = Course::notReviewed()->with(['category', 'subCategory', 'instructor'])->paginate($limit);
-
+        /** @var User $user */
+        $user = auth()->user();
         return [
+            'user' => new UserResource($user),
             'categories' => CategoryResource::collection($categories),
             'courses_to_review' => CourseResource::collection($courses)
         ];
