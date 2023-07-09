@@ -68,6 +68,7 @@ class CourseController extends Controller
 
 
         $course->thumbnail = Storage::url($imagePath);
+        $course->price *= 100;
         $course->save();
 
         return new CourseResource($course);

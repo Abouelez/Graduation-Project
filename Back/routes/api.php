@@ -98,6 +98,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/reject-course', [UserController::class, 'rejectCourse'])->middleware('admin');
 
     Route::put('/user/update-profile', [UserController::class, 'update']);
+    Route::get('user/has-purchased/{course}', [UserController::class, 'hasPurchased']);
 
     Route::get('/notifications', [NotificationController::class, 'index']);
     Route::get('/notifications/{id}/mark-read', [NotificationController::class, 'markRead']);
@@ -117,7 +118,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 
     Route::get('courses/access-content/{course}', [CourseController::class, 'accessContent']);
-
     Route::apiResource('courses', CourseController::class)->except(['index', 'show']);
     Route::apiResource('categories', CategoryController::class)->except(['index', 'show']);
     Route::apiResource('sections', SectionController::class);

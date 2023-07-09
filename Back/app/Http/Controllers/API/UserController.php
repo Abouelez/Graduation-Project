@@ -100,6 +100,13 @@ class UserController extends Controller
         //
     }
 
+    public function hasPurchased(Course $course)
+    {
+        $purchased = auth()->user()->hasPurchased($course->id);
+        return response()->json([
+            'purchased' => $purchased
+        ]);
+    }
 
     public function UserDashboard()
     {
