@@ -25,6 +25,7 @@ import CreateCourse from "./pages/Instructor/CreateCourse"
 import InstructorDashboard from "./pages/Instructor/InstructorDashboard"  
 import Student from "./pages/student/Student";
 import Userprofile from "./pages/UserProfile";
+import CourseWatching from "./pages/Courses/CourseWatching";
 import StudentCourcessEnroll from "./pages/student/StudentCourcessEnroll";
 function App() {
   return (
@@ -41,11 +42,12 @@ function App() {
         <Route path="/userprofile" element={ <Userprofile/> }/>
         <Route path="/Shopping" element={ <Shopping/> }/>
         <Route path="/Checkout" element={ <Checkout/> }/>
+        <Route path="/coursewatch" element={ <CourseWatching/> }/>
         <Route path="/instructorDashboard" element={ <InstructorDashboard/> }>
           <Route index element={ <CoursesDashboard/> }/>
            <Route path="communication" element={ <Communication/> }/>
            <Route path="tools" element={ <Tools/> }/>
-          <Route path="coursesdashboard" element={ <CoursesDashboard/> }/>
+          <Route path="coursesdashboard" element={ <courseWatching/> }/>
           <Route path="resources" element={ <Resources/> }/>
           <Route path="createCourse" element={ <CreateCourse/> }/>
         </Route>
