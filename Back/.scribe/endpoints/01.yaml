@@ -30,11 +30,11 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: arianna.yundt@example.org
+        example: lazaro.deckow@example.com
         type: string
         custom: []
     cleanBodyParameters:
-      email: arianna.yundt@example.org
+      email: lazaro.deckow@example.com
     fileParameters: []
     responses: []
     responseFields: []
@@ -70,27 +70,27 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: abernathy.rickey@example.org
+        example: adams.weston@example.org
         type: string
         custom: []
       token:
         name: token
         description: ''
         required: true
-        example: qui
+        example: veritatis
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: 'JO9mvVP18D2YH(zz`#l'
+        example: 'fik1}<XjcIj'
         type: string
         custom: []
     cleanBodyParameters:
-      email: abernathy.rickey@example.org
-      token: qui
-      password: 'JO9mvVP18D2YH(zz`#l'
+      email: adams.weston@example.org
+      token: veritatis
+      password: 'fik1}<XjcIj'
     fileParameters: []
     responses: []
     responseFields: []
@@ -126,19 +126,19 @@ endpoints:
         name: old_password
         description: ''
         required: true
-        example: nihil
+        example: natus
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: '-{[&iV:l;"9-"~5|7'
+        example: 'g5m:"Mxl$PTg_ABPr{+'
         type: string
         custom: []
     cleanBodyParameters:
-      old_password: nihil
-      password: '-{[&iV:l;"9-"~5|7'
+      old_password: natus
+      password: 'g5m:"Mxl$PTg_ABPr{+'
     fileParameters: []
     responses: []
     responseFields: []

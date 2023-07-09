@@ -10,12 +10,17 @@ use Illuminate\Http\Response;
 
 class WishListController extends Controller
 {
-    public function wishlist(){
-        return 
+    public function wishlist()
+    {
+        /** @var User $user */
+        $user = auth()->user();
+        return CourseResource::collection($user->wishlist);
     }
     public function addToWishlist(Course $course)
     {
-        auth()->user()->wishlist()->attach($course->id);
+        /** @var User $user */
+        $user = auth()->user();
+        $user->wishlist()->attach($course->id);
         return response()->json([
             "message" => "Course added to wishlist",
             'course' => new CourseResource($course)
@@ -24,9 +29,11 @@ class WishListController extends Controller
 
     public function remove(Course $course)
     {
-        auth()->user()->wishlist()->detach($course->id);
+        /** @var User $user */
+        $user = auth()->user();
+        $user->wishlist()->detach($course->id);
         return response()->json([
             "message" => "Course removed from wishlist",
-        ], Response::HTTP_NO_CONTENT);
+        ]);
     }
 }

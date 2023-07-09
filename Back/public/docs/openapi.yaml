@@ -26,19 +26,19 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: elfhstlzfppkcouhcrwbkl
+                  example: mrcjgcchjpxbzrp
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: bednar.prudence@example.org
+                  example: lubowitz.abbey@example.com
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: 'V+K''.5y~>ZY"&|'
+                  example: 'AtT]5YQ+gZjWI1cQ)'
                 password_confirmation:
                   type: string
                   description: 'Confirm password.'
-                  example: porro
+                  example: doloribus
               required:
                 - name
                 - email
@@ -64,11 +64,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: savion11@example.com
+                  example: omari.adams@example.net
                 password:
                   type: string
                   description: ''
-                  example: quia
+                  example: molestias
               required:
                 - email
                 - password
@@ -102,11 +102,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: mjiorhkv
+                  example: aaudzwapu
                 parent_id:
                   type: integer
                   description: ''
-                  example: 6
+                  example: 5
               required:
                 - name
       security: []
@@ -337,11 +337,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: sopmhhfe
+                  example: gxlgnjgxsbauopegwtt
                 parent_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 3
               required:
                 - name
       security: []
@@ -391,6 +391,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 18
                         title: 'Tenetur vel ut quia itaque est explicabo.'
@@ -406,6 +408,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 51
                         title: 'HTML Course'
@@ -421,7 +425,9 @@ paths:
                           bio: 'instructor for many years'
                           is_instructor: 1
                           is_admin: 1
-                        rate: '4.5'
+                        rate: '3.5'
+                        total_enrollments: 1
+                        your_review: null
                 properties:
                   data:
                     type: object
@@ -468,6 +474,8 @@ paths:
                               is_instructor: 1
                               is_admin: 0
                             rate: '0.0'
+                            total_enrollments: 0
+                            your_review: null
                           -
                             id: 18
                             title: 'Tenetur vel ut quia itaque est explicabo.'
@@ -483,6 +491,8 @@ paths:
                               is_instructor: 1
                               is_admin: 0
                             rate: '0.0'
+                            total_enrollments: 0
+                            your_review: null
                           -
                             id: 51
                             title: 'HTML Course'
@@ -498,7 +508,9 @@ paths:
                               bio: 'instructor for many years'
                               is_instructor: 1
                               is_admin: 1
-                            rate: '4.5'
+                            rate: '3.5'
+                            total_enrollments: 1
+                            your_review: null
                         items:
                           type: object
                           properties:
@@ -544,6 +556,12 @@ paths:
                             rate:
                               type: string
                               example: '0.0'
+                            total_enrollments:
+                              type: integer
+                              example: 0
+                            your_review:
+                              type: string
+                              example: null
       tags:
         - Categories
       security: []
@@ -575,11 +593,11 @@ paths:
                 course_id:
                   type: string
                   description: ''
-                  example: nostrum
+                  example: sed
                 comment_text:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: jqbabalnicfxsjqoljlckpcpg
+                  example: yuhgnlmrqjmfqu
               required:
                 - course_id
                 - comment_text
@@ -683,7 +701,9 @@ paths:
                         bio: 'instructor for many years'
                         is_instructor: 1
                         is_admin: 1
-                      rate: '4.5'
+                      rate: '3.5'
+                      total_enrollments: 1
+                      your_review: null
                   links:
                     first: 'http://localhost/api/courses/filter?page=1'
                     last: 'http://localhost/api/courses/filter?page=1'
@@ -729,7 +749,9 @@ paths:
                           bio: 'instructor for many years'
                           is_instructor: 1
                           is_admin: 1
-                        rate: '4.5'
+                        rate: '3.5'
+                        total_enrollments: 1
+                        your_review: null
                     items:
                       type: object
                       properties:
@@ -777,7 +799,13 @@ paths:
                               example: 1
                         rate:
                           type: string
-                          example: '4.5'
+                          example: '3.5'
+                        total_enrollments:
+                          type: integer
+                          example: 1
+                        your_review:
+                          type: string
+                          example: null
                   links:
                     type: object
                     properties:
@@ -897,11 +925,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: loklisvr
+                  example: zgnxfhtdngidukeljupuobc
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Sit odio nisi et sed.'
+                  example: 'Qui dolor alias nihil placeat necessitatibus laboriosam enim.'
                 thumbnail:
                   type: string
                   format: binary
@@ -909,15 +937,15 @@ paths:
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 12
+                  example: 15
                 category_id:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 15
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 5
+                  example: 8
               required:
                 - title
                 - description
@@ -972,31 +1000,14 @@ paths:
                       sub_category: null
                       instructor:
                         id: 7
-                        name: 'Dr. Gregory Koch II'
-                        email: hazle.dickens@example.com
-                        avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                        name: 'new name'
+                        email: newemail@gmai.c
+                        avatar: /storage/content/users/user7/avatar.jpeg
                         is_instructor: 1
-                        is_admin: 0
+                        is_admin: 1
                       rate: '0.0'
-                    -
-                      id: 4
-                      title: 'Soluta necessitatibus ea accusamus ipsum pariatur voluptate quis.'
-                      description: 'Eligendi ea corrupti officia. Culpa voluptatibus est rerum distinctio. Tenetur id aut quidem nesciunt.'
-                      thumbnail: 'https://via.placeholder.com/640x480.png/005588?text=id'
-                      price: '265.89'
-                      published: 1
-                      category:
-                        id: 7
-                        name: 'Qui ab ex laudantium.'
-                      sub_category: null
-                      instructor:
-                        id: 1
-                        name: 'Dr. Barrett Kreiger'
-                        email: mueller.zelda@example.net
-                        avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
-                        is_instructor: 1
-                        is_admin: 0
-                      rate: '0.0'
+                      total_enrollments: 1
+                      your_review: null
                     -
                       id: 5
                       title: 'Distinctio et dicta consequatur consequuntur aut.'
@@ -1016,6 +1027,8 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                     -
                       id: 6
                       title: 'Nihil tempore maiores possimus.'
@@ -1035,6 +1048,8 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                     -
                       id: 7
                       title: 'Id explicabo voluptas praesentium.'
@@ -1054,6 +1069,8 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                     -
                       id: 8
                       title: 'Cumque est accusantium est ipsa consequuntur quidem minima.'
@@ -1073,6 +1090,8 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                     -
                       id: 9
                       title: 'Culpa ut natus vitae atque ex dignissimos aut voluptatem.'
@@ -1092,6 +1111,8 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                     -
                       id: 10
                       title: 'Quia sequi repellat sed cumque nobis ut.'
@@ -1111,6 +1132,8 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                     -
                       id: 11
                       title: 'Veritatis quo inventore officia sit rerum omnis ut velit.'
@@ -1130,6 +1153,8 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                     -
                       id: 12
                       title: 'Hic quia et unde ab sapiente nobis repudiandae deserunt.'
@@ -1149,6 +1174,29 @@ paths:
                         is_instructor: 1
                         is_admin: 0
                       rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
+                    -
+                      id: 13
+                      title: 'Beatae enim inventore sed rerum.'
+                      description: 'Qui autem debitis aut. Qui omnis iusto nam enim iusto at.'
+                      thumbnail: 'https://via.placeholder.com/640x480.png/006666?text=consequatur'
+                      price: '798.00'
+                      published: 1
+                      category:
+                        id: 11
+                        name: 'Doloremque quia aliquid sit.'
+                      sub_category: null
+                      instructor:
+                        id: 3
+                        name: 'Miss Mylene Feil DDS'
+                        email: jordi.franecki@example.net
+                        avatar: 'https://via.placeholder.com/640x480.png/009944?text=ut'
+                        is_instructor: 1
+                        is_admin: 0
+                      rate: '0.0'
+                      total_enrollments: 0
+                      your_review: null
                   links:
                     first: 'http://localhost/api/courses?page=1'
                     last: 'http://localhost/api/courses?page=5'
@@ -1190,7 +1238,7 @@ paths:
                     path: 'http://localhost/api/courses'
                     per_page: 10
                     to: 10
-                    total: 48
+                    total: 47
                 properties:
                   data:
                     type: array
@@ -1208,31 +1256,14 @@ paths:
                         sub_category: null
                         instructor:
                           id: 7
-                          name: 'Dr. Gregory Koch II'
-                          email: hazle.dickens@example.com
-                          avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                          name: 'new name'
+                          email: newemail@gmai.c
+                          avatar: /storage/content/users/user7/avatar.jpeg
                           is_instructor: 1
-                          is_admin: 0
+                          is_admin: 1
                         rate: '0.0'
-                      -
-                        id: 4
-                        title: 'Soluta necessitatibus ea accusamus ipsum pariatur voluptate quis.'
-                        description: 'Eligendi ea corrupti officia. Culpa voluptatibus est rerum distinctio. Tenetur id aut quidem nesciunt.'
-                        thumbnail: 'https://via.placeholder.com/640x480.png/005588?text=id'
-                        price: '265.89'
-                        published: 1
-                        category:
-                          id: 7
-                          name: 'Qui ab ex laudantium.'
-                        sub_category: null
-                        instructor:
-                          id: 1
-                          name: 'Dr. Barrett Kreiger'
-                          email: mueller.zelda@example.net
-                          avatar: 'https://via.placeholder.com/640x480.png/00ee88?text=et'
-                          is_instructor: 1
-                          is_admin: 0
-                        rate: '0.0'
+                        total_enrollments: 1
+                        your_review: null
                       -
                         id: 5
                         title: 'Distinctio et dicta consequatur consequuntur aut.'
@@ -1252,6 +1283,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 6
                         title: 'Nihil tempore maiores possimus.'
@@ -1271,6 +1304,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 7
                         title: 'Id explicabo voluptas praesentium.'
@@ -1290,6 +1325,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 8
                         title: 'Cumque est accusantium est ipsa consequuntur quidem minima.'
@@ -1309,6 +1346,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 9
                         title: 'Culpa ut natus vitae atque ex dignissimos aut voluptatem.'
@@ -1328,6 +1367,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 10
                         title: 'Quia sequi repellat sed cumque nobis ut.'
@@ -1347,6 +1388,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 11
                         title: 'Veritatis quo inventore officia sit rerum omnis ut velit.'
@@ -1366,6 +1409,8 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                       -
                         id: 12
                         title: 'Hic quia et unde ab sapiente nobis repudiandae deserunt.'
@@ -1385,6 +1430,29 @@ paths:
                           is_instructor: 1
                           is_admin: 0
                         rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
+                      -
+                        id: 13
+                        title: 'Beatae enim inventore sed rerum.'
+                        description: 'Qui autem debitis aut. Qui omnis iusto nam enim iusto at.'
+                        thumbnail: 'https://via.placeholder.com/640x480.png/006666?text=consequatur'
+                        price: '798.00'
+                        published: 1
+                        category:
+                          id: 11
+                          name: 'Doloremque quia aliquid sit.'
+                        sub_category: null
+                        instructor:
+                          id: 3
+                          name: 'Miss Mylene Feil DDS'
+                          email: jordi.franecki@example.net
+                          avatar: 'https://via.placeholder.com/640x480.png/009944?text=ut'
+                          is_instructor: 1
+                          is_admin: 0
+                        rate: '0.0'
+                        total_enrollments: 0
+                        your_review: null
                     items:
                       type: object
                       properties:
@@ -1426,22 +1494,28 @@ paths:
                               example: 7
                             name:
                               type: string
-                              example: 'Dr. Gregory Koch II'
+                              example: 'new name'
                             email:
                               type: string
-                              example: hazle.dickens@example.com
+                              example: newemail@gmai.c
                             avatar:
                               type: string
-                              example: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                              example: /storage/content/users/user7/avatar.jpeg
                             is_instructor:
                               type: integer
                               example: 1
                             is_admin:
                               type: integer
-                              example: 0
+                              example: 1
                         rate:
                           type: string
                           example: '0.0'
+                        total_enrollments:
+                          type: integer
+                          example: 1
+                        your_review:
+                          type: string
+                          example: null
                   links:
                     type: object
                     properties:
@@ -1523,7 +1597,7 @@ paths:
                         example: 10
                       total:
                         type: integer
-                        example: 48
+                        example: 47
       tags:
         - Courses
       security: []
@@ -1546,11 +1620,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: huutiqmktjbglbqjntr
+                  example: jozu
                 description:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 5000 characters.'
-                  example: 'Autem aut impedit consectetur magni necessitatibus ut cum.'
+                  example: 'Voluptatem nobis sunt distinctio accusamus magni beatae eum.'
                 thumbnail:
                   type: string
                   description: ''
@@ -1558,15 +1632,15 @@ paths:
                 price:
                   type: number
                   description: 'Must be at least 0.'
-                  example: 3
+                  example: 66
                 category_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 19
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 19
               required:
                 - title
                 - description
@@ -1608,15 +1682,17 @@ paths:
                     sub_category: null
                     instructor:
                       id: 7
-                      name: 'Dr. Gregory Koch II'
-                      email: hazle.dickens@example.com
-                      avatar: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                      name: 'new name'
+                      email: newemail@gmai.c
+                      avatar: /storage/content/users/user7/avatar.jpeg
                       is_instructor: 1
-                      is_admin: 0
+                      is_admin: 1
                     sections: []
                     comments: []
                     rate: '0.0'
                     reviews: []
+                    total_enrollments: 1
+                    your_review: null
                 properties:
                   data:
                     type: object
@@ -1659,19 +1735,19 @@ paths:
                             example: 7
                           name:
                             type: string
-                            example: 'Dr. Gregory Koch II'
+                            example: 'new name'
                           email:
                             type: string
-                            example: hazle.dickens@example.com
+                            example: newemail@gmai.c
                           avatar:
                             type: string
-                            example: 'https://via.placeholder.com/640x480.png/0088dd?text=cupiditate'
+                            example: /storage/content/users/user7/avatar.jpeg
                           is_instructor:
                             type: integer
                             example: 1
                           is_admin:
                             type: integer
-                            example: 0
+                            example: 1
                       sections:
                         type: array
                         example: []
@@ -1684,6 +1760,12 @@ paths:
                       reviews:
                         type: array
                         example: []
+                      total_enrollments:
+                        type: integer
+                        example: 1
+                      your_review:
+                        type: string
+                        example: null
       tags:
         - Courses
       security: []
@@ -1733,7 +1815,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the verify email.'
-        example: eos
+        example: vel
         required: true
         schema:
           type: string
@@ -1741,7 +1823,7 @@ paths:
         in: path
         name: hash
         description: ''
-        example: commodi
+        example: quo
         required: true
         schema:
           type: string
@@ -1794,7 +1876,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the notification.'
-        example: modi
+        example: suscipit
         required: true
         schema:
           type: string
@@ -1822,16 +1904,160 @@ paths:
                 payment_amount:
                   type: number
                   description: ''
-                  example: 523740.19345359
+                  example: 16564.8
                 payment_id:
                   type: string
                   description: ''
-                  example: sed
+                  example: distinctio
               required:
                 - course_ids
                 - payment_amount
                 - payment_id
       security: []
+  /api/wishlist:
+    get:
+      summary: ''
+      operationId: getApiWishlist
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/add-to-wishlist/{course_id}':
+    get:
+      summary: ''
+      operationId: getApiAddToWishlistCourse_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: course_id
+        description: 'The ID of the course.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/remove-from-wishlist/{course_id}':
+    delete:
+      summary: ''
+      operationId: deleteApiRemoveFromWishlistCourse_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: course_id
+        description: 'The ID of the course.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/cart:
+    get:
+      summary: ''
+      operationId: getApiCart
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/add-to-cart/{course_id}':
+    get:
+      summary: ''
+      operationId: getApiAddToCartCourse_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: course_id
+        description: 'The ID of the course.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/remove-from-cart/{course_id}':
+    delete:
+      summary: ''
+      operationId: deleteApiRemoveFromCartCourse_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: course_id
+        description: 'The ID of the course.'
+        example: 2
+        required: true
+        schema:
+          type: integer
   /api/lectures:
     get:
       summary: 'Get Lectures'
@@ -1872,19 +2098,19 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: hqivklwdptrtfnqhsydyiqii
+                  example: fbidaskjymvmtvjmyc
                 type:
                   type: string
                   description: ''
-                  example: provident
+                  example: at
                 section_id:
                   type: integer
                   description: ''
-                  example: 18
+                  example: 10
                 content:
                   type: string
                   description: ''
-                  example: culpa
+                  example: porro
               required:
                 - title
                 - type
@@ -1959,7 +2185,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: arianna.yundt@example.org
+                  example: lazaro.deckow@example.com
               required:
                 - email
       security: []
@@ -1982,15 +2208,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: abernathy.rickey@example.org
+                  example: adams.weston@example.org
                 token:
                   type: string
                   description: ''
-                  example: qui
+                  example: veritatis
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: 'JO9mvVP18D2YH(zz`#l'
+                  example: 'fik1}<XjcIj'
               required:
                 - email
                 - token
@@ -2015,11 +2241,11 @@ paths:
                 old_password:
                   type: string
                   description: ''
-                  example: nihil
+                  example: natus
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: '-{[&iV:l;"9-"~5|7'
+                  example: 'g5m:"Mxl$PTg_ABPr{+'
               required:
                 - old_password
                 - password
@@ -2064,23 +2290,23 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: mccjhamzbbhtgzz
+                  example: goczizqogezom
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: q
+                  example: m
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: nomplu
+                  example: wvsy
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 100 characters.'
-                  example: t
+                  example: rivnrmexvepufwwqsb
                 quiz_id:
                   type: integer
                   description: ''
-                  example: 9
+                  example: 12
               required:
                 - question
                 - answer
@@ -2128,19 +2354,19 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: qd
+                  example: oyivwqimxvkjfkcxufiays
                 answer:
                   type: string
                   description: 'Must be 1 character.'
-                  example: d
+                  example: x
                 A:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: tujjlovgxpp
+                  example: kwrswkgcdjvtcr
                 B:
                   type: string
                   description: 'Must be at least 1 character. Must not be greater than 50 characters.'
-                  example: eokamesain
+                  example: pffobwta
               required:
                 - question
                 - answer
@@ -2205,11 +2431,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
-                  example: zrcuw
+                  example: udubqhihfgsgljssl
                 section_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 8
               required:
                 - title
                 - section_id
@@ -2254,7 +2480,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: pmlvt
+                  example: jp
               required:
                 - title
       security: []
@@ -2277,27 +2503,6 @@ paths:
         schema:
           type: integer
   /api/reviews:
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Reviews
-      security: []
     post:
       summary: 'Store a newly created resource in storage.'
       operationId: storeANewlyCreatedResourceInStorage
@@ -2306,29 +2511,31 @@ paths:
       responses: {  }
       tags:
         - Reviews
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                course_id:
+                  type: string
+                  description: ''
+                  example: tempora
+                rate:
+                  type: integer
+                  description: 'Must be at least 1. Must not be greater than 5.'
+                  example: 5
+                comment:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: dvfiiylcdiucvkj
+              required:
+                - course_id
+                - rate
+                - comment
       security: []
   '/api/reviews/{id}':
-    get:
-      summary: 'Display the specified resource.'
-      operationId: displayTheSpecifiedResource
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Reviews
-      security: []
     put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
@@ -2337,6 +2544,24 @@ paths:
       responses: {  }
       tags:
         - Reviews
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rate:
+                  type: integer
+                  description: 'Must be at least 1. Must not be greater than 5.'
+                  example: 4
+                comment:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: nomtgpjekqyfalccqjzhlnmb
+              required:
+                - rate
+                - comment
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -2396,11 +2621,11 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: bdodaledbskfl
+                  example: tlvripbnn
                 course_id:
                   type: integer
                   description: ''
-                  example: 9
+                  example: 15
               required:
                 - title
                 - course_id
@@ -2445,7 +2670,7 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: vnlnrghtxrwfgzyiwsdkxgrrv
+                  example: jcach
               required:
                 - title
       security: []
@@ -2621,6 +2846,37 @@ paths:
       tags:
         - Users
       security: []
+  '/api/user/has-purchased/{course_id}':
+    get:
+      summary: ''
+      operationId: getApiUserHasPurchasedCourse_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+      security: []
+    parameters:
+      -
+        in: path
+        name: course_id
+        description: 'The ID of the course.'
+        example: 2
+        required: true
+        schema:
+          type: integer
 tags:
   -
     name: Authentication

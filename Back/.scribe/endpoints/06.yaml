@@ -30,19 +30,19 @@ endpoints:
         name: name
         description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: mjiorhkv
+        example: aaudzwapu
         type: string
         custom: []
       parent_id:
         name: parent_id
         description: ''
         required: false
-        example: 6
+        example: 5
         type: integer
         custom: []
     cleanBodyParameters:
-      name: mjiorhkv
-      parent_id: 6
+      name: aaudzwapu
+      parent_id: 5
     fileParameters: []
     responses: []
     responseFields: []
@@ -87,19 +87,19 @@ endpoints:
         name: name
         description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
         required: true
-        example: sopmhhfe
+        example: gxlgnjgxsbauopegwtt
         type: string
         custom: []
       parent_id:
         name: parent_id
         description: ''
         required: false
-        example: 10
+        example: 3
         type: integer
         custom: []
     cleanBodyParameters:
-      name: sopmhhfe
-      parent_id: 10
+      name: gxlgnjgxsbauopegwtt
+      parent_id: 3
     fileParameters: []
     responses: []
     responseFields: []
@@ -227,7 +227,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Et labore accusantium sed veritatis voluptatem.","parent":null,"children":[{"id":10,"name":"Omnis neque fugiat cum."}],"courses":[{"id":5,"title":"Distinctio et dicta consequatur consequuntur aut.","description":"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00cc88?text=omnis","price":"932.28","published":1,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":18,"title":"Tenetur vel ut quia itaque est explicabo.","description":"Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/003366?text=quo","price":"286.31","published":1,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"0.0"},{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":14,"name":"updated","email":"abouelez10@gmail.com","avatar":"users\/user14\/avatar.jpeg","bio":"instructor for many years","is_instructor":1,"is_admin":1},"rate":"4.5"}]}}'
+        content: '{"data":{"id":1,"name":"Et labore accusantium sed veritatis voluptatem.","parent":null,"children":[{"id":10,"name":"Omnis neque fugiat cum."}],"courses":[{"id":5,"title":"Distinctio et dicta consequatur consequuntur aut.","description":"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/00cc88?text=omnis","price":"932.28","published":1,"instructor":{"id":6,"name":"Leilani Gutmann","email":"gwen.runte@example.org","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=quo","is_instructor":1,"is_admin":0},"rate":"0.0","total_enrollments":0,"your_review":null},{"id":18,"title":"Tenetur vel ut quia itaque est explicabo.","description":"Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.","thumbnail":"https:\/\/via.placeholder.com\/640x480.png\/003366?text=quo","price":"286.31","published":1,"instructor":{"id":1,"name":"Dr. Barrett Kreiger","email":"mueller.zelda@example.net","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee88?text=et","is_instructor":1,"is_admin":0},"rate":"0.0","total_enrollments":0,"your_review":null},{"id":51,"title":"HTML Course","description":"All you need to be professional in HTML","thumbnail":"courses\/course51\/thumbnail.jpeg","price":"119.99","published":0,"instructor":{"id":14,"name":"updated","email":"abouelez10@gmail.com","avatar":"users\/user14\/avatar.jpeg","bio":"instructor for many years","is_instructor":1,"is_admin":1},"rate":"3.5","total_enrollments":1,"your_review":null}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

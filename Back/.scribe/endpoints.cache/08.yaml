@@ -73,35 +73,35 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
         required: true
-        example: hqivklwdptrtfnqhsydyiqii
+        example: fbidaskjymvmtvjmyc
         type: string
         custom: []
       type:
         name: type
         description: ''
         required: true
-        example: provident
+        example: at
         type: string
         custom: []
       section_id:
         name: section_id
         description: ''
         required: true
-        example: 18
+        example: 10
         type: integer
         custom: []
       content:
         name: content
         description: ''
         required: true
-        example: culpa
+        example: porro
         type: string
         custom: []
     cleanBodyParameters:
-      title: hqivklwdptrtfnqhsydyiqii
-      type: provident
-      section_id: 18
-      content: culpa
+      title: fbidaskjymvmtvjmyc
+      type: at
+      section_id: 10
+      content: porro
     fileParameters: []
     responses: []
     responseFields: []

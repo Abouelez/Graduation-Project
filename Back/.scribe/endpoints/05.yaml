@@ -52,19 +52,19 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: eos
+        example: vel
         type: string
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: commodi
+        example: quo
         type: string
         custom: []
     cleanUrlParameters:
-      id: eos
-      hash: commodi
+      id: vel
+      hash: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

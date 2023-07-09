@@ -32,35 +32,35 @@ endpoints:
         name: name
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: elfhstlzfppkcouhcrwbkl
+        example: mrcjgcchjpxbzrp
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: bednar.prudence@example.org
+        example: lubowitz.abbey@example.com
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: 'V+K''.5y~>ZY"&|'
+        example: 'AtT]5YQ+gZjWI1cQ)'
         type: string
         custom: []
       password_confirmation:
         name: password_confirmation
         description: 'Confirm password.'
         required: true
-        example: porro
+        example: doloribus
         type: string
         custom: []
     cleanBodyParameters:
-      name: elfhstlzfppkcouhcrwbkl
-      email: bednar.prudence@example.org
-      password: 'V+K''.5y~>ZY"&|'
-      password_confirmation: porro
+      name: mrcjgcchjpxbzrp
+      email: lubowitz.abbey@example.com
+      password: 'AtT]5YQ+gZjWI1cQ)'
+      password_confirmation: doloribus
     fileParameters: []
     responses: []
     responseFields: []
@@ -96,19 +96,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: savion11@example.com
+        example: omari.adams@example.net
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: quia
+        example: molestias
         type: string
         custom: []
     cleanBodyParameters:
-      email: savion11@example.com
-      password: quia
+      email: omari.adams@example.net
+      password: molestias
     fileParameters: []
     responses: []
     responseFields: []

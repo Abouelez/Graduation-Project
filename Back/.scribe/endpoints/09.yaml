@@ -71,19 +71,19 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 60 characters.'
         required: true
-        example: zrcuw
+        example: udubqhihfgsgljssl
         type: string
         custom: []
       section_id:
         name: section_id
         description: ''
         required: true
-        example: 13
+        example: 8
         type: integer
         custom: []
     cleanBodyParameters:
-      title: zrcuw
-      section_id: 13
+      title: udubqhihfgsgljssl
+      section_id: 8
     fileParameters: []
     responses: []
     responseFields: []
@@ -177,11 +177,11 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: pmlvt
+        example: jp
         type: string
         custom: []
     cleanBodyParameters:
-      title: pmlvt
+      title: jp
     fileParameters: []
     responses: []
     responseFields: []

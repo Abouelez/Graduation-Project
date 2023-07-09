@@ -5,6 +5,7 @@ use App\Http\Controllers\API\Auth\EmailVerificationController;
 use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\PasswordController;
 use App\Http\Controllers\API\Auth\RegisterController;
+use App\Http\Controllers\API\CartController;
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\CourseController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\API\QuizQuestionsController;
 use App\Http\Controllers\API\ReviewController;
 use App\Http\Controllers\API\SectionController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\WishListController;
 use App\Models\QuizQuestion;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -126,6 +128,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('questions', QuizQuestionsController::class);
     Route::apiResource('reviews', ReviewController::class)->only(['store', 'update', 'destroy']);
     Route::apiResource('comments', CommentController::class)->only(['store', 'destroy']);
+
+    Route::get('wishlist', [WishListController::class, 'wishlist']);
+    Route::get('add-to-wishlist/{course}', [WishListController::class, 'addToWishlist']);
+    Route::delete('remove-from-wishlist/{course}', [WishListController::class, 'remove']);
+
+    Route::get('cart', [CartController::class, 'cart']);
+    Route::get('add-to-cart/{course}', [CartController::class, 'addToCart']);
+    Route::delete('remove-from-cart/{course}', [CartController::class, 'remove']);
 });
 
 Route::apiResource('courses', CourseController::class)->only(['index', 'show']);

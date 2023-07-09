@@ -73,19 +73,19 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: bdodaledbskfl
+        example: tlvripbnn
         type: string
         custom: []
       course_id:
         name: course_id
         description: ''
         required: true
-        example: 9
+        example: 15
         type: integer
         custom: []
     cleanBodyParameters:
-      title: bdodaledbskfl
-      course_id: 9
+      title: tlvripbnn
+      course_id: 15
     fileParameters: []
     responses: []
     responseFields: []
@@ -179,11 +179,11 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: vnlnrghtxrwfgzyiwsdkxgrrv
+        example: jcach
         type: string
         custom: []
     cleanBodyParameters:
-      title: vnlnrghtxrwfgzyiwsdkxgrrv
+      title: jcach
     fileParameters: []
     responses: []
     responseFields: []

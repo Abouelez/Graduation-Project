@@ -32,19 +32,19 @@ endpoints:
         name: course_id
         description: ''
         required: true
-        example: nostrum
+        example: sed
         type: string
         custom: []
       comment_text:
         name: comment_text
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: jqbabalnicfxsjqoljlckpcpg
+        example: yuhgnlmrqjmfqu
         type: string
         custom: []
     cleanBodyParameters:
-      course_id: nostrum
-      comment_text: jqbabalnicfxsjqoljlckpcpg
+      course_id: sed
+      comment_text: yuhgnlmrqjmfqu
     fileParameters: []
     responses: []
     responseFields: []

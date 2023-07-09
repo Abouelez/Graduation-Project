@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "5d85441e-6aa2-41b0-b6fc-9d285203cce0",
+        "_postman_id": "f1e16074-79c7-4568-9946-8df9a3d1473a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"elfhstlzfppkcouhcrwbkl\",\"email\":\"bednar.prudence@example.org\",\"password\":\"V+K'.5y~>ZY\\\"&|\",\"password_confirmation\":\"porro\"}"
+                            "raw": "{\"name\":\"mrcjgcchjpxbzrp\",\"email\":\"lubowitz.abbey@example.com\",\"password\":\"AtT]5YQ+gZjWI1cQ)\",\"password_confirmation\":\"doloribus\"}"
                         },
                         "description": "Add new user to system",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"savion11@example.com\",\"password\":\"quia\"}"
+                            "raw": "{\"email\":\"omari.adams@example.net\",\"password\":\"molestias\"}"
                         },
                         "description": "Login User",
                         "auth": {
@@ -137,7 +137,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"mjiorhkv\",\"parent_id\":6}"
+                            "raw": "{\"name\":\"aaudzwapu\",\"parent_id\":5}"
                         },
                         "description": "Store a newly created Category in storage.",
                         "auth": {
@@ -176,7 +176,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sopmhhfe\",\"parent_id\":10}"
+                            "raw": "{\"name\":\"gxlgnjgxsbauopegwtt\",\"parent_id\":3}"
                         },
                         "description": "Update the specified Category in storage.",
                         "auth": {
@@ -336,7 +336,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Et labore accusantium sed veritatis voluptatem.\",\"parent\":null,\"children\":[{\"id\":10,\"name\":\"Omnis neque fugiat cum.\"}],\"courses\":[{\"id\":5,\"title\":\"Distinctio et dicta consequatur consequuntur aut.\",\"description\":\"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00cc88?text=omnis\",\"price\":\"932.28\",\"published\":1,\"instructor\":{\"id\":6,\"name\":\"Leilani Gutmann\",\"email\":\"gwen.runte@example.org\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/006688?text=quo\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":18,\"title\":\"Tenetur vel ut quia itaque est explicabo.\",\"description\":\"Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/003366?text=quo\",\"price\":\"286.31\",\"published\":1,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":14,\"name\":\"updated\",\"email\":\"abouelez10@gmail.com\",\"avatar\":\"users\\\/user14\\\/avatar.jpeg\",\"bio\":\"instructor for many years\",\"is_instructor\":1,\"is_admin\":1},\"rate\":\"4.5\"}]}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Et labore accusantium sed veritatis voluptatem.\",\"parent\":null,\"children\":[{\"id\":10,\"name\":\"Omnis neque fugiat cum.\"}],\"courses\":[{\"id\":5,\"title\":\"Distinctio et dicta consequatur consequuntur aut.\",\"description\":\"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00cc88?text=omnis\",\"price\":\"932.28\",\"published\":1,\"instructor\":{\"id\":6,\"name\":\"Leilani Gutmann\",\"email\":\"gwen.runte@example.org\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/006688?text=quo\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":18,\"title\":\"Tenetur vel ut quia itaque est explicabo.\",\"description\":\"Voluptatibus et rem beatae quasi voluptatem. Itaque sit ratione fuga voluptas sit dolor delectus rem. Ab ea explicabo corrupti incidunt placeat quo.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/003366?text=quo\",\"price\":\"286.31\",\"published\":1,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":14,\"name\":\"updated\",\"email\":\"abouelez10@gmail.com\",\"avatar\":\"users\\\/user14\\\/avatar.jpeg\",\"bio\":\"instructor for many years\",\"is_instructor\":1,\"is_admin\":1},\"rate\":\"3.5\",\"total_enrollments\":1,\"your_review\":null}]}}",
                             "name": ""
                         }
                     ]
@@ -369,7 +369,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"course_id\":\"nostrum\",\"comment_text\":\"jqbabalnicfxsjqoljlckpcpg\"}"
+                            "raw": "{\"course_id\":\"sed\",\"comment_text\":\"yuhgnlmrqjmfqu\"}"
                         },
                         "description": "",
                         "auth": {
@@ -502,7 +502,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":14,\"name\":\"updated\",\"email\":\"abouelez10@gmail.com\",\"avatar\":\"users\\\/user14\\\/avatar.jpeg\",\"bio\":\"instructor for many years\",\"is_instructor\":1,\"is_admin\":1},\"rate\":\"4.5\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter\",\"per_page\":10,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[{\"id\":51,\"title\":\"HTML Course\",\"description\":\"All you need to be professional in HTML\",\"thumbnail\":\"courses\\\/course51\\\/thumbnail.jpeg\",\"price\":\"119.99\",\"published\":0,\"instructor\":{\"id\":14,\"name\":\"updated\",\"email\":\"abouelez10@gmail.com\",\"avatar\":\"users\\\/user14\\\/avatar.jpeg\",\"bio\":\"instructor for many years\",\"is_instructor\":1,\"is_admin\":1},\"rate\":\"3.5\",\"total_enrollments\":1,\"your_review\":null}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\\\/filter\",\"per_page\":10,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -588,31 +588,31 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "loklisvr",
+                                    "value": "zgnxfhtdngidukeljupuobc",
                                     "type": "text",
                                     "description": "Must be at least 5 characters. Must not be greater than 255 characters."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Sit odio nisi et sed.",
+                                    "value": "Qui dolor alias nihil placeat necessitatibus laboriosam enim.",
                                     "type": "text",
                                     "description": "Must be at least 10 characters. Must not be greater than 5000 characters."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 12,
+                                    "value": 15,
                                     "type": "text",
                                     "description": "Must be at least 0."
                                 },
                                 {
                                     "key": "category_id",
-                                    "value": 20,
+                                    "value": 15,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sub_category_id",
-                                    "value": 5,
+                                    "value": 8,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -660,7 +660,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"huutiqmktjbglbqjntr\",\"description\":\"Autem aut impedit consectetur magni necessitatibus ut cum.\",\"price\":3,\"category_id\":12,\"sub_category_id\":11}"
+                            "raw": "{\"title\":\"jozu\",\"description\":\"Voluptatem nobis sunt distinctio accusamus magni beatae eum.\",\"price\":66,\"category_id\":19,\"sub_category_id\":19}"
                         },
                         "description": "Update the specified Course in storage.",
                         "auth": {
@@ -769,7 +769,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":2,\"title\":\"Aut quis voluptatem autem voluptatibus.\",\"description\":\"Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=quo\",\"price\":\"925.20\",\"published\":1,\"category\":{\"id\":5,\"name\":\"Et repellendus ex et sapiente ut explicabo expedita dicta.\"},\"sub_category\":null,\"instructor\":{\"id\":7,\"name\":\"Dr. Gregory Koch II\",\"email\":\"hazle.dickens@example.com\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0088dd?text=cupiditate\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":4,\"title\":\"Soluta necessitatibus ea accusamus ipsum pariatur voluptate quis.\",\"description\":\"Eligendi ea corrupti officia. Culpa voluptatibus est rerum distinctio. Tenetur id aut quidem nesciunt.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/005588?text=id\",\"price\":\"265.89\",\"published\":1,\"category\":{\"id\":7,\"name\":\"Qui ab ex laudantium.\"},\"sub_category\":null,\"instructor\":{\"id\":1,\"name\":\"Dr. Barrett Kreiger\",\"email\":\"mueller.zelda@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee88?text=et\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":5,\"title\":\"Distinctio et dicta consequatur consequuntur aut.\",\"description\":\"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00cc88?text=omnis\",\"price\":\"932.28\",\"published\":1,\"category\":{\"id\":1,\"name\":\"Et labore accusantium sed veritatis voluptatem.\"},\"sub_category\":null,\"instructor\":{\"id\":6,\"name\":\"Leilani Gutmann\",\"email\":\"gwen.runte@example.org\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/006688?text=quo\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":6,\"title\":\"Nihil tempore maiores possimus.\",\"description\":\"Eos iure omnis voluptas nemo dolorem temporibus corporis. Et explicabo vero rem reprehenderit. Iure autem similique voluptatem aut et ut.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00dd00?text=temporibus\",\"price\":\"471.39\",\"published\":1,\"category\":{\"id\":2,\"name\":\"Totam ea adipisci ut.\"},\"sub_category\":null,\"instructor\":{\"id\":4,\"name\":\"Esmeralda Howe DVM\",\"email\":\"qhauck@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ff00?text=itaque\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":7,\"title\":\"Id explicabo voluptas praesentium.\",\"description\":\"Quidem est reprehenderit incidunt repellendus quia. Quod incidunt voluptatibus omnis quod iusto eveniet est accusantium. Dignissimos reprehenderit delectus commodi vero.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00eedd?text=molestiae\",\"price\":\"658.84\",\"published\":1,\"category\":{\"id\":15,\"name\":\"tesst catdd\"},\"sub_category\":null,\"instructor\":{\"id\":5,\"name\":\"Mr. Lukas Bahringer\",\"email\":\"tbogisich@example.com\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=laudantium\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":8,\"title\":\"Cumque est accusantium est ipsa consequuntur quidem minima.\",\"description\":\"Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0088dd?text=unde\",\"price\":\"57.83\",\"published\":1,\"category\":{\"id\":9,\"name\":\"Et quis recusandae autem voluptates dolorem et.\"},\"sub_category\":null,\"instructor\":{\"id\":5,\"name\":\"Mr. Lukas Bahringer\",\"email\":\"tbogisich@example.com\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=laudantium\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":9,\"title\":\"Culpa ut natus vitae atque ex dignissimos aut voluptatem.\",\"description\":\"Sunt eum sint modi rerum cum quo. Ipsum fugiat delectus quo sed pariatur tenetur maiores. Et eligendi hic distinctio repellendus omnis. Totam cum sit ipsa.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00aabb?text=earum\",\"price\":\"706.19\",\"published\":1,\"category\":{\"id\":6,\"name\":\"Accusantium laborum reiciendis ab eos tempore qui.\"},\"sub_category\":null,\"instructor\":{\"id\":4,\"name\":\"Esmeralda Howe DVM\",\"email\":\"qhauck@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ff00?text=itaque\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":10,\"title\":\"Quia sequi repellat sed cumque nobis ut.\",\"description\":\"Ducimus cumque vel natus sint autem. In aliquid et ut nisi ipsam. Quidem praesentium dignissimos ea odio. Explicabo provident doloremque excepturi ut eligendi eos qui.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/003311?text=dolor\",\"price\":\"736.60\",\"published\":1,\"category\":{\"id\":12,\"name\":\"Sunt sint animi mollitia enim nobis vel sit.\"},\"sub_category\":null,\"instructor\":{\"id\":6,\"name\":\"Leilani Gutmann\",\"email\":\"gwen.runte@example.org\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/006688?text=quo\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":11,\"title\":\"Veritatis quo inventore officia sit rerum omnis ut velit.\",\"description\":\"Dicta amet sequi error fugiat vitae accusantium vel. Nihil sint id expedita qui magnam qui ut qui.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ff99?text=dolorem\",\"price\":\"341.06\",\"published\":1,\"category\":{\"id\":14,\"name\":\"Aliquam iste quasi quibusdam dignissimos cupiditate sit.\"},\"sub_category\":null,\"instructor\":{\"id\":9,\"name\":\"Katrine Dietrich\",\"email\":\"mccullough.alverta@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0022ee?text=deleniti\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"},{\"id\":12,\"title\":\"Hic quia et unde ab sapiente nobis repudiandae deserunt.\",\"description\":\"Voluptates iusto voluptatem nisi ut. Aspernatur eaque consequuntur quia aliquam. Molestiae quibusdam in labore fugit voluptatem aperiam unde. Neque ut vero dolores inventore in dolorem.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee55?text=in\",\"price\":\"727.85\",\"published\":1,\"category\":{\"id\":9,\"name\":\"Et quis recusandae autem voluptates dolorem et.\"},\"sub_category\":null,\"instructor\":{\"id\":9,\"name\":\"Katrine Dietrich\",\"email\":\"mccullough.alverta@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0022ee?text=deleniti\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=5\",\"prev\":null,\"next\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":5,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\",\"per_page\":10,\"to\":10,\"total\":48}}",
+                            "body": "{\"data\":[{\"id\":2,\"title\":\"Aut quis voluptatem autem voluptatibus.\",\"description\":\"Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=quo\",\"price\":\"925.20\",\"published\":1,\"category\":{\"id\":5,\"name\":\"Et repellendus ex et sapiente ut explicabo expedita dicta.\"},\"sub_category\":null,\"instructor\":{\"id\":7,\"name\":\"new name\",\"email\":\"newemail@gmai.c\",\"avatar\":\"\\\/storage\\\/content\\\/users\\\/user7\\\/avatar.jpeg\",\"is_instructor\":1,\"is_admin\":1},\"rate\":\"0.0\",\"total_enrollments\":1,\"your_review\":null},{\"id\":5,\"title\":\"Distinctio et dicta consequatur consequuntur aut.\",\"description\":\"Quas vel veniam quaerat saepe aliquam dolorem est. Recusandae similique nesciunt inventore animi laborum quidem fugit. Incidunt neque aut ratione corporis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00cc88?text=omnis\",\"price\":\"932.28\",\"published\":1,\"category\":{\"id\":1,\"name\":\"Et labore accusantium sed veritatis voluptatem.\"},\"sub_category\":null,\"instructor\":{\"id\":6,\"name\":\"Leilani Gutmann\",\"email\":\"gwen.runte@example.org\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/006688?text=quo\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":6,\"title\":\"Nihil tempore maiores possimus.\",\"description\":\"Eos iure omnis voluptas nemo dolorem temporibus corporis. Et explicabo vero rem reprehenderit. Iure autem similique voluptatem aut et ut.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00dd00?text=temporibus\",\"price\":\"471.39\",\"published\":1,\"category\":{\"id\":2,\"name\":\"Totam ea adipisci ut.\"},\"sub_category\":null,\"instructor\":{\"id\":4,\"name\":\"Esmeralda Howe DVM\",\"email\":\"qhauck@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ff00?text=itaque\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":7,\"title\":\"Id explicabo voluptas praesentium.\",\"description\":\"Quidem est reprehenderit incidunt repellendus quia. Quod incidunt voluptatibus omnis quod iusto eveniet est accusantium. Dignissimos reprehenderit delectus commodi vero.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00eedd?text=molestiae\",\"price\":\"658.84\",\"published\":1,\"category\":{\"id\":15,\"name\":\"tesst catdd\"},\"sub_category\":null,\"instructor\":{\"id\":5,\"name\":\"Mr. Lukas Bahringer\",\"email\":\"tbogisich@example.com\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=laudantium\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":8,\"title\":\"Cumque est accusantium est ipsa consequuntur quidem minima.\",\"description\":\"Eligendi alias dolorum molestias dolorem est qui. Magni nisi enim ut distinctio voluptas ut totam deleniti. Ex ad ullam est saepe expedita totam mollitia. Consequuntur sapiente porro tempora a debitis at aliquid quae.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0088dd?text=unde\",\"price\":\"57.83\",\"published\":1,\"category\":{\"id\":9,\"name\":\"Et quis recusandae autem voluptates dolorem et.\"},\"sub_category\":null,\"instructor\":{\"id\":5,\"name\":\"Mr. Lukas Bahringer\",\"email\":\"tbogisich@example.com\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=laudantium\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":9,\"title\":\"Culpa ut natus vitae atque ex dignissimos aut voluptatem.\",\"description\":\"Sunt eum sint modi rerum cum quo. Ipsum fugiat delectus quo sed pariatur tenetur maiores. Et eligendi hic distinctio repellendus omnis. Totam cum sit ipsa.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00aabb?text=earum\",\"price\":\"706.19\",\"published\":1,\"category\":{\"id\":6,\"name\":\"Accusantium laborum reiciendis ab eos tempore qui.\"},\"sub_category\":null,\"instructor\":{\"id\":4,\"name\":\"Esmeralda Howe DVM\",\"email\":\"qhauck@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ff00?text=itaque\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":10,\"title\":\"Quia sequi repellat sed cumque nobis ut.\",\"description\":\"Ducimus cumque vel natus sint autem. In aliquid et ut nisi ipsam. Quidem praesentium dignissimos ea odio. Explicabo provident doloremque excepturi ut eligendi eos qui.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/003311?text=dolor\",\"price\":\"736.60\",\"published\":1,\"category\":{\"id\":12,\"name\":\"Sunt sint animi mollitia enim nobis vel sit.\"},\"sub_category\":null,\"instructor\":{\"id\":6,\"name\":\"Leilani Gutmann\",\"email\":\"gwen.runte@example.org\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/006688?text=quo\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":11,\"title\":\"Veritatis quo inventore officia sit rerum omnis ut velit.\",\"description\":\"Dicta amet sequi error fugiat vitae accusantium vel. Nihil sint id expedita qui magnam qui ut qui.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ff99?text=dolorem\",\"price\":\"341.06\",\"published\":1,\"category\":{\"id\":14,\"name\":\"Aliquam iste quasi quibusdam dignissimos cupiditate sit.\"},\"sub_category\":null,\"instructor\":{\"id\":9,\"name\":\"Katrine Dietrich\",\"email\":\"mccullough.alverta@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0022ee?text=deleniti\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":12,\"title\":\"Hic quia et unde ab sapiente nobis repudiandae deserunt.\",\"description\":\"Voluptates iusto voluptatem nisi ut. Aspernatur eaque consequuntur quia aliquam. Molestiae quibusdam in labore fugit voluptatem aperiam unde. Neque ut vero dolores inventore in dolorem.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/00ee55?text=in\",\"price\":\"727.85\",\"published\":1,\"category\":{\"id\":9,\"name\":\"Et quis recusandae autem voluptates dolorem et.\"},\"sub_category\":null,\"instructor\":{\"id\":9,\"name\":\"Katrine Dietrich\",\"email\":\"mccullough.alverta@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0022ee?text=deleniti\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null},{\"id\":13,\"title\":\"Beatae enim inventore sed rerum.\",\"description\":\"Qui autem debitis aut. Qui omnis iusto nam enim iusto at.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/006666?text=consequatur\",\"price\":\"798.00\",\"published\":1,\"category\":{\"id\":11,\"name\":\"Doloremque quia aliquid sit.\"},\"sub_category\":null,\"instructor\":{\"id\":3,\"name\":\"Miss Mylene Feil DDS\",\"email\":\"jordi.franecki@example.net\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009944?text=ut\",\"is_instructor\":1,\"is_admin\":0},\"rate\":\"0.0\",\"total_enrollments\":0,\"your_review\":null}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=5\",\"prev\":null,\"next\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":5,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/courses?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/courses\",\"per_page\":10,\"to\":10,\"total\":47}}",
                             "name": ""
                         }
                     ]
@@ -833,7 +833,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":2,\"title\":\"Aut quis voluptatem autem voluptatibus.\",\"description\":\"Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=quo\",\"price\":\"925.20\",\"published\":1,\"category\":{\"id\":5,\"name\":\"Et repellendus ex et sapiente ut explicabo expedita dicta.\"},\"sub_category\":null,\"instructor\":{\"id\":7,\"name\":\"Dr. Gregory Koch II\",\"email\":\"hazle.dickens@example.com\",\"avatar\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/0088dd?text=cupiditate\",\"is_instructor\":1,\"is_admin\":0},\"sections\":[],\"comments\":[],\"rate\":\"0.0\",\"reviews\":[]}}",
+                            "body": "{\"data\":{\"id\":2,\"title\":\"Aut quis voluptatem autem voluptatibus.\",\"description\":\"Error voluptatem dolor et. Aut sint rem tempore cumque fuga. Aliquid delectus aperiam sunt facilis.\",\"thumbnail\":\"https:\\\/\\\/via.placeholder.com\\\/640x480.png\\\/009933?text=quo\",\"price\":\"925.20\",\"published\":1,\"category\":{\"id\":5,\"name\":\"Et repellendus ex et sapiente ut explicabo expedita dicta.\"},\"sub_category\":null,\"instructor\":{\"id\":7,\"name\":\"new name\",\"email\":\"newemail@gmai.c\",\"avatar\":\"\\\/storage\\\/content\\\/users\\\/user7\\\/avatar.jpeg\",\"is_instructor\":1,\"is_admin\":1},\"sections\":[],\"comments\":[],\"rate\":\"0.0\",\"reviews\":[],\"total_enrollments\":1,\"your_review\":null}}",
                             "name": ""
                         }
                     ]
@@ -884,13 +884,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eos",
+                                    "value": "vel",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "commodi",
+                                    "value": "quo",
                                     "description": ""
                                 }
                             ]
@@ -1000,7 +1000,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "modi",
+                                    "value": "suscipit",
                                     "description": "The ID of the notification."
                                 }
                             ]
@@ -1066,8 +1066,288 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"course_ids\":[],\"payment_amount\":523740.1934535899781621992588043212890625,\"payment_id\":\"sed\"}"
+                            "raw": "{\"course_ids\":[],\"payment_amount\":16564.79999999999927240423858165740966796875,\"payment_id\":\"distinctio\"}"
                         },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/wishlist",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/wishlist",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/wishlist"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/add-to-wishlist\/{course_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/add-to-wishlist\/:course_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/add-to-wishlist\/:course_id",
+                            "variable": [
+                                {
+                                    "id": "course_id",
+                                    "key": "course_id",
+                                    "value": "2",
+                                    "description": "The ID of the course."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/remove-from-wishlist\/{course_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/remove-from-wishlist\/:course_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/remove-from-wishlist\/:course_id",
+                            "variable": [
+                                {
+                                    "id": "course_id",
+                                    "key": "course_id",
+                                    "value": "2",
+                                    "description": "The ID of the course."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/cart",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cart",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cart"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/add-to-cart\/{course_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/add-to-cart\/:course_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/add-to-cart\/:course_id",
+                            "variable": [
+                                {
+                                    "id": "course_id",
+                                    "key": "course_id",
+                                    "value": "2",
+                                    "description": "The ID of the course."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/remove-from-cart\/{course_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/remove-from-cart\/:course_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/remove-from-cart\/:course_id",
+                            "variable": [
+                                {
+                                    "id": "course_id",
+                                    "key": "course_id",
+                                    "value": "2",
+                                    "description": "The ID of the course."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -1151,7 +1431,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"hqivklwdptrtfnqhsydyiqii\",\"type\":\"provident\",\"section_id\":18,\"content\":\"culpa\"}"
+                            "raw": "{\"title\":\"fbidaskjymvmtvjmyc\",\"type\":\"at\",\"section_id\":10,\"content\":\"porro\"}"
                         },
                         "description": "Store a newly created resource in storage.",
                         "auth": {
@@ -1316,7 +1596,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"arianna.yundt@example.org\"}"
+                            "raw": "{\"email\":\"lazaro.deckow@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1347,7 +1627,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"abernathy.rickey@example.org\",\"token\":\"qui\",\"password\":\"JO9mvVP18D2YH(zz`#l\"}"
+                            "raw": "{\"email\":\"adams.weston@example.org\",\"token\":\"veritatis\",\"password\":\"fik1}<XjcIj\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1378,7 +1658,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"old_password\":\"nihil\",\"password\":\"-{[&iV:l;\\\"9-\\\"~5|7\"}"
+                            "raw": "{\"old_password\":\"natus\",\"password\":\"g5m:\\\"Mxl$PTg_ABPr{+\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1463,7 +1743,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"mccjhamzbbhtgzz\",\"answer\":\"q\",\"A\":\"nomplu\",\"B\":\"t\",\"quiz_id\":9}"
+                            "raw": "{\"question\":\"goczizqogezom\",\"answer\":\"m\",\"A\":\"wvsy\",\"B\":\"rivnrmexvepufwwqsb\",\"quiz_id\":12}"
                         },
                         "description": "Store a newly created question in storage.",
                         "auth": {
@@ -1558,7 +1838,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"qd\",\"answer\":\"d\",\"A\":\"tujjlovgxpp\",\"B\":\"eokamesain\"}"
+                            "raw": "{\"question\":\"oyivwqimxvkjfkcxufiays\",\"answer\":\"x\",\"A\":\"kwrswkgcdjvtcr\",\"B\":\"pffobwta\"}"
                         },
                         "description": "Update the specified resource in storage.",
                         "auth": {
@@ -1679,7 +1959,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"zrcuw\",\"section_id\":13}"
+                            "raw": "{\"title\":\"udubqhihfgsgljssl\",\"section_id\":8}"
                         },
                         "description": "Store a newly created Quiz in storage.",
                         "auth": {
@@ -1774,7 +2054,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"pmlvt\"}"
+                            "raw": "{\"title\":\"jp\"}"
                         },
                         "description": "Update the specified Quiz in storage.",
                         "auth": {
@@ -1826,54 +2106,6 @@
             "description": "\nManaging Reviews",
             "item": [
                 {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/reviews",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/reviews"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
                     "name": "Store a newly created resource in storage.",
                     "request": {
                         "url": {
@@ -1893,69 +2125,16 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"course_id\":\"tempora\",\"rate\":5,\"comment\":\"dvfiiylcdiucvkj\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
                         }
                     },
                     "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/reviews\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/reviews\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the review."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
                 },
                 {
                     "name": "Update the specified resource in storage.",
@@ -1985,7 +2164,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"rate\":4,\"comment\":\"nomtgpjekqyfalccqjzhlnmb\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -2105,7 +2287,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"bdodaledbskfl\",\"course_id\":9}"
+                            "raw": "{\"title\":\"tlvripbnn\",\"course_id\":15}"
                         },
                         "description": "Store a newly created section in storage.",
                         "auth": {
@@ -2200,7 +2382,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"vnlnrghtxrwfgzyiwsdkxgrrv\"}"
+                            "raw": "{\"title\":\"jcach\"}"
                         },
                         "description": "Update the specified section in storage.",
                         "auth": {
@@ -2547,6 +2729,62 @@
                             "path": "api\/reject-course",
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/reject-course"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/user\/has-purchased\/{course_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/has-purchased\/:course_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/has-purchased\/:course_id",
+                            "variable": [
+                                {
+                                    "id": "course_id",
+                                    "key": "course_id",
+                                    "value": "2",
+                                    "description": "The ID of the course."
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [

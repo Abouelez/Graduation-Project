@@ -102,7 +102,9 @@ class UserController extends Controller
 
     public function hasPurchased(Course $course)
     {
-        $purchased = auth()->user()->hasPurchased($course->id);
+        /** @var User $user */
+        $user = auth()->user();
+        $purchased = $user->hasPurchased($course->id);
         return response()->json([
             'purchased' => $purchased
         ]);
