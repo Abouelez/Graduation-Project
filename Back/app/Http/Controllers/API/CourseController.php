@@ -65,10 +65,9 @@ class CourseController extends Controller
         $imagePath = 'public/content/courses/course' . $course->id . '/' . $imageName;
 
         Storage::put($imagePath, $resizedImage->encode());
-        $thumbnailLink = Storage::url($imagePath);
 
-        $course->thumbnail = $thumbnailLink;
-        dd($thumbnailLink);
+
+        $course->thumbnail = Storage::url($imagePath);
         $course->save();
 
         return new CourseResource($course);

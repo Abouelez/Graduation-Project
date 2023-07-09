@@ -53,7 +53,7 @@ class User extends Authenticatable implements MustVerifyEmail
             ->withTimestamps();
     }
 
-    public function wishes(): BelongsToMany
+    public function wishlist(): BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'wish_list');
     }
