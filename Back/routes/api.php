@@ -97,7 +97,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/accept-course', [UserController::class, 'acceptCourse'])->middleware('admin');
     Route::get('/reject-course', [UserController::class, 'rejectCourse'])->middleware('admin');
 
-    Route::post('/user/update-profile', [UserController::class, 'update']);
+    Route::put('/user/update-profile', [UserController::class, 'update']);
 
     Route::get('/notifications', [NotificationController::class, 'index']);
     Route::get('/notifications/{id}/mark-read', [NotificationController::class, 'markRead']);

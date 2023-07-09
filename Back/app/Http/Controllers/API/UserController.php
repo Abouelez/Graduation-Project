@@ -78,17 +78,16 @@ class UserController extends Controller
             $uploadedImage = $request->file('avatar');
             $resizedImage = Image::make($uploadedImage)->resize(100, 100);
             $imageName = 'avatar.' . $uploadedImage->getClientOriginalExtension();
-            $imagePath = 'users/user' . $user->id . '/' . $imageName;
+            $imagePath = 'public/content/users/user' . $user->id . '/' . $imageName;
 
-            if (Storage::disk('content')->exists($imagePath)) {
-                Storage::disk('content')->delete($imagePath);
+            if (Storage::exists($imagePath)) {
+                Storage::delete($imagePath);
             }
 
-            Storage::disk('content')->put($imagePath, $resizedImage->encode());
+            Storage::put($imagePath, $resizedImage->encode());
+            $user->avatar = Storage::url($imagePath);
+            $user->save();
         }
-
-        $user->avatar = $imagePath;
-        $user->save();
 
         return new UserResource($user);
     }

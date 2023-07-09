@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'content'),
+    'default' => env('FILESYSTEM_DISK', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -58,7 +58,10 @@ return [
         //This folder will contain all website files
         'content' => [
             'driver' => 'local',
-            'root' => '../../content'
+            'root' => '../../content',
+            'visibility' => 'public',
+            'url' => env('APP_URL').'/storage/content',
+
         ]
 
     ],

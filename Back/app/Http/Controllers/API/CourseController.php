@@ -62,10 +62,13 @@ class CourseController extends Controller
         $uploadedImage = $request->file('thumbnail');
         $resizedImage = Image::make($uploadedImage)->resize(300, 200);
         $imageName = 'thumbnail.' . $uploadedImage->getClientOriginalExtension();
-        $imagePath = 'courses/course' . $course->id . '/' . $imageName;
-        Storage::disk('content')->put($imagePath, $resizedImage->encode());
+        $imagePath = 'public/content/courses/course' . $course->id . '/' . $imageName;
 
-        $course->thumbnail = $imagePath;
+        Storage::put($imagePath, $resizedImage->encode());
+        $thumbnailLink = Storage::url($imagePath);
+
+        $course->thumbnail = $thumbnailLink;
+        dd($thumbnailLink);
         $course->save();
 
         return new CourseResource($course);
@@ -114,15 +117,15 @@ class CourseController extends Controller
             $uploadedImage = $request->file('thumbnail');
             $resizedImage = Image::make($uploadedImage)->resize(300, 200);
             $imageName = 'thumbnail.' . $uploadedImage->getClientOriginalExtension();
-            $imagePath = 'courses/course' . $course->id . '/' . $imageName;
+            $imagePath = 'public/content/courses/course' . $course->id . '/' . $imageName;
 
-            if (Storage::disk('content')->exists($imagePath)) {
-                Storage::disk('content')->delete($imagePath);
+            if (Storage::exists($imagePath)) {
+                Storage::delete($imagePath);
             }
 
-            Storage::disk('content')->put($imagePath, $resizedImage->encode());
+            Storage::put($imagePath, $resizedImage->encode());
 
-            $course->thumbnail = $imagePath;
+            $course->thumbnail = Storage::url($imagePath);
             $course->save();
         }
 

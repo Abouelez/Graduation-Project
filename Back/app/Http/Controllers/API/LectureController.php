@@ -48,11 +48,12 @@ class LectureController extends Controller
         $lecture = Lecture::create($request->except('content'));
         $content = $request->file('content');
         $contentName = 'lecture.' . $content->getClientOriginalExtension();
-        $contentPath = 'courses/course' . $lecture->section->course->id . '/section' . $lecture->section->id . '/lecture' . $lecture->id . '/';
+        $contentPath = 'public/content/courses/course' . $lecture->section->course->id . '/section' . $lecture->section->id . '/lecture' . $lecture->id . '/';
 
-        Storage::disk('content')->putFileAs($contentPath, $content, $contentName);
+        Storage::putFileAs($contentPath, $content, $contentName);
 
-        $lecture->content = $contentPath . $contentName;
+
+        $lecture->content = Storage::url($contentPath . $contentName);
         $lecture->save();
 
         return new LectureResource($lecture);
@@ -92,15 +93,23 @@ class LectureController extends Controller
         $lecture->update($request->except('content'));
         if ($request->hasFile('content')) {
             $this->mimesValidation($request->type, $request);
-            $contentPath = dirname($lecture->content);
-            Storage::disk('content')->deleteDirectory($contentPath);
+
+            // $contentPath = dirname($lecture->content);
+            // Storage::disk('content')->deleteDirectory($contentPath);
+
 
 
             $content = $request->file('content');
             $contentName = 'lecture' . '.' . $content->getClientOriginalExtension();
 
-            Storage::disk('content')->putFileAs($contentPath, $content, $contentName);
-            $lecture->content = $contentPath . '/' . $contentName;
+            $contentPath = 'public/content/courses/course' . $lecture->section->course->id . '/section' . $lecture->section->id . '/lecture' . $lecture->id . '/';
+
+            if (Storage::exists($contentPath . $contentName)) {
+                Storage::delete($contentPath . $contentName);
+            }
+
+            Storage::putFileAs($contentPath, $content, $contentName);
+            $lecture->content = Storage::url($contentPath . $contentName);
             $lecture->save();
         }
 
