@@ -19,14 +19,14 @@ const [category,loading,clickCategory]=SideSearchHook()
           <div className="d-flex flex-column mt-2">
             <div className="filter-title">category</div>
             <div className="d-flex mt-2" >
-              <input onChange={clickCategory} type="checkbox" value={0} style={{ width: "50%" }} />
+              <input onChange={clickCategory} type="checkbox" value={0} style={{ width: "25%" }} />
                 <div className="filter-sub me-2"><h4>All</h4> </div>
               </div>
             {loading && <p>Loading categories...</p>}
              
             {!loading  && category.data.slice(0, 4).map(category => (
               <div className="d-flex mt-2" key={category.id}>
-              <input onChange={clickCategory} type="checkbox" value={category.name} style={{ width: "50%" }} />
+              <input onChange={clickCategory} type="checkbox" value={category.name} style={{ width: "25%" }} />
                 <div className="filter-sub me-2"><h4>{category.name.slice(0, 10)}</h4> </div>
               </div>
             ))}

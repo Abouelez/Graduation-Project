@@ -9,7 +9,7 @@ const UseCoursesSearchHook = () => {
         getStorge();
         sortData();
 
-        await dispatch(getAllCoursesSearch(`keyword=${word}&min=20&max=1000&${sort}&limit=10`))
+        await dispatch(getAllCoursesSearch(`keyword=${word}&min=0&max=1000000&${sort}&limit=10`))
     }
     useEffect(() => {
         getCourse()

@@ -19,10 +19,10 @@ import Shopping from "./pages/Shopping";
 import Checkout from "./pages/Checkout";
 import Communication from "./component/Instructor/Communication"
 import Tools from "./component/Instructor/Tools"
-import CoursesDashboard from "./component/Instructor/CoursesDashboard"
+import CoursesDashboard from "./pages/Instructor/CoursesDashboard"
 import Resources from "./component/Instructor/Resources"
 import CreateCourse from "./component/Instructor/CreateCourse"
-import InstructorDashboard from "./component/Instructor/InstructorDashboard"  
+import InstructorDashboard from "./pages/Instructor/InstructorDashboard"  
 import Student from "./pages/student/Student";
 import Userprofile from "./pages/UserProfile";
 import StudentCourcessEnroll from "./pages/student/StudentCourcessEnroll";

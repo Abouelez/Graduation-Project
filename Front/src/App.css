@@ -84,3 +84,8 @@ section {
 .margin-8{
   margin-top: 8rem!important;
 }
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
