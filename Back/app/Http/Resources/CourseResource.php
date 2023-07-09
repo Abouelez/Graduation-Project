@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Models\Category;
+use App\Models\Review;
 use App\Models\SubCategory;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,6 +18,14 @@ class CourseResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        if (!$request->user()) {
+            $your_review = null;
+        } else {
+            $your_review =
+                Review::where('course_id', $this->id)
+                ->where('user_id', $request->user()->id)
+                ->first();
+        }
         return [
             'id' => $this->id,
             'title' => $this->title,
@@ -31,6 +40,9 @@ class CourseResource extends JsonResource
             'comments' => CommentResource::collection($this->whenLoaded('comments')),
             'rate' => number_format($this->reviews()->avg('rate'), 1),
             'reviews' => ReviewResource::collection($this->whenLoaded('reviews')),
+            'total_enrollments' => $this->users->count(),
+            'your_review' => $this->whenNotNull(new ReviewResource($your_review)),
+
         ];
     }
 }

@@ -124,7 +124,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('lectures', LectureController::class);
     Route::apiResource('quizzes', QuizController::class);
     Route::apiResource('questions', QuizQuestionsController::class);
-    Route::apiResource('reviews', ReviewController::class);
+    Route::apiResource('reviews', ReviewController::class)->only(['store', 'update', 'destroy']);
     Route::apiResource('comments', CommentController::class)->only(['store', 'destroy']);
 });
 
