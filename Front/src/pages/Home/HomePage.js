@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../css/Home.css"
-import InstructorCard from '../../component/Instructor/InstructorCard'
+import InstructorCard from '../../pages/Instructor/InstructorCard'
 import CourseCard from '../../component/Courses/CourseCard'
 import { Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
