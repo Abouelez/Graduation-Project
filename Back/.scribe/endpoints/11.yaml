@@ -1,22 +1,63 @@
-name: Reviews
+name: QuizQuestions
 description: |-
 
-  Managing Reviews
+  Managing QuizQuestions
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: api/reviews
+      - GET
+    uri: api/questions
     metadata:
-      groupName: Reviews
+      groupName: QuizQuestions
       groupDescription: |-
 
-        Managing Reviews
+        Managing QuizQuestions
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
-      description: ''
-      authenticated: false
+      title: 'Get questions'
+      description: 'List all questions.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/questions
+    metadata:
+      groupName: QuizQuestions
+      groupDescription: |-
+
+        Managing QuizQuestions
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create question'
+      description: 'Store a newly created question in QUIZ.'
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -26,33 +67,61 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      course_id:
-        name: course_id
+      question:
+        name: question
+        description: 'Question text. Example Is HTML used to style web pages'
+        required: true
+        example: delectus
+        type: string
+        custom: []
+      answer:
+        name: answer
+        description: 'One Char (A, B, C or D).'
+        required: true
+        example: A
+        type: string
+        custom: []
+      A:
+        name: A
+        description: 'Forth answer.'
+        required: false
+        example: voluptate
+        type: string
+        custom: []
+      B:
+        name: B
+        description: 'Second answer.'
+        required: true
+        example: ut
+        type: string
+        custom: []
+      quiz_id:
+        name: quiz_id
+        description: required.
+        required: false
+        example: 16
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      question: delectus
+      answer: A
+      A: voluptate
+      B: ut
+      quiz_id: 16
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: '{"data":{"id":2,"question":"question","answer":"A","A":"True","B":"False","C":null,"D":null}}'
+        headers: []
         description: ''
-        required: true
-        example: tempora
-        type: string
         custom: []
-      rate:
-        name: rate
-        description: 'Must be at least 1. Must not be greater than 5.'
-        required: true
-        example: 5
-        type: integer
+      -
+        status: 422
+        content: '{"message":"The answer field is required. (and 1 more error)","errors":{"answer":["The answer field is required."],"quiz_id":["The quiz id field is required."]}}'
+        headers: []
+        description: ''
         custom: []
-      comment:
-        name: comment
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: dvfiiylcdiucvkj
-        type: string
-        custom: []
-    cleanBodyParameters:
-      course_id: tempora
-      rate: 5
-      comment: dvfiiylcdiucvkj
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -61,19 +130,18 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/reviews/{id}'
+      - GET
+    uri: 'api/questions/{id}'
     metadata:
-      groupName: Reviews
+      groupName: QuizQuestions
       groupDescription: |-
 
-        Managing Reviews
+        Managing QuizQuestions
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: 'Display the specified resource.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -81,63 +149,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the review.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      rate:
-        name: rate
-        description: 'Must be at least 1. Must not be greater than 5.'
-        required: true
-        example: 4
-        type: integer
-        custom: []
-      comment:
-        name: comment
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: nomtgpjekqyfalccqjzhlnmb
-        type: string
-        custom: []
-    cleanBodyParameters:
-      rate: 4
-      comment: nomtgpjekqyfalccqjzhlnmb
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/reviews/{id}'
-    metadata:
-      groupName: Reviews
-      groupDescription: |-
-
-        Managing Reviews
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the review.'
+        description: 'The ID of the question.'
         required: true
         example: 1
         type: integer
@@ -149,7 +161,147 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/questions/{id}'
+    metadata:
+      groupName: QuizQuestions
+      groupDescription: |-
+
+        Managing QuizQuestions
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update question'
+      description: 'Update the specified resource in storage.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the question.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      question:
+        name: question
+        description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
+        required: true
+        example: zsmvzscghyxobyojrevtxbi
+        type: string
+        custom: []
+      answer:
+        name: answer
+        description: 'One Char (A, B, C or D).'
+        required: true
+        example: A
+        type: string
+        custom: []
+      A:
+        name: A
+        description: 'Forth answer.'
+        required: false
+        example: et
+        type: string
+        custom: []
+      B:
+        name: B
+        description: 'Second answer.'
+        required: true
+        example: inventore
+        type: string
+        custom: []
+    cleanBodyParameters:
+      question: zsmvzscghyxobyojrevtxbi
+      answer: A
+      A: et
+      B: inventore
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: '{"data":{"id":2,"question":"question","answer":"A","A":"True","B":"False","C":null,"'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The question field is required. (and 3 more errors)","errors":{"question":["The question field is required."],"answer":["The answer field is required."],"A":["The a field is required."],"B":["The b field is required."]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/questions/{id}'
+    metadata:
+      groupName: QuizQuestions
+      groupDescription: |-
+
+        Managing QuizQuestions
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Question'
+      description: 'Remove the specified resource from storage.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the question.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: ''
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

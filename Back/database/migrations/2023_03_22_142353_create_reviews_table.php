@@ -26,7 +26,7 @@ return new class extends Migration
             $table->unique(['user_id', 'course_id']);
 
             $table->unsignedTinyInteger('rate');
-            $table->text('comment');
+            $table->text('comment')->nullable();
 
             $table->timestamps();
         });

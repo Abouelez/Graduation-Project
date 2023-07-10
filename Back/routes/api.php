@@ -13,6 +13,7 @@ use App\Http\Controllers\API\EnrollmentController;
 use App\Http\Controllers\API\LectureController;
 use App\Http\Controllers\API\NotificationController;
 use App\Http\Controllers\API\PaymentController;
+use App\Http\Controllers\API\QuestionController;
 use App\Http\Controllers\API\QuizController;
 use App\Http\Controllers\API\QuizQuestionsController;
 use App\Http\Controllers\API\ReviewController;
@@ -85,23 +86,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('auth/register', [AuthController::class, 'register']);
 Route::post('auth/login', [AuthController::class, 'login']);
-Route::post('auth/forgot-password', [PasswordController::class, 'forgotPassword']);
-Route::post('auth/rest-password', [PasswordController::class, 'reset']);
+
+// Route::post('auth/forgot-password', [PasswordController::class, 'forgotPassword']);
+// Route::post('auth/rest-password', [PasswordController::class, 'reset']);
 
 Route::get('courses/filter', [CourseController::class, 'filter']);
-// 24|Xe9TVDaUlnwbW8eGlrn4yORIddUwE5WDTlPM3CCW
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user-dashboard', [UserController::class, 'userDashboard']);
     Route::get('/instructor-dashboard', [UserController::class, 'instructorDashboard'])->middleware('instructor');
     Route::get('/admin-dashboard', [UserController::class, 'adminDashboard'])->middleware('admin');
     Route::get('/active-instructor-role', [UserController::class, 'activeInstructorRole']);
     Route::get('/active-admin-role', [UserController::class, 'activeAdminRole'])->middleware('admin');
-    Route::get('/accept-course', [UserController::class, 'acceptCourse'])->middleware('admin');
-    Route::get('/reject-course', [UserController::class, 'rejectCourse'])->middleware('admin');
+    Route::get('/accept-course/{course}', [UserController::class, 'acceptCourse'])->middleware('admin');
+    Route::get('/reject-course/{course}', [UserController::class, 'rejectCourse'])->middleware('admin');
 
     Route::put('/user/update-profile', [UserController::class, 'update']);
     Route::get('user/has-purchased/{course}', [UserController::class, 'hasPurchased']);
-
+    // Route::apiResource('users', UserController::class);
     Route::get('/notifications', [NotificationController::class, 'index']);
     Route::get('/notifications/{id}/mark-read', [NotificationController::class, 'markRead']);
 
@@ -125,7 +126,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('sections', SectionController::class);
     Route::apiResource('lectures', LectureController::class);
     Route::apiResource('quizzes', QuizController::class);
-    Route::apiResource('questions', QuizQuestionsController::class);
+    Route::apiResource('questions', QuestionController::class);
     Route::apiResource('reviews', ReviewController::class)->only(['store', 'update', 'destroy']);
     Route::apiResource('comments', CommentController::class)->only(['store', 'destroy']);
 

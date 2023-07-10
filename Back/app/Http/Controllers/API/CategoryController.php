@@ -21,6 +21,8 @@ class CategoryController extends Controller
      * Get categories
      * 
      * List all categories
+     * 
+     * @response status=200 {"data":[{"id":1,"name":"Officiis nostrum rerum facere reprehenderit ipsum reprehenderit.","parent":null,"children":[]},{"id":2,"name":"Et repudiandae quam sit ratione.","parent":null,"children":[]},{"id":3,"name":"Quam fugiat expedita fuga id inventore quisquam.","parent":null,"children":[]}]}
      */
     public function index()
     {
@@ -40,6 +42,11 @@ class CategoryController extends Controller
      * Create Category
      * 
      * Store a newly created Category in storage.
+     * @authenticated
+     * 
+     * @bodyParam name string required Name of new category. Example: Development
+     * @response status=200 {"data":{"id":16,"name":"new"}}
+     * @response status=422 {"message":"The name field is required.","errors":{"name":["The name field is required."]}}
      */
     public function store(StoreCategoryRequest $request)
     {
@@ -51,6 +58,7 @@ class CategoryController extends Controller
      * Display Category
      * 
      * Display the specified Category.
+     * @response status=200 {"data":{"id":2,"name":"Et repudiandae quam sit ratione.","parent":null,"children":[],"courses":[{"id":3,"title":"Iusto qui inventore quis minus quam magnam labore facere.","description":"Assumenda repellendus temporibus soluta provident enim nobis praesentium. Aut est totam saepe iste et quasi rerum in. Rerum nulla nihil aliquam odio a. Veniam asperiores asperiores ut et cupiditate eveniet.","thumbnail":"https://via.placeholder.com/640x480.png/00ccff?text=et","price":"328.63","published":1,"instructor":{"id":1,"name":"Lilly Labadie","email":"jacky47@example.net","avatar":"https://via.placeholder.com/640x480.png/001111?text=dolores","is_instructor":1,"is_admin":0},"rate":"0.0","total_enrollments":0,"your_review":null},{"id":6,"title":"Praesentium sit id iusto repudiandae amet.","description":"Soluta quia minima et est expedita praesentium quisquam. Alias omnis illum inventore distinctio occaecati eum odit. Et impedit sapiente et quis. Temporibus earum eum placeat sed sequi eos molestias.","thumbnail":"https://via.placeholder.com/640x480.png/001166?text=unde","price":"304.67","published":1,"instructor":{"id":4,"name":"Wilton Vandervort","email":"jaclyn14@example.net","avatar":"https://via.placeholder.com/640x480.png/00eeee?text=eum","is_instructor":1,"is_admin":0},"rate":"0.0","total_enrollments":0,"your_review":null}]}}
      */
     public function show(Category $category)
     {
@@ -69,6 +77,11 @@ class CategoryController extends Controller
      * Update Category
      * 
      * Update the specified Category in storage.
+     * @authenticated
+     * 
+     * @bodyParam name string required Updated name of category, Ex: Tech
+     * @response status=200 {"data":{"id":16,"name":"Tech"}}
+     * @response status=422 {"message":"The name field is required.","errors":{"name":["The name field is required."]}}
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
@@ -81,6 +94,9 @@ class CategoryController extends Controller
      * Delete Category
      * 
      * Remove the specified Category from storage.
+     * @authenticated
+     * 
+     * @response status=204
      */
     public function destroy(Category $category)
     {

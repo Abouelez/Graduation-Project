@@ -13,6 +13,7 @@ use Illuminate\Http\Response;
  * @group Reviews
  * 
  * Managing Reviews
+ * @authenticated
  */
 class ReviewController extends Controller
 {
@@ -33,11 +34,19 @@ class ReviewController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Review
+     * 
+     * Add a newly review.
+     * 
+     * @bodyParam course_id integer Course you want to rate. Example: 2
+     * @bodyParam rate integer required From 1 to 5. Example: 3
+     * @bodyParam comment string If you want to add something. Example: Great course
+     * @response status=201 {"data":{"id":1,"rate":"4","comment":"Great course"}}
+     * @response status=422 {"message":"The course id field is required. (and 1 more error)","errors":{"course_id":["The course id field is required."],"rate":["The rate field is required."]}}
      */
     public function store(StoreReviewRequest $request)
     {
-        
+
         $data = $request->validated();
         $review = Review::create(
             array_merge(
@@ -65,26 +74,36 @@ class ReviewController extends Controller
     }
 
     /**
+     * Edit Review
+     * 
      * Update the specified resource in storage.
+     * 
+     * @bodyParam rate integer required From 1 to 5. Example: 3
+     * @bodyParam comment string If you want to add something. Example: Great course
+     * @response status=201 {"data":{"id":1,"rate":"4","comment":"Great course"}}
+     * @response status=422 {"message":"The course id field is required. (and 1 more error)","errors":{"course_id":["The course id field is required."],"rate":["The rate field is required."]}}
      */
     public function update(Request $request, Review $review)
     {
         $this->authorize('update', $review);
         $request->validate([
             'rate' => 'required|integer|min:1|max:5',
-            'comment' => 'required|string|max:255'
+            'comment' => 'string|max:255'
         ]);
 
         $review->update([
-            'rate' => $request->rate,
-            'comment' => $request->comment
+            $request->all
         ]);
 
         return new ReviewResource($review);
     }
 
     /**
+     * Remove
+     * 
      * Remove the specified resource from storage.
+     * 
+     * @response status=204
      */
     public function destroy(Review $review)
     {

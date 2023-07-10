@@ -1,22 +1,22 @@
-name: Comments
+name: Reviews
 description: |-
 
-  Managing Comments
+  Managing Reviews
 endpoints:
   -
     httpMethods:
       - POST
-    uri: api/comments
+    uri: api/reviews
     metadata:
-      groupName: Comments
+      groupName: Reviews
       groupDescription: |-
 
-        Managing Comments
+        Managing Reviews
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
-      description: ''
-      authenticated: false
+      title: Review
+      description: 'Add a newly review.'
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -28,23 +28,112 @@ endpoints:
     bodyParameters:
       course_id:
         name: course_id
-        description: ''
-        required: true
-        example: sed
-        type: string
+        description: 'Course you want to rate.'
+        required: false
+        example: 2
+        type: integer
         custom: []
-      comment_text:
-        name: comment_text
-        description: 'Must not be greater than 255 characters.'
+      rate:
+        name: rate
+        description: 'From 1 to 5.'
         required: true
-        example: yuhgnlmrqjmfqu
+        example: 3
+        type: integer
+        custom: []
+      comment:
+        name: comment
+        description: 'If you want to add something.'
+        required: false
+        example: 'Great course'
         type: string
         custom: []
     cleanBodyParameters:
-      course_id: sed
-      comment_text: yuhgnlmrqjmfqu
+      course_id: 2
+      rate: 3
+      comment: 'Great course'
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 201
+        content: '{"data":{"id":1,"rate":"4","comment":"Great course"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The course id field is required. (and 1 more error)","errors":{"course_id":["The course id field is required."],"rate":["The rate field is required."]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/reviews/{id}'
+    metadata:
+      groupName: Reviews
+      groupDescription: |-
+
+        Managing Reviews
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Edit Review'
+      description: 'Update the specified resource in storage.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the review.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      rate:
+        name: rate
+        description: 'From 1 to 5.'
+        required: true
+        example: 3
+        type: integer
+        custom: []
+      comment:
+        name: comment
+        description: 'If you want to add something.'
+        required: false
+        example: 'Great course'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      rate: 3
+      comment: 'Great course'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: '{"data":{"id":1,"rate":"4","comment":"Great course"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The course id field is required. (and 1 more error)","errors":{"course_id":["The course id field is required."],"rate":["The rate field is required."]}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -54,17 +143,17 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/comments/{id}'
+    uri: 'api/reviews/{id}'
     metadata:
-      groupName: Comments
+      groupName: Reviews
       groupDescription: |-
 
-        Managing Comments
+        Managing Reviews
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
+      title: Remove
+      description: 'Remove the specified resource from storage.'
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -72,7 +161,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the comment.'
+        description: 'The ID of the review.'
         required: true
         example: 1
         type: integer
@@ -84,7 +173,13 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 204
+        content: ''
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

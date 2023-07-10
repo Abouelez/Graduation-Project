@@ -1,7 +1,7 @@
 name: Authentication
 description: |-
 
-  Managing Auth
+  Authentication APIs
 endpoints:
   -
     httpMethods:
@@ -11,11 +11,11 @@ endpoints:
       groupName: Authentication
       groupDescription: |-
 
-        Managing Auth
+        Authentication APIs
       subgroup: ''
       subgroupDescription: ''
       title: 'Register User'
-      description: 'Add new user to system'
+      description: 'Register new user into website'
       authenticated: false
       custom: []
     headers:
@@ -28,39 +28,51 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must not be greater than 100 characters.'
+        description: 'Your full name.'
         required: true
-        example: mrcjgcchjpxbzrp
+        example: Abdulrahman
         type: string
         custom: []
       email:
         name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        description: 'Your email.'
         required: true
-        example: lubowitz.abbey@example.com
+        example: Abouelez10@gmail.com
         type: string
         custom: []
       password:
         name: password
-        description: 'Must be at least 8 characters.'
-        required: true
-        example: 'AtT]5YQ+gZjWI1cQ)'
+        description: 'Your Password.'
+        required: false
+        example: password
         type: string
         custom: []
       password_confirmation:
         name: password_confirmation
         description: 'Confirm password.'
         required: true
-        example: doloribus
+        example: password
         type: string
         custom: []
     cleanBodyParameters:
-      name: mrcjgcchjpxbzrp
-      email: lubowitz.abbey@example.com
-      password: 'AtT]5YQ+gZjWI1cQ)'
-      password_confirmation: doloribus
+      name: Abdulrahman
+      email: Abouelez10@gmail.com
+      password: password
+      password_confirmation: password
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 201
+        content: '{"user":{"id":11,"name":"Abdulrahman","email":"abouelez10@gmail.com","is_instructor":0,"is_admin":0},"access_token":"1|lNZjX8LiCgM9HfesupUAw0jBWnYnu9mixpOK5t24"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The name field is required. (and 2 more errors)","errors":{"name":["The name field is required."],"email":["The email has already been taken."],"password":["The password field confirmation does not match."]}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -75,11 +87,11 @@ endpoints:
       groupName: Authentication
       groupDescription: |-
 
-        Managing Auth
+        Authentication APIs
       subgroup: ''
       subgroupDescription: ''
       title: Login
-      description: 'Login User'
+      description: 'Login to website'
       authenticated: false
       custom: []
     headers:
@@ -92,23 +104,35 @@ endpoints:
     bodyParameters:
       email:
         name: email
-        description: 'Must be a valid email address.'
+        description: 'Your email.'
         required: true
-        example: omari.adams@example.net
+        example: bernie59@example.org
         type: string
         custom: []
       password:
         name: password
-        description: ''
-        required: true
-        example: molestias
+        description: 'Your Password.'
+        required: false
+        example: jOWTq>n$3yse@L
         type: string
         custom: []
     cleanBodyParameters:
-      email: omari.adams@example.net
-      password: molestias
+      email: bernie59@example.org
+      password: jOWTq>n$3yse@L
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"user":{"id":11,"name":"Abdulrahman","email":"abouelez10@gmail.com","is_instructor":0,"is_admin":0},"access_token":"5|AvgBOMYXI0hFXX2yWM5oxBiJD1BVEUXis1flm3GI"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 401
+        content: '{"message":"The provided credentials are incorrect."}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -123,12 +147,12 @@ endpoints:
       groupName: Authentication
       groupDescription: |-
 
-        Managing Auth
+        Authentication APIs
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
+      title: Logout
+      description: 'Logout from website'
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -140,7 +164,13 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 204
+        content: ''
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

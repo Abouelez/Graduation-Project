@@ -1,63 +1,22 @@
-name: Sections
+name: Categories
 description: |-
 
-  Managing Sections
+  Managing Categories
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/sections
-    metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get sections'
-      description: 'List all sections.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/sections
+    uri: api/categories
     metadata:
-      groupName: Sections
+      groupName: Categories
       groupDescription: |-
 
-        Managing Sections
+        Managing Categories
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create section'
-      description: 'Store a newly created section in storage.'
-      authenticated: false
+      title: 'Create Category'
+      description: 'Store a newly created Category in storage.'
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -67,73 +26,36 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+      name:
+        name: name
+        description: 'Name of new category.'
         required: true
-        example: tlvripbnn
+        example: Development
         type: string
         custom: []
-      course_id:
-        name: course_id
+      parent_id:
+        name: parent_id
         description: ''
-        required: true
-        example: 15
+        required: false
+        example: 5
         type: integer
         custom: []
     cleanBodyParameters:
-      title: tlvripbnn
-      course_id: 15
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/sections/{id}'
-    metadata:
-      groupName: Sections
-      groupDescription: |-
-
-        Managing Sections
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display section'
-      description: 'Display the specified section.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the section.'
-        required: true
-        example: 3
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 3
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+      name: Development
+      parent_id: 5
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":{"id":16,"name":"new"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The name field is required.","errors":{"name":["The name field is required."]}}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -145,17 +67,17 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/sections/{id}'
+    uri: 'api/categories/{id}'
     metadata:
-      groupName: Sections
+      groupName: Categories
       groupDescription: |-
 
-        Managing Sections
+        Managing Categories
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update section'
-      description: 'Update the specified section in storage.'
-      authenticated: false
+      title: 'Update Category'
+      description: 'Update the specified Category in storage.'
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -163,27 +85,47 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the section.'
+        description: 'The ID of the category.'
         required: true
-        example: 3
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      title:
-        name: title
-        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
+      name:
+        name: name
+        description: 'Updated name of category, Ex: Tech'
         required: true
-        example: jcach
+        example: ut
         type: string
         custom: []
+      parent_id:
+        name: parent_id
+        description: ''
+        required: false
+        example: 9
+        type: integer
+        custom: []
     cleanBodyParameters:
-      title: jcach
+      name: ut
+      parent_id: 9
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":16,"name":"Tech"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The name field is required.","errors":{"name":["The name field is required."]}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -193,18 +135,100 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/sections/{id}'
+    uri: 'api/categories/{id}'
     metadata:
-      groupName: Sections
+      groupName: Categories
       groupDescription: |-
 
-        Managing Sections
+        Managing Categories
       subgroup: ''
       subgroupDescription: ''
-      title: |-
-        Delete section
-        Remove the specified section from storage.
-      description: ''
+      title: 'Delete Category'
+      description: 'Remove the specified Category from storage.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: ''
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/categories
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        Managing Categories
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get categories'
+      description: 'List all categories'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"name":"Officiis nostrum rerum facere reprehenderit ipsum reprehenderit.","parent":null,"children":[]},{"id":2,"name":"Et repudiandae quam sit ratione.","parent":null,"children":[]},{"id":3,"name":"Quam fugiat expedita fuga id inventore quisquam.","parent":null,"children":[]}]}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/categories/{id}'
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        Managing Categories
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display Category'
+      description: 'Display the specified Category.'
       authenticated: false
       custom: []
     headers:
@@ -213,19 +237,25 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the section.'
+        description: 'The ID of the category.'
         required: true
-        example: 3
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":2,"name":"Et repudiandae quam sit ratione.","parent":null,"children":[],"courses":[{"id":3,"title":"Iusto qui inventore quis minus quam magnam labore facere.","description":"Assumenda repellendus temporibus soluta provident enim nobis praesentium. Aut est totam saepe iste et quasi rerum in. Rerum nulla nihil aliquam odio a. Veniam asperiores asperiores ut et cupiditate eveniet.","thumbnail":"https://via.placeholder.com/640x480.png/00ccff?text=et","price":"328.63","published":1,"instructor":{"id":1,"name":"Lilly Labadie","email":"jacky47@example.net","avatar":"https://via.placeholder.com/640x480.png/001111?text=dolores","is_instructor":1,"is_admin":0},"rate":"0.0","total_enrollments":0,"your_review":null},{"id":6,"title":"Praesentium sit id iusto repudiandae amet.","description":"Soluta quia minima et est expedita praesentium quisquam. Alias omnis illum inventore distinctio occaecati eum odit. Et impedit sapiente et quis. Temporibus earum eum placeat sed sequi eos molestias.","thumbnail":"https://via.placeholder.com/640x480.png/001166?text=unde","price":"304.67","published":1,"instructor":{"id":4,"name":"Wilton Vandervort","email":"jaclyn14@example.net","avatar":"https://via.placeholder.com/640x480.png/00eeee?text=eum","is_instructor":1,"is_admin":0},"rate":"0.0","total_enrollments":0,"your_review":null}]}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

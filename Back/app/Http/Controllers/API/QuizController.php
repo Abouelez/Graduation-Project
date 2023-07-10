@@ -15,6 +15,7 @@ use Illuminate\Http\Response;
  * @group Quizzes
  * 
  * Managing Quizzes
+ * @authenticated
  */
 class QuizController extends Controller
 {
@@ -40,7 +41,11 @@ class QuizController extends Controller
     /**
      * Create Quiz
      * 
-     * Store a newly created Quiz in storage. 
+     * Create a newly quiz within a create. 
+     * @bodyParam title string required Title of quiz. Example: quiz 1
+     * @bodyParam section_id integer required Section which quiz belongs to. Example: 1
+     * @response status=201 {"data":{"id":2,"title":"quiz 1","questions":[]}}
+     * @response status=422 {"message":"The title field is required. (and 1 more error)","errors":{"title":["The title field is required."],"section_id":["The section id field is required."]}}
      */
     public function store(StoreQuizRequest $request)
     {
@@ -69,7 +74,11 @@ class QuizController extends Controller
     /**
      * Update Quiz
      * 
-     * Update the specified Quiz in storage.
+     * Update the  Quiz.
+     * @bodyParam title string required Title of quiz. Example: quiz 1
+     * @response status=200 {"data":{"id":2,"title":"quiz 1 new"}}
+     * @response status=422 {"message":"The title field is required.","errors":{"title":["The title field is required."]}}
+
      */
     public function update(UpdateQuizRequest $request, Quiz $quiz)
     {
@@ -82,7 +91,8 @@ class QuizController extends Controller
     /**
      * Delete Quiz
      * 
-     * Remove the specified resource from storage.
+     * Remove the specified Quiz from Course.
+     * @response status=204
      */
     public function destroy(Quiz $quiz)
     {
@@ -91,5 +101,7 @@ class QuizController extends Controller
         if ($quiz->section->course->isPublished()) {
             return response()->json(['message' => 'The course is published, so quiz cannot be deleted.'], Response::HTTP_FORBIDDEN);
         }
+        $quiz->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

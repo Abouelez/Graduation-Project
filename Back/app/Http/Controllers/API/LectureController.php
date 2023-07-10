@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreLectureRequest;
+use App\Http\Requests\UpdateLectureRequest;
 use App\Http\Resources\LectureResource;
 use App\Models\Lecture;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Storage;
  * @group Lectures
  * 
  * Managing Lectures
+ * @authenticated
  */
 class LectureController extends Controller
 {
@@ -39,7 +41,13 @@ class LectureController extends Controller
     /**
      * Create Lecture
      * 
-     * Store a newly created resource in storage.
+     * Create a newly lecture within a course.
+     * @bodyParam title string required Title of lecture. Example: lec 1
+     * @bodyParam type string required [video or text]. Example: video
+     * @bodyParam section_id integer require. Example: 1
+     * @bodyParam content file Content of lecture
+     * @response status=201 {"data":{"id":2,"title":"new lec","type":"video","content":"/storage/content/courses/course1/section1/lecture2/lecture.mkv"}}
+     * @response status=422 {"message":"The title field is required. (and 3 more errors)","errors":{"title":["The title field is required."],"type":["The type field is required."],"section_id":["The section id field is required."],"content":["The content field is required."]}}
      */
     public function store(StoreLectureRequest $request)
     {
@@ -80,9 +88,14 @@ class LectureController extends Controller
     /**
      * Update Lecture
      * 
-     * Update the specified resource in storage.
+     * Update Lecture in course.
+     * @bodyParam title string required Title of lecture. Example: lec 1
+     * @bodyParam type string required [video or text]. Example: video
+     * @bodyParam content file Content of lecture
+     * @response status=200 {"data":{"id":2,"title":"new lec edited","type":"video","content":"/storage/content/courses/course1/section1/lecture2/lecture.mkv"}}
+     * @response status=422 {"message":"The title field is required. (and 1 more error)","errors":{"title":["The title field is required."],"type":["The type field is required."]}}
      */
-    public function update(Request $request, Lecture $lecture)
+    public function update(UpdateLectureRequest $request, Lecture $lecture)
     {
         $this->authorize('update', $lecture);
 
@@ -119,7 +132,8 @@ class LectureController extends Controller
     /**
      * Delete Lecture
      * 
-     * Remove the specified resource from storage.
+     * Remove Lecture from course.
+     * @response status=204
      */
     public function destroy(Lecture $lecture)
     {

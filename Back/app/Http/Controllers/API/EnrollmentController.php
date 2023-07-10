@@ -10,8 +10,27 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Exception\CardException;
 
+/**
+ * @group Enrollment And Payment
+ * 
+ * Mange Enrollment Process
+ * @authenticated
+ */
 class EnrollmentController extends Controller
 {
+    /**
+     * Payment
+     * 
+     * Payment Process
+     * 
+     * @bodyParam payment_amount number required Amount needed to pay. Example: 100
+     * @bodyParam payment_id string required Payment method id that generated from stripe. Example = 
+     * @bodyParam course_ids object required Array of courses ids. Example: [1, 10]
+     * 
+     * @response status=200 {"message":"Enrollment successful"}
+     * @response status=500 {"message":"No such PaymentMethod: 'pm_1NS6eqGEPWFHPllANwhUzh'"}
+     * 
+     */
     public function pay(PaymentRequest $request)
     {
         $payment_amount = $request->payment_amount;

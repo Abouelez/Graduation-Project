@@ -2,27 +2,28 @@
 
 namespace App\Policies;
 
-use App\Models\QuizQuestion;
+use App\Models\Question;
 use App\Models\User;
+use GuzzleHttp\Psr7\Query;
 use Illuminate\Auth\Access\Response;
 
-class QuizQuestionPolicy
+class QuestionPolicy
 {
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user)
-    {
-        //
-    }
+    // public function viewAny(User $user)
+    // {
+    //     return 1;
+    // }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, QuizQuestion $quizQuestion)
-    {
-        //
-    }
+    // public function view(User $user, QuizQuestion $quizQuestion)
+    // {
+    //     return 1;
+    // }
 
     /**
      * Determine whether the user can create models.
@@ -35,23 +36,23 @@ class QuizQuestionPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, QuizQuestion $quizQuestion)
+    public function update(User $user, Question $question)
     {
-        return $quizQuestion->instructor() == $user->id;
+        return $question->instructor()->id == $user->id;
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, QuizQuestion $quizQuestion)
+    public function delete(User $user, Question $question)
     {
-        return $quizQuestion->instructor() == $user->id;
+        return $question->instructor()->id == $user->id;
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, QuizQuestion $quizQuestion)
+    public function restore(User $user, Query $question)
     {
         //
     }
@@ -59,7 +60,7 @@ class QuizQuestionPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, QuizQuestion $quizQuestion)
+    public function forceDelete(User $user, Question $question)
     {
         //
     }

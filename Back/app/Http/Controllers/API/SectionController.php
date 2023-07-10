@@ -15,6 +15,7 @@ use Illuminate\Http\Response;
  * @group Sections
  * 
  * Managing Sections
+ * @authenticated
  */
 class SectionController extends Controller
 {
@@ -41,6 +42,11 @@ class SectionController extends Controller
      * Create section
      * 
      * Store a newly created section in storage.
+     * 
+     * @bodyParam course_id integer required Course which section belongs to. Example: 1
+     * @bodyParam title string required Title of section. Example: Section 1
+     * @response status=201 {"data":{"id":2,"title":"Section 1"}}
+     * @response status=422 {"message":"The title field is required. (and 1 more error)","errors":{"title":["The title field is required."],"course_id":["The course id field is required."]}}
      */
     public function store(StoreSectionRequest $request)
     {
@@ -68,8 +74,12 @@ class SectionController extends Controller
 
     /**
      * Update section
-     *
+     * 
      * Update the specified section in storage.
+     * 
+     * @bodyParam title string required New title of section. Example: new title
+     * @response status=200 {"data":{"id":2,"title":"new title"}}
+     * @response status=422 {"message":"The title field is required.","errors":{"title":["The title field is required."]}}
      */
     public function update(UpdateSectionRequest $request, Section $section)
     {
@@ -81,7 +91,10 @@ class SectionController extends Controller
 
     /**
      * Delete section
+     * 
      * Remove the specified section from storage.
+     * 
+     * @response status=204
      */
     public function destroy(Section $section)
     {

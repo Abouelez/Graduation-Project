@@ -24,7 +24,7 @@ class StoreReviewRequest extends FormRequest
         return [
             'course_id' => 'required',
             'rate' => 'required|integer|min:1|max:5',
-            'comment' => 'required|string|max:255'
+            'comment' => 'string|max:255'
         ];
     }
 }

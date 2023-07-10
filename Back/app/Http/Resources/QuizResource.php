@@ -26,6 +26,7 @@ class QuizResource extends JsonResource
 
     public function canAccess()
     {
+        /** @var User $user */
         $user = auth()->user();
         if (
             $user
@@ -33,7 +34,7 @@ class QuizResource extends JsonResource
                 || $this->instructor()->id == $user->id
                 || $user->is_admin)
         ) {
-            return QuizQuestionResource::collection($this->whenLoaded('questions'));
+            return QuestionResource::collection($this->whenLoaded('questions'));
         }
         return null;
     }

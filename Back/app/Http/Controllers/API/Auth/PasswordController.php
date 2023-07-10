@@ -9,19 +9,33 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 
 /**
- * @group Managing Password
+ * @group Password EndPoints
  * 
  * Managing Password
  */
 class PasswordController extends Controller
 {
+    /**
+     * Change Password
+     * 
+     * Change your password with new one.
+     * 
+     * @bodyParam password string required. Example: newpassword
+     * @bodyParam password string required. Example: newpassword
+     * @authenticated
+     * @response status=200 {"message":"Password updated successfully"}
+     * @response status=422 {"message":"The old password field is required. (and 1 more error)","errors":{"old_password":["The old password field is required."],"password":["The password field confirmation does not match."]}}
+     * 
+     * @response status=401 {"message":"The password is incorrect."}
+
+     */
     public function updatePassword(Request $request)
     {
         $request->validate([
             'old_password' => 'required',
             'password' => 'required|min:8|confirmed'
         ]);
-
+        /** @var User $user */
         $user = auth()->user();
 
         if (!Hash::check($request->old_password, $user->password)) {
@@ -33,9 +47,15 @@ class PasswordController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return response()->json(['message' => 'Password updated successfully'], Response::HTTP_NO_CONTENT);
+        return response()->json(['message' => 'Password updated successfully']);
     }
 
+    /**
+     * Forgot Password
+     * 
+     * Send Rest Password Token
+     * 
+     */
     public function forgotPassword(Request $request)
     {
         $request->validate(['email' => 'required|email']);

@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class QuizQuestionResource extends JsonResource
+class QuestionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -24,6 +24,4 @@ class QuizQuestionResource extends JsonResource
             'D' => $this->D,
         ];
     }
-
-    
 }

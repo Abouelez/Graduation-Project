@@ -36,7 +36,16 @@ class CommentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Add Comment
+     * 
+     * Comment on course.
+     * @authenticated
+     * @bodyParam course_id integer required. Example: 2
+     * @bodyParam comment_text string required Your comment. Example: Excellent course
+     * 
+     * @response status=201 {"message":"comment published","comment":{"id":1,"comment_text":"good","user":{"id":11,"name":"Abdulrahman","email":"abouelez10@gmail.com","is_instructor":1,"is_admin":1}}}
+     * 
+     * @response status=422{"message":"The course id field is required. (and 1 more error)","errors":{"course_id":["The course id field is required."],"comment_text":["The comment text field is required."]}}
      */
     public function store(StoreCommentRequest $request)
     {
@@ -87,7 +96,11 @@ class CommentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete Comment
+     * 
+     * Remove the Comment resource from course.
+     * @authenticated
+     * @response status=204
      */
     public function destroy(Comment $comment)
     {
