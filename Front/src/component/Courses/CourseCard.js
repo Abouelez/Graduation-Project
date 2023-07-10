@@ -4,6 +4,7 @@ import '../../css/coursecard.css'
 import { Link } from 'react-router-dom'
 const CourseCard = ({ course }) => {
   //console.log(course);
+  
   return (
     <div className='coursecard'>
     <Link to={`/coursedetails/${course.id}`} style={{ textDecoration: 'none' }}>

@@ -119,8 +119,13 @@ function NavBar() {
               user != '' ? (
                 <NavDropdown title={user.name} id="basic-nav-dropdown">
                   {
-                    user.is_instructor == 1 ? (<NavDropdown.Item href="/instructorDashboard">my dashboard</NavDropdown.Item>)
-                      : (<NavDropdown.Item href="/student"> my profil</NavDropdown.Item>)
+                    user.is_instructor === 1 ? (<NavDropdown.Item as={Link} to="/instructorDashboard">
+                    my dashboard
+                  </NavDropdown.Item>
+                ) : (
+                  <NavDropdown.Item as={Link} to="/student">
+                    my profil
+                  </NavDropdown.Item>)
                   }
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logOut} href="/"> log out</NavDropdown.Item>

@@ -12,7 +12,6 @@ import "./App.css";
 import HomePage from "./pages/Home/HomePage";
 import Coursedetails from "./pages/Courses/Coursedetails"
 import HeadTitle from "./component/utility/HeadTitle";
-import AddLecture from "./component/utility/AddLecture";
 import AddSection from "./component/utility/AddSection";
 import SectionDetails from "./component/utility/SectionDetails";
 import Shopping from "./pages/Shopping";
@@ -27,6 +26,8 @@ import Student from "./pages/student/Student";
 import Userprofile from "./pages/UserProfile";
 import CourseWatching from "./pages/Courses/CourseWatching";
 import StudentCourcessEnroll from "./pages/student/StudentCourcessEnroll";
+import AddLecture from "./pages/Instructor/AddLecture";
+import VideosWatch from "./pages/Courses/VideosWatch";
 function App() {
   return (
     <>
@@ -42,12 +43,15 @@ function App() {
         <Route path="/userprofile" element={ <Userprofile/> }/>
         <Route path="/Shopping" element={ <Shopping/> }/>
         <Route path="/Checkout" element={ <Checkout/> }/>
-        <Route path="/coursewatch" element={ <CourseWatching/> }/>
+        <Route path="/coursewatch/:id" element={ <VideosWatch/> }/>
+        <Route path="/courseUpdate/:id" element={ <AddLecture/> }/>
+       
+
         <Route path="/instructorDashboard" element={ <InstructorDashboard/> }>
           <Route index element={ <CoursesDashboard/> }/>
            <Route path="communication" element={ <Communication/> }/>
            <Route path="tools" element={ <Tools/> }/>
-          <Route path="coursesdashboard" element={ <courseWatching/> }/>
+          <Route path="coursesDashboard" element={ <CoursesDashboard/> }/>
           <Route path="resources" element={ <Resources/> }/>
           <Route path="createCourse" element={ <CreateCourse/> }/>
         </Route>

@@ -10,7 +10,7 @@ const InstructorDashboard = ({ Children }) => {
   const toggle = () => setopen(!open);
   const menuItem = [
     {
-      path: "coursesDashboard",
+      path: "",
       name: "courses",
       icon: <FaViadeo />
     },

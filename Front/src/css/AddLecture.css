@@ -1,3 +1,8 @@
+.totalpage{
+    position: relative;
+    margin-top: 10rem;
+}
+
 .Lecture{
     margin: 4.8rem 0 2.4rem;
     padding:1.5rem;
@@ -26,3 +31,164 @@
 .headicon{
     display: flex;
 }
+.file{
+    position: relative;
+    width: 10rem;
+}
+/* /////// */
+.AddSection{
+    margin: 4.8rem 0 2.4rem;
+    padding:1.5rem;
+    align-items: center;
+    width: 70%;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    justify-content: space-between;
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+    display: block;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #f7f9fa;
+}
+@media(max-width:767px){
+    .AddSection{
+        width: 100%;
+    }
+}
+.N{
+    display: block;
+    align-items: center;
+}
+.N h2,
+span{
+    font-weight: bold;
+}
+.N span{
+    font-size: 20px;
+    margin-right: 3px;
+}
+input{
+    width: 100%;
+    padding: 7px;
+    font-size: 15px;
+}
+.N{
+    margin-top: 5px;
+}
+.foot{
+    display: flex;
+    position: absolute;
+    right:1.5rem;
+    align-items: center;
+    top: 70%;
+}
+.foot h2{
+    font-size: 15px;
+    cursor: pointer;
+}
+.foot button{
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+/* //////////////// */
+.details{
+    margin: 4.8rem 0 2.4rem;
+    padding:1.5rem;
+    align-items: center;
+    width: 70%;
+    min-height: 220px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    justify-content: space-between;
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+    display: block;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    background-color: #f7f9fa;
+}
+.SCn{
+    display: flex;
+    align-items: center;
+}
+.SCn h2{
+    margin-right: 10px;
+}
+.para{
+    font-size: 15px;
+    margin-left: 10px;
+}
+.LQCPA{
+    position: absolute;
+    top: 40%;
+    left: 7%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    width: 85%;
+    margin-top: 10px;
+}
+@media(max-width:767px){
+    .details{
+        margin-bottom: 30rem;
+        width: 100%;
+    }
+    .LQCPA{
+        min-height: 15vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media(max-width:991px){
+    .LQCPA{
+        min-height: 15vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.LQCPA .pluse{
+    margin-right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #5624d0;
+    font-weight: bold;
+
+}
+.Lec{
+    margin-right: 20px;
+    font-size: 14px;
+    color: #5624d0;
+    font-weight: bold;
+    padding: 5px 10px ;
+    border: none;
+}
+.BT{
+    position: absolute;
+    margin-top: 17rem;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 15px;
+    cursor: pointer;
+    left: 20px;
+    border: none;
+}
+.icmp{
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
+
+

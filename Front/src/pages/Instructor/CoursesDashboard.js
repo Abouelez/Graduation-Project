@@ -47,10 +47,8 @@ const CoursesDashboard = () => {
    */
 
   const dispatch = useDispatch();
-  //const = useSelector(state => state.courses);
   const { courses, loading } = useSelector(state => state.instructor);
 
-  console.log(courses?.data?.data["created-courses"]);
   useEffect(() => {
     dispatch(getInstructorCourses());
   }, []);
@@ -92,12 +90,12 @@ const CoursesDashboard = () => {
                 <img src='/images/1 (1).png' alt='' />
                 <div>
                   <h2>{course.title}</h2>
-                  {course.published?<h2>Public</h2>:<h2>private</h2>}
+                  {course.published?<h2>Public{course.id}</h2>:<h2>private</h2>}
                 </div>
               </div>
               <div className='ED'>
-                <button className='btn btn-primary'>Edit</button>
-                <button className='btn btn-danger'>Delete</button>
+              <Link to={`/courseUpdate/${course.id}`} className='btn btn-primary'>Edit</Link>
+              <button className='btn btn-danger'>Delete</button>
               </div>
             </div>
           ))

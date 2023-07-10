@@ -8,7 +8,7 @@ const Coursedetails = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state)
   const course = useSelector((state) => state.allCourses.oneCourse);
-  console.log(course?.data?.data);
+ // console.log(course?.data?.data);
   const details = course?.data?.data;
   useEffect(() => {
       dispatch(getCourse(id));
@@ -49,7 +49,7 @@ const Coursedetails = () => {
                         <div className="course-section mb-4">
                         <h3 className="h4 mb-3">{section.title}</h3>
                         <ul className="list-unstyled mb-0">
-                          <li>Lesson 1 Title</li>
+                          <li>{section.id}</li>
                           <li>Lesson 2 Title</li>
                           <li>Lesson 3 Title</li>
                         </ul>
@@ -57,11 +57,7 @@ const Coursedetails = () => {
                       )
                   })
                 }
-                  
-                   
-                   
                 </div>
-                 
               </div>
             </div>
             <div className="col-lg-4">

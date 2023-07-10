@@ -1,0 +1,64 @@
+
+.section-video{
+    background-color: rgb(187 197 205 / 36%);
+}
+.VI{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.container video{
+    border-radius: 20px;
+}
+@media screen and (max-width:767px) {
+    .VI{
+        width: 382px;
+        height: 385px;
+        background-color: aliceblue;
+        border-radius: 30px;
+        text-align: center;
+        left: -8px;
+        position: relative;
+    }
+    .container video{
+        position: relative;
+        top: 85px;
+        width: 375px;
+    }
+}
+.accordion .item{
+    border: 0;
+    border-radius: 0;
+    padding: 1.5rem 1rem;
+}
+.accordion:last-child .item{
+    border-top: 2px dashed #d3d3d3;
+}
+.accordion .item .accordion-header button{
+    background-color: transparent;
+    box-shadow: none;
+    letter-spacing: .125rem;
+    line-height: 1.375rem;
+    color: black;
+    font-weight: 700;
+    vertical-align: middle;
+    position: relative;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.accordion .item .accordion-header button::after{
+    transition: all 0.s5 ease-in-out;
+}
+.accordion .item .accordion-collapse{
+    transition: all 0.4s ease-in-out;
+}
+.collection{
+    display: flex   ;
+}
+.square{
+    margin-right: 15px;
+    font-size: 15px;
+}
+.video-minite{
+    display: flex;
+    align-items: center;
+}
