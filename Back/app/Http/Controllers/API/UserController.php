@@ -118,10 +118,13 @@ class UserController extends Controller
      * @response status=200 {"purchased":true}
      */
     public function hasPurchased(Course $course)
+
     {
         /** @var User $user */
         $user = auth()->user();
-        $purchased = $user->hasPurchased($course->id);
+        $purchased = ($user->hasPurchased($course->id))
+            || ($user->id == $course->instructor->id);
+
         return response()->json([
             'purchased' => $purchased
         ]);
