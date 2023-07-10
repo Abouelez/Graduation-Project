@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
@@ -54,11 +55,14 @@ class PasswordController extends Controller
      * Forgot Password
      * 
      * Send Rest Password Token
-     * 
+     * @response status=200 {"message":"Password reset email sent"}
+     * @response status=422 {"message":"Failed to send password reset email"} 
      */
     public function forgotPassword(Request $request)
     {
         $request->validate(['email' => 'required|email']);
+
+        // $user = User::where('email', $request->email)->firstOrFail();
 
         $status = Password::sendResetLink($request->only('email'));
 
@@ -68,7 +72,19 @@ class PasswordController extends Controller
             return response()->json(['message' => 'Failed to send password reset email'], 422);
         }
     }
-
+    /**
+     * Reset
+     * 
+     * Create new password
+     * 
+     * @bodyParam email string required
+     * @bodyParam token string required
+     * @bodyParam password string required
+     * @bodyParam password_confirmation string required
+     * 
+     * @response status=200 {"message":"Password reset successfully"}
+     * @response status=422 {"message":"Password reset failed"}
+     */
     public function reset(Request $request)
     {
         $request->validate([
@@ -77,7 +93,7 @@ class PasswordController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        $response = Password::broker()->reset(
+        $response = Password::reset(
             $request->only('email', 'token', 'password', 'password_confirmation'),
             function ($user, $password) {
                 $user->password = Hash::make($password);

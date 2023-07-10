@@ -37,12 +37,12 @@ endpoints:
         name: parent_id
         description: ''
         required: false
-        example: 5
+        example: 10
         type: integer
         custom: []
     cleanBodyParameters:
       name: Development
-      parent_id: 5
+      parent_id: 10
     fileParameters: []
     responses:
       -
@@ -99,19 +99,19 @@ endpoints:
         name: name
         description: 'Updated name of category, Ex: Tech'
         required: true
-        example: ut
+        example: nisi
         type: string
         custom: []
       parent_id:
         name: parent_id
         description: ''
         required: false
-        example: 9
+        example: 10
         type: integer
         custom: []
     cleanBodyParameters:
-      name: ut
-      parent_id: 9
+      name: nisi
+      parent_id: 10
     fileParameters: []
     responses:
       -

@@ -73,7 +73,7 @@ endpoints:
         name: question
         description: 'Question text. Example Is HTML used to style web pages'
         required: true
-        example: delectus
+        example: occaecati
         type: string
         custom: []
       answer:
@@ -87,29 +87,29 @@ endpoints:
         name: A
         description: 'Forth answer.'
         required: false
-        example: voluptate
+        example: odit
         type: string
         custom: []
       B:
         name: B
         description: 'Second answer.'
         required: true
-        example: ut
+        example: omnis
         type: string
         custom: []
       quiz_id:
         name: quiz_id
         description: required.
         required: false
-        example: 16
+        example: 2
         type: integer
         custom: []
     cleanBodyParameters:
-      question: delectus
+      question: occaecati
       answer: A
-      A: voluptate
-      B: ut
-      quiz_id: 16
+      A: odit
+      B: omnis
+      quiz_id: 2
     fileParameters: []
     responses:
       -
@@ -153,11 +153,11 @@ endpoints:
         name: id
         description: 'The ID of the question.'
         required: true
-        example: 1
+        example: 17
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -203,11 +203,11 @@ endpoints:
         name: id
         description: 'The ID of the question.'
         required: true
-        example: 1
+        example: 2
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -215,7 +215,7 @@ endpoints:
         name: question
         description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
         required: true
-        example: zsmvzscghyxobyojrevtxbi
+        example: rsayrmtleokrnbagzbkk
         type: string
         custom: []
       answer:
@@ -229,21 +229,21 @@ endpoints:
         name: A
         description: 'Forth answer.'
         required: false
-        example: et
+        example: ipsum
         type: string
         custom: []
       B:
         name: B
         description: 'Second answer.'
         required: true
-        example: inventore
+        example: ipsa
         type: string
         custom: []
     cleanBodyParameters:
-      question: zsmvzscghyxobyojrevtxbi
+      question: rsayrmtleokrnbagzbkk
       answer: A
-      A: et
-      B: inventore
+      A: ipsum
+      B: ipsa
     fileParameters: []
     responses:
       -
@@ -287,11 +287,11 @@ endpoints:
         name: id
         description: 'The ID of the question.'
         required: true
-        example: 1
+        example: 10
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

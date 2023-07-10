@@ -86,11 +86,11 @@ endpoints:
         name: id
         description: 'The ID of the comment.'
         required: true
-        example: 18
+        example: 10
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

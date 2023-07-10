@@ -1,21 +1,21 @@
-name: 'Enrollment And Payment'
+name: Notification
 description: |-
 
-  Mange Enrollment Process
+  Manage Notification
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: api/enroll
+      - GET
+    uri: api/notifications
     metadata:
-      groupName: 'Enrollment And Payment'
+      groupName: Notification
       groupDescription: |-
 
-        Mange Enrollment Process
+        Manage Notification
       subgroup: ''
       subgroupDescription: ''
-      title: Payment
-      description: 'Payment Process'
+      title: 'Get Notifications'
+      description: 'Return unread notifications'
       authenticated: true
       custom: []
     headers:
@@ -25,47 +25,67 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      course_ids:
-        name: course_ids
-        description: 'Array of courses ids.'
-        required: true
-        example:
-          - 1
-          - 10
-        type: object
-        custom: []
-      payment_amount:
-        name: payment_amount
-        description: 'Amount needed to pay.'
-        required: true
-        example: 100.0
-        type: number
-        custom: []
-      payment_id:
-        name: payment_id
-        description: 'Payment method id that generated from stripe. Example ='
-        required: true
-        example: nihil
-        type: string
-        custom: []
-    cleanBodyParameters:
-      course_ids:
-        - 1
-        - 10
-      payment_amount: 100.0
-      payment_id: nihil
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"message":"Enrollment successful"}'
+        content: '[{"id":"11a67272-88b7-4755-8f44-8f54c79b1b91","data":{"course_id":51,"comment_id":2,"message":"A user has commented on the course."}}]'
         headers: []
         description: ''
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/notifications/{id}/mark-read'
+    metadata:
+      groupName: Notification
+      groupDescription: |-
+
+        Manage Notification
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark as read'
+      description: 'Mark notification as read'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the notification.'
+        required: true
+        example: aut
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: aut
+    queryParameters:
+      id:
+        name: id
+        description: ''
+        required: true
+        example: quisquam
+        type: string
+        custom: []
+    cleanQueryParameters:
+      id: quisquam
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
       -
-        status: 500
-        content: '{"message":"No such PaymentMethod: ''pm_1NS6eqGEPWFHPllANwhUzh''"}'
+        status: 200
+        content: '{"message":"Notification marked as read"}'
         headers: []
         description: ''
         custom: []

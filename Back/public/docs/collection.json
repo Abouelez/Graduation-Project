@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "4fbc6731-09cb-4fcf-9ccb-822e9a2d8e96",
+        "_postman_id": "72061b6e-67a0-4792-bcc9-9c718b9b3800",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -85,7 +85,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"bernie59@example.org\",\"password\":\"jOWTq>n$3yse@L\"}"
+                            "raw": "{\"email\":\"frederick.borer@example.org\",\"password\":\"IR4s7n]ikl:0jk~N\"}"
                         },
                         "description": "Login to website",
                         "auth": {
@@ -285,7 +285,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Development\",\"parent_id\":5}"
+                            "raw": "{\"name\":\"Development\",\"parent_id\":10}"
                         },
                         "description": "Store a newly created Category in storage."
                     },
@@ -334,7 +334,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ut\",\"parent_id\":9}"
+                            "raw": "{\"name\":\"nisi\",\"parent_id\":10}"
                         },
                         "description": "Update the specified Category in storage."
                     },
@@ -530,7 +530,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "10",
                                     "description": "The ID of the comment."
                                 }
                             ]
@@ -713,13 +713,13 @@
                                 },
                                 {
                                     "key": "category_id",
-                                    "value": 4,
+                                    "value": 8,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sub_category_id",
-                                    "value": 4,
+                                    "value": 3,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -777,7 +777,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"HTML Course\",\"description\":\"All you need in HTML\",\"price\":1000,\"category_id\":2,\"sub_category_id\":20}"
+                            "raw": "{\"title\":\"HTML Course\",\"description\":\"All you need in HTML\",\"price\":1000,\"category_id\":4,\"sub_category_id\":1}"
                         },
                         "description": "Update Course Data."
                     },
@@ -983,13 +983,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quisquam",
+                                    "value": "magni",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "consequatur",
+                                    "value": "voluptatum",
                                     "description": ""
                                 }
                             ]
@@ -1051,7 +1051,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"course_ids\":[1,10],\"payment_amount\":100,\"payment_id\":\"nihil\"}"
+                            "raw": "{\"course_ids\":[1,10],\"payment_amount\":100,\"payment_id\":\"numquam\"}"
                         },
                         "description": "Payment Process"
                     },
@@ -1198,7 +1198,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "15",
                                     "description": "The ID of the lecture."
                                 }
                             ]
@@ -1251,7 +1251,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "17",
                                     "description": "The ID of the lecture."
                                 }
                             ]
@@ -1323,7 +1323,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "12",
                                     "description": "The ID of the lecture."
                                 }
                             ]
@@ -1398,17 +1398,17 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "debitis",
+                                    "value": "quisquam",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/notifications\/:id\/mark-read?id=debitis",
+                            "raw": "{{baseUrl}}\/api\/notifications\/:id\/mark-read?id=quisquam",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "necessitatibus",
+                                    "value": "aut",
                                     "description": "The ID of the notification."
                                 }
                             ]
@@ -1443,6 +1443,94 @@
             "description": "\nManaging Password",
             "item": [
                 {
+                    "name": "Forgot Password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/forgot-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/forgot-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"rolfson.dakota@example.org\"}"
+                        },
+                        "description": "Send Rest Password Token",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"message\":\"Password reset email sent\"}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\"message\":\"Failed to send password reset email\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Reset",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/rest-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/rest-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"annette.beier@example.com\",\"token\":\"vero\",\"password\":\"L#p8GFRH&\",\"password_confirmation\":\"sed\"}"
+                        },
+                        "description": "Create new password",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"message\":\"Password reset successfully\"}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\"message\":\"Password reset failed\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Change Password",
                     "request": {
                         "url": {
@@ -1464,7 +1552,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"old_password\":\"commodi\",\"password\":\"newpassword\"}"
+                            "raw": "{\"old_password\":\"non\",\"password\":\"newpassword\"}"
                         },
                         "description": "Change your password with new one."
                     },
@@ -1562,7 +1650,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"delectus\",\"answer\":\"A\",\"A\":\"voluptate\",\"B\":\"ut\",\"quiz_id\":16}"
+                            "raw": "{\"question\":\"occaecati\",\"answer\":\"A\",\"A\":\"odit\",\"B\":\"omnis\",\"quiz_id\":2}"
                         },
                         "description": "Store a newly created question in QUIZ."
                     },
@@ -1593,7 +1681,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "17",
                                     "description": "The ID of the question."
                                 }
                             ]
@@ -1646,7 +1734,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "2",
                                     "description": "The ID of the question."
                                 }
                             ]
@@ -1664,7 +1752,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"question\":\"zsmvzscghyxobyojrevtxbi\",\"answer\":\"A\",\"A\":\"et\",\"B\":\"inventore\"}"
+                            "raw": "{\"question\":\"rsayrmtleokrnbagzbkk\",\"answer\":\"A\",\"A\":\"ipsum\",\"B\":\"ipsa\"}"
                         },
                         "description": "Update the specified resource in storage."
                     },
@@ -1695,7 +1783,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "10",
                                     "description": "The ID of the question."
                                 }
                             ]
@@ -1827,7 +1915,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "12",
                                     "description": "The ID of the quiz."
                                 }
                             ]
@@ -1880,7 +1968,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "3",
                                     "description": "The ID of the quiz."
                                 }
                             ]
@@ -1929,7 +2017,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "3",
                                     "description": "The ID of the quiz."
                                 }
                             ]
@@ -2016,7 +2104,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "9",
                                     "description": "The ID of the review."
                                 }
                             ]
@@ -2065,7 +2153,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "8",
                                     "description": "The ID of the review."
                                 }
                             ]
@@ -2197,7 +2285,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "3",
                                     "description": "The ID of the section."
                                 }
                             ]
@@ -2250,7 +2338,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "2",
                                     "description": "The ID of the section."
                                 }
                             ]
@@ -2299,7 +2387,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "20",
                                     "description": "The ID of the section."
                                 }
                             ]
@@ -2602,7 +2690,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Ali\",\"email\":\"test@test.com\",\"bio\":\"PHP programmer\",\"avatar\":\"asperiores\"}"
+                            "raw": "{\"name\":\"Ali\",\"email\":\"test@test.com\",\"bio\":\"PHP programmer\",\"avatar\":\"ipsa\"}"
                         },
                         "description": "Update Profile Data."
                     },

@@ -64,19 +64,19 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: quisquam
+        example: magni
         type: string
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: consequatur
+        example: voluptatum
         type: string
         custom: []
     cleanUrlParameters:
-      id: quisquam
-      hash: consequatur
+      id: magni
+      hash: voluptatum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

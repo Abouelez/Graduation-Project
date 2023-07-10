@@ -108,19 +108,19 @@ endpoints:
         name: email
         description: 'Your email.'
         required: true
-        example: bernie59@example.org
+        example: frederick.borer@example.org
         type: string
         custom: []
       password:
         name: password
         description: 'Your Password.'
         required: false
-        example: jOWTq>n$3yse@L
+        example: 'IR4s7n]ikl:0jk~N'
         type: string
         custom: []
     cleanBodyParameters:
-      email: bernie59@example.org
-      password: jOWTq>n$3yse@L
+      email: frederick.borer@example.org
+      password: 'IR4s7n]ikl:0jk~N'
     fileParameters: []
     responses:
       -

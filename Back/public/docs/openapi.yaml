@@ -187,11 +187,11 @@ paths:
                 email:
                   type: string
                   description: 'Your email.'
-                  example: bernie59@example.org
+                  example: frederick.borer@example.org
                 password:
                   type: string
                   description: 'Your Password.'
-                  example: jOWTq>n$3yse@L
+                  example: 'IR4s7n]ikl:0jk~N'
               required:
                 - email
       security: []
@@ -531,7 +531,7 @@ paths:
                 parent_id:
                   type: integer
                   description: ''
-                  example: 5
+                  example: 10
               required:
                 - name
     get:
@@ -663,11 +663,11 @@ paths:
                 name:
                   type: string
                   description: 'Updated name of category, Ex: Tech'
-                  example: ut
+                  example: nisi
                 parent_id:
                   type: integer
                   description: ''
-                  example: 9
+                  example: 10
               required:
                 - name
     delete:
@@ -946,7 +946,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the comment.'
-        example: 18
+        example: 10
         required: true
         schema:
           type: integer
@@ -1656,11 +1656,11 @@ paths:
                 category_id:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 8
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 3
               required:
                 - title
                 - description
@@ -2469,11 +2469,11 @@ paths:
                 category_id:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 4
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 1
               required:
                 - title
                 - description
@@ -2781,7 +2781,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the verify email.'
-        example: quisquam
+        example: magni
         required: true
         schema:
           type: string
@@ -2789,7 +2789,7 @@ paths:
         in: path
         name: hash
         description: ''
-        example: consequatur
+        example: voluptatum
         required: true
         schema:
           type: string
@@ -2847,7 +2847,7 @@ paths:
                 payment_id:
                   type: string
                   description: 'Payment method id that generated from stripe. Example ='
-                  example: nihil
+                  example: numquam
               required:
                 - course_ids
                 - payment_amount
@@ -3109,7 +3109,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the lecture.'
-        example: 9
+        example: 15
         required: true
         schema:
           type: integer
@@ -3147,12 +3147,12 @@ paths:
           in: query
           name: id
           description: ''
-          example: debitis
+          example: quisquam
           required: true
           schema:
             type: string
             description: ''
-            example: debitis
+            example: quisquam
       responses:
         200:
           description: ''
@@ -3173,10 +3173,119 @@ paths:
         in: path
         name: id
         description: 'The ID of the notification.'
-        example: necessitatibus
+        example: aut
         required: true
         schema:
           type: string
+  /api/forgot-password:
+    post:
+      summary: 'Forgot Password'
+      operationId: forgotPassword
+      description: 'Send Rest Password Token'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Password reset email sent'
+                properties:
+                  message:
+                    type: string
+                    example: 'Password reset email sent'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Failed to send password reset email'
+                properties:
+                  message:
+                    type: string
+                    example: 'Failed to send password reset email'
+      tags:
+        - 'Password EndPoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: rolfson.dakota@example.org
+              required:
+                - email
+      security: []
+  /api/rest-password:
+    post:
+      summary: Reset
+      operationId: reset
+      description: 'Create new password'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Password reset successfully'
+                properties:
+                  message:
+                    type: string
+                    example: 'Password reset successfully'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Password reset failed'
+                properties:
+                  message:
+                    type: string
+                    example: 'Password reset failed'
+      tags:
+        - 'Password EndPoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: annette.beier@example.com
+                token:
+                  type: string
+                  description: ''
+                  example: vero
+                password:
+                  type: string
+                  description: ''
+                  example: 'L#p8GFRH&'
+                password_confirmation:
+                  type: string
+                  description: ''
+                  example: sed
+              required:
+                - email
+                - token
+                - password
+                - password_confirmation
+      security: []
   /api/auth/change_password:
     post:
       summary: 'Change Password'
@@ -3252,7 +3361,7 @@ paths:
                 old_password:
                   type: string
                   description: ''
-                  example: commodi
+                  example: non
                 password:
                   type: string
                   description: required.
@@ -3370,7 +3479,7 @@ paths:
                 question:
                   type: string
                   description: 'Question text. Example Is HTML used to style web pages'
-                  example: delectus
+                  example: occaecati
                 answer:
                   type: string
                   description: 'One Char (A, B, C or D).'
@@ -3378,15 +3487,15 @@ paths:
                 A:
                   type: string
                   description: 'Forth answer.'
-                  example: voluptate
+                  example: odit
                 B:
                   type: string
                   description: 'Second answer.'
-                  example: ut
+                  example: omnis
                 quiz_id:
                   type: integer
                   description: required.
-                  example: 16
+                  example: 2
               required:
                 - question
                 - answer
@@ -3485,7 +3594,7 @@ paths:
                 question:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 100 characters.'
-                  example: zsmvzscghyxobyojrevtxbi
+                  example: rsayrmtleokrnbagzbkk
                 answer:
                   type: string
                   description: 'One Char (A, B, C or D).'
@@ -3493,11 +3602,11 @@ paths:
                 A:
                   type: string
                   description: 'Forth answer.'
-                  example: et
+                  example: ipsum
                 B:
                   type: string
                   description: 'Second answer.'
-                  example: inventore
+                  example: ipsa
               required:
                 - question
                 - answer
@@ -3517,7 +3626,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the question.'
-        example: 1
+        example: 17
         required: true
         schema:
           type: integer
@@ -3725,7 +3834,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the quiz.'
-        example: 1
+        example: 12
         required: true
         schema:
           type: integer
@@ -3912,7 +4021,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the review.'
-        example: 1
+        example: 9
         required: true
         schema:
           type: integer
@@ -4116,7 +4225,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the section.'
-        example: 1
+        example: 3
         required: true
         schema:
           type: integer
@@ -5041,7 +5150,7 @@ paths:
                 avatar:
                   type: file.
                   description: ''
-                  example: asperiores
+                  example: ipsa
               required:
                 - name
                 - email

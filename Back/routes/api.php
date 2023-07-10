@@ -87,8 +87,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('auth/register', [AuthController::class, 'register']);
 Route::post('auth/login', [AuthController::class, 'login']);
 
-// Route::post('auth/forgot-password', [PasswordController::class, 'forgotPassword']);
-// Route::post('auth/rest-password', [PasswordController::class, 'reset']);
+Route::post('forgot-password', [PasswordController::class, 'forgotPassword']);
+Route::post('rest-password', [PasswordController::class, 'reset']);
 
 Route::get('courses/filter', [CourseController::class, 'filter']);
 Route::middleware(['auth:sanctum'])->group(function () {

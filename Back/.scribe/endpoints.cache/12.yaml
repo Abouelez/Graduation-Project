@@ -97,11 +97,11 @@ endpoints:
         name: id
         description: 'The ID of the review.'
         required: true
-        example: 1
+        example: 9
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -165,11 +165,11 @@ endpoints:
         name: id
         description: 'The ID of the review.'
         required: true
-        example: 1
+        example: 8
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

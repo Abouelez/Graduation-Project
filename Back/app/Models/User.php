@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -81,5 +82,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function hasPurchased($course_id)
     {
         return $this->courses()->where('course_id', $course_id)->exists();
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $url = 'http://localhost:300/rest-password?token=' . $token;
+        $this->notify(new ResetPasswordNotification($url));
     }
 }
