@@ -1,5 +1,5 @@
 import { useInsertDataWithImage } from '../../Hook/useInsertData';
-import { GET_ALL_COURSE,CREATE_COURSE, GET_ERROR, } from '../type';
+import { GET_ALL_COURSE,GET_COURSE_ID,CREATE_COURSE, GET_ERROR, } from '../type';
 import axios from 'axios';
 
 //get all courses
@@ -68,8 +68,9 @@ export const getCourse = (id) => async (dispatch) => {
     const response = await axios.get(`http://localhost:8000/api/courses/${id}`);
    
     dispatch({
-      type: GET_ALL_COURSE,
-      payload: response.data,
+      type: GET_COURSE_ID,
+      payload: response,
+      loading: true
     });
   } catch (e) {
     dispatch({
@@ -79,14 +80,21 @@ export const getCourse = (id) => async (dispatch) => {
   }
 };
 
- 
-export const createCourse = (formData, config) => async (dispatch) => {
-  console.log(formData, config);
+export const createCourseInfo = (formData, accessToken) => async (dispatch) => {
+  console.log(formData);
   try {
-    const response = await useInsertDataWithImage('/api/courses', formData, config);
+    const response = await fetch("http://localhost:8000/api/courses", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${accessToken}`
+      },
+      body: formData,
+    });
+    console.log(response);
+    const data = await response.json();
     dispatch({
       type: CREATE_COURSE,
-      payload: response,
+      payload: data,
       loading: true
     });
   } catch (e) {

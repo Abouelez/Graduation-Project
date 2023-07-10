@@ -4,20 +4,15 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCourse } from '../../redux/actions/courseAction';
 const Coursedetails = () => {
-    const { id } = useParams();
-    const dispatch = useDispatch();
-    
-    useEffect(() => {
-        dispatch(getCourse(id));
-    }, [dispatch, id]);
-    
-    const course = useSelector((state) => state.allCourses);
-
-    let details = null;
-    if (course && course.courses && course.courses.data) {
-      details = course.courses.data;
-    }
-   console.log(course);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state)
+  const course = useSelector((state) => state.allCourses.oneCourse);
+  console.log(course?.data?.data);
+  const details = course?.data?.data;
+  useEffect(() => {
+      dispatch(getCourse(id));
+  }, [dispatch, id]);
     return (
         <div className="container my-5 margin-8">
           {details &&(<div className="row">
@@ -43,35 +38,28 @@ const Coursedetails = () => {
                   </div>
                   <div className="d-flex mb-2">
                     <span className="mr-2">Price:</span>
-                    <span>Course Price</span>
+                    <span>{details.price}</span>
                   </div>
                 </div>
                 <div className="course-syllabus mb-4">
                   <h2 className="display-4 mb-4">Syllabus</h2>
-                  <div className="course-section mb-4">
-                    <h3 className="h4 mb-3">Section 1 Title</h3>
-                    <ul className="list-unstyled mb-0">
-                      <li>Lesson 1 Title</li>
-                      <li>Lesson 2 Title</li>
-                      <li>Lesson 3 Title</li>
-                    </ul>
-                  </div>
-                  <div className="course-section mb-4">
-                    <h3 className="h4 mb-3">Section 2 Title</h3>
-                    <ul className="list-unstyled mb-0">
-                      <li>Lesson 1 Title</li>
-                      <li>Lesson 2 Title</li>
-                      <li>Lesson 3 Title</li>
-                    </ul>
-                  </div>
-                  <div className="course-section mb-4">
-                    <h3 className="h4 mb-3">Section 3 Title</h3>
-                    <ul className="list-unstyled mb-0">
-                      <li>Lesson 1 Title</li>
-                      <li>Lesson 2 Title</li>
-                      <li>Lesson 3 Title</li>
-                    </ul>
-                  </div>
+                  {
+                    details.sections && details.sections.map((section, index) => {
+                      return (
+                        <div className="course-section mb-4">
+                        <h3 className="h4 mb-3">{section.title}</h3>
+                        <ul className="list-unstyled mb-0">
+                          <li>Lesson 1 Title</li>
+                          <li>Lesson 2 Title</li>
+                          <li>Lesson 3 Title</li>
+                        </ul>
+                      </div>
+                      )
+                  })
+                }
+                  
+                   
+                   
                 </div>
                  
               </div>
@@ -80,43 +68,14 @@ const Coursedetails = () => {
               <div className="course-sidebar bg-light p-3">
                 <div className="course-stats mb-3">
                   <div className="course-rating display-4 mb-2">
-                   rate :{details.Rate}<i className="fas fa-star"></i>
+                   rate :{details.rate}<i className="fas fa-star"></i>
                   </div>
-                  <div className="course-enrollment lead">1000+ enrolled</div>
+                  <div className="course-enrollment lead">{details.total_enrollments} enrolled</div>
                 </div>
                 <div className="course-cta mb-3">
                   <button className="btn btn-primary btn-lg btn-block mb-2">Enroll Now</button>
                   <button className="btn btn-outline-primary btn-lg btn-block">Add to Wishlist</button>
-                </div>
-                <div className="course-share mb-3">
-                  <h3 className="h5 mb-3">Share:</h3>
-                  <ul className="list-inline mb-0">
-                    <li className="list-inline-item mr-3">
-                      <a href="#">
-                        <i className="fab fa-facebook-f"></i>
-                      </a>
-                    </li>
-                    <li className="list-inline-item mr-3">
-                      <a href="#">
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#">
-                        <i className="fab fa-linkedin-in"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="course-features mb-3">
-                  <h3 className="h5 mb-3">Course Features:</h3>
-                  <ul className="list-unstyled mb-0">
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                    <li>Feature 4</li>
-                  </ul>
-                </div>
+                </div> 
                 <div className="course-categories">
                   <h3 className="h5 mb-3">Categories:</h3>
                   <ul className="list-unstyled mb-0">

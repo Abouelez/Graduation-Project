@@ -9,8 +9,7 @@ export const getAllCategory = () => async (dispatch) => {
   try {
     // Make a GET request to the backend API to get all categories
     const response = await axios.get('http://localhost:8000/api/categories');
-   // console.log(response);
-    
+    console.log(response);
     // Dispatch an action to the Redux store with the categories data
     dispatch({
       type: GET_ALL_CATEGORY,

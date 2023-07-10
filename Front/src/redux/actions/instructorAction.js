@@ -11,7 +11,7 @@ export const getInstructorCourses = () => async (dispatch) => {
         'Authorization': `Bearer ${accessToken}`
       }
     });
-  //  console.log(response);
+    //console.log(response.data);
     dispatch({
       type: GET_INSTRUCTOR_COURSES,
       payload: response,

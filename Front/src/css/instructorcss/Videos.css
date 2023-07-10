@@ -207,3 +207,97 @@
   .head-titlt h4:hover p{
   opacity: 1;
   }
+
+  /* //////////////////// */
+  .search{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+.search input{
+    padding: 10px 20px;
+    width: 250px;
+    font-size: 15px;
+}
+.search input::placeholder{
+    font-size: 15px;
+}
+.ic{
+    font-size: 46px;
+    background: black;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.VDS .TT{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+.bt{
+    padding: 10px;
+    background: blue;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+.VDS .box{
+  margin: 4.8rem 0 2.4rem;
+  padding: 4.8rem;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  position: relative;
+  justify-content: space-between;
+  border: 1px solid #d1d7dc;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+  display: flex;
+  justify-content: space-between;
+}
+.box img{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    left: -48px;
+}
+.sec{
+    display: flex;
+}
+.sec h2{
+    margin-left: 10px;
+    padding-bottom: 42px;
+}
+.ED button{
+  margin-right: 10px;
+}
+.VDS{
+  position: relative;
+  top: -120rem;
+}
+@media screen and (max-width:767px) {
+  .ED{
+    position: absolute;
+    top: 17rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .VDS .bt{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: -5rem;
+  }
+  .VDS{
+    position: relative;
+    top: -155rem;
+  }
+  .VDS .box{
+    width: 100%;
+  }
+}

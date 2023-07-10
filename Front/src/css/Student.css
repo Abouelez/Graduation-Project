@@ -1,4 +1,4 @@
-.Sidebar{
+.Student{
     background-color: #010c1d;
     color: #fff;
     height: 300vh;
@@ -8,7 +8,6 @@
     top: 81px;
     z-index:1;
     overflow: hidden;
-    margin-bottom: -40rem;
 }
 .Sidebar.Sidebar2{
     height: 100vh;
