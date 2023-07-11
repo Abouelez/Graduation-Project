@@ -6,6 +6,9 @@
     text-align: center;
     margin-bottom: 30px;
 }
+.VI >*{
+    height: 100%;
+}
 .container video{
     border-radius: 20px;
 }
@@ -61,4 +64,7 @@
 .video-minite{
     display: flex;
     align-items: center;
+}
+.embed-responsive-item{
+    height: 100%;
 }

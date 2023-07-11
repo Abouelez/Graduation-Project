@@ -11,12 +11,10 @@ function Login() {
     onChangePassword,
     onSubmit,
     loading,
-    isPress
+    isPress,
+    status
   ] = LoginHook()
-
-  const loginrUser = (e) => {
-    e.preventDefault();
-  };
+  console.log();
   return (
     <>
       <section className="container auth">
@@ -36,15 +34,23 @@ function Login() {
               <input type="password" className="form-control" id="password" placeholder="Enter your password" required value={password}
                 onChange={onChangePassword} />
             </div>
-            <button onClick={onSubmit} className="btn btn-primary mx-auto mt-4">  SignUp</button>
+            {isPress === true ? (loading === true ? (<button onClick={onSubmit} className="btn btn-primary mx-auto mt-4">login</button>
+            ) : <button onClick={onSubmit} className="btn btn-primary mx-auto mt-4">  login</button>) :
+              <button onClick={onSubmit} className="btn btn-danger mx-auto mt-4">  login</button>
+            }   
+            
+            {
+              status === "password or email is incorrect"? (
+               
+                  
+                    <h2>password or email is incorrect</h2>):
+                    null
+            }
             <span className="register"><p>Dont have an account ?</p> <Link to={"/register"}>Sign up</Link></span>
           </div>
         </div>
-        <Row>
-         {isPress===true ?  (loading === true ? (<Spinner  animation="border" role="status">
+        
 
-        </Spinner>) : null) : null}
-        </Row>
       </section>
     </>
   )

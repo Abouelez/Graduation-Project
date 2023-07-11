@@ -9,7 +9,7 @@ const LoginHook = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false)
-    
+    const [status, setStatus] =useState("")
     const [isPress, setIsPress] = useState(false)
   
     const dispatch=useDispatch()
@@ -22,9 +22,6 @@ const LoginHook = () => {
     const onChangePassword = (e) => {
       setPassword(e.target.value);
     };
-  
-    
-  
     const onSubmit = async () => {
         setIsPress(true)
         setLoading(true)
@@ -41,11 +38,11 @@ const LoginHook = () => {
   useEffect(() => {
     if (loading === false) {
       if (res.data) {
-          console.log(res.data.user)
+          //console.log(res.data.user)
             if (res &&res.data && res.data.access_token ) {
                 localStorage.setItem("token", res.data.access_token)
                 localStorage.setItem("user", JSON.stringify(res.data.user))
-                console.log("تم تسجيل الدخول بنجاح", "success")
+             //   console.log("تم تسجيل الدخول بنجاح", "success")
                 setTimeout(() => {
                     window.location.href = "/"
                 }, 1500);
@@ -57,7 +54,8 @@ const LoginHook = () => {
             if (res&& res.data && res.data.message === "The provided credentials are incorrect." ) {
                 localStorage.removeItem("token")
                 localStorage.removeItem("user")
-                console.log("password or email is incorrect ")
+                setStatus("password or email is incorrect")
+             //  console.log("password or email is incorrect ")
             }
             setLoading(true)
         }
@@ -71,7 +69,7 @@ const LoginHook = () => {
       onChangePassword,
       onSubmit,
       loading,
-      isPress
+      isPress,status
     ];
 }
 

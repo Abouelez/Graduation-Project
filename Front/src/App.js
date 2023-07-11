@@ -23,7 +23,7 @@ import Resources from "./pages/Instructor/Resources"
 import CreateCourse from "./pages/Instructor/CreateCourse"
 import InstructorDashboard from "./pages/Instructor/InstructorDashboard"  
 import Student from "./pages/student/Student";
-import Userprofile from "./pages/UserProfile";
+import Userprofile from "./pages/student/UserProfile";
 import CourseWatching from "./pages/Courses/CourseWatching";
 import StudentCourcessEnroll from "./pages/student/StudentCourcessEnroll";
 import AddLecture from "./pages/Instructor/AddLecture";

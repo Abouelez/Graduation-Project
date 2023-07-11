@@ -8,8 +8,9 @@ const RegisterHook = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [loading, setLoading] = useState(true)
-
+  const [loading0, setLoading] = useState(true)
+  const [isPress, setIsPress] = useState(false)
+  const [message, setMessage] = useState("")
   const dispatch=useDispatch()
   const onChangeName = (e) => {
     setName(e.target.value);
@@ -55,9 +56,11 @@ const RegisterHook = () => {
     return errors;
   };
 
-  const onSubmit = async () => {
-    console.log('submit');
-    setLoading(true);
+ // const {createUser,loading}= useSelector(state => state.authReducer  )
+ const res = useSelector(state => state.authReducer.createUser)
+   const onSubmit = async () => {
+     setLoading(true);
+    setIsPress(true)
     await dispatch(createNewUser({
         name,
         email,
@@ -65,14 +68,39 @@ const RegisterHook = () => {
         password_confirmation: confirmPassword,
         
     })) 
-    setLoading(false);
+    setLoading(false)
+    setIsPress(false)
+    
+    
 }
-const res = useSelector(state => state.authReducer.createUser)
 
-  useEffect(() => {
-    setLoading(false);
-    console.log(res);
-  },[setLoading])
+useEffect(() => {
+  if (loading0 === false) { 
+    if (res?.data) {
+          if (res &&res.data && res.data.access_token ) { 
+              localStorage.setItem("token", res.data.access_token)
+              localStorage.setItem("user", JSON.stringify(res.data.user))
+             
+
+               setTimeout(() => {
+                   window.location.href = "/"
+               }, 1500);
+            
+          } else { 
+            setMessage(res.data.message )
+              localStorage.removeItem("token")
+              localStorage.removeItem("user")
+          }
+
+          if (res&& res.data && res.data.message === "The provided credentials are incorrect." ) {
+              localStorage.removeItem("token")
+              localStorage.removeItem("user")
+ 
+          }
+          setLoading(true)
+      }
+  }
+}, [loading0])
 
   return [
     name,
@@ -84,7 +112,11 @@ const res = useSelector(state => state.authReducer.createUser)
     onChangePassword,
     onChangeConfirmPassword,
     validateInputs,
-    onSubmit
+    onSubmit,
+    loading0,
+    res,
+    isPress,
+    message
   ];
 };
 

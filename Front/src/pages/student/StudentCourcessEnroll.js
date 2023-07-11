@@ -3,6 +3,7 @@ import "../../css/StudentEnrolled.css"
 import { HiStar } from 'react-icons/hi';
 
 const StudentCourcessEnroll = () => {
+  
   return (
     <div className='sce'>
       <h2 className='h22'>Courcess your Enrolled in</h2>

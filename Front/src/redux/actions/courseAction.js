@@ -81,20 +81,22 @@ export const getCourse = (id) => async (dispatch) => {
 };
 
 export const createCourseInfo = (formData, accessToken) => async (dispatch) => {
+  console.log(formData);
   try {
     const response = await fetch("http://localhost:8000/api/courses", {
       method: "POST",
       headers: {
+        "Accept": "application/json",
         "Authorization": `Bearer ${accessToken}`
       },
       body: formData,
     });
-  //  console.log(response);
+    //console.log(response);
     const data = await response.json();
     dispatch({
       type: CREATE_COURSE,
       payload: data,
-      loading: true
+      loading0: true
     });
   } catch (e) {
     dispatch({
@@ -114,7 +116,7 @@ export const createSection = (formData, accessToken) => async (dispatch) => {
       },
       body: formData,
     });
-   // console.log(response);
+    console.log(response);
     const data = await response.json();
     dispatch({
       type: CREATE_SECTION,
@@ -133,8 +135,10 @@ export const addLecture = (formData, accessToken) => async (dispatch) => {
   try {
     const response = await fetch("http://localhost:8000/api/lectures", {
       method: "POST",
-      headers: {
-        "Authorization": `Bearer ${accessToken}`
+      headers: { 
+        Accept: "application/json",
+        'Content-Type': `multipart/form-data`,
+        Authorization: `Bearer ${accessToken}`
       },
       body: formData,
     });

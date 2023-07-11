@@ -2,48 +2,85 @@ import React, { useState } from 'react'
 import "../../css/AddLecture.css"
 import { FaPenSquare, FaTrash, FaFile } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
-import { addLecture, createSection } from '../../redux/actions/courseAction';
-import { useDispatch } from 'react-redux';
+import { addLecture, createSection, getCourse } from '../../redux/actions/courseAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 const AddLecture = () => {
-    const [text, settext] = useState(''); 
-    const [path, setpath] = useState('');
-    const [title, setTitle] = useState(""); 
-    const [lecVideo, setlecVideo]=useState(null)  
     const { id } = useParams()
 
-       const dispatch = useDispatch();
-   const accessToken = localStorage.getItem("token");
-   const formData=new FormData()
-   const handelSectionSubmit = (e) => {
-    e.preventDefault();
-    formData.append("title", title); 
-    formData.append("course_id", id); 
-    dispatch(createSection(formData, accessToken));
+    const [text, settext] = useState('');
+    const [path, setpath] = useState('');
+    const [title, setTitle] = useState("");
+    const [lecTitle, setLecTitle] = useState(""); ////
+    const [lecVideo, setlecVideo] = useState(null)
+    const [added, setAdded] = useState('');
+    const [secId, setSecId] = useState()
+    const [secState, setSecState] = useState()
+    const [lectureState, setLectureState] = useState()
+    const [loading, setLoading] = useState(false);
 
-}
-const formData0=new FormData()
-    //////////////////
-    const handelLectureSubmit = (e) => {
+    const dispatch = useDispatch();
+    const accessToken = localStorage.getItem("token");
+    const formData = new FormData()
+    const handelSectionSubmit = (e) => {
+        setLoading(true)
         e.preventDefault();
-        formData0.append("title", title); 
-        formData0.append("type", 'video'); 
-        formData0.append("section_id", 1); 
-        formData0.append("content", lecVideo); 
-        dispatch(addLecture(formData, accessToken));
-        console.log(lecVideo);
-
+        formData.append("title", title);
+        formData.append("course_id", id);
+        dispatch(createSection(formData, accessToken));
+        setAdded('new section added')
+        setLoading(false)
+        setTitle('')
     }
+    const handelLectureSubmit = () => {
+        console.log(secId);
+        const formData = new FormData();
+        formData.append('title', lecTitle);
+        formData.append('type', 'video');
+        formData.append('section_id', secId);
+        formData.append('content', lecVideo);
+
+        fetch('http://localhost:8000/api/lectures', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                Authorization: `Bearer ${accessToken}`
+            },
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                // Do something with the response data
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // Handle the error
+            });
+            setLecTitle('')
+            setlecVideo('')
+    };
     const handleFileChange = (e) => {
         setlecVideo(e.target.files[0]);
-      };
-    //////////
+    };
+    const res = useSelector(state => state.authReducer.loginUser)
+     
+    const dispatch0 = useDispatch();
+  
+  const course = useSelector((state) => state.allCourses.oneCourse);
+  console.log(course?.data?.data);
+  const details = course?.data?.data;
+  useEffect(() => {
+    dispatch0(getCourse(id));
+  }, [dispatch, id]);
     return (
         <>
             <div className='totalpage'>
                 <div className='AddSection'>
                     <div className='N'>
                         <h2>New Section</h2>
-                        <input type='text' placeholder='Title' value={title} onChange={(w) => setTitle(w.target.value)} />
+                        <input type='text' placeholder='Title' required value={title} onChange={(w) => setTitle(w.target.value)} />
+                        {added != '' ? <h3 className='text-primary'>{added}</h3> : null}
                     </div>
                     <div className='foot'>
                         <h2>Cancel</h2>
@@ -59,43 +96,30 @@ const formData0=new FormData()
                                 <FaPenSquare className='icmp' />
                             </div>
                         </div>
-                        <input type='text' placeholder='Title' value={text} onChange={(w) => settext(w.target.value)} />
+                        <input type='text' placeholder='Title' required value={lecTitle} onChange={(w) => setLecTitle(w.target.value)} />
                     </div>
-                    
-                    <input type='file' className='file' onChange={handleFileChange}/>
+                    <select
+                    name="cat"
+                    value={secId}
+                   onChange={(e) => setSecId(e.target.value)}
+                    className="form-select mt-3 px-2"
+                    aria-label="Select category"
+                  >
+                    <option value="">Select a section</option>
+                    {details?.sections &&
+                      details.sections.map((item, index) => (
+                        <option key={index} value={item.id}>
+                          {item.title}
+                        </option>
+                      ))}
+                  </select>
+                    <input type='file' required className='file' multiple onChange={handleFileChange} />
                     <div className='foot'>
                         <h2>Cancel</h2>
-                        <button className='button' onClick={handelLectureSubmit} >Add Lecture</button>
+                        <button className='button' onClick={handelLectureSubmit}>Add Lecture</button>
                     </div>
                 </div>
-                {/* /////////// */}
-
-                {/* ////////// */}
-                <div className='details'>
-                    <div className='SCn'>
-                        <h2>Unpublished Section:</h2>
-                        <FaFile className='i' />
-                        <span className='para'>Course Name</span>
-                        <div className='CO'>
-                            <FaTrash className='icmp' />
-                            <FaPenSquare className='icmp' />
-                        </div>
-                    </div>
-                    <div className='LQCPA'>
-                        <div className='pluse'>+</div>
-                        <button className='button Lec'>Lecture</button>
-                        <div className='pluse'>+</div>
-                        <button className='button Lec'>Quize</button>
-                        <div className='pluse'>+</div>
-                        <button className='button Lec'>Coding Exercise</button>
-                        <div className='pluse'>+</div>
-                        <button className='button Lec'>Practice Test</button>
-                        <div className='pluse'>+</div>
-                        <button className='button Lec'>Assignment</button>
-                    </div>
-                    <button className='button BT'>+ Section</button>
-
-                </div>
+                 
             </div>
         </>
     )

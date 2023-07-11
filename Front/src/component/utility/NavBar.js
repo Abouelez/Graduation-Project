@@ -14,7 +14,7 @@ function NavBar() {
   const logo = (
     <div className="logo">
       <Link to={"/"}>
-        <h2><span>Courza.</span></h2>
+        <h2><span>courses platform</span></h2>
       </Link>
     </div>
   );

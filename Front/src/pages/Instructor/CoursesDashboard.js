@@ -58,12 +58,7 @@ const CoursesDashboard = () => {
   return (
     <>
 
-      <div className='head-titlt'>
-        <h4>Student</h4>
-        <p>Switch to the student view here - get back to the courses you’re taking.</p>
-        <FaBell className='i' />
-        <div className='name'>AG</div>
-      </div>
+     
       <div className='A'>
         <span className='h'>Cources</span>
       </div>
@@ -74,28 +69,26 @@ const CoursesDashboard = () => {
 
       <div className='VDS'>
         <div className='TT'>
-          <div className='search'>
-            <input type='search' placeholder='Search Your Cources' />
-            <FaSearch className='ic' />
-          </div>
+          
 
 
         </div>
         {
           loadin ? <h1>loading</h1> :
-          courses?.data?.data["created-courses"].map(course => (
+          courses?.data?.data["created-courses"].slice(0,5).map(course => (
           
-            <div className='box'>
+            <div className='box p-2' key={course.id}>
               <div className='sec'>
                 <img src='/images/1 (1).png' alt='' />
-                <div>
+                <div className='p-2 text-primary'>
                   <h2>{course.title}</h2>
-                  {course.published?<h2>Public{course.id}</h2>:<h2>private</h2>}
+                  {course.published?<h2>Public</h2>:<h2>private</h2>}
                 </div>
               </div>
               <div className='ED'>
-              <Link to={`/courseUpdate/${course.id}`} className='btn btn-primary'>Edit</Link>
-              <button className='btn btn-danger'>Delete</button>
+              <Link to={`/courseUpdate/${course.id}`} className='btn btn-primary mx-2'><button className='btn'>Edit</button></Link>
+              <Link to={`/courseUpdate/${course.id}`} className='btn btn-danger'><button className='btn'>Delete</button></Link>
+               
               </div>
             </div>
           ))

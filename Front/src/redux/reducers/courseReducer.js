@@ -3,7 +3,11 @@ import { GET_ALL_COURSE, GET_COURSE_ID,GET_ERROR,ACCESS_COURSE_ID,CREATE_SECTION
 const inital = {
     courses: [],
     loading: true,
+    loading0: true,
     oneCourse:[],
+    createCourse:[],
+    section:[],
+    lecture:[]
 }
  
 const courseReducer = (state = inital, action) => {
@@ -26,20 +30,19 @@ const courseReducer = (state = inital, action) => {
           };
           case CREATE_COURSE:
             return {
-                ...state,
-                courses: action.payload,
-                loading: false,
+              createCourse: action.payload,
+                loading0: false,
             }
             case CREATE_SECTION:
             return {
                 ...state,
-                courses: action.payload,
+                section: action.payload,
                 loading: false,
             }
             case ADD_LECTURE:
               return {
-                  ...state,
-                  courses: action.payload,
+                ...state,
+                lecture: action.payload,
                   loading: false,
               }
       default:
