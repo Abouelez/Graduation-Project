@@ -79,7 +79,7 @@ const CoursesDashboard = () => {
           
             <div className='box p-2' key={course.id}>
               <div className='sec'>
-                <img src='/images/1 (1).png' alt='' />
+                <img src={`http://localhost:8000${course.thumbnail}`} alt='' />
                 <div className='p-2 text-primary'>
                   <h2>{course.title}</h2>
                   {course.published?<h2>Public</h2>:<h2>private</h2>}
