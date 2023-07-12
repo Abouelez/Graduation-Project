@@ -11,7 +11,7 @@ const CourseCard = ({ course }) => {
   const dispatch = useDispatch();
 
   const res = useSelector((state) => state.user.hasAccess);
-  console.log(res);
+  //console.log(res);
   const handleClick=(e)=>{
     e.preventDefault();
     if (access) {

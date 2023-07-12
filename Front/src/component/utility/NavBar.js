@@ -67,74 +67,30 @@ function NavBar() {
               />
             </ul>
             <div className="dropdown">
-              {/*
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                  Category
-                </button>
-                 <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
-                  <li><h2 className="dropdown-item ">Action</h2>
-                    <ul className='dropdown-submenu'>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li><h2 className="dropdown-item ">Action</h2>
-                    <ul className='dropdown-submenu'>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li><h2 className="dropdown-item ">Action</h2>
-                    <ul className='dropdown-submenu'>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li><h2 className="dropdown-item ">Action</h2>
-                    <ul className='dropdown-submenu'>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li><h2 className="dropdown-item ">Action</h2>
-                    <ul className='dropdown-submenu'>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                      <li><a className="dropdown-item" href="#1">Another action</a></li>
-                      <li><a className="dropdown-item" href="#1">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul> */
-              }
+
             </div>
             {
               user != '' ? (
                 <NavDropdown title={user.name} id="basic-nav-dropdown">
                   {
-                    user.is_instructor === 1 ? (<NavDropdown.Item as={Link} to="/instructorDashboard">
-                    my dashboard
-                  </NavDropdown.Item>
-                ) : (
-                  <NavDropdown.Item as={Link} to="/student">
-                    my profil
-                  </NavDropdown.Item>)
+                    user.is_instructor === 1 ? (
+                      <NavDropdown.Item as={Link} to="/instructorDashboard">
+                        my dashboard
+                      </NavDropdown.Item>
+                    ) : (
+                      <NavDropdown.Item as={Link} to="/student">
+                        my profile
+                      </NavDropdown.Item>
+                    )
                   }
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logOut} href="/"> log out</NavDropdown.Item>
                 </NavDropdown>
-
-              ) :
-                (<span className="links">
+              ) : (
+                <span className="links">
                   <NavLink to={"/login"} className={({ isActive }) => isActive ? "active" : ""}>login</NavLink>
-                </span>)
+                </span>
+              )
             }
 
             <div className="links d-flex ">
@@ -147,8 +103,6 @@ function NavBar() {
                 </div>
               </div>
             </div>
-
-
           </nav>
           <div className="menu-icon">
             <span className='cart1'>
