@@ -93,6 +93,13 @@ function NavBar() {
               )
             }
 
+            <span className="links">
+               
+              <Link to={"/student"}>
+                <h2><span>  my profile</span></h2>
+              </Link>
+            </span>
+
             <div className="links d-flex ">
               <div className="header-right " onClick={hidemenu}>
                 <div className="d-flex cart">

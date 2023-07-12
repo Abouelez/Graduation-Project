@@ -18,7 +18,7 @@ const AddLecture = () => {
     const [secState, setSecState] = useState()
     const [lectureState, setLectureState] = useState()
     const [loading, setLoading] = useState(false);
-
+    
     const dispatch = useDispatch();
     const accessToken = localStorage.getItem("token");
     const formData = new FormData()
@@ -50,15 +50,27 @@ const AddLecture = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log('Success:', data);
+              //  console.log('Success:', data);
                 // Do something with the response data
+
+                setLectureState('lecture added')
+                setTimeout(() => {
+                    setLecTitle('')
+                    setlecVideo('')
+                },1000)
+                
             })
             .catch((error) => {
                 console.error('Error:', error);
                 // Handle the error
+                setLectureState('something wrong happened')
+                 
             });
-            setLecTitle('')
-            setlecVideo('')
+            setTimeout(() => {
+                setLecTitle('')
+                setlecVideo('')
+                setLectureState('')
+            },1000)
     };
     const handleFileChange = (e) => {
         setlecVideo(e.target.files[0]);
@@ -68,7 +80,7 @@ const AddLecture = () => {
     const dispatch0 = useDispatch();
   
   const course = useSelector((state) => state.allCourses.oneCourse);
-  console.log(course?.data?.data);
+ // console.log(course?.data?.data);
   const details = course?.data?.data;
   useEffect(() => {
     dispatch0(getCourse(id));
@@ -114,6 +126,7 @@ const AddLecture = () => {
                       ))}
                   </select>
                     <input type='file' required className='file' multiple onChange={handleFileChange} />
+                    <h3 className='text-primary '>{lectureState&& lecTitle!=''?lectureState:null}</h3>
                     <div className='foot'>
                         <h2>Cancel</h2>
                         <button className='button' onClick={handelLectureSubmit}>Add Lecture</button>

@@ -1,7 +1,7 @@
 .Sidebar{
     background-color: #010c1d;
     color: #fff;
-    min-height: 100vh;
+    height: 320vh;
     width: 200px;
     transition: all 0.5s;
     position: relative;
