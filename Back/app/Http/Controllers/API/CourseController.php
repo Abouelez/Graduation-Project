@@ -67,6 +67,7 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
+        
         $data = $request->except('thumbnail');
         $course = Course::create(array_merge($data, ['user_id' => auth()->user()->id]));
 
