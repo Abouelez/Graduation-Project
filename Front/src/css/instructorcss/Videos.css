@@ -248,12 +248,13 @@
   padding: 4.8rem;
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 75rem;
+  left: 0px;
   height: 150px;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 50px;
-  position: relative;
+  margin-left: 30px;
   justify-content: space-between;
   border: 1px solid #d1d7dc;
   box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
@@ -269,16 +270,32 @@
 .sec{
     display: flex;
 }
+.sec h2 , h4{
+  margin-left: 10px;
+  color: black;
+}
 .sec h2{
-    margin-left: 10px;
-    padding-bottom: 42px;
+  font-size: 20px;
 }
 .ED button{
   margin-right: 10px;
 }
-.VDS{
+.Cname{
   position: relative;
-  top: -120rem;
+  top: 20px;
+}
+.VDS{
+  position: absolute;
+    top: 66%;
+    left: 20%;
+}
+.ED{
+  position: relative;
+    left: -20px;
+}
+.ED button{
+  color: #fff;
+  font-weight: bold;
 }
 @media screen and (max-width:767px) {
   .ED{

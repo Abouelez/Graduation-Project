@@ -28,7 +28,6 @@ function HomePage() {
             <h4>The Best Theme</h4>
             <h5>Top Education <br /> Cources 2022/23</h5>
             <p></p>
-            <a className='button' href='h'>FIND COURCE</a>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsLinkedin, BsYoutube, BsInstagram, BsGithub, BsTelegram, BsFacebook, BsTwitter } from "react-icons/bs"
 import "../../css/Footer.css"
+import { FaMousePointer } from 'react-icons/fa'
 function Footer() {
   return (
     <>
@@ -9,7 +10,7 @@ function Footer() {
           <div className='row align-items-center'>
             <div className='col-5'>
               <div className='footer-top-data d-flex gap-15 align-items-center'>
-                <img src='images/newsletter.png' alt='newsletter' />
+                <FaMousePointer className='mouse'/>
                 <h5 className='mb-0 text-white'>Sign Up for news letter</h5>
               </div>
             </div>

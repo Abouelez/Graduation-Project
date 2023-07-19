@@ -62,7 +62,7 @@ export const getUser = () => async (dispatch, getState) => {
         }
       };
       const response = await axios.get(`http://localhost:8000/api/user/has-purchased/${id}`, config);
-     console.log(response);
+     //console.log(response);
       dispatch({
         type: HAS_ACCESS,
         payload: response,

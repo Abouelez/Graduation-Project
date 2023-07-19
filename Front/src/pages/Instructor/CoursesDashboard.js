@@ -12,53 +12,47 @@ const CoursesDashboard = () => {
 
   let accessToken = localStorage.getItem('token');
   const [loadin, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  /*
-   //  useEffect(() => {
-   //    const accessToken = localStorage.getItem('token');
-   //    setLoading(true);
-   //    fetch('http://localhost:8000/api/instructor-dashboard', {
-   //      method: 'GET',
-   //      headers: {
-   //        'Content-Type': 'application/json',
-   //        'Accept': 'application/json',
-   //        'Authorization': `Bearer ${accessToken}`
-   //      }
-   //    })
-   //    .then(response => {
-   //      if (response) {
-   //       console.log(response);
-   //       return response.json();
- 
-   //      } else {
-   //        throw new Error('Failed to fetch data');
-   //      }
-   //    })
-   //    .then(data => {
-   //     console.log(data);
-   //      setCourseData(data);
-   //      setLoading(false);
-   //    })
-   //    .catch(error => {
-   //      setError(error);
-   //      setLoading(false);
-   //    });
-   //  }, []);
-   */
+   const [error, setError] = useState(null);
+
 
   const dispatch = useDispatch();
   const { courses, loading } = useSelector(state => state.instructor);
+  const handleDel=(e)=>{
+
+    const accessToken = localStorage.getItem('token');
+    const url = `http://localhost:8000/api/courses/${e}`;
+  
+    fetch(url, {
+      method: 'DELETE',
+      headers: { 
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      }
+    })
+    .then(response => { 
+        if(response?.statusText!='Forbidden'){
+          window.location.href = "/instructorDashboard"
+      }
+      
+    })
+    .catch(error => {
+      // Handle any errors
+      console.error(error);
+      setError(error);
+    });
+  }
+
 
   useEffect(() => {
     dispatch(getInstructorCourses());
   }, []);
 
- 
+
 
   return (
     <>
 
-     
+
       <div className='A'>
         <span className='h'>Cources</span>
       </div>
@@ -69,35 +63,27 @@ const CoursesDashboard = () => {
 
       <div className='VDS'>
         <div className='TT'>
-          
-
-
         </div>
         {
           loadin ? <h1>loading</h1> :
-          courses?.data?.data["created-courses"].slice(0,5).map(course => (
-          
-            <div className='box p-2' key={course.id}>
-              <div className='sec'>
-                <img src='/images/1 (1).png' alt='' />
-                <div className='p-2 text-primary'>
-                  <h2>{course.title}</h2>
-                  {course.published?<h2>Public</h2>:<h2>private</h2>}
+            courses?.data?.data["created-courses"].slice(0, 5).map(course => (
+
+              <div className='box p-2' key={course.id}>
+                <div className='sec'>
+                  <img src={`http://localhost:8000${course.thumbnail}`} alt='' />
+                  <div className='p-2 text-primary'>
+                    <h2>{course.title}</h2>
+                    {course.published ? <h2>Public</h2> : <h2>private</h2>}
+                  </div>
+                </div>
+                <div className='ED'>
+                  <Link to={`/courseUpdate/${course.id}`} className='btn btn-primary mx-2'><button className='btn'>Edit</button></Link>
+                  <div   onClick={(e)=> handleDel(course.id)} className='btn btn-danger'><button className='btn'>Delete</button></div>
+
                 </div>
               </div>
-              <div className='ED'>
-              <Link to={`/courseUpdate/${course.id}`} className='btn btn-primary mx-2'><button className='btn'>Edit</button></Link>
-              <Link to={`/courseUpdate/${course.id}`} className='btn btn-danger'><button className='btn'>Delete</button></Link>
-               
-              </div>
-            </div>
-          ))
-
-            
+            ))
         }
-
-
-
       </div>
     </>
   );

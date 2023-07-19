@@ -30,8 +30,8 @@ const Register = () => {
                 <h2 className="card-title text-center mb-4">Sign up</h2>
 
                 <div className="form-group mt-3">
-                  <label htmlFor="name"><h4>First Name</h4> </label>
-                  <input type="text" className="form-control" id="name" placeholder="Enter your first name" required value={name}
+                  <label htmlFor="name"><h4>Name</h4> </label>
+                  <input type="text" className="form-control" id="name" placeholder="Enter your name" required value={name}
                     onChange={onChangeName} />
                 </div>
                 <div className="form-group mt-3">

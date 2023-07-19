@@ -1,7 +1,7 @@
     import React, {Children, useState } from 'react'
     import "../../css/Admin.css"
     import { NavLink, Outlet } from 'react-router-dom'
-    import {FaBars, FaUser} from "react-icons/fa"
+    import {FaBars, FaCreativeCommons, FaUser} from "react-icons/fa"
 
     const Admin = ({Children}) => {
         const [open ,setopen]=useState(false);
@@ -12,6 +12,11 @@
             name:"UserRequest",
             icon:<FaUser  />
             },
+            {
+                path:"createcategory",
+                name:"Createnewcategory",
+                icon:<FaCreativeCommons  />
+                },
         ]
     return (
         <>

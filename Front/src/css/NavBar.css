@@ -9,7 +9,9 @@ header {
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 4px 12px rgba(0,0,0,.08);
 }
-
+.search1{
+  border-radius: 10px;
+}
 header .header {
   width: 100%;
   height: 8rem;

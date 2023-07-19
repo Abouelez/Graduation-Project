@@ -23,3 +23,8 @@ footer .input-group-text {
 }
 
 /*End Footer*/
+.mouse{
+    color: rgb(199, 203, 207);
+    transform: rotate(65deg);
+    font-size: 20px;
+}

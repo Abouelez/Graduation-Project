@@ -1,0 +1,18 @@
+.createcategory{
+    left: 40%;
+    position: absolute;
+    top: 40%;
+}
+.createcategory input{
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.createcategory input:focus::-webkit-input-placeholder{
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    border: none;
+}
+.Category{
+    color: green;
+    font-size: 15px;
+}

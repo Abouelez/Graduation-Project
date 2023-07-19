@@ -28,6 +28,9 @@ import CourseWatching from "./pages/Courses/CourseWatching";
 import StudentCourcessEnroll from "./pages/student/StudentCourcessEnroll";
 import AddLecture from "./pages/Instructor/AddLecture";
 import VideosWatch from "./pages/Courses/VideosWatch";
+import Admin from "./pages/Admin/Admin";
+import UserRequest from "./pages/UserRequest";
+import CreateCaregory from "./pages/CreateCaregory";
 function App() {
   return (
     <>
@@ -60,7 +63,11 @@ function App() {
           <Route path="userprofile" element={ <Userprofile/> }/>
           <Route path="studentCourcessEnroll" element={ <StudentCourcessEnroll/> }/>
         </Route>
-
+        <Route path="/admin" element={ <Admin/> }>
+        <Route index element={ <UserRequest /> }/>
+          <Route path="userrequest" element={ <UserRequest />}/>
+          <Route path="createcategory" element={ <CreateCaregory />}/>
+        </Route>
         </Routes>
       {/* <AddLecture/>
       <AddSection/>
